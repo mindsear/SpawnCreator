@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DFFB2DCA-6ABD-42AB-BBDA-1D05A91E7123}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpawnCreator</RootNamespace>
+    <AssemblyName>SpawnCreator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>spawncreator_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>C:\Users\Sorin\Desktop\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountCreator.Designer.cs">
+      <DependentUpon>AccountCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVendorItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVendorItems.Designer.cs">
+      <DependentUpon>AddVendorItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackToMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackToMainMenu.Designer.cs">
+      <DependentUpon>BackToMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Definers.cs" />
+    <Compile Include="dynamicflags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dynamicflags.Designer.cs">
+      <DependentUpon>dynamicflags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="flags_extra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flags_extra.Designer.cs">
+      <DependentUpon>flags_extra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_BagFamilyMasksDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BagFamilyMasksDialog.Designer.cs">
+      <DependentUpon>Form_BagFamilyMasksDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ClassMasksDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ClassMasksDialog.Designer.cs">
+      <DependentUpon>Form_ClassMasksDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FlagMasksDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FlagMasksDialog.Designer.cs">
+      <DependentUpon>Form_FlagMasksDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FlagExtraMasksDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FlagExtraMasksDialog.Designer.cs">
+      <DependentUpon>Form_FlagExtraMasksDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FlagCustomDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FlagCustomDialog.Designer.cs">
+      <DependentUpon>Form_FlagCustomDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ItemPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ItemPreview.Designer.cs">
+      <DependentUpon>Form_ItemPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MainMenu.Designer.cs">
+      <DependentUpon>Form_MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ItemCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ItemCreator.Designer.cs">
+      <DependentUpon>Form_ItemCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RaceMasksDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RaceMasksDialog.Designer.cs">
+      <DependentUpon>Form_RaceMasksDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SocketOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SocketOptions.Designer.cs">
+      <DependentUpon>Form_SocketOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameObject_Creator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameObject_Creator.Designer.cs">
+      <DependentUpon>GameObject_Creator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateLoot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateLoot.Designer.cs">
+      <DependentUpon>GenerateLoot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MakeNpcSay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeNpcSay.Designer.cs">
+      <DependentUpon>MakeNpcSay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mechanic_immune_mask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mechanic_immune_mask.Designer.cs">
+      <DependentUpon>mechanic_immune_mask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MountNPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MountNPC.Designer.cs">
+      <DependentUpon>MountNPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NpcFlag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NpcFlag.Designer.cs">
+      <DependentUpon>NpcFlag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NPC_Creator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NPC_Creator.Designer.cs">
+      <DependentUpon>NPC_Creator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveOptionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveOptionsDialog.Designer.cs">
+      <DependentUpon>SaveOptionsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpawnFunctions.cs" />
+    <Compile Include="type_flags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="type_flags.Designer.cs">
+      <DependentUpon>type_flags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="unit_flags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="unit_flags.Designer.cs">
+      <DependentUpon>unit_flags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="unit_flags2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="unit_flags2.Designer.cs">
+      <DependentUpon>unit_flags2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccountCreator.resx">
+      <DependentUpon>AccountCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVendorItems.resx">
+      <DependentUpon>AddVendorItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackToMainMenu.resx">
+      <DependentUpon>BackToMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dynamicflags.resx">
+      <DependentUpon>dynamicflags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flags_extra.resx">
+      <DependentUpon>flags_extra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_BagFamilyMasksDialog.resx">
+      <DependentUpon>Form_BagFamilyMasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ClassMasksDialog.resx">
+      <DependentUpon>Form_ClassMasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FlagMasksDialog.resx">
+      <DependentUpon>Form_FlagMasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FlagExtraMasksDialog.resx">
+      <DependentUpon>Form_FlagExtraMasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FlagCustomDialog.resx">
+      <DependentUpon>Form_FlagCustomDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ItemPreview.resx">
+      <DependentUpon>Form_ItemPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MainMenu.resx">
+      <DependentUpon>Form_MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ItemCreator.resx">
+      <DependentUpon>Form_ItemCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RaceMasksDialog.resx">
+      <DependentUpon>Form_RaceMasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SocketOptions.resx">
+      <DependentUpon>Form_SocketOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameObject_Creator.resx">
+      <DependentUpon>GameObject_Creator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateLoot.resx">
+      <DependentUpon>GenerateLoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeNpcSay.resx">
+      <DependentUpon>MakeNpcSay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mechanic_immune_mask.resx">
+      <DependentUpon>mechanic_immune_mask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MountNPC.resx">
+      <DependentUpon>MountNPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NpcFlag.resx">
+      <DependentUpon>NpcFlag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NPC_Creator.resx">
+      <DependentUpon>NPC_Creator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveOptionsDialog.resx">
+      <DependentUpon>SaveOptionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="type_flags.resx">
+      <DependentUpon>type_flags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unit_flags.resx">
+      <DependentUpon>unit_flags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unit_flags2.resx">
+      <DependentUpon>unit_flags2.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inv_enchant_disenchant.png" />
+    <None Include="Resources\Inv_misc_coin_02.png" />
+    <None Include="Resources\beta_axe.png" />
+    <None Include="Resources\56176.png" />
+    <None Include="Resources\SindoreiW650.png" />
+    <None Include="Resources\line_divider.png" />
+    <None Include="Resources\250px-Mage_Crest.png" />
+    <None Include="Resources\chibi_spawn_by_xxthornthevamphogxx-d9fzfhb.png" />
+    <None Include="Resources\Inv_misc_questionmark.png" />
+    <None Include="Resources\socket-blue.gif" />
+    <None Include="Resources\socket-prismatic.gif" />
+    <None Include="Resources\socket-red.gif" />
+    <None Include="Resources\socket-yellow.gif" />
+    <None Include="Resources\Attack.png" />
+    <None Include="Resources\Buy.png" />
+    <None Include="Resources\Directions.png" />
+    <None Include="Resources\Driver.png" />
+    <None Include="Resources\Gunner.png" />
+    <None Include="Resources\Interact.png" />
+    <None Include="Resources\LootAll.png" />
+    <None Include="Resources\Pickup.png" />
+    <None Include="Resources\PVP.png" />
+    <None Include="Resources\Quest.png" />
+    <None Include="Resources\Repair.png" />
+    <None Include="Resources\Speak.png" />
+    <None Include="Resources\Taxi.png" />
+    <None Include="Resources\Trainer.png" />
+    <None Include="Resources\vehichleCursor.png" />
+    <None Include="Resources\3D-Orc.png" />
+    <None Include="Resources\_wow__orc__render__by_popokupingupop90-dam60zw.png" />
+    <None Include="Resources\1373_hearthstone-_valeera_sanguinar.jpg" />
+    <None Include="Resources\__12de124503ec0306394bb969ddd8d.jpg" />
+    <None Include="Resources\e4f12de124503ec0306394bb969ddd8d.jpg" />
+    <None Include="Resources\skull_f18221f5f36c13224.png" />
+    <None Include="Resources\green_plus_with_black_border_preview.jpg" />
+    <Content Include="spawncreator_icon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
