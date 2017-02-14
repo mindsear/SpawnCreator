@@ -1,0 +1,126 @@
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.Properties.Resources.resources
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.csproj.GenerateResource.Cache
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\bin\Release\SpawnCreator.exe.config
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\bin\Release\SpawnCreator.exe
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\bin\Release\SpawnCreator.pdb
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.Form_BagFamilyMasksDialog.resources
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.Form_ClassMasksDialog.resources
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.Form_FlagMasksDialog.resources
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.Form_FlagExtraMasksDialog.resources
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.Form_FlagCustomDialog.resources
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.Form_MainMenu.resources
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.Form_ItemCreator.resources
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.Form_RaceMasksDialog.resources
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.Form_SocketOptions.resources
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.exe
+C:\WoW_Server\WindowsFormsApplication3\WindowsFormsApplication3\obj\Release\SpawnCreator.pdb
+C:\WoW_Server\SpawnCreator\SpawnCreator\bin\Release\SpawnCreator.exe.config
+C:\WoW_Server\SpawnCreator\SpawnCreator\bin\Release\SpawnCreator.exe
+C:\WoW_Server\SpawnCreator\SpawnCreator\bin\Release\SpawnCreator.pdb
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.csprojResolveAssemblyReference.cache
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_BagFamilyMasksDialog.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_ClassMasksDialog.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagMasksDialog.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagExtraMasksDialog.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagCustomDialog.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_MainMenu.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_ItemCreator.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_RaceMasksDialog.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_SocketOptions.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Properties.Resources.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.SaveOptionsDialog.resources
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.csproj.GenerateResource.Cache
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.exe
+C:\WoW_Server\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.pdb
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\bin\Release\SpawnCreator.exe.config
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.exe
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.pdb
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\bin\Release\SpawnCreator.exe
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\bin\Release\SpawnCreator.pdb
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.csprojResolveAssemblyReference.cache
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_BagFamilyMasksDialog.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_ClassMasksDialog.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagMasksDialog.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagExtraMasksDialog.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagCustomDialog.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_ItemPreview.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_MainMenu.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_ItemCreator.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_RaceMasksDialog.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Form_SocketOptions.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Properties.Resources.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.SaveOptionsDialog.resources
+C:\Users\alex\Desktop\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.csproj.GenerateResource.Cache
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\bin\Release\SpawnCreator.exe.config
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.exe
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.pdb
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\bin\Release\SpawnCreator.exe
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\bin\Release\SpawnCreator.pdb
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.csprojResolveAssemblyReference.cache
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_BagFamilyMasksDialog.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_ClassMasksDialog.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagMasksDialog.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagExtraMasksDialog.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagCustomDialog.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_ItemPreview.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_MainMenu.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_ItemCreator.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_RaceMasksDialog.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_SocketOptions.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Properties.Resources.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.SaveOptionsDialog.resources
+C:\Users\alex\Desktop\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.csproj.GenerateResource.Cache
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\bin\Release\SpawnCreator.exe.config
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.exe
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.pdb
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\bin\Release\SpawnCreator.exe
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\bin\Release\SpawnCreator.pdb
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.csprojResolveAssemblyReference.cache
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_BagFamilyMasksDialog.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_ClassMasksDialog.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagMasksDialog.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagExtraMasksDialog.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_FlagCustomDialog.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_ItemPreview.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_MainMenu.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_ItemCreator.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_RaceMasksDialog.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Form_SocketOptions.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.Properties.Resources.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.SaveOptionsDialog.resources
+F:\Visual Studio\WoW-Spawn-Creator\SpawnCreator\obj\Release\SpawnCreator.csproj.GenerateResource.Cache
+E:\WoW-Spawn-Creator-master\SpawnCreator\bin\Release\SpawnCreator.exe.config
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.exe
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.pdb
+E:\WoW-Spawn-Creator-master\SpawnCreator\bin\Release\SpawnCreator.exe
+E:\WoW-Spawn-Creator-master\SpawnCreator\bin\Release\SpawnCreator.pdb
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.csprojResolveAssemblyReference.cache
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Form_BagFamilyMasksDialog.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Form_ClassMasksDialog.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Form_FlagMasksDialog.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Form_FlagExtraMasksDialog.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Form_FlagCustomDialog.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Form_ItemPreview.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Form_MainMenu.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Form_ItemCreator.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Form_RaceMasksDialog.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Form_SocketOptions.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.Properties.Resources.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.SaveOptionsDialog.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.csproj.GenerateResource.Cache
+E:\WoW-Spawn-Creator-master\SpawnCreator\bin\Release\MySql.Data.dll
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.AccountCreator.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.BackToMainMenu.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.NPC_Creator.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.NpcFlag.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.unit_flags.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.dynamicflags.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.unit_flags2.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.type_flags.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.flags_extra.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.mechanic_immune_mask.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.GameObject_Creator.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.GenerateLoot.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.AddVendorItems.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.MountNPC.resources
+E:\WoW-Spawn-Creator-master\SpawnCreator\obj\Release\SpawnCreator.MakeNpcSay.resources
