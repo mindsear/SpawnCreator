@@ -233,9 +233,11 @@
             this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.timer8 = new System.Windows.Forms.Timer(this.components);
+            this.button_waypoints = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label82 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -513,7 +515,7 @@
             this.groupBox6.Controls.Add(this.button12);
             this.groupBox6.Controls.Add(this.textBox42);
             this.groupBox6.Controls.Add(this.button11);
-            this.groupBox6.Location = new System.Drawing.Point(15, 655);
+            this.groupBox6.Location = new System.Drawing.Point(16, 651);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(256, 100);
             this.groupBox6.TabIndex = 207;
@@ -581,7 +583,7 @@
             this.label70.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.ForeColor = System.Drawing.Color.Blue;
-            this.label70.Location = new System.Drawing.Point(180, 8);
+            this.label70.Location = new System.Drawing.Point(181, 4);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(364, 36);
             this.label70.TabIndex = 1;
@@ -614,7 +616,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 62);
+            this.groupBox1.Location = new System.Drawing.Point(16, 58);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(337, 266);
             this.groupBox1.TabIndex = 0;
@@ -866,7 +868,7 @@
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(388, 63);
+            this.groupBox2.Location = new System.Drawing.Point(389, 59);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(325, 351);
             this.groupBox2.TabIndex = 1;
@@ -1287,7 +1289,7 @@
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.textBox22);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.Location = new System.Drawing.Point(15, 339);
+            this.groupBox3.Location = new System.Drawing.Point(16, 335);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(232, 290);
             this.groupBox3.TabIndex = 2;
@@ -1562,7 +1564,7 @@
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox4.Location = new System.Drawing.Point(277, 423);
+            this.groupBox4.Location = new System.Drawing.Point(278, 419);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(436, 348);
             this.groupBox4.TabIndex = 3;
@@ -1897,6 +1899,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label82);
+            this.groupBox5.Controls.Add(this.button_waypoints);
             this.groupBox5.Controls.Add(this.label79);
             this.groupBox5.Controls.Add(this.button15);
             this.groupBox5.Controls.Add(this.button14);
@@ -1971,7 +1975,7 @@
             this.groupBox5.Controls.Add(this.label50);
             this.groupBox5.Controls.Add(this.textBox41);
             this.groupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox5.Location = new System.Drawing.Point(15, 777);
+            this.groupBox5.Location = new System.Drawing.Point(16, 773);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(700, 578);
             this.groupBox5.TabIndex = 107;
@@ -1983,9 +1987,9 @@
             this.label79.ForeColor = System.Drawing.Color.Maroon;
             this.label79.Location = new System.Drawing.Point(4, 388);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(147, 26);
+            this.label79.Size = new System.Drawing.Size(157, 26);
             this.label79.TabIndex = 206;
-            this.label79.Text = "Select SmartAI from AI Name \r\n      to enable this button.";
+            this.label79.Text = "Select \"SmartAI\" from AI Name \r\n      to enable this button.";
             // 
             // button15
             // 
@@ -2102,9 +2106,9 @@
             // textBox60
             // 
             this.textBox60.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox60.Location = new System.Drawing.Point(606, 197);
+            this.textBox60.Location = new System.Drawing.Point(607, 197);
             this.textBox60.Name = "textBox60";
-            this.textBox60.Size = new System.Drawing.Size(93, 20);
+            this.textBox60.Size = new System.Drawing.Size(90, 20);
             this.textBox60.TabIndex = 197;
             this.textBox60.Text = "0";
             this.textBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2592,7 +2596,7 @@
             // textBox46
             // 
             this.textBox46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox46.Location = new System.Drawing.Point(231, 198);
+            this.textBox46.Location = new System.Drawing.Point(230, 198);
             this.textBox46.Name = "textBox46";
             this.textBox46.Size = new System.Drawing.Size(93, 20);
             this.textBox46.TabIndex = 151;
@@ -2610,7 +2614,7 @@
             "Water",
             "Flying",
             "Rooted"});
-            this.comboBox10.Location = new System.Drawing.Point(519, 299);
+            this.comboBox10.Location = new System.Drawing.Point(9, 253);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(171, 21);
             this.comboBox10.TabIndex = 150;
@@ -2620,7 +2624,7 @@
             this.label52.AutoSize = true;
             this.label52.BackColor = System.Drawing.Color.Transparent;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(565, 285);
+            this.label52.Location = new System.Drawing.Point(58, 237);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(66, 13);
             this.label52.TabIndex = 149;
@@ -2718,6 +2722,7 @@
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(273, 21);
             this.comboBox8.TabIndex = 142;
+            this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
             // 
             // label44
             // 
@@ -2746,7 +2751,7 @@
             // textBox37
             // 
             this.textBox37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox37.Location = new System.Drawing.Point(125, 198);
+            this.textBox37.Location = new System.Drawing.Point(122, 198);
             this.textBox37.Name = "textBox37";
             this.textBox37.Size = new System.Drawing.Size(93, 20);
             this.textBox37.TabIndex = 139;
@@ -2886,6 +2891,22 @@
             this.timer8.Interval = 6000;
             this.timer8.Tick += new System.EventHandler(this.timer8_Tick);
             // 
+            // button_waypoints
+            // 
+            this.button_waypoints.BackColor = System.Drawing.Color.DimGray;
+            this.button_waypoints.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_waypoints.Enabled = false;
+            this.button_waypoints.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_waypoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_waypoints.ForeColor = System.Drawing.Color.White;
+            this.button_waypoints.Location = new System.Drawing.Point(512, 237);
+            this.button_waypoints.Name = "button_waypoints";
+            this.button_waypoints.Size = new System.Drawing.Size(173, 37);
+            this.button_waypoints.TabIndex = 207;
+            this.button_waypoints.Text = "How to add waypoints";
+            this.button_waypoints.UseVisualStyleBackColor = false;
+            this.button_waypoints.Click += new System.EventHandler(this.button_waypoints_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SpawnCreator.Properties.Resources.Speak;
@@ -2899,7 +2920,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SpawnCreator.Properties.Resources._wow__orc__render__by_popokupingupop90_dam60zw;
-            this.pictureBox2.Location = new System.Drawing.Point(253, 323);
+            this.pictureBox2.Location = new System.Drawing.Point(254, 319);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(129, 113);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2915,6 +2936,15 @@
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 3;
             this.pictureBox9.TabStop = false;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(516, 277);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(183, 26);
+            this.label82.TabIndex = 208;
+            this.label82.Text = "Select \"Waypoint Movement\" from \r\nMovement Type to enable this button";
             // 
             // NPC_Creator
             // 
@@ -3170,5 +3200,7 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Button button_waypoints;
+        private System.Windows.Forms.Label label82;
     }
 }

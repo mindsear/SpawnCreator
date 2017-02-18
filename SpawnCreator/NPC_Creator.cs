@@ -1575,6 +1575,15 @@ namespace SpawnCreator
 
             if (npcflag.checkedListBox1.GetItemCheckState(5/*Vendor*/) == CheckState.Checked)
                 button13.Enabled = true;
+            else if (npcflag.checkedListBox1.GetItemCheckState(6/*Vendor Ammo*/) == CheckState.Checked)
+                button13.Enabled = true;
+            else if (npcflag.checkedListBox1.GetItemCheckState(7/*Vendor Food*/) == CheckState.Checked)
+                button13.Enabled = true;
+            else if (npcflag.checkedListBox1.GetItemCheckState(8/*Vendor Poison*/) == CheckState.Checked)
+                button13.Enabled = true;
+            else if (npcflag.checkedListBox1.GetItemCheckState(9/*Vendor Reagent*/) == CheckState.Checked)
+                button13.Enabled = true;
+
             else
                 button13.Enabled = false;
         }
@@ -4186,8 +4195,10 @@ namespace SpawnCreator
 
         private void comboBox9_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox9.SelectedIndex == 7)
+            if (comboBox9.SelectedIndex == 7) /*SmartAI*/
                 button15.Enabled = true;
+           else
+                button15.Enabled = false;
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -4212,6 +4223,20 @@ namespace SpawnCreator
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox8.SelectedIndex == 2) /*Waypoint movement*/
+                button_waypoints.Enabled = true;
+            else
+                button_waypoints.Enabled = false;
+        }
+
+        private void button_waypoints_Click(object sender, EventArgs e)
+        {
+            HowToAddWaypoints waypoints = new HowToAddWaypoints();
+            waypoints.ShowDialog();
         }
     }
 }

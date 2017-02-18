@@ -179,6 +179,12 @@
     <Compile Include="GenerateLoot.Designer.cs">
       <DependentUpon>GenerateLoot.cs</DependentUpon>
     </Compile>
+    <Compile Include="HowToAddWaypoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HowToAddWaypoints.Designer.cs">
+      <DependentUpon>HowToAddWaypoints.cs</DependentUpon>
+    </Compile>
     <Compile Include="MakeNpcSay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenerateLoot.resx">
       <DependentUpon>GenerateLoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HowToAddWaypoints.resx">
+      <DependentUpon>HowToAddWaypoints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MakeNpcSay.resx">
       <DependentUpon>MakeNpcSay.cs</DependentUpon>

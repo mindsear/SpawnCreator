@@ -163,3 +163,4 @@ E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Disable_Form.resources
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Flags_Disable_Map.resources
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Flags_Disable_Spell.resources
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Flags_Disable_Vmap.resources
+E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.HowToAddWaypoints.resources
