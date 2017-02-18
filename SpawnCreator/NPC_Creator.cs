@@ -42,6 +42,7 @@ namespace SpawnCreator
         public static string stringEntryShare;
 
         Form_MainMenu mainmenu = new Form_MainMenu();
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -1120,11 +1121,11 @@ namespace SpawnCreator
             {
                 sfd.Filter = "sql files (*.sql)|*.sql";
                 sfd.FilterIndex = 2;
-                sfd.FileName = "NPC_" + NPC_Creator.stringEntryShare;
+                sfd.FileName = "NPC_" + stringEntryShare;
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    File.WriteAllText(sfd.FileName, NPC_Creator.stringSQLShare);
+                    File.WriteAllText(sfd.FileName, stringSQLShare);
                     timer3.Start();
                 }
             }
@@ -4196,6 +4197,21 @@ namespace SpawnCreator
 
             //MakeNpcSay entry = NPC_creator entry
             npcsay.textBox61.Text = textBox1.Text;
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

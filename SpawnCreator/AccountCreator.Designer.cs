@@ -33,6 +33,7 @@
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label78 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label_mysql_status2 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.label86 = new System.Windows.Forms.Label();
             this.label_stopwatch = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label84 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -73,16 +73,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_realmID = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label78 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // label80
@@ -127,6 +127,22 @@
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
+            // label78
+            // 
+            this.label78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label78.ForeColor = System.Drawing.Color.Black;
+            this.label78.Location = new System.Drawing.Point(560, 4);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(26, 26);
+            this.label78.TabIndex = 114;
+            this.label78.Text = "<";
+            this.toolTip1.SetToolTip(this.label78, "Back to Main Menu");
+            this.label78.Click += new System.EventHandler(this.label78_Click);
+            this.label78.MouseEnter += new System.EventHandler(this.label78_MouseEnter);
+            this.label78.MouseLeave += new System.EventHandler(this.label78_MouseLeave);
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
@@ -138,7 +154,7 @@
             this.label1.Size = new System.Drawing.Size(26, 26);
             this.label1.TabIndex = 80;
             this.label1.Text = "--";
-            this.toolTip1.SetToolTip(this.label1, "MInimize");
+            this.toolTip1.SetToolTip(this.label1, "Minimize");
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
@@ -215,12 +231,12 @@
             // 
             this.label88.AutoSize = true;
             this.label88.ForeColor = System.Drawing.Color.Lime;
-            this.label88.Location = new System.Drawing.Point(35, 213);
+            this.label88.Location = new System.Drawing.Point(20, 212);
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(105, 26);
+            this.label88.Size = new System.Drawing.Size(130, 26);
             this.label88.TabIndex = 100;
             this.label88.Tag = "";
-            this.label88.Text = "File has been saved \r\n      successfully!";
+            this.label88.Text = "File has been successfully\r\n               saved !";
             this.label88.Visible = false;
             // 
             // label87
@@ -284,16 +300,6 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "[Visit Creator\'s Website]";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::SpawnCreator.Properties.Resources.chibi_spawn_by_xxthornthevamphogxx_d9fzfhb;
-            this.pictureBox9.Location = new System.Drawing.Point(3, 252);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(161, 184);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 3;
-            this.pictureBox9.TabStop = false;
             // 
             // panel6
             // 
@@ -580,21 +586,15 @@
             this.pictureBox3.TabIndex = 113;
             this.pictureBox3.TabStop = false;
             // 
-            // label78
+            // pictureBox9
             // 
-            this.label78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
-            this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.ForeColor = System.Drawing.Color.Black;
-            this.label78.Location = new System.Drawing.Point(560, 4);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 26);
-            this.label78.TabIndex = 114;
-            this.label78.Text = "<";
-            this.toolTip1.SetToolTip(this.label78, "Back to Main Menu");
-            this.label78.Click += new System.EventHandler(this.label78_Click);
-            this.label78.MouseEnter += new System.EventHandler(this.label78_MouseEnter);
-            this.label78.MouseLeave += new System.EventHandler(this.label78_MouseLeave);
+            this.pictureBox9.Image = global::SpawnCreator.Properties.Resources.chibi_spawn_by_xxthornthevamphogxx_d9fzfhb;
+            this.pictureBox9.Location = new System.Drawing.Point(3, 252);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(161, 184);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 3;
+            this.pictureBox9.TabStop = false;
             // 
             // AccountCreator
             // 
@@ -634,12 +634,12 @@
             this.panel3.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

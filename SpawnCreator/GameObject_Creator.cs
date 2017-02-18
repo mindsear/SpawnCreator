@@ -144,8 +144,8 @@ namespace SpawnCreator
                 textBox3.Text + ", " + // displayId
                 "'" + textBox2.Text + "', " + // name
                 "'" + comboBox1.Text + "', " + // IconName
-                "'" + textBox4.Text + "', " + // castBarCaption
-                textBox28.Text + ", " + // unk1
+                "'" + textBox4.Text + "', '" + // castBarCaption
+                textBox28.Text + "', " + // unk1
                 textBox34.Text + ", " + // size
                 textBox26.Text + ", " + // Data0
                 textBox7.Text + ", " + // Data1
@@ -361,8 +361,8 @@ namespace SpawnCreator
                 textBox3.Text + ", " + // displayId
                 "'" + textBox2.Text + "', " + // name
                 "'" + comboBox1.Text + "', " + // IconName
-                "'" + textBox4.Text + "', " + // castBarCaption
-                textBox28.Text + ", " + // unk1
+                "'" + textBox4.Text + "', '" + // castBarCaption
+                textBox28.Text + "', " + // unk1
                 textBox34.Text + ", " + // size
                 textBox26.Text + ", " + // Data0
                 textBox7.Text + ", " + // Data1
@@ -420,8 +420,8 @@ namespace SpawnCreator
                 textBox3.Text + ", " + // displayId
                 "'" + textBox2.Text + "', " + // name
                 "'" + comboBox1.Text + "', " + // IconName
-                "'" + textBox4.Text + "', " + // castBarCaption
-                textBox28.Text + ", " + // unk1
+                "'" + textBox4.Text + "', '" + // castBarCaption
+                textBox28.Text + "', " + // unk1
                 textBox34.Text + ", " + // size
                 textBox26.Text + ", " + // Data0
                 textBox7.Text + ", " + // Data1
@@ -555,6 +555,11 @@ namespace SpawnCreator
         {
             label78.BackColor = Color.FromArgb(58, 89, 114);
             label78.ForeColor = Color.Black;
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

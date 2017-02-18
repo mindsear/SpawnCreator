@@ -33,6 +33,7 @@
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label78 = new System.Windows.Forms.Label();
             this.label_mysql_status2 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -43,7 +44,6 @@
             this.label86 = new System.Windows.Forms.Label();
             this.label_stopwatch = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label84 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -67,7 +67,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -139,19 +138,20 @@
             this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.timer8 = new System.Windows.Forms.Timer(this.components);
-            this.label78 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // label80
@@ -201,6 +201,22 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
+            // 
+            // label78
+            // 
+            this.label78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label78.ForeColor = System.Drawing.Color.Black;
+            this.label78.Location = new System.Drawing.Point(825, 6);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(26, 26);
+            this.label78.TabIndex = 22;
+            this.label78.Text = "<";
+            this.toolTip1.SetToolTip(this.label78, "Back To Main Menu");
+            this.label78.Click += new System.EventHandler(this.label78_Click);
+            this.label78.MouseEnter += new System.EventHandler(this.label78_MouseEnter);
+            this.label78.MouseLeave += new System.EventHandler(this.label78_MouseLeave);
             // 
             // label_mysql_status2
             // 
@@ -258,12 +274,12 @@
             // 
             this.label_saved_successfully.AutoSize = true;
             this.label_saved_successfully.ForeColor = System.Drawing.Color.Lime;
-            this.label_saved_successfully.Location = new System.Drawing.Point(36, 207);
+            this.label_saved_successfully.Location = new System.Drawing.Point(20, 207);
             this.label_saved_successfully.Name = "label_saved_successfully";
-            this.label_saved_successfully.Size = new System.Drawing.Size(105, 26);
+            this.label_saved_successfully.Size = new System.Drawing.Size(130, 26);
             this.label_saved_successfully.TabIndex = 100;
             this.label_saved_successfully.Tag = "";
-            this.label_saved_successfully.Text = "File has been saved \r\n      successfully!";
+            this.label_saved_successfully.Text = "File has been successfully\r\n               saved !";
             this.label_saved_successfully.Visible = false;
             // 
             // label_query_copied_to_clipboard
@@ -325,16 +341,6 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "[Visit Creator\'s Website]";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::SpawnCreator.Properties.Resources.chibi_spawn_by_xxthornthevamphogxx_d9fzfhb;
-            this.pictureBox9.Location = new System.Drawing.Point(3, 287);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(161, 184);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 3;
-            this.pictureBox9.TabStop = false;
             // 
             // panel6
             // 
@@ -597,7 +603,7 @@
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(99, 20);
             this.textBox34.TabIndex = 164;
-            this.textBox34.Text = "0";
+            this.textBox34.Text = "1";
             this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox34.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
             // 
@@ -637,16 +643,6 @@
             this.label4.Text = "Cast Bar Caption";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.label4, "Shows unique text in the object\'s casting bar when the object is used. ");
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SpawnCreator.Properties.Resources.Speak;
-            this.pictureBox1.Location = new System.Drawing.Point(238, 87);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 113;
-            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -701,6 +697,7 @@
             this.textBox3.TabIndex = 108;
             this.textBox3.Text = "0";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
             // 
             // textBox28
@@ -710,9 +707,7 @@
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(99, 20);
             this.textBox28.TabIndex = 106;
-            this.textBox28.Text = "0";
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox28.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
             // 
             // button_maxPlus1fromDB
             // 
@@ -1525,21 +1520,25 @@
             this.timer8.Interval = 6000;
             this.timer8.Tick += new System.EventHandler(this.timer8_Tick);
             // 
-            // label78
+            // pictureBox1
             // 
-            this.label78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
-            this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.ForeColor = System.Drawing.Color.Black;
-            this.label78.Location = new System.Drawing.Point(825, 6);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 26);
-            this.label78.TabIndex = 22;
-            this.label78.Text = "<";
-            this.toolTip1.SetToolTip(this.label78, "Back To Main Menu");
-            this.label78.Click += new System.EventHandler(this.label78_Click);
-            this.label78.MouseEnter += new System.EventHandler(this.label78_MouseEnter);
-            this.label78.MouseLeave += new System.EventHandler(this.label78_MouseLeave);
+            this.pictureBox1.Image = global::SpawnCreator.Properties.Resources.Speak;
+            this.pictureBox1.Location = new System.Drawing.Point(238, 87);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 113;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::SpawnCreator.Properties.Resources.chibi_spawn_by_xxthornthevamphogxx_d9fzfhb;
+            this.pictureBox9.Location = new System.Drawing.Point(3, 287);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(161, 184);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 3;
+            this.pictureBox9.TabStop = false;
             // 
             // GameObject_Creator
             // 
@@ -1562,7 +1561,6 @@
             this.panel3.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -1575,9 +1573,10 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }

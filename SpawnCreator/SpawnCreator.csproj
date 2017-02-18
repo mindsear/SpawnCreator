@@ -71,11 +71,35 @@
       <DependentUpon>BackToMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Definers.cs" />
+    <Compile Include="Disable_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Disable_Form.Designer.cs">
+      <DependentUpon>Disable_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="dynamicflags.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="dynamicflags.Designer.cs">
       <DependentUpon>dynamicflags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flags_Disable_Map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flags_Disable_Map.Designer.cs">
+      <DependentUpon>Flags_Disable_Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flags_Disable_Spell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flags_Disable_Spell.Designer.cs">
+      <DependentUpon>Flags_Disable_Spell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flags_Disable_Vmap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flags_Disable_Vmap.Designer.cs">
+      <DependentUpon>Flags_Disable_Vmap.cs</DependentUpon>
     </Compile>
     <Compile Include="flags_extra.cs">
       <SubType>Form</SubType>
@@ -221,8 +245,20 @@
     <EmbeddedResource Include="BackToMainMenu.resx">
       <DependentUpon>BackToMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Disable_Form.resx">
+      <DependentUpon>Disable_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dynamicflags.resx">
       <DependentUpon>dynamicflags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flags_Disable_Map.resx">
+      <DependentUpon>Flags_Disable_Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flags_Disable_Spell.resx">
+      <DependentUpon>Flags_Disable_Spell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flags_Disable_Vmap.resx">
+      <DependentUpon>Flags_Disable_Vmap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="flags_extra.resx">
       <DependentUpon>flags_extra.cs</DependentUpon>

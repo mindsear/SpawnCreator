@@ -151,6 +151,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.label77 = new System.Windows.Forms.Label();
             this.textBox66 = new System.Windows.Forms.TextBox();
             this.label76 = new System.Windows.Forms.Label();
@@ -206,7 +209,6 @@
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label49 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox35 = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.textBox36 = new System.Windows.Forms.TextBox();
@@ -231,9 +233,6 @@
             this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.timer8 = new System.Windows.Forms.Timer(this.components);
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.label79 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -375,12 +374,12 @@
             // 
             this.label_file_saved.AutoSize = true;
             this.label_file_saved.ForeColor = System.Drawing.Color.Lime;
-            this.label_file_saved.Location = new System.Drawing.Point(36, 216);
+            this.label_file_saved.Location = new System.Drawing.Point(20, 216);
             this.label_file_saved.Name = "label_file_saved";
-            this.label_file_saved.Size = new System.Drawing.Size(105, 26);
+            this.label_file_saved.Size = new System.Drawing.Size(130, 26);
             this.label_file_saved.TabIndex = 100;
             this.label_file_saved.Tag = "";
-            this.label_file_saved.Text = "File has been saved \r\n      successfully!";
+            this.label_file_saved.Text = "File has been successfully\r\n               saved !";
             this.label_file_saved.Visible = false;
             // 
             // label_copied_to_clipboard
@@ -514,7 +513,7 @@
             this.groupBox6.Controls.Add(this.button12);
             this.groupBox6.Controls.Add(this.textBox42);
             this.groupBox6.Controls.Add(this.button11);
-            this.groupBox6.Location = new System.Drawing.Point(16, 656);
+            this.groupBox6.Location = new System.Drawing.Point(15, 655);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(256, 100);
             this.groupBox6.TabIndex = 207;
@@ -582,7 +581,7 @@
             this.label70.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.ForeColor = System.Drawing.Color.Blue;
-            this.label70.Location = new System.Drawing.Point(181, 9);
+            this.label70.Location = new System.Drawing.Point(180, 8);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(364, 36);
             this.label70.TabIndex = 1;
@@ -615,7 +614,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 63);
+            this.groupBox1.Location = new System.Drawing.Point(15, 62);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(337, 266);
             this.groupBox1.TabIndex = 0;
@@ -867,7 +866,7 @@
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(389, 64);
+            this.groupBox2.Location = new System.Drawing.Point(388, 63);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(325, 351);
             this.groupBox2.TabIndex = 1;
@@ -935,6 +934,7 @@
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(156, 21);
             this.comboBox5.TabIndex = 150;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -951,6 +951,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(109, 21);
             this.comboBox2.TabIndex = 129;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -1286,7 +1287,7 @@
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.textBox22);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.Location = new System.Drawing.Point(16, 340);
+            this.groupBox3.Location = new System.Drawing.Point(15, 339);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(232, 290);
             this.groupBox3.TabIndex = 2;
@@ -1352,6 +1353,7 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(171, 21);
             this.comboBox4.TabIndex = 142;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label30
             // 
@@ -1560,7 +1562,7 @@
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox4.Location = new System.Drawing.Point(278, 424);
+            this.groupBox4.Location = new System.Drawing.Point(277, 423);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(436, 348);
             this.groupBox4.TabIndex = 3;
@@ -1953,7 +1955,6 @@
             this.groupBox5.Controls.Add(this.comboBox9);
             this.groupBox5.Controls.Add(this.label49);
             this.groupBox5.Controls.Add(this.label42);
-            this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.textBox35);
             this.groupBox5.Controls.Add(this.label43);
             this.groupBox5.Controls.Add(this.textBox36);
@@ -1970,11 +1971,52 @@
             this.groupBox5.Controls.Add(this.label50);
             this.groupBox5.Controls.Add(this.textBox41);
             this.groupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox5.Location = new System.Drawing.Point(16, 778);
+            this.groupBox5.Location = new System.Drawing.Point(15, 777);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(700, 578);
             this.groupBox5.TabIndex = 107;
             this.groupBox5.TabStop = false;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.ForeColor = System.Drawing.Color.Maroon;
+            this.label79.Location = new System.Drawing.Point(4, 388);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(147, 26);
+            this.label79.TabIndex = 206;
+            this.label79.Text = "Select SmartAI from AI Name \r\n      to enable this button.";
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.DimGray;
+            this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button15.Enabled = false;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.ForeColor = System.Drawing.Color.White;
+            this.button15.Location = new System.Drawing.Point(13, 339);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(131, 46);
+            this.button15.TabIndex = 205;
+            this.button15.Text = "Make NPC say/yell/whisper";
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.DimGray;
+            this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ForeColor = System.Drawing.Color.White;
+            this.button14.Location = new System.Drawing.Point(552, 355);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(132, 68);
+            this.button14.TabIndex = 172;
+            this.button14.Text = "Add mount/emote/auras to NPC";
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // label77
             // 
@@ -2599,7 +2641,7 @@
             "TotemAI",
             "EventAI",
             "SmartAI"});
-            this.comboBox9.Location = new System.Drawing.Point(33, 301);
+            this.comboBox9.Location = new System.Drawing.Point(13, 301);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(144, 21);
             this.comboBox9.TabIndex = 148;
@@ -2610,7 +2652,7 @@
             this.label49.AutoSize = true;
             this.label49.BackColor = System.Drawing.Color.Transparent;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(82, 285);
+            this.label49.Location = new System.Drawing.Point(62, 285);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(48, 13);
             this.label49.TabIndex = 147;
@@ -2628,22 +2670,6 @@
             this.label42.TabIndex = 146;
             this.label42.Text = "Resistance3";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(543, 467);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 31);
-            this.button1.TabIndex = 106;
-            this.button1.Text = "Back to Main Menu";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox35
             // 
@@ -2860,47 +2886,6 @@
             this.timer8.Interval = 6000;
             this.timer8.Tick += new System.EventHandler(this.timer8_Tick);
             // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.DimGray;
-            this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(552, 355);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(132, 68);
-            this.button14.TabIndex = 172;
-            this.button14.Text = "Add mount/emote/auras to NPC";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button15
-            // 
-            this.button15.BackColor = System.Drawing.Color.DimGray;
-            this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button15.Enabled = false;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.White;
-            this.button15.Location = new System.Drawing.Point(33, 339);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(128, 46);
-            this.button15.TabIndex = 205;
-            this.button15.Text = "Make NPC say/yell/whisper";
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label79.Location = new System.Drawing.Point(4, 388);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(147, 26);
-            this.label79.TabIndex = 206;
-            this.label79.Text = "Select SmartAI from AI Name \r\nto enable this button";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SpawnCreator.Properties.Resources.Speak;
@@ -2914,7 +2899,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SpawnCreator.Properties.Resources._wow__orc__render__by_popokupingupop90_dam60zw;
-            this.pictureBox2.Location = new System.Drawing.Point(254, 324);
+            this.pictureBox2.Location = new System.Drawing.Point(253, 323);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(129, 113);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -3005,7 +2990,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label3;

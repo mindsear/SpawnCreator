@@ -70,9 +70,13 @@
             this.panel_Account_Creator = new System.Windows.Forms.Panel();
             this.label_Account_Creator = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -81,6 +85,8 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel_Account_Creator.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,7 +164,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(264, 56);
+            this.label1.Location = new System.Drawing.Point(259, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 24);
             this.label1.TabIndex = 5;
@@ -170,7 +176,7 @@
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Location = new System.Drawing.Point(242, 83);
+            this.panel2.Location = new System.Drawing.Point(237, 56);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(177, 30);
             this.panel2.TabIndex = 6;
@@ -234,7 +240,7 @@
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
             this.panel3.Controls.Add(this.label_Npc_creator);
             this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Location = new System.Drawing.Point(242, 116);
+            this.panel3.Location = new System.Drawing.Point(237, 89);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(177, 30);
             this.panel3.TabIndex = 10;
@@ -263,7 +269,7 @@
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
             this.panel4.Controls.Add(this.label_GO_creator);
             this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel4.Location = new System.Drawing.Point(242, 150);
+            this.panel4.Location = new System.Drawing.Point(237, 123);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(177, 30);
             this.panel4.TabIndex = 11;
@@ -306,7 +312,7 @@
             this.panel_Quest_Creator.BackColor = System.Drawing.Color.Gainsboro;
             this.panel_Quest_Creator.Controls.Add(this.label_Quest_creator);
             this.panel_Quest_Creator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel_Quest_Creator.Location = new System.Drawing.Point(242, 183);
+            this.panel_Quest_Creator.Location = new System.Drawing.Point(237, 156);
             this.panel_Quest_Creator.Name = "panel_Quest_Creator";
             this.panel_Quest_Creator.Size = new System.Drawing.Size(177, 30);
             this.panel_Quest_Creator.TabIndex = 12;
@@ -522,7 +528,7 @@
             this.panel_Account_Creator.BackColor = System.Drawing.Color.Gainsboro;
             this.panel_Account_Creator.Controls.Add(this.label_Account_Creator);
             this.panel_Account_Creator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel_Account_Creator.Location = new System.Drawing.Point(242, 216);
+            this.panel_Account_Creator.Location = new System.Drawing.Point(237, 189);
             this.panel_Account_Creator.Name = "panel_Account_Creator";
             this.panel_Account_Creator.Size = new System.Drawing.Size(177, 30);
             this.panel_Account_Creator.TabIndex = 15;
@@ -550,17 +556,6 @@
             // 
             this.toolTip1.Tag = "";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 84);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 157);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -582,16 +577,85 @@
             this.label10.TabIndex = 115;
             this.label10.Text = "updated by";
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel5.Location = new System.Drawing.Point(237, 221);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(177, 30);
+            this.panel5.TabIndex = 117;
+            this.panel5.Visible = false;
+            this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter_1);
+            this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave_1);
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(0, -1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(174, 32);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Disable";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            this.label11.MouseEnter += new System.EventHandler(this.label11_MouseEnter);
+            this.label11.MouseLeave += new System.EventHandler(this.label11_MouseLeave);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel6.Controls.Add(this.label12);
+            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel6.Location = new System.Drawing.Point(237, 255);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(177, 30);
+            this.panel6.TabIndex = 118;
+            this.panel6.Visible = false;
+            this.panel6.MouseEnter += new System.EventHandler(this.panel6_MouseEnter);
+            this.panel6.MouseLeave += new System.EventHandler(this.panel6_MouseLeave);
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(0, -1);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(174, 32);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Conditions";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.label12.MouseEnter += new System.EventHandler(this.label12_MouseEnter);
+            this.label12.MouseLeave += new System.EventHandler(this.label12_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 84);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 157);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(490, 332);
+            this.ClientSize = new System.Drawing.Size(492, 332);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.panel_Account_Creator);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.panel_Account_Creator);
             this.Controls.Add(this.panel_Quest_Creator);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -620,6 +684,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel_Account_Creator.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -670,6 +736,10 @@
         internal System.Windows.Forms.TextBox textBox_mysql_authDB;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label12;
     }
 }
 

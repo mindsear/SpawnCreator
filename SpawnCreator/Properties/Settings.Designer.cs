@@ -262,5 +262,41 @@ namespace SpawnCreator.Properties {
                 this["FlagsExtra"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FlagsDisableSpell {
+            get {
+                return ((string)(this["FlagsDisableSpell"]));
+            }
+            set {
+                this["FlagsDisableSpell"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FlagsDisableMap {
+            get {
+                return ((string)(this["FlagsDisableMap"]));
+            }
+            set {
+                this["FlagsDisableMap"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FlagsDisableVmap {
+            get {
+                return ((string)(this["FlagsDisableVmap"]));
+            }
+            set {
+                this["FlagsDisableVmap"] = value;
+            }
+        }
     }
 }

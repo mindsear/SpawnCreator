@@ -201,6 +201,10 @@ namespace SpawnCreator
                 panel2.Visible = true;
                 panel3.Visible = true;
                 panel4.Visible = true;
+                panel5.Visible = true;
+                panel6.Visible = true;
+                label11.Visible = true;
+                label12.Visible = true;
                 panel_Quest_Creator.Visible = true;
                 label_Account_Creator.Visible = true;
                 panel_Account_Creator.Visible = true;
@@ -364,6 +368,73 @@ namespace SpawnCreator
         private void textbox_mysql_hostname_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel5_MouseEnter_1(object sender, EventArgs e)
+        {
+            //panel5.BackColor = Color.Firebrick;
+            //label11.ForeColor = Color.White;
+        }
+
+        private void panel5_MouseLeave_1(object sender, EventArgs e)
+        {
+            //panel5.BackColor = Color.Gainsboro;
+            //label11.ForeColor = Color.Black;
+        }
+        //=============================================================
+        private void panel6_MouseEnter(object sender, EventArgs e)
+        {
+            //panel6.BackColor = Color.Firebrick;
+            //label12.ForeColor = Color.White;
+        }
+
+        private void panel6_MouseLeave(object sender, EventArgs e)
+        {
+            //panel6.BackColor = Color.Gainsboro;
+            //label12.ForeColor = Color.Black;
+        }
+        //==========================================================
+        private void label11_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Firebrick;
+            label11.ForeColor = Color.White;
+        }
+
+        private void label11_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Gainsboro;
+            label11.ForeColor = Color.Black;
+            
+        }
+        //==========================================================
+        private void label12_MouseEnter(object sender, EventArgs e)
+        {
+            panel6.BackColor = Color.Firebrick;
+            label12.ForeColor = Color.White;
+            
+        }
+
+        private void label12_MouseLeave(object sender, EventArgs e)
+        {
+            panel6.BackColor = Color.Gainsboro;
+            label12.ForeColor = Color.Black;
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            //Disable - Click
+            Disable_Form disable = new Disable_Form();
+            disable.Show();
+            this.Hide();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            //Conditions - Click
+
+            //Conditions_Form conditions = new Conditions_Form();
+            //conditions.Show();
+            //this.Hide();
         }
     }
 }
