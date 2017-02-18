@@ -2014,7 +2014,7 @@
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(552, 355);
+            this.button14.Location = new System.Drawing.Point(553, 356);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(132, 68);
             this.button14.TabIndex = 172;

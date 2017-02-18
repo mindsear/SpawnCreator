@@ -92,7 +92,7 @@
             // 
             // textBox_SourceType
             // 
-            this.textBox_SourceType.Location = new System.Drawing.Point(457, 154);
+            this.textBox_SourceType.Location = new System.Drawing.Point(415, 130);
             this.textBox_SourceType.Name = "textBox_SourceType";
             this.textBox_SourceType.Size = new System.Drawing.Size(36, 20);
             this.textBox_SourceType.TabIndex = 124;
@@ -101,7 +101,7 @@
             // 
             // textBox_comment
             // 
-            this.textBox_comment.Location = new System.Drawing.Point(205, 292);
+            this.textBox_comment.Location = new System.Drawing.Point(205, 274);
             this.textBox_comment.Multiline = true;
             this.textBox_comment.Name = "textBox_comment";
             this.textBox_comment.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -114,7 +114,7 @@
             this.label_Executed_Successfully.AutoSize = true;
             this.label_Executed_Successfully.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
             this.label_Executed_Successfully.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label_Executed_Successfully.Location = new System.Drawing.Point(308, 435);
+            this.label_Executed_Successfully.Location = new System.Drawing.Point(308, 424);
             this.label_Executed_Successfully.Name = "label_Executed_Successfully";
             this.label_Executed_Successfully.Size = new System.Drawing.Size(223, 17);
             this.label_Executed_Successfully.TabIndex = 123;
@@ -193,18 +193,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(545, 137);
+            this.label4.Location = new System.Drawing.Point(520, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 133;
-            this.label4.Text = "Entry";
+            this.label4.Text = "  Entry";
             this.toolTip1.SetToolTip(this.label4, "Entry of Spell/Quest/Map/BG/Achievement/Map");
             // 
             // textBox_entry
             // 
-            this.textBox_entry.Location = new System.Drawing.Point(502, 153);
+            this.textBox_entry.Location = new System.Drawing.Point(477, 153);
             this.textBox_entry.Name = "textBox_entry";
-            this.textBox_entry.Size = new System.Drawing.Size(116, 20);
+            this.textBox_entry.Size = new System.Drawing.Size(128, 20);
             this.textBox_entry.TabIndex = 117;
             this.textBox_entry.Text = "0";
             this.textBox_entry.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -440,7 +440,7 @@
             this.button_Execute_Query.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Execute_Query.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
             this.button_Execute_Query.ForeColor = System.Drawing.Color.White;
-            this.button_Execute_Query.Location = new System.Drawing.Point(345, 384);
+            this.button_Execute_Query.Location = new System.Drawing.Point(345, 373);
             this.button_Execute_Query.Name = "button_Execute_Query";
             this.button_Execute_Query.Size = new System.Drawing.Size(148, 38);
             this.button_Execute_Query.TabIndex = 116;
@@ -476,7 +476,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(387, 207);
+            this.label5.Location = new System.Drawing.Point(387, 202);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 136;
@@ -484,7 +484,7 @@
             // 
             // textBox_params_0
             // 
-            this.textBox_params_0.Location = new System.Drawing.Point(357, 223);
+            this.textBox_params_0.Location = new System.Drawing.Point(357, 218);
             this.textBox_params_0.Name = "textBox_params_0";
             this.textBox_params_0.Size = new System.Drawing.Size(116, 20);
             this.textBox_params_0.TabIndex = 135;
@@ -495,7 +495,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(533, 207);
+            this.label6.Location = new System.Drawing.Point(520, 202);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 138;
@@ -503,7 +503,7 @@
             // 
             // textBox_params_1
             // 
-            this.textBox_params_1.Location = new System.Drawing.Point(502, 223);
+            this.textBox_params_1.Location = new System.Drawing.Point(489, 218);
             this.textBox_params_1.Name = "textBox_params_1";
             this.textBox_params_1.Size = new System.Drawing.Size(116, 20);
             this.textBox_params_1.TabIndex = 137;
@@ -514,7 +514,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(389, 276);
+            this.label7.Location = new System.Drawing.Point(389, 258);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 139;
