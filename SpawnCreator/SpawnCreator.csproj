@@ -58,6 +58,12 @@
     <Compile Include="AccountCreator.Designer.cs">
       <DependentUpon>AccountCreator.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddGossipMenus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGossipMenus.Designer.cs">
+      <DependentUpon>AddGossipMenus.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddVendorItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,18 @@
     </Compile>
     <Compile Include="dynamicflags.Designer.cs">
       <DependentUpon>dynamicflags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="event_flags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="event_flags.Designer.cs">
+      <DependentUpon>event_flags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="event_phase_mask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="event_phase_mask.Designer.cs">
+      <DependentUpon>event_phase_mask.cs</DependentUpon>
     </Compile>
     <Compile Include="Flags_Disable_Map.cs">
       <SubType>Form</SubType>
@@ -227,11 +245,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SaveOptionsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SaveOptionsDialog.Designer.cs">
       <DependentUpon>SaveOptionsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartScripts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmartScripts.Designer.cs">
+      <DependentUpon>SmartScripts.cs</DependentUpon>
     </Compile>
     <Compile Include="SpawnFunctions.cs" />
     <Compile Include="type_flags.cs">
@@ -255,6 +284,9 @@
     <EmbeddedResource Include="AccountCreator.resx">
       <DependentUpon>AccountCreator.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddGossipMenus.resx">
+      <DependentUpon>AddGossipMenus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddVendorItems.resx">
       <DependentUpon>AddVendorItems.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +301,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dynamicflags.resx">
       <DependentUpon>dynamicflags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="event_flags.resx">
+      <DependentUpon>event_flags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="event_phase_mask.resx">
+      <DependentUpon>event_phase_mask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Flags_Disable_Map.resx">
       <DependentUpon>Flags_Disable_Map.cs</DependentUpon>
@@ -344,6 +382,9 @@
     <EmbeddedResource Include="SaveOptionsDialog.resx">
       <DependentUpon>SaveOptionsDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SmartScripts.resx">
+      <DependentUpon>SmartScripts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="type_flags.resx">
       <DependentUpon>type_flags.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,11 +399,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -403,11 +439,22 @@
     <None Include="Resources\vehichleCursor.png" />
     <None Include="Resources\3D-Orc.png" />
     <None Include="Resources\_wow__orc__render__by_popokupingupop90-dam60zw.png" />
-    <None Include="Resources\1373_hearthstone-_valeera_sanguinar.jpg" />
-    <None Include="Resources\__12de124503ec0306394bb969ddd8d.jpg" />
     <None Include="Resources\e4f12de124503ec0306394bb969ddd8d.jpg" />
     <None Include="Resources\skull_f18221f5f36c13224.png" />
-    <None Include="Resources\green_plus_with_black_border_preview.jpg" />
+    <None Include="Resources\GossipGossipIcon.png" />
+    <None Include="Resources\VendorGossipIcon.png" />
+    <None Include="Resources\ActiveQuestIcon.png" />
+    <None Include="Resources\AvailableQuestIcon.png" />
+    <None Include="Resources\BankerGossipIcon.png" />
+    <None Include="Resources\BattleMasterGossipIcon.png" />
+    <None Include="Resources\BinderGossipIcon.png" />
+    <None Include="Resources\HealerGossipIcon.png" />
+    <None Include="Resources\PetitionGossipIcon.png" />
+    <None Include="Resources\TabardGossipIcon.png" />
+    <None Include="Resources\TaxiGossipIcon.png" />
+    <None Include="Resources\TrainerGossipIcon.png" />
+    <None Include="Resources\UnlearnGossipIcon.png" />
+    <None Include="Resources\yellow-dot.png" />
     <Content Include="spawncreator_icon.ico" />
   </ItemGroup>
   <ItemGroup />

@@ -3489,7 +3489,6 @@ namespace SpawnCreator
                     break;
             }
 
-            Form_MainMenu mainmenu = new Form_MainMenu();
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
@@ -4219,6 +4218,60 @@ namespace SpawnCreator
         {
             HowToAddWaypoints waypoints = new HowToAddWaypoints();
             waypoints.ShowDialog();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            // Max+1 Gossip Menu ID
+
+            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
+            string insertQuery = "SELECT max(menu_id)+1 FROM " + mainmenu.textbox_mysql_worldDB.Text + ".gossip_menu_option;";
+            //string insertQuery = textBox_SelectMaxPlus1.Text;
+            connection.Open();
+            MySqlCommand command = new MySqlCommand(insertQuery, connection);
+
+            try
+            {
+
+                textBox13.Text = command.ExecuteScalar().ToString();
+                //label_query_executed_successfully2.Visible = false;
+
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    textBox13.Text = command.ExecuteScalar().ToString();
+                    //label7.Visible = true;
+                    //label_query_executed_successfully2.Visible = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AddGossipMenus gossip = new AddGossipMenus();
+            gossip.Show();
+
+            //menu_id               gossip_menu_id
+            gossip.textBox61.Text = textBox13.Text;
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+            //Gossip Menu ID
+            button1.Enabled = true;
+
+            if (textBox13.Text == "0") button1.Enabled = false;
+            else if (textBox13.Text == "") button1.Enabled = false;
         }
     }
 }

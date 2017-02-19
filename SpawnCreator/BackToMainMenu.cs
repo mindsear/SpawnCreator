@@ -657,5 +657,24 @@ namespace SpawnCreator
             Conditions_Form con = new Conditions_Form();
             con.Show();
         }
+
+        private void label9_MouseEnter(object sender, EventArgs e)
+        {
+            panel8.BackColor = Color.Firebrick;
+            label9.ForeColor = Color.White;
+        }
+
+        private void label9_MouseLeave(object sender, EventArgs e)
+        {
+            panel8.BackColor = Color.Gainsboro;
+            label9.ForeColor = Color.Black;
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Hide();
+            SmartScripts smart = new SmartScripts();
+            smart.Show();
+        }
     }
 }

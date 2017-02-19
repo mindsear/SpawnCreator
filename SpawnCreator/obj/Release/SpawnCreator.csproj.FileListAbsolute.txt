@@ -165,3 +165,7 @@ E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Flags_Disable_Spell.resour
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Flags_Disable_Vmap.resources
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.HowToAddWaypoints.resources
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Conditions_Form.resources
+E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.AddGossipMenus.resources
+E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.event_flags.resources
+E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.event_phase_mask.resources
+E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.SmartScripts.resources

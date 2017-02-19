@@ -63,26 +63,6 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap @__12de124503ec0306394bb969ddd8d {
-            get {
-                object obj = ResourceManager.GetObject("__12de124503ec0306394bb969ddd8d", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1373_hearthstone__valeera_sanguinar {
-            get {
-                object obj = ResourceManager.GetObject("1373_hearthstone-_valeera_sanguinar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _250px_Mage_Crest {
             get {
                 object obj = ResourceManager.GetObject("250px-Mage_Crest", resourceCulture);
@@ -123,6 +103,16 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ActiveQuestIcon {
+            get {
+                object obj = ResourceManager.GetObject("ActiveQuestIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Attack {
             get {
                 object obj = ResourceManager.GetObject("Attack", resourceCulture);
@@ -133,9 +123,49 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AvailableQuestIcon {
+            get {
+                object obj = ResourceManager.GetObject("AvailableQuestIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BankerGossipIcon {
+            get {
+                object obj = ResourceManager.GetObject("BankerGossipIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BattleMasterGossipIcon {
+            get {
+                object obj = ResourceManager.GetObject("BattleMasterGossipIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap beta_axe {
             get {
                 object obj = ResourceManager.GetObject("beta_axe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BinderGossipIcon {
+            get {
+                object obj = ResourceManager.GetObject("BinderGossipIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +223,9 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap green_plus_with_black_border_preview {
+        internal static System.Drawing.Bitmap GossipGossipIcon {
             get {
-                object obj = ResourceManager.GetObject("green_plus_with_black_border_preview", resourceCulture);
+                object obj = ResourceManager.GetObject("GossipGossipIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +236,16 @@ namespace SpawnCreator.Properties {
         internal static System.Drawing.Bitmap Gunner {
             get {
                 object obj = ResourceManager.GetObject("Gunner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HealerGossipIcon {
+            get {
+                object obj = ResourceManager.GetObject("HealerGossipIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +306,16 @@ namespace SpawnCreator.Properties {
         internal static System.Drawing.Bitmap LootAll {
             get {
                 object obj = ResourceManager.GetObject("LootAll", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PetitionGossipIcon {
+            get {
+                object obj = ResourceManager.GetObject("PetitionGossipIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +433,29 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TabardGossipIcon {
+            get {
+                object obj = ResourceManager.GetObject("TabardGossipIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Taxi {
             get {
                 object obj = ResourceManager.GetObject("Taxi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TaxiGossipIcon {
+            get {
+                object obj = ResourceManager.GetObject("TaxiGossipIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +473,49 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TrainerGossipIcon {
+            get {
+                object obj = ResourceManager.GetObject("TrainerGossipIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UnlearnGossipIcon {
+            get {
+                object obj = ResourceManager.GetObject("UnlearnGossipIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vehichleCursor {
             get {
                 object obj = ResourceManager.GetObject("vehichleCursor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VendorGossipIcon {
+            get {
+                object obj = ResourceManager.GetObject("VendorGossipIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yellow_dot {
+            get {
+                object obj = ResourceManager.GetObject("yellow_dot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

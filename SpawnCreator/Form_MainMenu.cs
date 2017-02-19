@@ -203,8 +203,10 @@ namespace SpawnCreator
                 panel4.Visible = true;
                 panel5.Visible = true;
                 panel6.Visible = true;
+                panel7.Visible = true;
                 label11.Visible = true;
                 label12.Visible = true;
+                label14.Visible = true;
                 panel_Quest_Creator.Visible = true;
                 label_Account_Creator.Visible = true;
                 panel_Account_Creator.Visible = true;
@@ -443,6 +445,25 @@ namespace SpawnCreator
         private void panel6_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void label14_MouseEnter(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Firebrick;
+            label14.ForeColor = Color.White;
+        }
+
+        private void label14_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Gainsboro;
+            label14.ForeColor = Color.Black;
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            Hide();
+            SmartScripts smart = new SmartScripts();
+            smart.Show();
         }
     }
 }
