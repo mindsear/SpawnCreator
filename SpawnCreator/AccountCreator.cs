@@ -24,6 +24,8 @@ namespace SpawnCreator
         private bool _mouseDown;
         private Point lastLocation;
 
+        Form_MainMenu mainmenu = new Form_MainMenu();
+
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             _mouseDown = true;
@@ -90,7 +92,6 @@ namespace SpawnCreator
             comboBox_Expansion.SelectedIndex = 2; // 2 (WOTLK)
             timer6.Start();
         }
-        Form_MainMenu mainmenu = new Form_MainMenu();
         private void label86_Click(object sender, EventArgs e)
         {
             if (textBox_username.Text == "")
@@ -144,7 +145,7 @@ namespace SpawnCreator
 
         private void button_Execute_Query_Click(object sender, EventArgs e)
         {
-            Form_MainMenu mainmenu = new Form_MainMenu();
+            
 
             if (textBox_username.Text == "")
             {
@@ -164,21 +165,13 @@ namespace SpawnCreator
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
 
-            // Test
             try
             {
                 if (command.ExecuteNonQuery() == 1)
                 {
                     label_Executed_Successfully.Visible = true;
                 }
-                else
-                {
-                    label_Executed_Successfully.Visible = true;
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
-                }
+                
             }
             catch (Exception ex)
             {

@@ -123,7 +123,7 @@ namespace SpawnCreator
 
         private void label8_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -230,13 +230,13 @@ namespace SpawnCreator
 
         private void button_clearAll_Click(object sender, EventArgs e)
         {
-            textbox_mysql_hostname.Text = "";
-            textbox_mysql_port.Text     = "";
-            textbox_mysql_username.Text = "";
-            textbox_mysql_worldDB.Text  = "";
-            textbox_mysql_pass.Text     = "";
-            textBox_mysql_authDB.Text   = "";
-            textBox_mysql_charactersDB.Text = "";
+            textbox_mysql_hostname.Clear();
+            textbox_mysql_port.Clear();
+            textbox_mysql_username.Clear();
+            textbox_mysql_worldDB.Clear();
+            textbox_mysql_pass.Clear();
+            textBox_mysql_authDB.Clear();
+            textBox_mysql_charactersDB.Clear();
         }
 
         private void button_fill_default_Click(object sender, EventArgs e)
@@ -342,7 +342,7 @@ namespace SpawnCreator
         {
             AccountCreator acc = new AccountCreator();
             acc.Show();
-            this.Hide();
+            Hide();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -425,16 +425,24 @@ namespace SpawnCreator
             //Disable - Click
             Disable_Form disable = new Disable_Form();
             disable.Show();
-            this.Hide();
+            Hide();
         }
 
         private void label12_Click(object sender, EventArgs e)
         {
-            //Conditions - Click
+            //Conditions button - Click
 
-            //Conditions_Form conditions = new Conditions_Form();
-            //conditions.Show();
-            //this.Hide();
+            //Hide Main Menu Form
+            Hide();
+
+            //And then Show Conditions Form
+            Conditions_Form con = new Conditions_Form();
+            con.Show();
+        }
+
+        private void panel6_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

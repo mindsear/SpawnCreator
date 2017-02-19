@@ -18,7 +18,9 @@ namespace SpawnCreator
         {
             InitializeComponent();
         }
+
         Form_MainMenu mainmenu = new Form_MainMenu();
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://emucraft.com");
@@ -37,10 +39,10 @@ namespace SpawnCreator
         {
             if (mouseDown)
             {
-                this.Location = new Point(
-                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+                Location = new Point(
+                    (Location.X - lastLocation.X) + e.X, (Location.Y - lastLocation.Y) + e.Y);
 
-                this.Update();
+                Update();
             }
         }
 
@@ -335,7 +337,7 @@ namespace SpawnCreator
         {
             AccountCreator acc = new AccountCreator();
             acc.Show();
-            this.Hide();
+            Hide();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -435,7 +437,7 @@ namespace SpawnCreator
 
         private void label8_Click_1(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void BackToMainMenu_Load(object sender, EventArgs e)
@@ -641,16 +643,19 @@ namespace SpawnCreator
             //Disable - Click
             Disable_Form disable = new Disable_Form();
             disable.Show();
-            this.Hide();
+            Hide();
         }
 
         private void label12_Click(object sender, EventArgs e)
         {
             //Conditions - Click
 
-            //Conditions_Form conditions = new Conditions_Form();
-            //conditions.Show();
-            //this.Hide();
+            //Hide Main Menu Form
+            Hide();
+
+            //And then Show Conditions Form
+            Conditions_Form con = new Conditions_Form();
+            con.Show();
         }
     }
 }

@@ -134,7 +134,7 @@ Move to the location you wish the NPC to move to then enter:
 
 
 
-Do this as many times as you like in different locations, once finished:
+Do STEP3 as many times as you like in different locations, once finished:
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

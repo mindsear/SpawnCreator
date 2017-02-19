@@ -77,6 +77,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -615,6 +616,7 @@
             this.panel6.Size = new System.Drawing.Size(177, 30);
             this.panel6.TabIndex = 118;
             this.panel6.Visible = false;
+            this.panel6.Click += new System.EventHandler(this.panel6_Click);
             this.panel6.MouseEnter += new System.EventHandler(this.panel6_MouseEnter);
             this.panel6.MouseLeave += new System.EventHandler(this.panel6_MouseLeave);
             // 
@@ -644,12 +646,23 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(12, 256);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(135, 30);
+            this.label13.TabIndex = 119;
+            this.label13.Text = "Database Editor for \r\nTrinityCore TDB 335.62";
+            // 
             // Form_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(492, 332);
+            this.ClientSize = new System.Drawing.Size(489, 332);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label9);
@@ -740,6 +753,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
 

@@ -65,7 +65,6 @@
             this.textBox_Account_Access_Level = new System.Windows.Forms.TextBox();
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer6 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_email = new System.Windows.Forms.TextBox();
             this.textBox_Expansion = new System.Windows.Forms.TextBox();
@@ -221,7 +220,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(50, 23);
+            this.label89.Location = new System.Drawing.Point(51, 19);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -282,7 +281,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(49, 5);
+            this.label_stopwatch.Location = new System.Drawing.Point(51, 1);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -485,22 +484,6 @@
             this.timer6.Interval = 1000;
             this.timer6.Tick += new System.EventHandler(this.timer6_Tick);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(233, 441);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 39);
-            this.button1.TabIndex = 105;
-            this.button1.Text = "Back to Main Menu";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -610,7 +593,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox_email);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_Account_Access_Level);
             this.Controls.Add(this.label_Executed_Successfully);
             this.Controls.Add(this.comboBox_Account_Access_level);
@@ -682,7 +664,6 @@
         private System.Windows.Forms.TextBox textBox_Account_Access_Level;
         private System.Windows.Forms.Timer timer5;
         private System.Windows.Forms.Timer timer6;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_email;
         private System.Windows.Forms.TextBox textBox_Expansion;

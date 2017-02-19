@@ -578,6 +578,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(651, 493);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -603,7 +604,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Disable_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Disable_Form";
+            this.Text = "Disable";
             this.Load += new System.EventHandler(this.Disable_Form_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

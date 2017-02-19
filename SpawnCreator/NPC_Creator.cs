@@ -50,7 +50,7 @@ namespace SpawnCreator
 
         private void GenerateSQLCode_NPC_Creator(object sender, EventArgs e)
         {
-            UInt32 npcflag_st = 0;
+            uint npcflag_st = 0;
             uint unit_flags_st = 0;
             uint unit_flags2_st = 0;
             int dynamicflags_st = 0;
@@ -1110,8 +1110,12 @@ namespace SpawnCreator
             stringSQLShare = BuildSQLFile;
             stringEntryShare = textBox1.Text;
 
-
-            if (textBox2.Text == "")
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Entry should not be empty", "Error");
+                return;
+            }
+            if (textBox7.Text == "")
             {
                 MessageBox.Show("Name should not be empty", "Error");
                 return;
@@ -1121,7 +1125,8 @@ namespace SpawnCreator
             {
                 sfd.Filter = "sql files (*.sql)|*.sql";
                 sfd.FilterIndex = 2;
-                sfd.FileName = "NPC_" + stringEntryShare;
+                //                                         name
+                sfd.FileName = "NPC[" + stringEntryShare + "]" + textBox7.Text;
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -1147,7 +1152,7 @@ namespace SpawnCreator
 
         private void label80_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void label81_MouseEnter(object sender, EventArgs e)
@@ -1509,13 +1514,7 @@ namespace SpawnCreator
                     //label7.Visible = true;
                     //label_query_executed_successfully2.Visible = false;
                 }
-                else
-                {
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
-                }
+                
             }
             catch (Exception ex)
             {
@@ -1597,10 +1596,10 @@ namespace SpawnCreator
         {
             if (_mouseDown)
             {
-                this.Location = new Point(
-                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+                Location = new Point(
+                    (Location.X - lastLocation.X) + e.X, (Location.Y - lastLocation.Y) + e.Y);
 
-                this.Update();
+                Update();
             }
         }
 
@@ -1675,7 +1674,7 @@ namespace SpawnCreator
 
         private void button10_Click(object sender, EventArgs e)
         {
-            UInt32 npcflag_st = 0;
+            uint npcflag_st = 0;
             uint unit_flags_st = 0;
             uint unit_flags2_st = 0;
             int dynamicflags_st = 0;
@@ -2751,26 +2750,15 @@ namespace SpawnCreator
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
 
-            // Test
             try
             {
+                timer5.Start();
                 //frm.label_query_executed_successfully.Visible = true;
                 if (command.ExecuteNonQuery() == 1)
                 {
-                    // this.Close();
-                    //frm.label83.ForeColor = Color.GreenYellow;
-                    //label_query_executed_successfully2.Visible = true;
                     timer5.Start();
                 }
-                else
-                {
-                    //label_query_executed_successfully2.Visible = true;
-                    timer5.Start();
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
-                }
+               
             }
             catch (Exception ex)
             {
@@ -2816,7 +2804,7 @@ namespace SpawnCreator
         //copy to clipboard button (label)
         private void label86_Click(object sender, EventArgs e)
         {        
-            UInt32 npcflag_st = 0;
+            uint npcflag_st = 0;
             uint unit_flags_st = 0;
             uint unit_flags2_st = 0;
             int dynamicflags_st = 0;
@@ -3876,7 +3864,13 @@ namespace SpawnCreator
             stringSQLShare = BuildSQLFile;
             stringEntryShare = textBox1.Text;
 
-            if (textBox2.Text == "")
+
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Entry should not be empty", "Error");
+                return;
+            }
+            if (textBox7.Text == "")
             {
                 MessageBox.Show("Name should not be empty", "Error");
                 return;
@@ -3920,6 +3914,7 @@ namespace SpawnCreator
             label70.ForeColor = Color.Blue;
         }
 
+        //max + 1 button
         private void button2_Click(object sender, EventArgs e)
         {
             MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
@@ -3936,18 +3931,11 @@ namespace SpawnCreator
 
                 if (command.ExecuteNonQuery() == 1)
                 {
-                    textBox1.Text = command.ExecuteScalar().ToString();
+                    //textBox1.Text = command.ExecuteScalar().ToString();
                     //label7.Visible = true;
                     //label_query_executed_successfully2.Visible = false;
                 }
-                else
-                {
-                    textBox1.Text = command.ExecuteScalar().ToString();
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
-                }
+                
             }
             catch (Exception ex)
             {
@@ -3959,7 +3947,6 @@ namespace SpawnCreator
         private void button11_Click(object sender, EventArgs e)
         {
             
-
             GenerateLoot gen = new GenerateLoot();
             gen.Show();
             //entry                 lootid
@@ -3970,9 +3957,10 @@ namespace SpawnCreator
             gen.Text = "Generate Loot for [" + textBox1.Text + "] " + textBox7.Text + " <" +  textBox12.Text + ">";
         }
 
+        //           loot id
         private void textBox42_TextChanged(object sender, EventArgs e)
         {
-            
+            //Generate Loot
               button11.Enabled = true;
             
             if (textBox42.Text == "0") button11.Enabled = false;
@@ -4008,14 +3996,7 @@ namespace SpawnCreator
                     //label7.Visible = true;
                     //label_query_executed_successfully2.Visible = false;
                 }
-                else
-                {
-                    textBox42.Text = command.ExecuteScalar().ToString();
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
-                }
+                
             }
             catch (Exception ex)
             {
@@ -4133,6 +4114,8 @@ namespace SpawnCreator
         {
             onlyNumbers(sender, e);
         }
+        
+        // I'm a fucking idiot....
 
         // almost all
         private void textBox25_KeyPress(object sender, KeyPressEventArgs e)
@@ -4143,12 +4126,11 @@ namespace SpawnCreator
         private void button13_Click(object sender, EventArgs e)
         {
             
-
             AddVendorItems vendor = new AddVendorItems();
             vendor.Show();
             //entry                 entry (NPC_Create)
             vendor.textBox61.Text = textBox1.Text;
-            //                                       entry                  name                    subname
+            //                                       entry                  name                       subname
             vendor.Text = "Add Vendor Items for [" + textBox1.Text + "] " + textBox7.Text;
             if (textBox12.Text != "")
                 vendor.Text = "Add Vendor Items for [" + textBox1.Text + "] " + textBox7.Text + " <" + textBox12.Text + ">";
@@ -4184,7 +4166,7 @@ namespace SpawnCreator
             MountNPC mount = new MountNPC();
             mount.Show();
 
-            //entry                 entry
+            //mount.entry          this.entry
             mount.textBox61.Text = textBox1.Text;
         }
 
@@ -4206,7 +4188,7 @@ namespace SpawnCreator
             MakeNpcSay npcsay = new MakeNpcSay();
             npcsay.Show();
 
-            //MakeNpcSay entry = NPC_creator entry
+            //npcsay.entry        = this.entry
             npcsay.textBox61.Text = textBox1.Text;
         }
 

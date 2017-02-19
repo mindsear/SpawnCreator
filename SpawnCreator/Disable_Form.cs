@@ -476,7 +476,7 @@ namespace SpawnCreator
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)
@@ -489,10 +489,10 @@ namespace SpawnCreator
         {
             if (_mouseDown)
             {
-                this.Location = new Point(
-                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+                Location = new Point(
+                    (Location.X - lastLocation.X) + e.X, (Location.Y - lastLocation.Y) + e.Y);
 
-                this.Update();
+                Update();
             }
         }
 
