@@ -116,6 +116,7 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -304,6 +305,7 @@
             this.label78.Size = new System.Drawing.Size(26, 26);
             this.label78.TabIndex = 114;
             this.label78.Text = "<";
+            this.toolTip1.SetToolTip(this.label78, "Back to Main Menu");
             this.label78.Click += new System.EventHandler(this.label78_Click);
             this.label78.MouseEnter += new System.EventHandler(this.label78_MouseEnter);
             this.label78.MouseLeave += new System.EventHandler(this.label78_MouseLeave);
@@ -319,6 +321,7 @@
             this.label1.Size = new System.Drawing.Size(26, 26);
             this.label1.TabIndex = 80;
             this.label1.Text = "--";
+            this.toolTip1.SetToolTip(this.label1, "Minimize");
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
@@ -334,6 +337,7 @@
             this.label2.Size = new System.Drawing.Size(26, 26);
             this.label2.TabIndex = 79;
             this.label2.Text = "X";
+            this.toolTip1.SetToolTip(this.label2, "Close");
             this.label2.Click += new System.EventHandler(this.label2_Click);
             this.label2.MouseEnter += new System.EventHandler(this.label2_MouseEnter);
             this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
@@ -1547,5 +1551,6 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
