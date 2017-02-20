@@ -123,6 +123,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -399,6 +402,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.linkLabel5);
+            this.groupBox1.Controls.Add(this.linkLabel4);
+            this.groupBox1.Controls.Add(this.linkLabel3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label9);
@@ -1510,6 +1516,44 @@
             this.groupBox2.TabIndex = 346;
             this.groupBox2.TabStop = false;
             // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel3.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linkLabel3.Location = new System.Drawing.Point(445, 570);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(56, 13);
+            this.linkLabel3.TabIndex = 347;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Cast Flags";
+            this.linkLabel3.Visible = false;
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel4.Location = new System.Drawing.Point(445, 570);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(56, 13);
+            this.linkLabel4.TabIndex = 348;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Emote IDs";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel5.Location = new System.Drawing.Point(454, 570);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(47, 13);
+            this.linkLabel5.TabIndex = 349;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "Map IDs";
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
+            // 
             // SmartScripts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1641,5 +1685,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel linkLabel5;
     }
 }

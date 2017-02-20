@@ -167,6 +167,9 @@ namespace SpawnCreator
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
+            linkLabel4.Visible = false;
+            linkLabel5.Visible = false;
+
             if (comboBox4.Text == "0 - SMART_EVENT_UPDATE_IC")
             {
                 textBox5.Text = "0";
@@ -256,6 +259,7 @@ namespace SpawnCreator
             }
             else if (comboBox4.Text == "11 - SMART_EVENT_RESPAWN")
             {
+                linkLabel5.Visible = true;
                 textBox5.Text = "11";
                 textBox3.Text = "event_param1: type" + Environment.NewLine +
                                 "event_param2: MapId" + Environment.NewLine +
@@ -340,6 +344,7 @@ namespace SpawnCreator
             }
             else if (comboBox4.Text == "22 - SMART_EVENT_RECEIVE_EMOTE")
             {
+                linkLabel4.Visible = true;
                 textBox5.Text = "22";
                 textBox3.Text = "event_param1: EmoteId" + Environment.NewLine +
                                 "event_param2: CooldownMin" + Environment.NewLine +
@@ -650,22 +655,36 @@ namespace SpawnCreator
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBox14.Text = Convert.ToString(comboBox5.SelectedIndex);
-            button2.Visible = false;
+            button2.Visible = false; //Predefined SAI Templates
+            linkLabel3.Visible = false; //Cast Flags
+            linkLabel4.Visible = false; //Emote IDs
+            linkLabel5.Visible = false; // Map IDs
 
             if (comboBox5.SelectedIndex == 0)
             {
+                //RichTextBox _RichTextBox = new RichTextBox(); //Initialize a new RichTextBox of name _RichTextBox
+                //_RichTextBox.Select(0, 8); //Select text within 0 and 8
+                //_RichTextBox.SelectionColor = Color.Red; //Set the selected text color to Red
+                //_RichTextBox.Select(8, 16); //Select text within 8 and 16
+                //_RichTextBox.SelectionColor = Color.Green; //Set the selected text color to Green
+                //_RichTextBox.Select(0, 0); //Select text within 0 and 0
+
                 textBox6.Text = "Comment: Do nothing";
             }
            else if (comboBox5.SelectedIndex == 1)
             {
                 textBox6.Text = "action_param1: Creature_text.groupid" + Environment.NewLine +
-                                "action_param2: Duration to wait before TEXT_OVER event is triggered." + Environment.NewLine +
-                                "Comment: Param2 in Milliseconds.";
+                                    "action_param2: Duration to wait before TEXT_OVER event is triggered." + Environment.NewLine +
+                                    "Comment: Param2 in Milliseconds.";
             }
             else if (comboBox5.SelectedIndex == 2)
             {
                 textBox6.Text = "action_param1: FactionID (or 0 for default)" + Environment.NewLine +
-                                "Comment: Sets faction to creature.";
+                                "Comment: Sets faction to creature." + Environment.NewLine +
+                                "All players (and pets) = 0" + Environment.NewLine +
+                                "Alliance players (and their pets) = 1" + Environment.NewLine +
+                                "Horde players (and their pets) = 2" + Environment.NewLine +
+                                "Monster (Not a player nor a pet) = 3";
             }
             else if (comboBox5.SelectedIndex == 3)
             {
@@ -681,6 +700,7 @@ namespace SpawnCreator
             }
             else if (comboBox5.SelectedIndex == 5)
             {
+                linkLabel4.Visible = true;
                 textBox6.Text = "action_param1: EmoteId" + Environment.NewLine +
                                 "Comment: Play Emote";
             }
@@ -698,7 +718,11 @@ namespace SpawnCreator
             else if (comboBox5.SelectedIndex == 8)
             {
                 textBox6.Text = "action_param1: State" + Environment.NewLine +
-                                "Comment: React State. Can be Passive (0), Defensive (1), Aggressive (2), Assist (3).";
+                                "Comment: React State. Can be " + Environment.NewLine +
+                                "Passive = 0 " + Environment.NewLine +
+                                "Defensive = 1" + Environment.NewLine +
+                                "Aggressive = 2" + Environment.NewLine + 
+                                "Assist = 3";
             }
             else if (comboBox5.SelectedIndex == 9)
             {
@@ -706,6 +730,7 @@ namespace SpawnCreator
             }
             else if (comboBox5.SelectedIndex == 10)
             {
+                linkLabel4.Visible = true;
                 textBox6.Text = "action_param1: EmoteId1" + Environment.NewLine +
                                 "action_param2: EmoteId2" + Environment.NewLine +
                                 "action_param3: EmoteId3" + Environment.NewLine +
@@ -713,6 +738,7 @@ namespace SpawnCreator
             }
             else if (comboBox5.SelectedIndex == 11)
             {
+                linkLabel3.Visible = true;
                 textBox6.Text = "action_param1: SpellId" + Environment.NewLine +
                                 "action_param2: castFlags" + Environment.NewLine +
                                 "action_param3: triggeredFlags" + Environment.NewLine +
@@ -748,6 +774,7 @@ namespace SpawnCreator
             }
             else if (comboBox5.SelectedIndex == 17)
             {
+                linkLabel4.Visible = true;
                 textBox6.Text = "action_param1: EmoteId" + Environment.NewLine +
                                 "Comment: Play Emote Continuously";
             }
@@ -987,6 +1014,7 @@ namespace SpawnCreator
             }
             else if (comboBox5.SelectedIndex == 62)
             {
+                linkLabel5.Visible = true;
                 textBox6.Text = "action_param1: MapID" + Environment.NewLine +
                                 "Comment: Continue this action with the TARGET_TYPE column. Use any target_type (except 0), and use target_x, target_y, target_z, target_o as the coordinates";
             }
@@ -1693,6 +1721,21 @@ namespace SpawnCreator
         {
             Predefined_SAI_Templates pre = new Predefined_SAI_Templates();
             pre.Show();
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://trinitycore.atlassian.net/wiki/display/tc/smart_scripts#smart_scripts-CastFlags");
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://trinitycore.atlassian.net/wiki/display/tc/Emotes");
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://trinitycore.atlassian.net/wiki/display/tc/Map");
         }
     }
 }
