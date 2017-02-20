@@ -169,3 +169,4 @@ E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.AddGossipMenus.resources
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.event_flags.resources
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.event_phase_mask.resources
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.SmartScripts.resources
+E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Predefined_SAI_Templates.resources

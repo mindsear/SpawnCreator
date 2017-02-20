@@ -209,6 +209,7 @@
             this.textBox_entry.Text = "0";
             this.textBox_entry.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_entry.TextChanged += new System.EventHandler(this.textBox_entry_TextChanged);
+            this.textBox_entry.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_entry_KeyPress);
             // 
             // label89
             // 
@@ -545,7 +546,7 @@
             this.button_flags_dis_vmap.ForeColor = System.Drawing.Color.White;
             this.button_flags_dis_vmap.Location = new System.Drawing.Point(205, 192);
             this.button_flags_dis_vmap.Name = "button_flags_dis_vmap";
-            this.button_flags_dis_vmap.Size = new System.Drawing.Size(116, 43);
+            this.button_flags_dis_vmap.Size = new System.Drawing.Size(116, 44);
             this.button_flags_dis_vmap.TabIndex = 142;
             this.button_flags_dis_vmap.Text = "Flags Disable Type Vmap";
             this.button_flags_dis_vmap.UseVisualStyleBackColor = false;

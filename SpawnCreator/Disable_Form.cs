@@ -728,5 +728,13 @@ namespace SpawnCreator
         {
             Process.Start("http://emucraft.com");
         }
+
+        private void textBox_entry_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

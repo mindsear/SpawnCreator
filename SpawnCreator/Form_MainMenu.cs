@@ -207,6 +207,7 @@ namespace SpawnCreator
                 label11.Visible = true;
                 label12.Visible = true;
                 label14.Visible = true;
+                label_version.Visible = true;
                 panel_Quest_Creator.Visible = true;
                 label_Account_Creator.Visible = true;
                 panel_Account_Creator.Visible = true;
@@ -464,6 +465,11 @@ namespace SpawnCreator
             Hide();
             SmartScripts smart = new SmartScripts();
             smart.Show();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

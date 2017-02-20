@@ -55,14 +55,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel_Account_Creator.SuspendLayout();
             this.panel_Quest_Creator.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,8 +71,8 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -377,6 +378,29 @@
             this.panel6.MouseEnter += new System.EventHandler(this.panel6_MouseEnter);
             this.panel6.MouseLeave += new System.EventHandler(this.panel6_MouseLeave);
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel7.Location = new System.Drawing.Point(0, 34);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(177, 30);
+            this.panel7.TabIndex = 122;
+            this.panel7.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(0, -1);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(174, 32);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Smart Scripts";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gainsboro;
@@ -414,29 +438,6 @@
             this.label13.TabIndex = 121;
             this.label13.Text = "Database Editor for \r\nTrinityCore TDB 335.62";
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel7.Controls.Add(this.label14);
-            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel7.Location = new System.Drawing.Point(0, 34);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(177, 30);
-            this.panel7.TabIndex = 122;
-            this.panel7.Visible = false;
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(0, -1);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(174, 32);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Smart Scripts";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Gainsboro;
@@ -473,12 +474,24 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Maroon;
+            this.label15.Location = new System.Drawing.Point(405, 35);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(33, 16);
+            this.label15.TabIndex = 123;
+            this.label15.Text = "v2.1";
+            // 
             // BackToMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(489, 401);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel6);
@@ -510,8 +523,8 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -553,5 +566,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label15;
     }
 }

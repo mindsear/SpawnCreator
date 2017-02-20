@@ -80,6 +80,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label_version = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -685,12 +686,26 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // label_version
+            // 
+            this.label_version.AutoSize = true;
+            this.label_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_version.ForeColor = System.Drawing.Color.Maroon;
+            this.label_version.Location = new System.Drawing.Point(399, 35);
+            this.label_version.Name = "label_version";
+            this.label_version.Size = new System.Drawing.Size(33, 16);
+            this.label_version.TabIndex = 121;
+            this.label_version.Text = "v2.1";
+            this.label_version.Visible = false;
+            this.label_version.Click += new System.EventHandler(this.label15_Click);
+            // 
             // Form_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(489, 398);
+            this.Controls.Add(this.label_version);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel6);
@@ -787,6 +802,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label_version;
     }
 }
 

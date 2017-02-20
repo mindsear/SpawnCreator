@@ -51,7 +51,33 @@
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label_query_executed_successfully2 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -86,47 +112,28 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label_query_executed_successfully2 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -392,14 +399,18 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.linkLabel2);
             this.groupBox1.Controls.Add(this.label_query_executed_successfully2);
             this.groupBox1.Controls.Add(this.button10);
             this.groupBox1.Controls.Add(this.comboBox6);
             this.groupBox1.Controls.Add(this.comboBox5);
             this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.numericUpDown2);
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -453,20 +464,555 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.textBox15);
-            this.groupBox1.Location = new System.Drawing.Point(6, 7);
+            this.groupBox1.Location = new System.Drawing.Point(6, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(630, 807);
+            this.groupBox1.Size = new System.Drawing.Size(630, 1030);
             this.groupBox1.TabIndex = 272;
             this.groupBox1.TabStop = false;
             // 
-            // panel1
+            // linkLabel2
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(167, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(658, 462);
-            this.panel1.TabIndex = 273;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linkLabel2.Location = new System.Drawing.Point(164, 16);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(290, 13);
+            this.linkLabel2.TabIndex = 340;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "https://trinitycore.atlassian.net/wiki/display/tc/smart_scripts";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // label_query_executed_successfully2
+            // 
+            this.label_query_executed_successfully2.AutoSize = true;
+            this.label_query_executed_successfully2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_query_executed_successfully2.ForeColor = System.Drawing.Color.Green;
+            this.label_query_executed_successfully2.Location = new System.Drawing.Point(158, 977);
+            this.label_query_executed_successfully2.Name = "label_query_executed_successfully2";
+            this.label_query_executed_successfully2.Size = new System.Drawing.Size(293, 17);
+            this.label_query_executed_successfully2.TabIndex = 339;
+            this.label_query_executed_successfully2.Tag = "";
+            this.label_query_executed_successfully2.Text = "Query has been executed successfully!";
+            this.label_query_executed_successfully2.Visible = false;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.DimGray;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(223, 926);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(156, 31);
+            this.button10.TabIndex = 338;
+            this.button10.Text = "Execute Query";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "0 - SMART_TARGET_NONE",
+            "1 - SMART_TARGET_SELF",
+            "2 - SMART_TARGET_VICTIM",
+            "3 - SMART_TARGET_HOSTILE_SECOND_AGGRO",
+            "4 - SMART_TARGET_HOSTILE_LAST_AGGRO",
+            "5 - SMART_TARGET_HOSTILE_RANDOM",
+            "6 - SMART_TARGET_HOSTILE_RANDOM_NOT_TOP",
+            "7 - SMART_TARGET_ACTION_INVOKER",
+            "8 - SMART_TARGET_POSITION",
+            "9 - SMART_TARGET_CREATURE_RANGE",
+            "10 - SMART_TARGET_CREATURE_GUID",
+            "11 - SMART_TARGET_CREATURE_DISTANCE",
+            "12 - SMART_TARGET_STORED",
+            "13 - SMART_TARGET_GAMEOBJECT_RANGE",
+            "14 - SMART_TARGET_GAMEOBJECT_GUID",
+            "15 - SMART_TARGET_GAMEOBJECT_DISTANCE",
+            "16 - SMART_TARGET_INVOKER_PARTY",
+            "17 - SMART_TARGET_PLAYER_RANGE",
+            "18 - SMART_TARGET_PLAYER_DISTANCE",
+            "19 - SMART_TARGET_CLOSEST_CREATURE",
+            "20 - SMART_TARGET_CLOSEST_GAMEOBJECT",
+            "21 - SMART_TARGET_CLOSEST_PLAYER",
+            "22 - SMART_TARGET_ACTION_INVOKER_VEHICLE",
+            "23 - SMART_TARGET_OWNER_OR_SUMMONER",
+            "24 - SMART_TARGET_THREAT_LIST",
+            "25 - SMART_TARGET_CLOSEST_ENEMY",
+            "26 - SMART_TARGET_CLOSEST_FRIENDLY",
+            "27 - SMART_TARGET_LOOT_RECIPIENTS"});
+            this.comboBox6.Location = new System.Drawing.Point(12, 655);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(323, 21);
+            this.comboBox6.TabIndex = 337;
+            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "0 - SMART_ACTION_NONE",
+            "1 - SMART_ACTION_TALK",
+            "2 - SMART_ACTION_SET_FACTION",
+            "3 - SMART_ACTION_MORPH_TO_ENTRY_OR_MODEL",
+            "4 - SMART_ACTION_SOUND",
+            "5 - SMART_ACTION_PLAY_EMOTE",
+            "6 - SMART_ACTION_FAIL_QUEST",
+            "7 - SMART_ACTION_OFFER_QUEST",
+            "8 - SMART_ACTION_SET_REACT_STATE",
+            "9 - SMART_ACTION_ACTIVATE_GOBJECT",
+            "10 - SMART_ACTION_RANDOM_EMOTE",
+            "11 - SMART_ACTION_CAST",
+            "12 - SMART_ACTION_SUMMON_CREATURE",
+            "13 - SMART_ACTION_THREAT_SINGLE_PCT",
+            "14 - SMART_ACTION_THREAT_ALL_PCT",
+            "15 - SMART_ACTION_CALL_AREAEXPLOREDOREVENTHAPPENS",
+            "16 - SMART_ACTION_UNUSED_16",
+            "17 - SMART_ACTION_SET_EMOTE_STATE",
+            "18 - SMART_ACTION_SET_UNIT_FLAG",
+            "19 - SMART_ACTION_REMOVE_UNIT_FLAG",
+            "20 - SMART_ACTION_AUTO_ATTACK",
+            "21 - SMART_ACTION_ALLOW_COMBAT_MOVEMENT",
+            "22 - SMART_ACTION_SET_EVENT_PHASE",
+            "23 - SMART_ACTION_INC_EVENT_PHASE",
+            "24 - SMART_ACTION_EVADE",
+            "25 - SMART_ACTION_FLEE_FOR_ASSIST",
+            "26 - SMART_ACTION_CALL_GROUPEVENTHAPPENS",
+            "27 - SMART_ACTION_CALL_CASTEDCREATUREORGO",
+            "28 - SMART_ACTION_REMOVEAURASFROMSPELL",
+            "29 - SMART_ACTION_FOLLOW",
+            "30 - SMART_ACTION_RANDOM_PHASE",
+            "31 - SMART_ACTION_RANDOM_PHASE_RANGE",
+            "32 - SMART_ACTION_RESET_GOBJECT",
+            "33 - SMART_ACTION_CALL_KILLEDMONSTER",
+            "34 - SMART_ACTION_SET_INST_DATA",
+            "35 - SMART_ACTION_SET_INST_DATA64",
+            "36 - SMART_ACTION_UPDATE_TEMPLATE",
+            "37 - SMART_ACTION_DIE",
+            "38 - SMART_ACTION_SET_IN_COMBAT_WITH_ZONE",
+            "39 - SMART_ACTION_CALL_FOR_HELP",
+            "40 - SMART_ACTION_SET_SHEATH",
+            "41 - SMART_ACTION_FORCE_DESPAWN",
+            "42 - SMART_ACTION_SET_INVINCIBILITY_HP_LEVEL",
+            "43 - SMART_ACTION_MOUNT_TO_ENTRY_OR_MODEL",
+            "44 - SMART_ACTION_SET_INGAME_PHASE_MASK",
+            "45 - SMART_ACTION_SET_DATA",
+            "46 - SMART_ACTION_MOVE_FORWARD",
+            "47 - SMART_ACTION_SET_VISIBILITY",
+            "48 - SMART_ACTION_SET_ACTIVE",
+            "49 - SMART_ACTION_ATTACK_START",
+            "50 - SMART_ACTION_SUMMON_GO",
+            "51 - SMART_ACTION_KILL_UNIT",
+            "52 - SMART_ACTION_ACTIVATE_TAXI",
+            "53 - SMART_ACTION_WP_START",
+            "54 - SMART_ACTION_WP_PAUSE",
+            "55 - SMART_ACTION_WP_STOP",
+            "56 - SMART_ACTION_ADD_ITEM",
+            "57 - SMART_ACTION_REMOVE_ITEM",
+            "58 - SMART_ACTION_INSTALL_AI_TEMPLATE",
+            "59 - SMART_ACTION_SET_RUN",
+            "60 - SMART_ACTION_SET_FLY",
+            "61 - SMART_ACTION_SET_SWIM",
+            "62 - SMART_ACTION_TELEPORT",
+            "63 - SMART_ACTION_SET_COUNTER",
+            "64 - SMART_ACTION_STORE_TARGET_LIST",
+            "65 - SMART_ACTION_WP_RESUME",
+            "66 - SMART_ACTION_SET_ORIENTATION",
+            "67 - SMART_ACTION_CREATE_TIMED_EVENT",
+            "68 - SMART_ACTION_PLAYMOVIE",
+            "69 - SMART_ACTION_MOVE_TO_POS",
+            "70 - SMART_ACTION_RESPAWN_TARGET",
+            "71 - SMART_ACTION_EQUIP",
+            "72 - SMART_ACTION_CLOSE_GOSSIP",
+            "73 - SMART_ACTION_TRIGGER_TIMED_EVENT",
+            "74 - SMART_ACTION_REMOVE_TIMED_EVENT",
+            "75 - SMART_ACTION_ADD_AURA",
+            "76 - SMART_ACTION_OVERRIDE_SCRIPT_BASE_OBJECT",
+            "77 - SMART_ACTION_RESET_SCRIPT_BASE_OBJECT",
+            "78 - SMART_ACTION_CALL_SCRIPT_RESET",
+            "79 - SMART_ACTION_SET_RANGED_MOVEMENT",
+            "80 - SMART_ACTION_CALL_TIMED_ACTIONLIST",
+            "81 - SMART_ACTION_SET_NPC_FLAG",
+            "82 - SMART_ACTION_ADD_NPC_FLAG",
+            "83 - SMART_ACTION_REMOVE_NPC_FLAG",
+            "84 - SMART_ACTION_SIMPLE_TALK",
+            "85 - SMART_ACTION_INVOKER_CAST",
+            "86 - SMART_ACTION_CROSS_CAST",
+            "87 - SMART_ACTION_CALL_RANDOM_TIMED_ACTIONLIST",
+            "88 - SMART_ACTION_CALL_RANDOM_RANGE_TIMED_ACTIONLIST",
+            "89 - SMART_ACTION_RANDOM_MOVE",
+            "90 - SMART_ACTION_SET_UNIT_FIELD_BYTES_1",
+            "91 - SMART_ACTION_REMOVE_UNIT_FIELD_BYTES_1",
+            "92 - SMART_ACTION_INTERRUPT_SPELL",
+            "93 - SMART_ACTION_SEND_GO_CUSTOM_ANIM",
+            "94 - SMART_ACTION_SET_DYNAMIC_FLAG",
+            "95 - SMART_ACTION_ADD_DYNAMIC_FLAG",
+            "96 - SMART_ACTION_REMOVE_DYNAMIC_FLAG",
+            "97 - SMART_ACTION_JUMP_TO_POS",
+            "98 - SMART_ACTION_SEND_GOSSIP_MENU",
+            "99 - SMART_ACTION_GO_SET_LOOT_STATE",
+            "100 - SMART_ACTION_SEND_TARGET_TO_TARGET",
+            "101 - SMART_ACTION_SET_HOME_POS",
+            "102 - SMART_ACTION_SET_HEALTH_REGEN",
+            "103 - SMART_ACTION_SET_ROOT",
+            "104 - SMART_ACTION_SET_GO_FLAG",
+            "105 - SMART_ACTION_ADD_GO_FLAG",
+            "106 - SMART_ACTION_REMOVE_GO_FLAG",
+            "107 - SMART_ACTION_SUMMON_CREATURE_GROUP",
+            "108 - SMART_ACTION_SET_POWER",
+            "109 - SMART_ACTION_ADD_POWER",
+            "110 - SMART_ACTION_REMOVE_POWER",
+            "111 - SMART_ACTION_GAME_EVENT_STOP",
+            "112 - SMART_ACTION_GAME_EVENT_START",
+            "113 - SMART_ACTION_START_CLOSEST_WAYPOINT",
+            "114 - SMART_ACTION_MOVE_OFFSET",
+            "115 - SMART_ACTION_RANDOM_SOUND",
+            "116 - SMART_ACTION_SET_CORPSE_DELAY",
+            "117 - SMART_ACTION_DISABLE_EVADE",
+            "118 - SMART_ACTION_GO_SET_GO_STATE"});
+            this.comboBox5.Location = new System.Drawing.Point(10, 442);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(390, 21);
+            this.comboBox5.TabIndex = 336;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "0 - SMART_EVENT_UPDATE_IC",
+            "1 - SMART_EVENT_UPDATE_OOC",
+            "2 - SMART_EVENT_HEALT_PCT",
+            "3 - SMART_EVENT_MANA_PCT",
+            "4 - SMART_EVENT_AGGRO",
+            "5 - SMART_EVENT_KILL",
+            "6 - SMART_EVENT_DEATH",
+            "7 - SMART_EVENT_EVADE",
+            "8 - SMART_EVENT_SPELLHIT",
+            "9 - SMART_EVENT_RANGE",
+            "10 - SMART_EVENT_OOC_LOS",
+            "11 - SMART_EVENT_RESPAWN",
+            "12 - SMART_EVENT_TARGET_HEALTH_PCT",
+            "13 - SMART_EVENT_VICTIM_CASTING",
+            "14 - SMART_EVENT_FRIENDLY_HEALTH",
+            "15 - SMART_EVENT_FRIENDLY_IS_CC",
+            "16 - SMART_EVENT_FRIENDLY_MISSING_BUFF",
+            "17 - SMART_EVENT_SUMMONED_UNIT",
+            "18 - SMART_EVENT_TARGET_MANA_PCT",
+            "19 - SMART_EVENT_ACCEPTED_QUEST",
+            "20 - SMART_EVENT_REWARD_QUEST",
+            "21 - SMART_EVENT_REACHED_HOME",
+            "22 - SMART_EVENT_RECEIVE_EMOTE",
+            "23 - SMART_EVENT_HAS_AURA",
+            "24 - SMART_EVENT_TARGET_BUFFED",
+            "25 - SMART_EVENT_RESET",
+            "26 - SMART_EVENT_IC_LOS",
+            "27 - SMART_EVENT_PASSENGER_BOARDED",
+            "28 - SMART_EVENT_PASSENGER_REMOVED",
+            "29 - SMART_EVENT_CHARMED",
+            "30 - SMART_EVENT_CHARMED_TARGET",
+            "31 - SMART_EVENT_SPELLHIT_TARGET",
+            "32 - SMART_EVENT_DAMAGED",
+            "33 - SMART_EVENT_DAMAGED_TARGET",
+            "34 - SMART_EVENT_MOVEMENTINFORM",
+            "35 - SMART_EVENT_SUMMON_DESPAWNED",
+            "36 - SMART_EVENT_CORPSE_REMOVED",
+            "37 - SMART_EVENT_AI_INIT",
+            "38 - SMART_EVENT_DATA_SET",
+            "39 - SMART_EVENT_WAYPOINT_START",
+            "40 - SMART_EVENT_WAYPOINT_REACHED",
+            "46 - SMART_EVENT_AREATRIGGER_ONTRIGGER",
+            "52 - SMART_EVENT_TEXT_OVER",
+            "53 - SMART_EVENT_RECEIVE_HEAL",
+            "54 - SMART_EVENT_JUST_SUMMONED",
+            "55 - SMART_EVENT_WAYPOINT_PAUSED",
+            "56 - SMART_EVENT_WAYPOINT_RESUMED",
+            "57 - SMART_EVENT_WAYPOINT_STOPPED",
+            "58 - SMART_EVENT_WAYPOINT_ENDED",
+            "59 - SMART_EVENT_TIMED_EVENT_TRIGGERED",
+            "60 - SMART_EVENT_UPDATE",
+            "61 - SMART_EVENT_LINK",
+            "62 - SMART_EVENT_GOSSIP_SELECT",
+            "63 - SMART_EVENT_JUST_CREATED",
+            "64 - SMART_EVENT_GOSSIP_HELLO",
+            "65 - SMART_EVENT_FOLLOW_COMPLETED",
+            "67 - SMART_EVENT_IS_BEHIND_TARGET",
+            "68 - SMART_EVENT_GAME_EVENT_START",
+            "69 - SMART_EVENT_GAME_EVENT_END",
+            "70 - SMART_EVENT_GO_STATE_CHANGED",
+            "71 - SMART_EVENT_GO_EVENT_INFORM",
+            "72 - SMART_EVENT_ACTION_DONE",
+            "73 - SMART_EVENT_ON_SPELLCLICK",
+            "74 - SMART_EVENT_FRIENDLY_HEALTH_PCT",
+            "75 - SMART_EVENT_DISTANCE_CREATURE",
+            "76 - SMART_EVENT_DISTANCE_GAMEOBJECT",
+            "77 - SMART_EVENT_COUNTER_SET"});
+            this.comboBox4.Location = new System.Drawing.Point(27, 211);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(281, 21);
+            this.comboBox4.TabIndex = 335;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(274, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 34);
+            this.button1.TabIndex = 334;
+            this.button1.Text = "event_flags";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DimGray;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(41, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(140, 34);
+            this.button3.TabIndex = 333;
+            this.button3.Text = "event_phase_mask";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(295, 129);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(93, 20);
+            this.numericUpDown2.TabIndex = 331;
+            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(408, 79);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(93, 20);
+            this.numericUpDown1.TabIndex = 329;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "0 -  SMART_SCRIPT_TYPE_CREATURE",
+            "1 - SMART_SCRIPT_TYPE_GAMEOBJECT",
+            "2 - SMART_SCRIPT_TYPE_AREATRIGGER",
+            "9 - SMART_SCRIPT_TYPE_TIMED_ACTIONLIST"});
+            this.comboBox1.Location = new System.Drawing.Point(114, 78);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(276, 21);
+            this.comboBox1.TabIndex = 328;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // textBox27
+            // 
+            this.textBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox27.Location = new System.Drawing.Point(103, 871);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(394, 20);
+            this.textBox27.TabIndex = 327;
+            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox27.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(210, 789);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(46, 13);
+            this.label29.TabIndex = 326;
+            this.label29.Text = "target_o";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox28
+            // 
+            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox28.Location = new System.Drawing.Point(186, 806);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(93, 20);
+            this.textBox28.TabIndex = 325;
+            this.textBox28.Text = "0";
+            this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox28.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(274, 855);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(51, 13);
+            this.label30.TabIndex = 324;
+            this.label30.Text = "Comment";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox21.Location = new System.Drawing.Point(234, 711);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(93, 20);
+            this.textBox21.TabIndex = 323;
+            this.textBox21.Text = "0";
+            this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox21.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(109, 745);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(45, 13);
+            this.label23.TabIndex = 322;
+            this.label23.Text = "target_x";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox22.Location = new System.Drawing.Point(82, 806);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(99, 20);
+            this.textBox22.TabIndex = 321;
+            this.textBox22.Text = "0";
+            this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox22.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(239, 697);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(75, 13);
+            this.label24.TabIndex = 320;
+            this.label24.Text = "target_param3";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(204, 746);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(45, 13);
+            this.label25.TabIndex = 319;
+            this.label25.Text = "target_y";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox23.Location = new System.Drawing.Point(184, 761);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(93, 20);
+            this.textBox23.TabIndex = 318;
+            this.textBox23.Text = "0";
+            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox23.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(109, 789);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(45, 13);
+            this.label26.TabIndex = 317;
+            this.label26.Text = "target_z";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox24.Location = new System.Drawing.Point(82, 761);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(97, 20);
+            this.textBox24.TabIndex = 316;
+            this.textBox24.Text = "0";
+            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox24.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(131, 697);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(75, 13);
+            this.label27.TabIndex = 315;
+            this.label27.Text = "target_param2";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox25.Location = new System.Drawing.Point(24, 711);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(93, 20);
+            this.textBox25.TabIndex = 314;
+            this.textBox25.Text = "0";
+            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox25.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox26
+            // 
+            this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox26.Location = new System.Drawing.Point(126, 711);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(93, 20);
+            this.textBox26.TabIndex = 313;
+            this.textBox26.Text = "0";
+            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox26.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(28, 696);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(75, 13);
+            this.label28.TabIndex = 312;
+            this.label28.Text = "target_param1";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -483,7 +1029,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(266, 56);
+            this.textBox2.Location = new System.Drawing.Point(302, 56);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(35, 20);
             this.textBox2.TabIndex = 272;
@@ -497,7 +1043,7 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(287, 438);
+            this.label18.Location = new System.Drawing.Point(138, 639);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(60, 13);
             this.label18.TabIndex = 311;
@@ -509,7 +1055,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(465, 63);
+            this.label5.Location = new System.Drawing.Point(546, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 13);
             this.label5.TabIndex = 273;
@@ -519,7 +1065,7 @@
             // textBox16
             // 
             this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(215, 391);
+            this.textBox16.Location = new System.Drawing.Point(220, 493);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(93, 20);
             this.textBox16.TabIndex = 310;
@@ -532,7 +1078,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(330, 375);
+            this.label19.Location = new System.Drawing.Point(20, 520);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(77, 13);
             this.label19.TabIndex = 309;
@@ -544,7 +1090,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(366, 63);
+            this.label3.Location = new System.Drawing.Point(436, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(18, 13);
             this.label3.TabIndex = 275;
@@ -554,7 +1100,7 @@
             // textBox17
             // 
             this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(533, 391);
+            this.textBox17.Location = new System.Drawing.Point(220, 536);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(93, 20);
             this.textBox17.TabIndex = 308;
@@ -565,7 +1111,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(385, 119);
+            this.textBox5.Location = new System.Drawing.Point(238, 188);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(37, 20);
             this.textBox5.TabIndex = 276;
@@ -579,7 +1125,7 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(224, 375);
+            this.label20.Location = new System.Drawing.Point(229, 477);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(77, 13);
             this.label20.TabIndex = 307;
@@ -589,7 +1135,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(437, 79);
+            this.textBox4.Location = new System.Drawing.Point(518, 79);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(93, 20);
             this.textBox4.TabIndex = 278;
@@ -600,7 +1146,7 @@
             // textBox18
             // 
             this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(369, 431);
+            this.textBox18.Location = new System.Drawing.Point(220, 632);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(53, 20);
             this.textBox18.TabIndex = 306;
@@ -614,7 +1160,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(173, 63);
+            this.label6.Location = new System.Drawing.Point(207, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 13);
             this.label6.TabIndex = 279;
@@ -626,7 +1172,7 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(425, 375);
+            this.label21.Location = new System.Drawing.Point(116, 520);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(77, 13);
             this.label21.TabIndex = 305;
@@ -647,9 +1193,9 @@
             // textBox19
             // 
             this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(423, 391);
+            this.textBox19.Location = new System.Drawing.Point(114, 536);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(93, 20);
+            this.textBox19.Size = new System.Drawing.Size(91, 20);
             this.textBox19.TabIndex = 304;
             this.textBox19.Text = "0";
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -660,7 +1206,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(285, 125);
+            this.label14.Location = new System.Drawing.Point(133, 195);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(60, 13);
             this.label14.TabIndex = 281;
@@ -672,7 +1218,7 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(538, 375);
+            this.label22.Location = new System.Drawing.Point(228, 520);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(77, 13);
             this.label22.TabIndex = 303;
@@ -682,7 +1228,7 @@
             // textBox20
             // 
             this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.Location = new System.Drawing.Point(322, 391);
+            this.textBox20.Location = new System.Drawing.Point(10, 536);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(93, 20);
             this.textBox20.TabIndex = 302;
@@ -695,7 +1241,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(113, 244);
+            this.label11.Location = new System.Drawing.Point(71, 238);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 13);
             this.label11.TabIndex = 283;
@@ -707,7 +1253,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(111, 375);
+            this.label12.Location = new System.Drawing.Point(116, 477);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 13);
             this.label12.TabIndex = 301;
@@ -717,7 +1263,7 @@
             // textBox11
             // 
             this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(321, 260);
+            this.textBox11.Location = new System.Drawing.Point(62, 294);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(93, 20);
             this.textBox11.TabIndex = 300;
@@ -730,7 +1276,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(436, 244);
+            this.label13.Location = new System.Drawing.Point(177, 278);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 13);
             this.label13.TabIndex = 299;
@@ -740,7 +1286,7 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(216, 260);
+            this.textBox8.Location = new System.Drawing.Point(169, 254);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(93, 20);
             this.textBox8.TabIndex = 286;
@@ -751,7 +1297,7 @@
             // textBox12
             // 
             this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(5, 391);
+            this.textBox12.Location = new System.Drawing.Point(10, 493);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(93, 20);
             this.textBox12.TabIndex = 298;
@@ -764,7 +1310,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(330, 244);
+            this.label15.Location = new System.Drawing.Point(71, 278);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 13);
             this.label15.TabIndex = 297;
@@ -774,7 +1320,7 @@
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(104, 260);
+            this.textBox7.Location = new System.Drawing.Point(62, 254);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(93, 20);
             this.textBox7.TabIndex = 288;
@@ -785,9 +1331,9 @@
             // textBox13
             // 
             this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(107, 391);
+            this.textBox13.Location = new System.Drawing.Point(114, 493);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(93, 20);
+            this.textBox13.Size = new System.Drawing.Size(91, 20);
             this.textBox13.TabIndex = 296;
             this.textBox13.Text = "0";
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -798,7 +1344,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(538, 63);
+            this.label8.Location = new System.Drawing.Point(299, 113);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 289;
@@ -810,7 +1356,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(285, 320);
+            this.label16.Location = new System.Drawing.Point(138, 426);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(62, 13);
             this.label16.TabIndex = 295;
@@ -820,7 +1366,7 @@
             // textBox14
             // 
             this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(370, 313);
+            this.textBox14.Location = new System.Drawing.Point(223, 419);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(44, 20);
             this.textBox14.TabIndex = 294;
@@ -834,7 +1380,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(226, 244);
+            this.label4.Location = new System.Drawing.Point(177, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 291;
@@ -846,7 +1392,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(15, 375);
+            this.label17.Location = new System.Drawing.Point(20, 477);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(77, 13);
             this.label17.TabIndex = 293;
@@ -856,7 +1402,7 @@
             // textBox15
             // 
             this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(428, 260);
+            this.textBox15.Location = new System.Drawing.Point(169, 294);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(93, 20);
             this.textBox15.TabIndex = 292;
@@ -864,536 +1410,85 @@
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox15.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox21
+            // panel1
             // 
-            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.Location = new System.Drawing.Point(395, 510);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(93, 20);
-            this.textBox21.TabIndex = 323;
-            this.textBox21.Text = "0";
-            this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox21.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Location = new System.Drawing.Point(167, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(658, 462);
+            this.panel1.TabIndex = 273;
             // 
-            // label23
+            // timer1
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(138, 556);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(45, 13);
-            this.label23.TabIndex = 322;
-            this.label23.Text = "target_x";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // textBox22
+            // timer2
             // 
-            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(336, 573);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(93, 20);
-            this.textBox22.TabIndex = 321;
-            this.textBox22.Text = "0";
-            this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox22.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // label24
+            // textBox3
             // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(404, 494);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(75, 13);
-            this.label24.TabIndex = 320;
-            this.label24.Text = "target_param3";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textBox3.Font = new System.Drawing.Font("Arial", 9F);
+            this.textBox3.Location = new System.Drawing.Point(319, 210);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox3.Size = new System.Drawing.Size(289, 105);
+            this.textBox3.TabIndex = 341;
             // 
-            // label25
+            // textBox6
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(246, 557);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(45, 13);
-            this.label25.TabIndex = 319;
-            this.label25.Text = "target_y";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textBox6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(351, 468);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox6.Size = new System.Drawing.Size(257, 99);
+            this.textBox6.TabIndex = 342;
             // 
-            // textBox23
+            // textBox9
             // 
-            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(226, 573);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(93, 20);
-            this.textBox23.TabIndex = 318;
-            this.textBox23.Text = "0";
-            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox23.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox9.Font = new System.Drawing.Font("Arial", 9F);
+            this.textBox9.Location = new System.Drawing.Point(353, 653);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox9.Size = new System.Drawing.Size(255, 123);
+            this.textBox9.TabIndex = 343;
             // 
-            // label26
+            // label9
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(356, 556);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(45, 13);
-            this.label26.TabIndex = 317;
-            this.label26.Text = "target_z";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(418, 195);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 344;
+            this.label9.Text = "Notes";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox24
+            // button2
             // 
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(115, 573);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(93, 20);
-            this.textBox24.TabIndex = 316;
-            this.textBox24.Text = "0";
-            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox24.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.Transparent;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(296, 494);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(75, 13);
-            this.label27.TabIndex = 315;
-            this.label27.Text = "target_param2";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox25
-            // 
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(185, 510);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(93, 20);
-            this.textBox25.TabIndex = 314;
-            this.textBox25.Text = "0";
-            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox25.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox26
-            // 
-            this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(287, 510);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(93, 20);
-            this.textBox26.TabIndex = 313;
-            this.textBox26.Text = "0";
-            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox26.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(189, 495);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(75, 13);
-            this.label28.TabIndex = 312;
-            this.label28.Text = "target_param1";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox27
-            // 
-            this.textBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox27.Location = new System.Drawing.Point(163, 638);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(340, 20);
-            this.textBox27.TabIndex = 327;
-            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox27.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(475, 556);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(46, 13);
-            this.label29.TabIndex = 326;
-            this.label29.Text = "target_o";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox28
-            // 
-            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(451, 573);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(93, 20);
-            this.textBox28.TabIndex = 325;
-            this.textBox28.Text = "0";
-            this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox28.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(309, 623);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(51, 13);
-            this.label30.TabIndex = 324;
-            this.label30.Text = "Comment";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "SMART_SCRIPT_TYPE_CREATURE",
-            "SMART_SCRIPT_TYPE_GAMEOBJECT",
-            "SMART_SCRIPT_TYPE_AREATRIGGER",
-            "SMART_SCRIPT_TYPE_TIMED_ACTIONLIST"});
-            this.comboBox1.Location = new System.Drawing.Point(109, 79);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 21);
-            this.comboBox1.TabIndex = 328;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(335, 80);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(93, 20);
-            this.numericUpDown1.TabIndex = 329;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(534, 79);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(93, 20);
-            this.numericUpDown2.TabIndex = 331;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown2.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DimGray;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(141, 183);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 34);
-            this.button3.TabIndex = 333;
-            this.button3.Text = "event_phase_mask";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(343, 183);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 34);
-            this.button1.TabIndex = 334;
-            this.button1.Text = "event_flags";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "SMART_EVENT_UPDATE_IC",
-            "SMART_EVENT_UPDATE_OOC",
-            "SMART_EVENT_HEALT_PCT",
-            "SMART_EVENT_MANA_PCT",
-            "SMART_EVENT_AGGRO",
-            "SMART_EVENT_KILL",
-            "SMART_EVENT_DEATH",
-            "SMART_EVENT_EVADE",
-            "SMART_EVENT_SPELLHIT",
-            "SMART_EVENT_RANGE",
-            "SMART_EVENT_OOC_LOS",
-            "SMART_EVENT_RESPAWN",
-            "SMART_EVENT_TARGET_HEALTH_PCT",
-            "SMART_EVENT_VICTIM_CASTING",
-            "SMART_EVENT_FRIENDLY_HEALTH",
-            "SMART_EVENT_FRIENDLY_IS_CC",
-            "SMART_EVENT_FRIENDLY_MISSING_BUFF",
-            "SMART_EVENT_SUMMONED_UNIT",
-            "SMART_EVENT_TARGET_MANA_PCT",
-            "SMART_EVENT_ACCEPTED_QUEST",
-            "SMART_EVENT_REWARD_QUEST",
-            "SMART_EVENT_REACHED_HOME",
-            "SMART_EVENT_RECEIVE_EMOTE",
-            "SMART_EVENT_HAS_AURA",
-            "SMART_EVENT_TARGET_BUFFED",
-            "SMART_EVENT_RESET",
-            "SMART_EVENT_IC_LOS",
-            "SMART_EVENT_PASSENGER_BOARDED",
-            "SMART_EVENT_PASSENGER_REMOVED",
-            "SMART_EVENT_CHARMED",
-            "SMART_EVENT_CHARMED_TARGET",
-            "SMART_EVENT_SPELLHIT_TARGET",
-            "SMART_EVENT_DAMAGED",
-            "SMART_EVENT_DAMAGED_TARGET",
-            "SMART_EVENT_MOVEMENTINFORM",
-            "SMART_EVENT_SUMMON_DESPAWNED",
-            "SMART_EVENT_CORPSE_REMOVED",
-            "SMART_EVENT_AI_INIT",
-            "SMART_EVENT_DATA_SET",
-            "SMART_EVENT_WAYPOINT_START",
-            "SMART_EVENT_WAYPOINT_REACHED",
-            "SMART_EVENT_AREATRIGGER_ONTRIGGER",
-            "SMART_EVENT_TEXT_OVER",
-            "SMART_EVENT_RECEIVE_HEAL",
-            "SMART_EVENT_JUST_SUMMONED",
-            "SMART_EVENT_WAYPOINT_PAUSED",
-            "SMART_EVENT_WAYPOINT_RESUMED",
-            "SMART_EVENT_WAYPOINT_STOPPED",
-            "SMART_EVENT_WAYPOINT_ENDED",
-            "SMART_EVENT_TIMED_EVENT_TRIGGERED",
-            "SMART_EVENT_UPDATE",
-            "SMART_EVENT_LINK",
-            "SMART_EVENT_GOSSIP_SELECT",
-            "SMART_EVENT_JUST_CREATED",
-            "SMART_EVENT_GOSSIP_HELLO",
-            "SMART_EVENT_FOLLOW_COMPLETED",
-            "SMART_EVENT_IS_BEHIND_TARGET",
-            "SMART_EVENT_GAME_EVENT_START",
-            "SMART_EVENT_GAME_EVENT_END",
-            "SMART_EVENT_GO_STATE_CHANGED",
-            "SMART_EVENT_GO_EVENT_INFORM",
-            "SMART_EVENT_ACTION_DONE",
-            "SMART_EVENT_ON_SPELLCLICK",
-            "SMART_EVENT_FRIENDLY_HEALTH_PCT",
-            "SMART_EVENT_DISTANCE_CREATURE",
-            "SMART_EVENT_DISTANCE_GAMEOBJECT",
-            "SMART_EVENT_COUNTER_SET"});
-            this.comboBox4.Location = new System.Drawing.Point(179, 141);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(263, 21);
-            this.comboBox4.TabIndex = 335;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "SMART_ACTION_NONE",
-            "SMART_ACTION_TALK",
-            "SMART_ACTION_SET_FACTION",
-            "SMART_ACTION_MORPH_TO_ENTRY_OR_MODEL",
-            "SMART_ACTION_SOUND",
-            "SMART_ACTION_PLAY_EMOTE",
-            "SMART_ACTION_FAIL_QUEST",
-            "SMART_ACTION_OFFER_QUEST",
-            "SMART_ACTION_SET_REACT_STATE",
-            "SMART_ACTION_ACTIVATE_GOBJECT",
-            "SMART_ACTION_RANDOM_EMOTE",
-            "SMART_ACTION_CAST",
-            "SMART_ACTION_SUMMON_CREATURE",
-            "SMART_ACTION_THREAT_SINGLE_PCT",
-            "SMART_ACTION_THREAT_ALL_PCT",
-            "SMART_ACTION_CALL_AREAEXPLOREDOREVENTHAPPENS",
-            "SMART_ACTION_UNUSED_16",
-            "SMART_ACTION_SET_EMOTE_STATE",
-            "SMART_ACTION_SET_UNIT_FLAG",
-            "SMART_ACTION_REMOVE_UNIT_FLAG",
-            "SMART_ACTION_AUTO_ATTACK",
-            "SMART_ACTION_ALLOW_COMBAT_MOVEMENT",
-            "SMART_ACTION_SET_EVENT_PHASE",
-            "SMART_ACTION_INC_EVENT_PHASE",
-            "SMART_ACTION_EVADE",
-            "SMART_ACTION_FLEE_FOR_ASSIST",
-            "SMART_ACTION_CALL_GROUPEVENTHAPPENS",
-            "SMART_ACTION_CALL_CASTEDCREATUREORGO",
-            "SMART_ACTION_REMOVEAURASFROMSPELL",
-            "SMART_ACTION_FOLLOW",
-            "SMART_ACTION_RANDOM_PHASE",
-            "SMART_ACTION_RANDOM_PHASE_RANGE",
-            "SMART_ACTION_RESET_GOBJECT",
-            "SMART_ACTION_CALL_KILLEDMONSTER",
-            "SMART_ACTION_SET_INST_DATA",
-            "SMART_ACTION_SET_INST_DATA64",
-            "SMART_ACTION_UPDATE_TEMPLATE",
-            "SMART_ACTION_DIE",
-            "SMART_ACTION_SET_IN_COMBAT_WITH_ZONE",
-            "SMART_ACTION_CALL_FOR_HELP",
-            "SMART_ACTION_SET_SHEATH",
-            "SMART_ACTION_FORCE_DESPAWN",
-            "SMART_ACTION_SET_INVINCIBILITY_HP_LEVEL",
-            "SMART_ACTION_MOUNT_TO_ENTRY_OR_MODEL",
-            "SMART_ACTION_SET_INGAME_PHASE_MASK",
-            "SMART_ACTION_SET_DATA",
-            "SMART_ACTION_MOVE_FORWARD",
-            "SMART_ACTION_SET_VISIBILITY",
-            "SMART_ACTION_SET_ACTIVE",
-            "SMART_ACTION_ATTACK_START",
-            "SMART_ACTION_SUMMON_GO",
-            "SMART_ACTION_KILL_UNIT",
-            "SMART_ACTION_ACTIVATE_TAXI",
-            "SMART_ACTION_WP_START",
-            "SMART_ACTION_WP_PAUSE",
-            "SMART_ACTION_WP_STOP",
-            "SMART_ACTION_ADD_ITEM",
-            "SMART_ACTION_REMOVE_ITEM",
-            "SMART_ACTION_INSTALL_AI_TEMPLATE",
-            "SMART_ACTION_SET_RUN",
-            "SMART_ACTION_SET_FLY",
-            "SMART_ACTION_SET_SWIM",
-            "SMART_ACTION_TELEPORT",
-            "SMART_ACTION_SET_COUNTER",
-            "SMART_ACTION_STORE_TARGET_LIST",
-            "SMART_ACTION_WP_RESUME",
-            "SMART_ACTION_SET_ORIENTATION",
-            "SMART_ACTION_CREATE_TIMED_EVENT",
-            "SMART_ACTION_PLAYMOVIE",
-            "SMART_ACTION_MOVE_TO_POS",
-            "SMART_ACTION_RESPAWN_TARGET",
-            "SMART_ACTION_EQUIP",
-            "SMART_ACTION_CLOSE_GOSSIP",
-            "SMART_ACTION_TRIGGER_TIMED_EVENT",
-            "SMART_ACTION_REMOVE_TIMED_EVENT",
-            "SMART_ACTION_ADD_AURA",
-            "SMART_ACTION_OVERRIDE_SCRIPT_BASE_OBJECT",
-            "SMART_ACTION_RESET_SCRIPT_BASE_OBJECT",
-            "SMART_ACTION_CALL_SCRIPT_RESET",
-            "SMART_ACTION_SET_RANGED_MOVEMENT",
-            "SMART_ACTION_CALL_TIMED_ACTIONLIST",
-            "SMART_ACTION_SET_NPC_FLAG",
-            "SMART_ACTION_ADD_NPC_FLAG",
-            "SMART_ACTION_REMOVE_NPC_FLAG",
-            "SMART_ACTION_SIMPLE_TALK",
-            "SMART_ACTION_INVOKER_CAST",
-            "SMART_ACTION_CROSS_CAST",
-            "SMART_ACTION_CALL_RANDOM_TIMED_ACTIONLIST",
-            "SMART_ACTION_CALL_RANDOM_RANGE_TIMED_ACTIONLIST",
-            "SMART_ACTION_RANDOM_MOVE",
-            "SMART_ACTION_SET_UNIT_FIELD_BYTES_1",
-            "SMART_ACTION_REMOVE_UNIT_FIELD_BYTES_1",
-            "SMART_ACTION_INTERRUPT_SPELL",
-            "SMART_ACTION_SEND_GO_CUSTOM_ANIM",
-            "SMART_ACTION_SET_DYNAMIC_FLAG",
-            "SMART_ACTION_ADD_DYNAMIC_FLAG",
-            "SMART_ACTION_REMOVE_DYNAMIC_FLAG",
-            "SMART_ACTION_JUMP_TO_POS",
-            "SMART_ACTION_SEND_GOSSIP_MENU",
-            "SMART_ACTION_GO_SET_LOOT_STATE",
-            "SMART_ACTION_SEND_TARGET_TO_TARGET",
-            "SMART_ACTION_SET_HOME_POS",
-            "SMART_ACTION_SET_HEALTH_REGEN",
-            "SMART_ACTION_SET_ROOT",
-            "SMART_ACTION_SET_GO_FLAG",
-            "SMART_ACTION_ADD_GO_FLAG",
-            "SMART_ACTION_REMOVE_GO_FLAG",
-            "SMART_ACTION_SUMMON_CREATURE_GROUP",
-            "SMART_ACTION_SET_POWER",
-            "SMART_ACTION_ADD_POWER",
-            "SMART_ACTION_REMOVE_POWER",
-            "SMART_ACTION_GAME_EVENT_STOP",
-            "SMART_ACTION_GAME_EVENT_START",
-            "SMART_ACTION_START_CLOSEST_WAYPOINT",
-            "SMART_ACTION_MOVE_OFFSET",
-            "SMART_ACTION_RANDOM_SOUND",
-            "SMART_ACTION_SET_CORPSE_DELAY",
-            "SMART_ACTION_DISABLE_EVADE",
-            "SMART_ACTION_GO_SET_GO_STATE"});
-            this.comboBox5.Location = new System.Drawing.Point(142, 336);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(350, 21);
-            this.comboBox5.TabIndex = 336;
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "SMART_TARGET_NONE",
-            "SMART_TARGET_SELF",
-            "SMART_TARGET_VICTIM",
-            "SMART_TARGET_HOSTILE_SECOND_AGGRO",
-            "SMART_TARGET_HOSTILE_LAST_AGGRO",
-            "SMART_TARGET_HOSTILE_RANDOM",
-            "SMART_TARGET_HOSTILE_RANDOM_NOT_TOP",
-            "SMART_TARGET_ACTION_INVOKER",
-            "SMART_TARGET_POSITION",
-            "SMART_TARGET_CREATURE_RANGE",
-            "SMART_TARGET_CREATURE_GUID",
-            "SMART_TARGET_CREATURE_DISTANCE",
-            "SMART_TARGET_STORED",
-            "SMART_TARGET_GAMEOBJECT_RANGE",
-            "SMART_TARGET_GAMEOBJECT_GUID",
-            "SMART_TARGET_GAMEOBJECT_DISTANCE",
-            "SMART_TARGET_INVOKER_PARTY",
-            "SMART_TARGET_PLAYER_RANGE",
-            "SMART_TARGET_PLAYER_DISTANCE",
-            "SMART_TARGET_CLOSEST_CREATURE",
-            "SMART_TARGET_CLOSEST_GAMEOBJECT",
-            "SMART_TARGET_CLOSEST_PLAYER",
-            "SMART_TARGET_ACTION_INVOKER_VEHICLE",
-            "SMART_TARGET_OWNER_OR_SUMMONER",
-            "SMART_TARGET_THREAT_LIST",
-            "SMART_TARGET_CLOSEST_ENEMY",
-            "SMART_TARGET_CLOSEST_FRIENDLY",
-            "SMART_TARGET_LOOT_RECIPIENTS"});
-            this.comboBox6.Location = new System.Drawing.Point(176, 454);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(304, 21);
-            this.comboBox6.TabIndex = 337;
-            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
-            // 
-            // label_query_executed_successfully2
-            // 
-            this.label_query_executed_successfully2.AutoSize = true;
-            this.label_query_executed_successfully2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_query_executed_successfully2.ForeColor = System.Drawing.Color.Green;
-            this.label_query_executed_successfully2.Location = new System.Drawing.Point(184, 753);
-            this.label_query_executed_successfully2.Name = "label_query_executed_successfully2";
-            this.label_query_executed_successfully2.Size = new System.Drawing.Size(293, 17);
-            this.label_query_executed_successfully2.TabIndex = 339;
-            this.label_query_executed_successfully2.Tag = "";
-            this.label_query_executed_successfully2.Text = "Query has been executed successfully!";
-            this.label_query_executed_successfully2.Visible = false;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.DimGray;
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(249, 702);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(156, 31);
-            this.button10.TabIndex = 338;
-            this.button10.Text = "Execute Query";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button2.BackColor = System.Drawing.Color.DimGray;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(409, 573);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(140, 39);
+            this.button2.TabIndex = 345;
+            this.button2.Text = "Predefined SAI Templates";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox9
             // 
@@ -1405,28 +1500,15 @@
             this.pictureBox9.TabIndex = 3;
             this.pictureBox9.TabStop = false;
             // 
-            // linkLabel2
+            // groupBox2
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linkLabel2.Location = new System.Drawing.Point(164, 16);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(290, 13);
-            this.linkLabel2.TabIndex = 340;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "https://trinitycore.atlassian.net/wiki/display/tc/smart_scripts";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Location = new System.Drawing.Point(62, 333);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(452, 68);
+            this.groupBox2.TabIndex = 346;
+            this.groupBox2.TabStop = false;
             // 
             // SmartScripts
             // 
@@ -1455,10 +1537,11 @@
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1552,5 +1635,11 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
