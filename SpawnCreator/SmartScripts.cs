@@ -167,8 +167,8 @@ namespace SpawnCreator
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            linkLabel4.Visible = false;
-            linkLabel5.Visible = false;
+            linkLabel6.Visible = false; // Map IDs
+            linkLabel7.Visible = false; // Emote IDs
 
             if (comboBox4.Text == "0 - SMART_EVENT_UPDATE_IC")
             {
@@ -259,7 +259,7 @@ namespace SpawnCreator
             }
             else if (comboBox4.Text == "11 - SMART_EVENT_RESPAWN")
             {
-                linkLabel5.Visible = true;
+                linkLabel6.Visible = true;
                 textBox5.Text = "11";
                 textBox3.Text = "event_param1: type" + Environment.NewLine +
                                 "event_param2: MapId" + Environment.NewLine +
@@ -344,7 +344,7 @@ namespace SpawnCreator
             }
             else if (comboBox4.Text == "22 - SMART_EVENT_RECEIVE_EMOTE")
             {
-                linkLabel4.Visible = true;
+                linkLabel7.Visible = true;
                 textBox5.Text = "22";
                 textBox3.Text = "event_param1: EmoteId" + Environment.NewLine +
                                 "event_param2: CooldownMin" + Environment.NewLine +
@@ -1765,6 +1765,16 @@ namespace SpawnCreator
             {
                 e.Handled = true;
             }
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://trinitycore.atlassian.net/wiki/display/tc/Map");
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://trinitycore.atlassian.net/wiki/display/tc/Emotes");
         }
     }
 }
