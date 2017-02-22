@@ -162,7 +162,7 @@ namespace SpawnCreator
 
         private void label_Quest_creator_MouseEnter(object sender, EventArgs e)
         {
-            panel_Quest_Creator.BackColor = Color.Gray;
+            panel_Quest_Creator.BackColor = Color.Firebrick;
             label_Quest_creator.ForeColor = Color.White;
             //label_Quest_creator.Text = "working..";
         }
@@ -176,7 +176,10 @@ namespace SpawnCreator
 
         private void label_Quest_creator_Click(object sender, EventArgs e)
         {
+            Hide();
 
+            QuestTemplate quest = new QuestTemplate();
+            quest.Show();
         }
 
         private void button_mysql_connect_Click(object sender, EventArgs e)
@@ -204,9 +207,11 @@ namespace SpawnCreator
                 panel5.Visible = true;
                 panel6.Visible = true;
                 panel7.Visible = true;
+                //panel8.Visible = true; //Mail sender
                 label11.Visible = true;
                 label12.Visible = true;
                 label14.Visible = true;
+                //label15.Visible = true; // Mail Sender
                 label_version.Visible = true;
                 panel_Quest_Creator.Visible = true;
                 label_Account_Creator.Visible = true;
@@ -470,6 +475,26 @@ namespace SpawnCreator
         private void label15_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label15_MouseEnter(object sender, EventArgs e)
+        {
+            panel8.BackColor = Color.Firebrick;
+            label15.ForeColor = Color.White;
+        }
+
+        private void label15_MouseLeave(object sender, EventArgs e)
+        {
+            panel8.BackColor = Color.Gainsboro;
+            label15.ForeColor = Color.Black;
+        }
+
+        private void label15_Click_1(object sender, EventArgs e)
+        {
+            Hide();
+
+            MailSender mail = new MailSender();
+            mail.Show();
         }
     }
 }

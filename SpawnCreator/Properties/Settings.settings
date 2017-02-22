@@ -77,7 +77,7 @@
     <Setting Name="EventFlags" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Setting" Type="System.String" Scope="User">
+    <Setting Name="QuestFlags" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

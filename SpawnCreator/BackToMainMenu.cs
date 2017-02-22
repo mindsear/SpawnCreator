@@ -425,7 +425,7 @@ namespace SpawnCreator
 
         private void label_Quest_creator_MouseEnter_1(object sender, EventArgs e)
         {
-            panel_Quest_Creator.BackColor = Color.Gray;
+            panel_Quest_Creator.BackColor = Color.Firebrick;
             label_Quest_creator.ForeColor = Color.White;
         }
 
@@ -675,6 +675,31 @@ namespace SpawnCreator
             Hide();
             SmartScripts smart = new SmartScripts();
             smart.Show();
+        }
+
+        private void label10_MouseEnter(object sender, EventArgs e)
+        {
+            panel9.BackColor = Color.Firebrick;
+            label10.ForeColor = Color.White;
+        }
+
+        private void label10_MouseLeave(object sender, EventArgs e)
+        {
+            panel9.BackColor = Color.Gainsboro;
+            label10.ForeColor = Color.Black;
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Quest_creator_Click_1(object sender, EventArgs e)
+        {
+            Close();
+
+            QuestTemplate quest = new QuestTemplate();
+            quest.Show();
         }
     }
 }

@@ -64,6 +64,7 @@
             this.NegativeConditionNUD = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox_ConditionType = new System.Windows.Forms.TextBox();
             this.ConditionValue3NUD = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.ConditionValue2NUD = new System.Windows.Forms.NumericUpDown();
@@ -102,7 +103,6 @@
             this.ConditionValue2Tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.ConditionValue1Tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.label_Executed_Successfully = new System.Windows.Forms.Label();
-            this.textBox_ConditionType = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -203,6 +203,8 @@
             this.label86.TabIndex = 1;
             this.label86.Text = " Copy to Clipboard";
             this.label86.Click += new System.EventHandler(this.label86_Click);
+            this.label86.MouseEnter += new System.EventHandler(this.label86_MouseEnter);
+            this.label86.MouseLeave += new System.EventHandler(this.label86_MouseLeave);
             // 
             // label_stopwatch
             // 
@@ -270,6 +272,8 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
+            this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // label83
             // 
@@ -284,6 +288,8 @@
             this.label83.TabIndex = 1;
             this.label83.Text = "Save as *.sql";
             this.label83.Click += new System.EventHandler(this.label83_Click);
+            this.label83.MouseEnter += new System.EventHandler(this.label83_MouseEnter);
+            this.label83.MouseLeave += new System.EventHandler(this.label83_MouseLeave);
             // 
             // panel2
             // 
@@ -357,7 +363,7 @@
             this.label_mysql_status2.BackColor = System.Drawing.Color.Transparent;
             this.label_mysql_status2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mysql_status2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label_mysql_status2.Location = new System.Drawing.Point(148, 8);
+            this.label_mysql_status2.Location = new System.Drawing.Point(130, 8);
             this.label_mysql_status2.Name = "label_mysql_status2";
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
@@ -559,6 +565,16 @@
             this.groupBox3.TabIndex = 84;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "3.";
+            // 
+            // textBox_ConditionType
+            // 
+            this.textBox_ConditionType.Location = new System.Drawing.Point(247, 29);
+            this.textBox_ConditionType.Name = "textBox_ConditionType";
+            this.textBox_ConditionType.Size = new System.Drawing.Size(38, 20);
+            this.textBox_ConditionType.TabIndex = 94;
+            this.textBox_ConditionType.Text = "0";
+            this.textBox_ConditionType.Visible = false;
+            this.textBox_ConditionType.TextChanged += new System.EventHandler(this.textBox_sourceType_TextChanged);
             // 
             // ConditionValue3NUD
             // 
@@ -957,16 +973,6 @@
             this.label_Executed_Successfully.Tag = "";
             this.label_Executed_Successfully.Text = "Query has been executed successfully!";
             this.label_Executed_Successfully.Visible = false;
-            // 
-            // textBox_ConditionType
-            // 
-            this.textBox_ConditionType.Location = new System.Drawing.Point(247, 29);
-            this.textBox_ConditionType.Name = "textBox_ConditionType";
-            this.textBox_ConditionType.Size = new System.Drawing.Size(38, 20);
-            this.textBox_ConditionType.TabIndex = 94;
-            this.textBox_ConditionType.Text = "0";
-            this.textBox_ConditionType.Visible = false;
-            this.textBox_ConditionType.TextChanged += new System.EventHandler(this.textBox_sourceType_TextChanged);
             // 
             // timer1
             // 

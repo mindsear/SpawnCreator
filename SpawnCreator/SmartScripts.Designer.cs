@@ -52,6 +52,8 @@
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
@@ -126,8 +128,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -202,6 +202,8 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
+            this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
+            this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             // 
             // label86
             // 
@@ -216,6 +218,8 @@
             this.label86.TabIndex = 1;
             this.label86.Text = " Copy to Clipboard";
             this.label86.Click += new System.EventHandler(this.label86_Click);
+            this.label86.MouseEnter += new System.EventHandler(this.label86_MouseEnter);
+            this.label86.MouseLeave += new System.EventHandler(this.label86_MouseLeave);
             // 
             // label_stopwatch
             // 
@@ -283,6 +287,8 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
+            this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // label83
             // 
@@ -297,6 +303,8 @@
             this.label83.TabIndex = 1;
             this.label83.Text = "Save as *.sql";
             this.label83.Click += new System.EventHandler(this.label83_Click);
+            this.label83.MouseEnter += new System.EventHandler(this.label83_MouseEnter);
+            this.label83.MouseLeave += new System.EventHandler(this.label83_MouseLeave);
             // 
             // panel2
             // 
@@ -370,7 +378,7 @@
             this.label_mysql_status2.BackColor = System.Drawing.Color.Transparent;
             this.label_mysql_status2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mysql_status2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label_mysql_status2.Location = new System.Drawing.Point(148, 8);
+            this.label_mysql_status2.Location = new System.Drawing.Point(132, 8);
             this.label_mysql_status2.Name = "label_mysql_status2";
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
@@ -489,6 +497,30 @@
             this.groupBox1.Size = new System.Drawing.Size(630, 1030);
             this.groupBox1.TabIndex = 272;
             this.groupBox1.TabStop = false;
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel7.Location = new System.Drawing.Point(436, 318);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(56, 13);
+            this.linkLabel7.TabIndex = 351;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "Emote IDs";
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel6.Location = new System.Drawing.Point(436, 318);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(47, 13);
+            this.linkLabel6.TabIndex = 350;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "Map IDs";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
             // 
             // linkLabel5
             // 
@@ -621,6 +653,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Arial", 9F);
+            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox3.Location = new System.Drawing.Point(319, 210);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
@@ -1576,30 +1609,6 @@
             // 
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel6.Location = new System.Drawing.Point(436, 318);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(47, 13);
-            this.linkLabel6.TabIndex = 350;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Map IDs";
-            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel7.Location = new System.Drawing.Point(436, 318);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(56, 13);
-            this.linkLabel7.TabIndex = 351;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "Emote IDs";
-            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
             // SmartScripts
             // 

@@ -134,7 +134,7 @@ namespace SpawnCreator
             }
 
             MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".gameobject_template " +
+            string insertQuery = textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".gameobject_template " +
                 "(entry, type, displayId, name, IconName, castBarCaption, unk1, " +
                 "size, Data0, Data1, Data2, Data3, Data4, Data5, Data6, Data7, Data8, Data9, Data10, Data11, Data12, Data13, Data14, Data15, " +
                 "Data16, Data17, Data18, Data19, Data20, Data21, Data22, Data23, AIName, ScriptName, VerifiedBuild) " +
@@ -351,7 +351,7 @@ namespace SpawnCreator
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    File.WriteAllText(sfd.FileName, "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".gameobject_template " +
+                    File.WriteAllText(sfd.FileName, textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".gameobject_template " +
                 "(entry, type, displayId, name, IconName, castBarCaption, unk1, " +
                 "size, Data0, Data1, Data2, Data3, Data4, Data5, Data6, Data7, Data8, Data9, Data10, Data11, Data12, Data13, Data14, Data15, " +
                 "Data16, Data17, Data18, Data19, Data20, Data21, Data22, Data23, AIName, ScriptName, VerifiedBuild) " +
@@ -410,7 +410,7 @@ namespace SpawnCreator
                 MessageBox.Show("Name should not be empty", "Error");
                 return;
             }
-            Clipboard.SetText("INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".gameobject_template " +
+            Clipboard.SetText(textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".gameobject_template " +
                 "(entry, type, displayId, name, IconName, castBarCaption, unk1, " + "\n" +
                 "size, Data0, Data1, Data2, Data3, Data4, Data5, Data6, Data7, Data8, Data9, Data10, Data11, Data12, Data13, Data14, Data15, " + "\n" +
                 "Data16, Data17, Data18, Data19, Data20, Data21, Data22, Data23, AIName, ScriptName, VerifiedBuild) " + "\n" +
@@ -560,6 +560,52 @@ namespace SpawnCreator
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label83_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Firebrick;
+        }
+
+        private void label83_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.FromArgb(58, 89, 114);
+        }
+        //==========================================================
+        private void label86_MouseEnter(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Firebrick;
+        }
+
+        private void label86_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void panel5_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Firebrick;
+        }
+
+        private void panel5_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void panel7_MouseEnter(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Firebrick;
+        }
+
+        private void panel7_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox11.SelectedIndex == 0) textBox105.Text = "INSERT";
+            else if (comboBox11.SelectedIndex == 1) textBox105.Text = "REPLACE";
         }
     }
 }

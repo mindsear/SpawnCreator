@@ -169,7 +169,7 @@ namespace SpawnCreator
         {
             linkLabel6.Visible = false; // Map IDs
             linkLabel7.Visible = false; // Emote IDs
-
+ 
             if (comboBox4.Text == "0 - SMART_EVENT_UPDATE_IC")
             {
                 textBox5.Text = "0";
@@ -1484,6 +1484,8 @@ namespace SpawnCreator
 
             timer1.Start(); //Check if mysql is still running
             timer2.Start(); // Stopwatch
+
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -1775,6 +1777,46 @@ namespace SpawnCreator
         private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://trinitycore.atlassian.net/wiki/display/tc/Emotes");
+        }
+
+        private void label83_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Firebrick;
+        }
+
+        private void label83_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void label86_MouseEnter(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Firebrick;
+        }
+
+        private void label86_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void panel5_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Firebrick;
+        }
+
+        private void panel5_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void panel7_MouseEnter(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Firebrick;
+        }
+
+        private void panel7_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.FromArgb(58, 89, 114);
         }
     }
 }

@@ -862,5 +862,35 @@ namespace SpawnCreator
                 }
             }
         }
+
+        private void label83_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Firebrick;
+        }
+
+        private void label83_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.FromArgb(58, 89, 114);
+        }
+        //=========================================================
+        private void label86_MouseEnter(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Firebrick;
+        }
+
+        private void label86_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void panel5_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Firebrick;
+        }
+
+        private void panel5_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.FromArgb(58, 89, 114);
+        }
     }
 }

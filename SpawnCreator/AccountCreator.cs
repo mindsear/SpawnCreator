@@ -32,6 +32,35 @@ namespace SpawnCreator
             lastLocation = e.Location;
         }
 
+        private void ShowExistingAccounts(object sender, EventArgs e)
+        {
+            string constring = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
+            MySqlConnection conDataBase = new MySqlConnection(constring);
+            MySqlCommand com = new MySqlCommand("select id, username, email from " + mainmenu.textBox_mysql_authDB.Text + ".account;", conDataBase);
+
+            //MySqlCommand com2 = new MySqlCommand("select * from mountlist.mountlist;", conDataBase);
+
+            try
+            {
+                MySqlDataAdapter sda = new MySqlDataAdapter();
+                sda.SelectCommand = com;
+                //sda.SelectCommand = com2;
+                DataTable dbdataset = new DataTable();
+                sda.Fill(dbdataset);
+                BindingSource bsource = new BindingSource();
+
+                bsource.DataSource = dbdataset;
+                dataGridView1.DataSource = bsource;
+                //dataGridView2.DataSource = bsource;
+                sda.Update(dbdataset);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
             if (_mouseDown)
@@ -91,6 +120,8 @@ namespace SpawnCreator
             comboBox_Account_Access_level.SelectedIndex = 3; // 3 (Admin)
             comboBox_Expansion.SelectedIndex = 2; // 2 (WOTLK)
             timer6.Start();
+
+            ShowExistingAccounts(sender, e);
         }
         private void label86_Click(object sender, EventArgs e)
         {
@@ -145,7 +176,6 @@ namespace SpawnCreator
 
         private void button_Execute_Query_Click(object sender, EventArgs e)
         {
-            
 
             if (textBox_username.Text == "")
             {
@@ -159,7 +189,8 @@ namespace SpawnCreator
             }
 
             MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "INSERT INTO " + mainmenu.textBox_mysql_authDB.Text + ".account(username, sha_pass_hash, expansion, email) " + "\n" +
+            string insertQuery = "INSERT INTO " + mainmenu.textBox_mysql_authDB.Text + 
+                ".account (username, sha_pass_hash, expansion, email) " + "\n" +
                 "VALUES(UPPER('" + textBox_username.Text + "'), (SHA1(CONCAT(UPPER('" + textBox_username.Text + "'), ':', UPPER('" + textBox_pass.Text + "')))), " + textBox_Expansion.Text + ", '" + textBox_email.Text + "'); " + "\n" +
                 "INSERT INTO " + mainmenu.textBox_mysql_authDB.Text + ".account_access(id, gmlevel, RealmID) VALUES((SELECT id FROM " + mainmenu.textBox_mysql_authDB.Text + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + ");";
             connection.Open();
@@ -167,11 +198,16 @@ namespace SpawnCreator
 
             try
             {
+
+                //ShowExistingAccounts(sender, e); // Refresh dataGridView1
+                label_Executed_Successfully.Visible = true;
+               
                 if (command.ExecuteNonQuery() == 1)
                 {
+                    
                     label_Executed_Successfully.Visible = true;
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -347,6 +383,31 @@ namespace SpawnCreator
             Close();
             BackToMainMenu backtomainmenu = new BackToMainMenu();
             backtomainmenu.Show();
+        }
+
+        private void panel7_MouseEnter(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Firebrick;
+        }
+
+        private void panel7_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void panel5_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Firebrick;
+        }
+
+        private void panel5_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ShowExistingAccounts(sender, e); // Refresh dataGridView1
         }
     }
 }

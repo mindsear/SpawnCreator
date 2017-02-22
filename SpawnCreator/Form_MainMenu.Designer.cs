@@ -79,8 +79,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_version = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,6 +94,7 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -307,7 +310,6 @@
             this.label_Quest_creator.TabIndex = 0;
             this.label_Quest_creator.Text = "Quest Creator";
             this.label_Quest_creator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.toolTip1.SetToolTip(this.label_Quest_creator, "Not finnished yet");
             this.label_Quest_creator.Click += new System.EventHandler(this.label_Quest_creator_Click);
             this.label_Quest_creator.MouseEnter += new System.EventHandler(this.label_Quest_creator_MouseEnter);
             this.label_Quest_creator.MouseLeave += new System.EventHandler(this.label_Quest_creator_MouseLeave);
@@ -328,7 +330,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(156, 59);
+            this.tabControl1.Location = new System.Drawing.Point(156, 54);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(335, 262);
@@ -675,6 +677,45 @@
             this.label14.MouseEnter += new System.EventHandler(this.label14_MouseEnter);
             this.label14.MouseLeave += new System.EventHandler(this.label14_MouseLeave);
             // 
+            // label_version
+            // 
+            this.label_version.AutoSize = true;
+            this.label_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_version.ForeColor = System.Drawing.Color.Maroon;
+            this.label_version.Location = new System.Drawing.Point(399, 35);
+            this.label_version.Name = "label_version";
+            this.label_version.Size = new System.Drawing.Size(33, 16);
+            this.label_version.TabIndex = 121;
+            this.label_version.Text = "v2.2";
+            this.label_version.Visible = false;
+            this.label_version.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel8.Controls.Add(this.label15);
+            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel8.Location = new System.Drawing.Point(237, 323);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(177, 30);
+            this.panel8.TabIndex = 122;
+            this.panel8.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(0, -2);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(174, 32);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Mail Sender";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label15.Click += new System.EventHandler(this.label15_Click_1);
+            this.label15.MouseEnter += new System.EventHandler(this.label15_MouseEnter);
+            this.label15.MouseLeave += new System.EventHandler(this.label15_MouseLeave);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Silver;
@@ -686,25 +727,13 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // label_version
-            // 
-            this.label_version.AutoSize = true;
-            this.label_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_version.ForeColor = System.Drawing.Color.Maroon;
-            this.label_version.Location = new System.Drawing.Point(399, 35);
-            this.label_version.Name = "label_version";
-            this.label_version.Size = new System.Drawing.Size(33, 16);
-            this.label_version.TabIndex = 121;
-            this.label_version.Text = "v2.1";
-            this.label_version.Visible = false;
-            this.label_version.Click += new System.EventHandler(this.label15_Click);
-            // 
             // Form_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(489, 398);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.label_version);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label13);
@@ -745,6 +774,7 @@
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -803,6 +833,8 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label_version;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label15;
     }
 }
 

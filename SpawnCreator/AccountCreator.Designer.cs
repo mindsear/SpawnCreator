@@ -75,6 +75,11 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -82,6 +87,10 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label80
@@ -180,7 +189,7 @@
             this.label_mysql_status2.BackColor = System.Drawing.Color.Transparent;
             this.label_mysql_status2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mysql_status2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label_mysql_status2.Location = new System.Drawing.Point(148, 8);
+            this.label_mysql_status2.Location = new System.Drawing.Point(131, 8);
             this.label_mysql_status2.Name = "label_mysql_status2";
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
@@ -259,6 +268,8 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
+            this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
+            this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             // 
             // label86
             // 
@@ -332,6 +343,8 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
+            this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // label83
             // 
@@ -356,7 +369,7 @@
             this.button_Execute_Query.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Execute_Query.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
             this.button_Execute_Query.ForeColor = System.Drawing.Color.White;
-            this.button_Execute_Query.Location = new System.Drawing.Point(344, 322);
+            this.button_Execute_Query.Location = new System.Drawing.Point(150, 284);
             this.button_Execute_Query.Name = "button_Execute_Query";
             this.button_Execute_Query.Size = new System.Drawing.Size(148, 38);
             this.button_Execute_Query.TabIndex = 80;
@@ -367,7 +380,7 @@
             // textBox_username
             // 
             this.textBox_username.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_username.Location = new System.Drawing.Point(310, 70);
+            this.textBox_username.Location = new System.Drawing.Point(116, 32);
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(292, 23);
             this.textBox_username.TabIndex = 81;
@@ -377,7 +390,7 @@
             // textBox_pass
             // 
             this.textBox_pass.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_pass.Location = new System.Drawing.Point(310, 118);
+            this.textBox_pass.Location = new System.Drawing.Point(116, 80);
             this.textBox_pass.Name = "textBox_pass";
             this.textBox_pass.Size = new System.Drawing.Size(292, 23);
             this.textBox_pass.TabIndex = 82;
@@ -388,7 +401,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label3.Location = new System.Drawing.Point(216, 75);
+            this.label3.Location = new System.Drawing.Point(22, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 17);
             this.label3.TabIndex = 83;
@@ -398,7 +411,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label4.Location = new System.Drawing.Point(219, 121);
+            this.label4.Location = new System.Drawing.Point(25, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 17);
             this.label4.TabIndex = 84;
@@ -408,7 +421,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label5.Location = new System.Drawing.Point(230, 205);
+            this.label5.Location = new System.Drawing.Point(36, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 17);
             this.label5.TabIndex = 85;
@@ -425,7 +438,7 @@
             "2 (Moderator)",
             "3 (Admin)",
             "4 (Console)"});
-            this.comboBox_Account_Access_level.Location = new System.Drawing.Point(411, 202);
+            this.comboBox_Account_Access_level.Location = new System.Drawing.Point(217, 164);
             this.comboBox_Account_Access_level.Name = "comboBox_Account_Access_level";
             this.comboBox_Account_Access_level.Size = new System.Drawing.Size(191, 23);
             this.comboBox_Account_Access_level.TabIndex = 86;
@@ -436,7 +449,7 @@
             this.label_Executed_Successfully.AutoSize = true;
             this.label_Executed_Successfully.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
             this.label_Executed_Successfully.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label_Executed_Successfully.Location = new System.Drawing.Point(307, 373);
+            this.label_Executed_Successfully.Location = new System.Drawing.Point(113, 335);
             this.label_Executed_Successfully.Name = "label_Executed_Successfully";
             this.label_Executed_Successfully.Size = new System.Drawing.Size(223, 17);
             this.label_Executed_Successfully.TabIndex = 101;
@@ -466,7 +479,7 @@
             // 
             // textBox_Account_Access_Level
             // 
-            this.textBox_Account_Access_Level.Location = new System.Drawing.Point(608, 205);
+            this.textBox_Account_Access_Level.Location = new System.Drawing.Point(414, 167);
             this.textBox_Account_Access_Level.Name = "textBox_Account_Access_Level";
             this.textBox_Account_Access_Level.Size = new System.Drawing.Size(36, 20);
             this.textBox_Account_Access_Level.TabIndex = 104;
@@ -488,7 +501,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label6.Location = new System.Drawing.Point(246, 164);
+            this.label6.Location = new System.Drawing.Point(52, 126);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 17);
             this.label6.TabIndex = 107;
@@ -497,7 +510,7 @@
             // textBox_email
             // 
             this.textBox_email.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_email.Location = new System.Drawing.Point(310, 161);
+            this.textBox_email.Location = new System.Drawing.Point(116, 123);
             this.textBox_email.Name = "textBox_email";
             this.textBox_email.Size = new System.Drawing.Size(292, 23);
             this.textBox_email.TabIndex = 106;
@@ -505,7 +518,7 @@
             // 
             // textBox_Expansion
             // 
-            this.textBox_Expansion.Location = new System.Drawing.Point(608, 241);
+            this.textBox_Expansion.Location = new System.Drawing.Point(414, 203);
             this.textBox_Expansion.Name = "textBox_Expansion";
             this.textBox_Expansion.Size = new System.Drawing.Size(36, 20);
             this.textBox_Expansion.TabIndex = 110;
@@ -521,7 +534,7 @@
             "0 (Vanilla)",
             "1 (TBC)",
             "2 (WOTLK)"});
-            this.comboBox_Expansion.Location = new System.Drawing.Point(411, 238);
+            this.comboBox_Expansion.Location = new System.Drawing.Point(217, 200);
             this.comboBox_Expansion.Name = "comboBox_Expansion";
             this.comboBox_Expansion.Size = new System.Drawing.Size(191, 23);
             this.comboBox_Expansion.TabIndex = 109;
@@ -531,7 +544,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label7.Location = new System.Drawing.Point(317, 242);
+            this.label7.Location = new System.Drawing.Point(123, 204);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 17);
             this.label7.TabIndex = 108;
@@ -541,7 +554,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label8.Location = new System.Drawing.Point(326, 280);
+            this.label8.Location = new System.Drawing.Point(132, 242);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 17);
             this.label8.TabIndex = 112;
@@ -550,7 +563,7 @@
             // textBox_realmID
             // 
             this.textBox_realmID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_realmID.Location = new System.Drawing.Point(411, 277);
+            this.textBox_realmID.Location = new System.Drawing.Point(217, 239);
             this.textBox_realmID.Name = "textBox_realmID";
             this.textBox_realmID.Size = new System.Drawing.Size(109, 23);
             this.textBox_realmID.TabIndex = 111;
@@ -562,9 +575,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SpawnCreator.Properties.Resources.e4f12de124503ec0306394bb969ddd8d;
-            this.pictureBox3.Location = new System.Drawing.Point(411, 393);
+            this.pictureBox3.Location = new System.Drawing.Point(332, 369);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(277, 132);
+            this.pictureBox3.Size = new System.Drawing.Size(132, 80);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 113;
             this.pictureBox3.TabStop = false;
@@ -579,29 +592,82 @@
             this.pictureBox9.TabIndex = 3;
             this.pictureBox9.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 48);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(439, 150);
+            this.dataGridView1.TabIndex = 114;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Location = new System.Drawing.Point(167, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(484, 459);
+            this.panel1.TabIndex = 115;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.button_Execute_Query);
+            this.groupBox1.Controls.Add(this.textBox_username);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.textBox_pass);
+            this.groupBox1.Controls.Add(this.textBox_realmID);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textBox_Expansion);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.comboBox_Expansion);
+            this.groupBox1.Controls.Add(this.comboBox_Account_Access_level);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label_Executed_Successfully);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.textBox_Account_Access_Level);
+            this.groupBox1.Controls.Add(this.textBox_email);
+            this.groupBox1.Location = new System.Drawing.Point(3, 14);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(458, 375);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Location = new System.Drawing.Point(6, 419);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(458, 218);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Accounts";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(182, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 114;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // AccountCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(648, 492);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox_realmID);
-            this.Controls.Add(this.textBox_Expansion);
-            this.Controls.Add(this.comboBox_Expansion);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox_email);
-            this.Controls.Add(this.textBox_Account_Access_Level);
-            this.Controls.Add(this.label_Executed_Successfully);
-            this.Controls.Add(this.comboBox_Account_Access_level);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox_pass);
-            this.Controls.Add(this.textBox_username);
-            this.Controls.Add(this.button_Execute_Query);
+            this.ClientSize = new System.Drawing.Size(651, 492);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -622,8 +688,12 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -674,5 +744,10 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

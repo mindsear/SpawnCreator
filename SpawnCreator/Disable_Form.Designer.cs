@@ -270,7 +270,7 @@
             this.label_mysql_status2.BackColor = System.Drawing.Color.Transparent;
             this.label_mysql_status2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mysql_status2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label_mysql_status2.Location = new System.Drawing.Point(148, 8);
+            this.label_mysql_status2.Location = new System.Drawing.Point(132, 8);
             this.label_mysql_status2.Name = "label_mysql_status2";
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
@@ -338,6 +338,8 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
+            this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
+            this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             // 
             // label86
             // 
@@ -352,6 +354,8 @@
             this.label86.TabIndex = 1;
             this.label86.Text = " Copy to Clipboard";
             this.label86.Click += new System.EventHandler(this.label86_Click);
+            this.label86.MouseEnter += new System.EventHandler(this.label86_MouseEnter);
+            this.label86.MouseLeave += new System.EventHandler(this.label86_MouseLeave);
             // 
             // label_stopwatch
             // 
@@ -419,6 +423,8 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
+            this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // label83
             // 
@@ -433,6 +439,8 @@
             this.label83.TabIndex = 1;
             this.label83.Text = "Save as *.sql";
             this.label83.Click += new System.EventHandler(this.label83_Click);
+            this.label83.MouseEnter += new System.EventHandler(this.label83_MouseEnter);
+            this.label83.MouseLeave += new System.EventHandler(this.label83_MouseLeave);
             // 
             // button_Execute_Query
             // 

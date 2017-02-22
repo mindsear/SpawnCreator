@@ -739,7 +739,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3, KillCredit1, ";
+            BuildSQLFile = textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3, KillCredit1, ";
             BuildSQLFile += "KillCredit2, modelid1, modelid2, modelid3, modelid4, name, subname, IconName, gossip_menu_id, minlevel, ";
             BuildSQLFile += "maxlevel, exp, faction, npcflag, speed_walk, speed_run, scale, rank, dmgschool, BaseAttackTime, ";
             BuildSQLFile += "RangeAttackTime, BaseVariance, RangeVariance, unit_class, unit_flags, unit_flags2, dynamicflags, family, ";
@@ -1195,7 +1195,7 @@ namespace SpawnCreator
             comboBox8.SelectedIndex = 0; // show default item
             comboBox9.SelectedIndex = 0; // show default item
             comboBox10.SelectedIndex = 0; // show default item
-
+            comboBox11.SelectedIndex = 0; // INSERT
 
             timer1.Start(); //check if mysql is running
             timer2.Start(); //stopwatch
@@ -2363,7 +2363,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3, KillCredit1, ";
+            BuildSQLFile = textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3, KillCredit1, ";
             BuildSQLFile += "KillCredit2, modelid1, modelid2, modelid3, modelid4, name, subname, IconName, gossip_menu_id, minlevel, ";
             BuildSQLFile += "maxlevel, exp, faction, npcflag, speed_walk, speed_run, scale, rank, dmgschool, BaseAttackTime, ";
             BuildSQLFile += "RangeAttackTime, BaseVariance, RangeVariance, unit_class, unit_flags, unit_flags2, dynamicflags, family, ";
@@ -3492,7 +3492,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3, KillCredit1, ";
+            BuildSQLFile = textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3, KillCredit1, ";
             BuildSQLFile += "KillCredit2, modelid1, modelid2, modelid3, modelid4, name, subname, IconName, gossip_menu_id, minlevel, ";
             BuildSQLFile += "maxlevel, exp, faction, npcflag, speed_walk, speed_run, scale, rank, dmgschool, BaseAttackTime, ";
             BuildSQLFile += "RangeAttackTime, BaseVariance, RangeVariance, unit_class, unit_flags, unit_flags2, dynamicflags, family, ";
@@ -3924,17 +3924,7 @@ namespace SpawnCreator
 
             try
             {
-
-                textBox1.Text = command.ExecuteScalar().ToString();
-                //label_query_executed_successfully2.Visible = false;
-
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    //textBox1.Text = command.ExecuteScalar().ToString();
-                    //label7.Visible = true;
-                    //label_query_executed_successfully2.Visible = false;
-                }
-                
+                textBox1.Text = command.ExecuteScalar().ToString();     
             }
             catch (Exception ex)
             {
@@ -4272,6 +4262,52 @@ namespace SpawnCreator
 
             if (textBox13.Text == "0") button1.Enabled = false;
             else if (textBox13.Text == "") button1.Enabled = false;
+        }
+
+        private void label83_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Firebrick;
+        }
+
+        private void label83_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void label86_MouseEnter(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Firebrick;
+        }
+
+        private void label86_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void panel7_MouseEnter(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Firebrick;
+        }
+
+        private void panel7_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void panel5_MouseEnter(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Firebrick;
+        }
+
+        private void panel5_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox11.SelectedIndex == 0) textBox105.Text = "INSERT";
+            else if (comboBox11.SelectedIndex == 1) textBox105.Text = "REPLACE";
         }
     }
 }

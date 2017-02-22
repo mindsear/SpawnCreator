@@ -113,6 +113,26 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_left {
+            get {
+                object obj = ResourceManager.GetObject("arrow_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_right {
+            get {
+                object obj = ResourceManager.GetObject("arrow_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Attack {
             get {
                 object obj = ResourceManager.GetObject("Attack", resourceCulture);
@@ -306,6 +326,16 @@ namespace SpawnCreator.Properties {
         internal static System.Drawing.Bitmap LootAll {
             get {
                 object obj = ResourceManager.GetObject("LootAll", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mail_green {
+            get {
+                object obj = ResourceManager.GetObject("mail_green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

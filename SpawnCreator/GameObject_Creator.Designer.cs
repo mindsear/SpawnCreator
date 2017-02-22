@@ -58,7 +58,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.label_query_executed_successfully2 = new System.Windows.Forms.Label();
             this.button_execute_query = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -140,6 +139,8 @@
             this.timer8 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.textBox105 = new System.Windows.Forms.TextBox();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -303,6 +304,8 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
+            this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
+            this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             // 
             // label86
             // 
@@ -317,6 +320,8 @@
             this.label86.TabIndex = 1;
             this.label86.Text = " Copy to Clipboard";
             this.label86.Click += new System.EventHandler(this.label86_Click);
+            this.label86.MouseEnter += new System.EventHandler(this.label86_MouseEnter);
+            this.label86.MouseLeave += new System.EventHandler(this.label86_MouseLeave);
             // 
             // label_stopwatch
             // 
@@ -374,6 +379,8 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
+            this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
+            this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
             // label83
             // 
@@ -388,11 +395,15 @@
             this.label83.TabIndex = 1;
             this.label83.Text = "Save as *.sql";
             this.label83.Click += new System.EventHandler(this.label83_Click);
+            this.label83.MouseEnter += new System.EventHandler(this.label83_MouseEnter);
+            this.label83.MouseLeave += new System.EventHandler(this.label83_MouseLeave);
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.textBox105);
+            this.panel1.Controls.Add(this.comboBox11);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.label35);
             this.panel1.Controls.Add(this.groupBox3);
@@ -411,9 +422,9 @@
             this.groupBox4.Controls.Add(this.textBox32);
             this.groupBox4.Controls.Add(this.textBox30);
             this.groupBox4.Controls.Add(this.label33);
-            this.groupBox4.Location = new System.Drawing.Point(19, 310);
+            this.groupBox4.Location = new System.Drawing.Point(12, 318);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(332, 145);
+            this.groupBox4.Size = new System.Drawing.Size(332, 160);
             this.groupBox4.TabIndex = 84;
             this.groupBox4.TabStop = false;
             // 
@@ -505,30 +516,13 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Controls.Add(this.label_query_executed_successfully2);
             this.groupBox3.Controls.Add(this.button_execute_query);
-            this.groupBox3.Location = new System.Drawing.Point(20, 473);
+            this.groupBox3.Location = new System.Drawing.Point(20, 503);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(687, 145);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.DimGray;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Yellow;
-            this.button8.Location = new System.Drawing.Point(529, 46);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(153, 27);
-            this.button8.TabIndex = 82;
-            this.button8.Text = "Back to Main Menu";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Visible = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label_query_executed_successfully2
             // 
@@ -581,7 +575,6 @@
             this.groupBox2.Size = new System.Drawing.Size(330, 239);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Game Object Info";
             // 
             // label36
             // 
@@ -825,7 +818,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label30);
-            this.groupBox1.Location = new System.Drawing.Point(366, 62);
+            this.groupBox1.Location = new System.Drawing.Point(366, 98);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(341, 393);
             this.groupBox1.TabIndex = 0;
@@ -1540,6 +1533,28 @@
             this.pictureBox9.TabIndex = 3;
             this.pictureBox9.TabStop = false;
             // 
+            // textBox105
+            // 
+            this.textBox105.Location = new System.Drawing.Point(538, 70);
+            this.textBox105.Name = "textBox105";
+            this.textBox105.Size = new System.Drawing.Size(100, 20);
+            this.textBox105.TabIndex = 211;
+            this.textBox105.Visible = false;
+            // 
+            // comboBox11
+            // 
+            this.comboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox11.Font = new System.Drawing.Font("Arial", 9F);
+            this.comboBox11.FormattingEnabled = true;
+            this.comboBox11.Items.AddRange(new object[] {
+            "Add New GameObject",
+            "Replace GameObject"});
+            this.comboBox11.Location = new System.Drawing.Point(366, 70);
+            this.comboBox11.Name = "comboBox11";
+            this.comboBox11.Size = new System.Drawing.Size(166, 23);
+            this.comboBox11.TabIndex = 210;
+            this.comboBox11.SelectedIndexChanged += new System.EventHandler(this.comboBox11_SelectedIndexChanged);
+            // 
             // GameObject_Creator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1675,7 +1690,6 @@
         public System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button8;
         internal System.Windows.Forms.Label label_query_executed_successfully2;
         private System.Windows.Forms.Button button_execute_query;
         internal System.Windows.Forms.Label label35;
@@ -1693,5 +1707,7 @@
         private System.Windows.Forms.Timer timer8;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.TextBox textBox105;
+        private System.Windows.Forms.ComboBox comboBox11;
     }
 }

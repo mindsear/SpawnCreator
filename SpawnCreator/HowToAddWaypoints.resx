@@ -129,7 +129,7 @@ target your npc and then type:
 
 
 
-Move to the location you wish the NPC to move to then enter:
+Move to the location you wish the NPC to move then enter:
 .wp add 'GUID' (without comma's) In my case it's
 
 
