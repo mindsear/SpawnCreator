@@ -196,11 +196,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(498, 137);
+            this.label4.Location = new System.Drawing.Point(464, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(109, 13);
             this.label4.TabIndex = 133;
-            this.label4.Text = "  Entry";
+            this.label4.Text = "             Entry             ";
             this.toolTip1.SetToolTip(this.label4, "Entry of Spell/Quest/Map/BG/Achievement/Map");
             // 
             // textBox_entry

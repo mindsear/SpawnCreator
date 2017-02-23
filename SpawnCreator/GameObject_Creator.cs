@@ -38,6 +38,7 @@ namespace SpawnCreator
         {
             comboBox1.SelectedIndex = 1; // Speak
             comboBox2.SelectedIndex = 0; // GAMEOBJECT_TYPE_DOOR
+            comboBox11.SelectedIndex = 0; // INSERT
             timer1.Start(); // check if mysql is running
             timer2.Start(); // stopwatch
 
