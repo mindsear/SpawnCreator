@@ -232,6 +232,11 @@ namespace SpawnCreator
             stringEntryShare = textBox1.Text;
         }
 
+        //private bool CheckTextBoxes( /*TextBox textbox, bool true*/)
+        //{          
+        //    return true;
+        //}
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -456,6 +461,16 @@ namespace SpawnCreator
                 MessageBox.Show("Quest Title should not be empty", "Error");
                 return;
             }
+            if (textBox106.Text == "")
+            {
+                MessageBox.Show("Creature Quest Starter Entry should not be empty", "Error");
+                return;
+            }
+            if (textBox109.Text == "")
+            {
+                MessageBox.Show("Creature Quest Ender Entry should not be empty", "Error");
+                return;
+            }
 
             using (var sfd = new SaveFileDialog())
             {
@@ -491,11 +506,22 @@ namespace SpawnCreator
                 MessageBox.Show("Quest Title should not be empty", "Error");
                 return;
             }
+            if (textBox106.Text == "")
+            {
+                MessageBox.Show("Creature Quest Starter Entry should not be empty", "Error");
+                return;
+            }
+            if (textBox109.Text == "")
+            {
+                MessageBox.Show("Creature Quest Ender Entry should not be empty", "Error");
+                return;
+            }
 
             Clipboard.SetText(stringSQLShare);
             label_copied_to_clipboard.Visible = true;
         }
 
+        // Execut Query - button
         private void button2_Click(object sender, EventArgs e)
         {
             GenerateSqlCode(sender, e);
@@ -513,6 +539,16 @@ namespace SpawnCreator
             if (textBox67.Text == "")
             {
                 MessageBox.Show("Quest Title should not be empty", "Error");
+                return;
+            }
+            if (textBox106.Text == "")
+            {
+                MessageBox.Show("Creature Quest Starter Entry should not be empty", "Error");
+                return;
+            }
+            if (textBox109.Text == "")
+            {
+                MessageBox.Show("Creature Quest Ender Entry should not be empty", "Error");
                 return;
             }
 

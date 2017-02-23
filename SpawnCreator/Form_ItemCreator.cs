@@ -59,6 +59,7 @@ namespace SpawnCreator
         private void Form2_Load(object sender, EventArgs e)
         {
             timer2.Start();
+            comboBox29.SelectedIndex = 0; // INSERT
 
             //MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
             //string insertQuery = "SELECT max(entry)+1 FROM " + mainmenu.textbox_mysql_worldDB.Text + ".item_template;";
@@ -921,7 +922,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".item_template (entry, quality, class, subclass, name, description, ";
+            BuildSQLFile = textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".item_template (entry, quality, class, subclass, name, description, ";
             BuildSQLFile += "displayid, inventorytype, bonding, buycount, buyprice, sellprice, stackable, maxcount, ";
             BuildSQLFile += "sheath, material, itemlevel, itemset, randomproperty, randomsuffix, gemproperties, ";
             BuildSQLFile += "socketColor_1, socketContent_1, socketColor_2, socketContent_2, socketColor_3, socketContent_3, ";
@@ -2348,7 +2349,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".item_template (entry, quality, class, subclass, name, description, ";
+            BuildSQLFile = textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".item_template (entry, quality, class, subclass, name, description, ";
             BuildSQLFile += "displayid, inventorytype, bonding, buycount, buyprice, sellprice, stackable, maxcount, ";
             BuildSQLFile += "sheath, material, itemlevel, itemset, randomproperty, randomsuffix, gemproperties, ";
             BuildSQLFile += "socketColor_1, socketContent_1, socketColor_2, socketContent_2, socketColor_3, socketContent_3, ";
@@ -3803,7 +3804,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".item_template (entry, quality, class, subclass, name, description, ";
+            BuildSQLFile = textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".item_template (entry, quality, class, subclass, name, description, ";
             BuildSQLFile += "displayid, inventorytype, bonding, buycount, buyprice, sellprice, stackable, maxcount, ";
             BuildSQLFile += "sheath, material, itemlevel, itemset, randomproperty, randomsuffix, gemproperties, ";
             BuildSQLFile += "socketColor_1, socketContent_1, socketColor_2, socketContent_2, socketColor_3, socketContent_3, ";
@@ -4430,6 +4431,12 @@ namespace SpawnCreator
         {
             label90.BackColor = Color.FromArgb(58, 89, 114);
             label90.ForeColor = Color.Black;
+        }
+
+        private void comboBox29_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox29.SelectedIndex == 0) textBox105.Text = "INSERT";
+            else if (comboBox29.SelectedIndex == 1) textBox105.Text = "REPLACE";
         }
     }
 }

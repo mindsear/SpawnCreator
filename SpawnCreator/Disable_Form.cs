@@ -62,7 +62,13 @@ namespace SpawnCreator
                 textBox_SourceType.Text = "0";
                 button_flags_dis_spell.Visible = true;
                 button_flags_dis_map.Visible = false;
-                button_flags_dis_vmap.Visible = false;
+                button_flags_dis_vmap.Visible = false;     
+                textBox1.Text = "params_0: MapId, 0 for all maps." + Environment.NewLine +
+                                "If multiple Maps, separate ids with a comma" + Environment.NewLine +
+                                "Example: 30,489 (Alterac Valley,Warsong Gulch)" + Environment.NewLine +
+                                "params_1: AreaId, 0 for all areas." + Environment.NewLine +
+                                "If multiple Areas, separate ids with a comma";
+                linkLabel2.Visible = true;
             }
             else if (comboBox_SourceType.Text == "DISABLE_TYPE_QUEST") 
             {
@@ -70,6 +76,8 @@ namespace SpawnCreator
                 button_flags_dis_spell.Visible = false;
                 button_flags_dis_map.Visible = false;
                 button_flags_dis_vmap.Visible = false;
+                textBox1.Clear();
+                linkLabel2.Visible = false;
             }
             else if (comboBox_SourceType.Text == "DISABLE_TYPE_MAP") 
             {
@@ -77,6 +85,8 @@ namespace SpawnCreator
                 button_flags_dis_spell.Visible = false;
                 button_flags_dis_map.Visible = true;
                 button_flags_dis_vmap.Visible = false;
+                textBox1.Clear();
+                linkLabel2.Visible = false;
             }
             else if (comboBox_SourceType.Text == "DISABLE_TYPE_BATTLEGROUND") 
             {
@@ -84,6 +94,8 @@ namespace SpawnCreator
                 button_flags_dis_spell.Visible = false;
                 button_flags_dis_map.Visible = false;
                 button_flags_dis_vmap.Visible = false;
+                textBox1.Clear();
+                linkLabel2.Visible = false;
             }
             else if (comboBox_SourceType.Text == "DISABLE_TYPE_ACHIEVEMENT_CRITERIA") 
             {
@@ -91,6 +103,8 @@ namespace SpawnCreator
                 button_flags_dis_spell.Visible = false;
                 button_flags_dis_map.Visible = false;
                 button_flags_dis_vmap.Visible = false;
+                textBox1.Clear();
+                linkLabel2.Visible = false;
             }
             else if (comboBox_SourceType.Text == "DISABLE_TYPE_OUTDOORPVP") 
             {
@@ -98,6 +112,8 @@ namespace SpawnCreator
                 button_flags_dis_spell.Visible = false;
                 button_flags_dis_map.Visible = false;
                 button_flags_dis_vmap.Visible = false;
+                textBox1.Clear();
+                linkLabel2.Visible = false;
             }
             else if (comboBox_SourceType.Text == "DISABLE_TYPE_VMAP") 
             {
@@ -105,6 +121,8 @@ namespace SpawnCreator
                 button_flags_dis_spell.Visible = false;
                 button_flags_dis_map.Visible = false;
                 button_flags_dis_vmap.Visible = true;
+                textBox1.Clear();
+                linkLabel2.Visible = false;
             }
             else if (comboBox_SourceType.Text == "DISABLE_TYPE_MMAP") 
             {
@@ -112,6 +130,8 @@ namespace SpawnCreator
                 button_flags_dis_spell.Visible = false;
                 button_flags_dis_map.Visible = false;
                 button_flags_dis_vmap.Visible = false;
+                textBox1.Clear();
+                linkLabel2.Visible = false;
             }
             else if (comboBox_SourceType.Text == "DISABLE_TYPE_LFG_MAP") 
             {
@@ -119,6 +139,8 @@ namespace SpawnCreator
                 button_flags_dis_spell.Visible = false;
                 button_flags_dis_map.Visible = false;
                 button_flags_dis_vmap.Visible = false;
+                textBox1.Clear();
+                linkLabel2.Visible = false;
             }
         }
 
@@ -775,6 +797,11 @@ namespace SpawnCreator
         private void panel7_MouseLeave(object sender, EventArgs e)
         {
             panel7.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://trinitycore.atlassian.net/wiki/display/tc/AreaTable");
         }
     }
 }

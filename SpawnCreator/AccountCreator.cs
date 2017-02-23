@@ -409,5 +409,32 @@ namespace SpawnCreator
         {
             ShowExistingAccounts(sender, e); // Refresh dataGridView1
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    panel1.BackColor = Color.CornflowerBlue;
+
+                    label3.ForeColor = Color.Black;
+                    label4.ForeColor = Color.Black;
+                    label6.ForeColor = Color.Black;
+                    label5.ForeColor = Color.Black;
+                    label7.ForeColor = Color.Black;
+                    label8.ForeColor = Color.Black;
+                    break;
+                case 1:
+                    panel1.BackColor = Color.Black;
+
+                    label3.ForeColor = Color.White;
+                    label4.ForeColor = Color.White;
+                    label6.ForeColor = Color.White;
+                    label5.ForeColor = Color.White;
+                    label7.ForeColor = Color.White;
+                    label8.ForeColor = Color.White;
+                    break;
+            }
+        }
     }
 }

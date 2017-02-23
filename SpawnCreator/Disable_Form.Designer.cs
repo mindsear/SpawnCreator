@@ -72,6 +72,9 @@
             this.button_flags_dis_vmap = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -92,7 +95,7 @@
             // 
             // textBox_SourceType
             // 
-            this.textBox_SourceType.Location = new System.Drawing.Point(415, 130);
+            this.textBox_SourceType.Location = new System.Drawing.Point(393, 130);
             this.textBox_SourceType.Name = "textBox_SourceType";
             this.textBox_SourceType.Size = new System.Drawing.Size(36, 20);
             this.textBox_SourceType.TabIndex = 124;
@@ -101,7 +104,7 @@
             // 
             // textBox_comment
             // 
-            this.textBox_comment.Location = new System.Drawing.Point(205, 274);
+            this.textBox_comment.Location = new System.Drawing.Point(205, 327);
             this.textBox_comment.Multiline = true;
             this.textBox_comment.Name = "textBox_comment";
             this.textBox_comment.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -114,7 +117,7 @@
             this.label_Executed_Successfully.AutoSize = true;
             this.label_Executed_Successfully.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
             this.label_Executed_Successfully.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label_Executed_Successfully.Location = new System.Drawing.Point(308, 424);
+            this.label_Executed_Successfully.Location = new System.Drawing.Point(299, 436);
             this.label_Executed_Successfully.Name = "label_Executed_Successfully";
             this.label_Executed_Successfully.Size = new System.Drawing.Size(223, 17);
             this.label_Executed_Successfully.TabIndex = 123;
@@ -136,7 +139,7 @@
             "DISABLE_TYPE_VMAP",
             "DISABLE_TYPE_MMAP",
             "DISABLE_TYPE_LFG_MAP"});
-            this.comboBox_SourceType.Location = new System.Drawing.Point(205, 153);
+            this.comboBox_SourceType.Location = new System.Drawing.Point(183, 153);
             this.comboBox_SourceType.Name = "comboBox_SourceType";
             this.comboBox_SourceType.Size = new System.Drawing.Size(246, 21);
             this.comboBox_SourceType.TabIndex = 122;
@@ -193,7 +196,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(520, 137);
+            this.label4.Location = new System.Drawing.Point(498, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 133;
@@ -202,7 +205,7 @@
             // 
             // textBox_entry
             // 
-            this.textBox_entry.Location = new System.Drawing.Point(477, 153);
+            this.textBox_entry.Location = new System.Drawing.Point(455, 153);
             this.textBox_entry.Name = "textBox_entry";
             this.textBox_entry.Size = new System.Drawing.Size(128, 20);
             this.textBox_entry.TabIndex = 117;
@@ -449,7 +452,7 @@
             this.button_Execute_Query.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Execute_Query.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
             this.button_Execute_Query.ForeColor = System.Drawing.Color.White;
-            this.button_Execute_Query.Location = new System.Drawing.Point(345, 373);
+            this.button_Execute_Query.Location = new System.Drawing.Point(336, 385);
             this.button_Execute_Query.Name = "button_Execute_Query";
             this.button_Execute_Query.Size = new System.Drawing.Size(148, 38);
             this.button_Execute_Query.TabIndex = 116;
@@ -460,7 +463,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(296, 137);
+            this.label3.Location = new System.Drawing.Point(274, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 132;
@@ -473,7 +476,7 @@
             this.button_flags_dis_spell.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_flags_dis_spell.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_flags_dis_spell.ForeColor = System.Drawing.Color.White;
-            this.button_flags_dis_spell.Location = new System.Drawing.Point(205, 193);
+            this.button_flags_dis_spell.Location = new System.Drawing.Point(183, 192);
             this.button_flags_dis_spell.Name = "button_flags_dis_spell";
             this.button_flags_dis_spell.Size = new System.Drawing.Size(116, 43);
             this.button_flags_dis_spell.TabIndex = 134;
@@ -485,7 +488,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(387, 202);
+            this.label5.Location = new System.Drawing.Point(347, 202);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 136;
@@ -493,7 +496,7 @@
             // 
             // textBox_params_0
             // 
-            this.textBox_params_0.Location = new System.Drawing.Point(357, 218);
+            this.textBox_params_0.Location = new System.Drawing.Point(317, 218);
             this.textBox_params_0.Name = "textBox_params_0";
             this.textBox_params_0.Size = new System.Drawing.Size(116, 20);
             this.textBox_params_0.TabIndex = 135;
@@ -504,7 +507,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(520, 202);
+            this.label6.Location = new System.Drawing.Point(347, 247);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 138;
@@ -512,7 +515,7 @@
             // 
             // textBox_params_1
             // 
-            this.textBox_params_1.Location = new System.Drawing.Point(489, 218);
+            this.textBox_params_1.Location = new System.Drawing.Point(317, 263);
             this.textBox_params_1.Name = "textBox_params_1";
             this.textBox_params_1.Size = new System.Drawing.Size(116, 20);
             this.textBox_params_1.TabIndex = 137;
@@ -523,7 +526,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(389, 258);
+            this.label7.Location = new System.Drawing.Point(389, 311);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 139;
@@ -536,7 +539,7 @@
             this.button_flags_dis_map.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_flags_dis_map.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_flags_dis_map.ForeColor = System.Drawing.Color.White;
-            this.button_flags_dis_map.Location = new System.Drawing.Point(205, 192);
+            this.button_flags_dis_map.Location = new System.Drawing.Point(183, 191);
             this.button_flags_dis_map.Name = "button_flags_dis_map";
             this.button_flags_dis_map.Size = new System.Drawing.Size(116, 43);
             this.button_flags_dis_map.TabIndex = 141;
@@ -552,7 +555,7 @@
             this.button_flags_dis_vmap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_flags_dis_vmap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_flags_dis_vmap.ForeColor = System.Drawing.Color.White;
-            this.button_flags_dis_vmap.Location = new System.Drawing.Point(205, 192);
+            this.button_flags_dis_vmap.Location = new System.Drawing.Point(183, 191);
             this.button_flags_dis_vmap.Name = "button_flags_dis_vmap";
             this.button_flags_dis_vmap.Size = new System.Drawing.Size(116, 44);
             this.button_flags_dis_vmap.TabIndex = 142;
@@ -583,12 +586,49 @@
             this.label9.Text = "https://trinitycore.atlassian.net/wiki/display/tc/disables";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(439, 207);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(200, 76);
+            this.textBox1.TabIndex = 145;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(464, 191);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 146;
+            this.label10.Text = "Notes";
+            this.toolTip1.SetToolTip(this.label10, "Entry of Spell/Quest/Map/BG/Achievement/Map");
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel2.Location = new System.Drawing.Point(483, 286);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(113, 13);
+            this.linkLabel2.TabIndex = 147;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Map Ids AND Area Ids";
+            this.linkLabel2.Visible = false;
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // Disable_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(651, 493);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button_flags_dis_vmap);
@@ -674,5 +714,8 @@
         private System.Windows.Forms.Button button_flags_dis_vmap;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
