@@ -560,7 +560,7 @@ namespace SpawnCreator
             try
             {
                 
-                if (command.ExecuteNonQuery() == 1)
+                if (command.ExecuteNonQuery() >= 1)
                 {
                     label_query_executed_successfully.Visible = true;
                 }

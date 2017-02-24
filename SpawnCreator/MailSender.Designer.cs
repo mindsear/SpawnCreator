@@ -38,6 +38,7 @@
             this.label86 = new System.Windows.Forms.Label();
             this.label_stopwatch = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label84 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -57,11 +58,30 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lstReceivers = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtSender = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnRec = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtpExp = new System.Windows.Forms.MonthCalendar();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ckbInstant = new System.Windows.Forms.CheckBox();
+            this.dtpDel = new System.Windows.Forms.MonthCalendar();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button_search = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.g = new System.Windows.Forms.NumericUpDown();
             this.s = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.c = new System.Windows.Forms.NumericUpDown();
             this.rdbCOD = new System.Windows.Forms.RadioButton();
             this.rdbMoney = new System.Windows.Forms.RadioButton();
@@ -69,58 +89,39 @@
             this.colID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lstSearchItems = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label6 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.numCount = new System.Windows.Forms.NumericUpDown();
-            this.lblCapacity = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dtpExp = new System.Windows.Forms.MonthCalendar();
-            this.dtpDel = new System.Windows.Forms.MonthCalendar();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.ckbInstant = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lstReceivers = new System.Windows.Forms.ListView();
-            this.colNameReceiver = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtSender = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnRec = new System.Windows.Forms.Button();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.numCount = new System.Windows.Forms.NumericUpDown();
             this.btnDel = new System.Windows.Forms.Button();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblCapacity = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.g)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.s)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.g)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.s)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -145,7 +146,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(51, 19);
+            this.label89.Location = new System.Drawing.Point(51, 23);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -203,7 +204,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(51, 1);
+            this.label_stopwatch.Location = new System.Drawing.Point(51, 5);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -220,6 +221,16 @@
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "[Visit Creator\'s Website]";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::SpawnCreator.Properties.Resources.chibi_spawn_by_xxthornthevamphogxx_d9fzfhb;
+            this.pictureBox9.Location = new System.Drawing.Point(3, 252);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(161, 184);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 3;
+            this.pictureBox9.TabStop = false;
             // 
             // panel6
             // 
@@ -445,23 +456,179 @@
             this.panel1.Size = new System.Drawing.Size(686, 489);
             this.panel1.TabIndex = 88;
             // 
-            // groupBox1
+            // groupBox4
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtSubject);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtStyle);
-            this.groupBox1.Controls.Add(this.txtBody);
-            this.groupBox1.Location = new System.Drawing.Point(50, 7);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(546, 302);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.groupBox4.Controls.Add(this.btnSend);
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.lstReceivers);
+            this.groupBox4.Controls.Add(this.txtSender);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.btnRec);
+            this.groupBox4.Location = new System.Drawing.Point(11, 931);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(651, 476);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSend.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSend.Image = global::SpawnCreator.Properties.Resources.mail_green;
+            this.btnSend.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSend.Location = new System.Drawing.Point(253, 382);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(136, 31);
+            this.btnSend.TabIndex = 21;
+            this.btnSend.Text = "Send";
+            this.btnSend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(341, 307);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(168, 26);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "   Select NPC";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // lstReceivers
+            // 
+            this.lstReceivers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3});
+            this.lstReceivers.FullRowSelect = true;
+            this.lstReceivers.GridLines = true;
+            this.lstReceivers.Location = new System.Drawing.Point(136, 63);
+            this.lstReceivers.MultiSelect = false;
+            this.lstReceivers.Name = "lstReceivers";
+            this.lstReceivers.Size = new System.Drawing.Size(373, 168);
+            this.lstReceivers.TabIndex = 19;
+            this.lstReceivers.UseCompatibleStateImageBehavior = false;
+            this.lstReceivers.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Name";
+            // 
+            // txtSender
+            // 
+            this.txtSender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSender.FormattingEnabled = true;
+            this.txtSender.Location = new System.Drawing.Point(136, 273);
+            this.txtSender.Name = "txtSender";
+            this.txtSender.Size = new System.Drawing.Size(373, 21);
+            this.txtSender.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(132, 250);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Sender";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(135, 39);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(23, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "To:";
+            // 
+            // btnRec
+            // 
+            this.btnRec.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRec.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRec.Location = new System.Drawing.Point(337, 22);
+            this.btnRec.Name = "btnRec";
+            this.btnRec.Size = new System.Drawing.Size(172, 30);
+            this.btnRec.TabIndex = 16;
+            this.btnRec.Text = "Select receivers...";
+            this.btnRec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRec.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dtpExp);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.ckbInstant);
+            this.groupBox3.Controls.Add(this.dtpDel);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Location = new System.Drawing.Point(10, 694);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(652, 231);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            // 
+            // dtpExp
+            // 
+            this.dtpExp.Location = new System.Drawing.Point(333, 53);
+            this.dtpExp.MaxSelectionCount = 1;
+            this.dtpExp.Name = "dtpExp";
+            this.dtpExp.TabIndex = 46;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(87, 31);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 13);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Delivery date:";
+            // 
+            // ckbInstant
+            // 
+            this.ckbInstant.AutoSize = true;
+            this.ckbInstant.Checked = true;
+            this.ckbInstant.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbInstant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbInstant.Location = new System.Drawing.Point(221, 27);
+            this.ckbInstant.Name = "ckbInstant";
+            this.ckbInstant.Size = new System.Drawing.Size(58, 17);
+            this.ckbInstant.TabIndex = 45;
+            this.ckbInstant.Text = "Instant";
+            this.ckbInstant.UseVisualStyleBackColor = true;
+            // 
+            // dtpDel
+            // 
+            this.dtpDel.Location = new System.Drawing.Point(90, 53);
+            this.dtpDel.MaxSelectionCount = 1;
+            this.dtpDel.Name = "dtpDel";
+            this.dtpDel.TabIndex = 47;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(330, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Expire date";
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(475, 22);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 24);
+            this.button2.TabIndex = 44;
+            this.button2.Text = "Default";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button_search);
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Controls.Add(this.rdbCOD);
             this.groupBox2.Controls.Add(this.rdbMoney);
@@ -479,6 +646,16 @@
             this.groupBox2.Size = new System.Drawing.Size(654, 372);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // button_search
+            // 
+            this.button_search.Location = new System.Drawing.Point(183, 37);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(75, 20);
+            this.button_search.TabIndex = 5262;
+            this.button_search.Text = "Search";
+            this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -502,6 +679,26 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(302, 29);
             this.tableLayoutPanel1.TabIndex = 5259;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 10);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox4.Location = new System.Drawing.Point(98, 10);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox4.TabIndex = 5235;
+            this.pictureBox4.TabStop = false;
             // 
             // g
             // 
@@ -530,6 +727,16 @@
             this.s.Name = "s";
             this.s.Size = new System.Drawing.Size(65, 21);
             this.s.TabIndex = 7;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox3.Location = new System.Drawing.Point(191, 10);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox3.TabIndex = 21;
+            this.pictureBox3.TabStop = false;
             // 
             // c
             // 
@@ -603,6 +810,16 @@
             // 
             this.colCount.Text = "Count";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Location = new System.Drawing.Point(263, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 5256;
+            this.pictureBox1.TabStop = false;
+            // 
             // lstSearchItems
             // 
             this.lstSearchItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -644,10 +861,21 @@
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtSearch.Location = new System.Drawing.Point(14, 37);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(234, 20);
+            this.txtSearch.Size = new System.Drawing.Size(162, 20);
             this.txtSearch.TabIndex = 5250;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Image = global::SpawnCreator.Properties.Resources.arrow_right;
+            this.btnAdd.Location = new System.Drawing.Point(276, 85);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 31);
+            this.btnAdd.TabIndex = 5253;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // numCount
             // 
@@ -673,237 +901,6 @@
             0});
             this.numCount.Visible = false;
             // 
-            // lblCapacity
-            // 
-            this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Location = new System.Drawing.Point(363, 37);
-            this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(119, 13);
-            this.lblCapacity.TabIndex = 5252;
-            this.lblCapacity.Text = "Attached items (0 of 12)";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dtpExp);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.ckbInstant);
-            this.groupBox3.Controls.Add(this.dtpDel);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Location = new System.Drawing.Point(10, 694);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(652, 231);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            // 
-            // dtpExp
-            // 
-            this.dtpExp.Location = new System.Drawing.Point(333, 53);
-            this.dtpExp.MaxSelectionCount = 1;
-            this.dtpExp.Name = "dtpExp";
-            this.dtpExp.TabIndex = 46;
-            // 
-            // dtpDel
-            // 
-            this.dtpDel.Location = new System.Drawing.Point(90, 53);
-            this.dtpDel.MaxSelectionCount = 1;
-            this.dtpDel.Name = "dtpDel";
-            this.dtpDel.TabIndex = 47;
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(475, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 24);
-            this.button2.TabIndex = 44;
-            this.button2.Text = "Default";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(330, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "Expire date";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(87, 31);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 13);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "Delivery date:";
-            // 
-            // ckbInstant
-            // 
-            this.ckbInstant.AutoSize = true;
-            this.ckbInstant.Checked = true;
-            this.ckbInstant.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbInstant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbInstant.Location = new System.Drawing.Point(221, 27);
-            this.ckbInstant.Name = "ckbInstant";
-            this.ckbInstant.Size = new System.Drawing.Size(58, 17);
-            this.ckbInstant.TabIndex = 45;
-            this.ckbInstant.Text = "Instant";
-            this.ckbInstant.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnSend);
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.lstReceivers);
-            this.groupBox4.Controls.Add(this.txtSender);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.btnRec);
-            this.groupBox4.Location = new System.Drawing.Point(11, 931);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(651, 476);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(341, 307);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 26);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "   Select NPC";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // lstReceivers
-            // 
-            this.lstReceivers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colNameReceiver});
-            this.lstReceivers.FullRowSelect = true;
-            this.lstReceivers.GridLines = true;
-            this.lstReceivers.Location = new System.Drawing.Point(136, 63);
-            this.lstReceivers.MultiSelect = false;
-            this.lstReceivers.Name = "lstReceivers";
-            this.lstReceivers.Size = new System.Drawing.Size(373, 168);
-            this.lstReceivers.TabIndex = 19;
-            this.lstReceivers.UseCompatibleStateImageBehavior = false;
-            this.lstReceivers.View = System.Windows.Forms.View.Details;
-            // 
-            // colNameReceiver
-            // 
-            this.colNameReceiver.Text = "Receivers";
-            this.colNameReceiver.Width = 350;
-            // 
-            // txtSender
-            // 
-            this.txtSender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtSender.FormattingEnabled = true;
-            this.txtSender.Location = new System.Drawing.Point(136, 273);
-            this.txtSender.Name = "txtSender";
-            this.txtSender.Size = new System.Drawing.Size(373, 21);
-            this.txtSender.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(132, 250);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Sender";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(135, 39);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(23, 13);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "To:";
-            // 
-            // btnRec
-            // 
-            this.btnRec.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRec.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRec.Location = new System.Drawing.Point(337, 22);
-            this.btnRec.Name = "btnRec";
-            this.btnRec.Size = new System.Drawing.Size(172, 30);
-            this.btnRec.TabIndex = 16;
-            this.btnRec.Text = "Select receivers...";
-            this.btnRec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRec.UseVisualStyleBackColor = true;
-            // 
-            // btnSend
-            // 
-            this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSend.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSend.Image = global::SpawnCreator.Properties.Resources.mail_green;
-            this.btnSend.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSend.Location = new System.Drawing.Point(253, 382);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(136, 31);
-            this.btnSend.TabIndex = 21;
-            this.btnSend.Text = "Send";
-            this.btnSend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 10);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox4.Location = new System.Drawing.Point(98, 10);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox4.TabIndex = 5235;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Location = new System.Drawing.Point(191, 10);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox3.TabIndex = 21;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(254, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 5256;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Image = global::SpawnCreator.Properties.Resources.arrow_right;
-            this.btnAdd.Location = new System.Drawing.Point(276, 85);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 31);
-            this.btnAdd.TabIndex = 5253;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // btnDel
             // 
             this.btnDel.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -915,20 +912,29 @@
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
-            // pictureBox9
+            // lblCapacity
             // 
-            this.pictureBox9.Image = global::SpawnCreator.Properties.Resources.chibi_spawn_by_xxthornthevamphogxx_d9fzfhb;
-            this.pictureBox9.Location = new System.Drawing.Point(3, 252);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(161, 184);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 3;
-            this.pictureBox9.TabStop = false;
+            this.lblCapacity.AutoSize = true;
+            this.lblCapacity.Location = new System.Drawing.Point(363, 37);
+            this.lblCapacity.Name = "lblCapacity";
+            this.lblCapacity.Size = new System.Drawing.Size(119, 13);
+            this.lblCapacity.TabIndex = 5252;
+            this.lblCapacity.Text = "Attached items (0 of 12)";
             // 
-            // timer1
+            // groupBox1
             // 
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtSubject);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtStyle);
+            this.groupBox1.Controls.Add(this.txtBody);
+            this.groupBox1.Location = new System.Drawing.Point(50, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(546, 302);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
             // textBox1
             // 
@@ -938,6 +944,11 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(62, 20);
             this.textBox1.TabIndex = 88;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MailSender
             // 
@@ -959,6 +970,7 @@
             this.panel3.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -966,24 +978,23 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.g)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.s)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numCount)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.g)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.s)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCount)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1022,7 +1033,6 @@
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListView lstReceivers;
-        private System.Windows.Forms.ColumnHeader colNameReceiver;
         private System.Windows.Forms.ComboBox txtSender;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -1061,5 +1071,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button_search;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

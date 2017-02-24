@@ -61,7 +61,9 @@ namespace SpawnCreator
             Form_ItemCreator form2 = new Form_ItemCreator();
             form2.Show();
             Hide();
-            form2.timer1.Enabled = true;
+
+            // this shouldn't be here - move it to Form_ItemCreator_Load
+            //form2.timer1.Enabled = true;
         }
 
         private void panel3_MouseEnter(object sender, EventArgs e)
@@ -208,10 +210,10 @@ namespace SpawnCreator
                 panel6.Visible = true;
                 panel7.Visible = true;
                 //panel8.Visible = true; //Mail sender
+                //label15.Visible = true; // Mail Sender
                 label11.Visible = true;
                 label12.Visible = true;
-                label14.Visible = true;
-                //label15.Visible = true; // Mail Sender
+                label14.Visible = true;               
                 label_version.Visible = true;
                 panel_Quest_Creator.Visible = true;
                 label_Account_Creator.Visible = true;

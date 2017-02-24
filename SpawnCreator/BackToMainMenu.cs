@@ -68,7 +68,9 @@ namespace SpawnCreator
             Form_ItemCreator form2 = new Form_ItemCreator();
             form2.Show();
             Hide();
-            form2.timer1.Enabled = true;
+
+            //same as Form_MainMenu
+            //form2.timer1.Enabled = true;
         }
 
         private void panel3_MouseEnter(object sender, EventArgs e)
@@ -355,7 +357,8 @@ namespace SpawnCreator
             Form_ItemCreator form2 = new Form_ItemCreator();
             form2.Show();
             Close();
-            form2.timer1.Enabled = true;
+
+            //form2.timer1.Enabled = true;
         }
 
         private void panel2_MouseEnter_1(object sender, EventArgs e)

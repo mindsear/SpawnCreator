@@ -77,11 +77,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -91,7 +91,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -231,7 +230,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(51, 19);
+            this.label89.Location = new System.Drawing.Point(51, 23);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -294,7 +293,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(51, 1);
+            this.label_stopwatch.Location = new System.Drawing.Point(51, 5);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -379,11 +378,11 @@
             this.button_Execute_Query.BackColor = System.Drawing.Color.DimGray;
             this.button_Execute_Query.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_Execute_Query.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Execute_Query.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.button_Execute_Query.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Execute_Query.ForeColor = System.Drawing.Color.White;
-            this.button_Execute_Query.Location = new System.Drawing.Point(150, 284);
+            this.button_Execute_Query.Location = new System.Drawing.Point(174, 218);
             this.button_Execute_Query.Name = "button_Execute_Query";
-            this.button_Execute_Query.Size = new System.Drawing.Size(148, 38);
+            this.button_Execute_Query.Size = new System.Drawing.Size(130, 28);
             this.button_Execute_Query.TabIndex = 80;
             this.button_Execute_Query.Text = "Execute Query";
             this.button_Execute_Query.UseVisualStyleBackColor = false;
@@ -391,20 +390,20 @@
             // 
             // textBox_username
             // 
-            this.textBox_username.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_username.Location = new System.Drawing.Point(116, 32);
+            this.textBox_username.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_username.Location = new System.Drawing.Point(115, 13);
             this.textBox_username.Name = "textBox_username";
-            this.textBox_username.Size = new System.Drawing.Size(292, 23);
+            this.textBox_username.Size = new System.Drawing.Size(292, 21);
             this.textBox_username.TabIndex = 81;
             this.textBox_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_username.TextChanged += new System.EventHandler(this.textBox_username_TextChanged);
             // 
             // textBox_pass
             // 
-            this.textBox_pass.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_pass.Location = new System.Drawing.Point(116, 80);
+            this.textBox_pass.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_pass.Location = new System.Drawing.Point(115, 40);
             this.textBox_pass.Name = "textBox_pass";
-            this.textBox_pass.Size = new System.Drawing.Size(292, 23);
+            this.textBox_pass.Size = new System.Drawing.Size(292, 21);
             this.textBox_pass.TabIndex = 82;
             this.textBox_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_pass.TextChanged += new System.EventHandler(this.textBox_pass_TextChanged);
@@ -412,37 +411,37 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label3.Location = new System.Drawing.Point(22, 37);
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(43, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.Size = new System.Drawing.Size(66, 15);
             this.label3.TabIndex = 83;
             this.label3.Text = "Username";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label4.Location = new System.Drawing.Point(25, 83);
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(46, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 17);
+            this.label4.Size = new System.Drawing.Size(63, 15);
             this.label4.TabIndex = 84;
             this.label4.Text = "Password";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label5.Location = new System.Drawing.Point(36, 167);
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(86, 101);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(170, 17);
+            this.label5.Size = new System.Drawing.Size(124, 15);
             this.label5.TabIndex = 85;
             this.label5.Text = "Account Access Level";
             // 
             // comboBox_Account_Access_level
             // 
             this.comboBox_Account_Access_level.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Account_Access_level.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Account_Access_level.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Account_Access_level.FormattingEnabled = true;
             this.comboBox_Account_Access_level.Items.AddRange(new object[] {
             "0 (Player)",
@@ -450,7 +449,7 @@
             "2 (Moderator)",
             "3 (Admin)",
             "4 (Console)"});
-            this.comboBox_Account_Access_level.Location = new System.Drawing.Point(217, 164);
+            this.comboBox_Account_Access_level.Location = new System.Drawing.Point(216, 98);
             this.comboBox_Account_Access_level.Name = "comboBox_Account_Access_level";
             this.comboBox_Account_Access_level.Size = new System.Drawing.Size(191, 23);
             this.comboBox_Account_Access_level.TabIndex = 86;
@@ -459,11 +458,11 @@
             // label_Executed_Successfully
             // 
             this.label_Executed_Successfully.AutoSize = true;
-            this.label_Executed_Successfully.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.label_Executed_Successfully.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Executed_Successfully.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label_Executed_Successfully.Location = new System.Drawing.Point(113, 335);
+            this.label_Executed_Successfully.Location = new System.Drawing.Point(146, 249);
             this.label_Executed_Successfully.Name = "label_Executed_Successfully";
-            this.label_Executed_Successfully.Size = new System.Drawing.Size(223, 17);
+            this.label_Executed_Successfully.Size = new System.Drawing.Size(196, 15);
             this.label_Executed_Successfully.TabIndex = 101;
             this.label_Executed_Successfully.Tag = "";
             this.label_Executed_Successfully.Text = "Query executed successfully!";
@@ -491,7 +490,7 @@
             // 
             // textBox_Account_Access_Level
             // 
-            this.textBox_Account_Access_Level.Location = new System.Drawing.Point(414, 167);
+            this.textBox_Account_Access_Level.Location = new System.Drawing.Point(413, 96);
             this.textBox_Account_Access_Level.Name = "textBox_Account_Access_Level";
             this.textBox_Account_Access_Level.Size = new System.Drawing.Size(36, 20);
             this.textBox_Account_Access_Level.TabIndex = 104;
@@ -512,25 +511,25 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label6.Location = new System.Drawing.Point(52, 126);
+            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(66, 70);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 17);
+            this.label6.Size = new System.Drawing.Size(43, 15);
             this.label6.TabIndex = 107;
             this.label6.Text = "E-mail";
             // 
             // textBox_email
             // 
-            this.textBox_email.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_email.Location = new System.Drawing.Point(116, 123);
+            this.textBox_email.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_email.Location = new System.Drawing.Point(115, 67);
             this.textBox_email.Name = "textBox_email";
-            this.textBox_email.Size = new System.Drawing.Size(292, 23);
+            this.textBox_email.Size = new System.Drawing.Size(292, 21);
             this.textBox_email.TabIndex = 106;
             this.textBox_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Expansion
             // 
-            this.textBox_Expansion.Location = new System.Drawing.Point(414, 203);
+            this.textBox_Expansion.Location = new System.Drawing.Point(413, 132);
             this.textBox_Expansion.Name = "textBox_Expansion";
             this.textBox_Expansion.Size = new System.Drawing.Size(36, 20);
             this.textBox_Expansion.TabIndex = 110;
@@ -540,13 +539,13 @@
             // comboBox_Expansion
             // 
             this.comboBox_Expansion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Expansion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Expansion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Expansion.FormattingEnabled = true;
             this.comboBox_Expansion.Items.AddRange(new object[] {
             "0 (Vanilla)",
             "1 (TBC)",
             "2 (WOTLK)"});
-            this.comboBox_Expansion.Location = new System.Drawing.Point(217, 200);
+            this.comboBox_Expansion.Location = new System.Drawing.Point(216, 127);
             this.comboBox_Expansion.Name = "comboBox_Expansion";
             this.comboBox_Expansion.Size = new System.Drawing.Size(191, 23);
             this.comboBox_Expansion.TabIndex = 109;
@@ -555,29 +554,29 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label7.Location = new System.Drawing.Point(123, 204);
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(146, 130);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 17);
+            this.label7.Size = new System.Drawing.Size(65, 15);
             this.label7.TabIndex = 108;
             this.label7.Text = "Expansion";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.label8.Location = new System.Drawing.Point(132, 242);
+            this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(151, 159);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 17);
+            this.label8.Size = new System.Drawing.Size(59, 15);
             this.label8.TabIndex = 112;
             this.label8.Text = "Realm ID";
             // 
             // textBox_realmID
             // 
-            this.textBox_realmID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_realmID.Location = new System.Drawing.Point(217, 239);
+            this.textBox_realmID.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_realmID.Location = new System.Drawing.Point(216, 156);
             this.textBox_realmID.Name = "textBox_realmID";
-            this.textBox_realmID.Size = new System.Drawing.Size(109, 23);
+            this.textBox_realmID.Size = new System.Drawing.Size(109, 21);
             this.textBox_realmID.TabIndex = 111;
             this.textBox_realmID.Text = "-1";
             this.textBox_realmID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -587,7 +586,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SpawnCreator.Properties.Resources.e4f12de124503ec0306394bb969ddd8d;
-            this.pictureBox3.Location = new System.Drawing.Point(332, 369);
+            this.pictureBox3.Location = new System.Drawing.Point(348, 156);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(132, 83);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -597,33 +596,20 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 48);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 290);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(439, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(459, 150);
             this.dataGridView1.TabIndex = 114;
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(167, 33);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(484, 459);
             this.panel1.TabIndex = 115;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(6, 419);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(458, 218);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Accounts";
             // 
             // button1
             // 
@@ -632,7 +618,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(182, 19);
+            this.button1.Location = new System.Drawing.Point(10, 261);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 114;
@@ -642,7 +628,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button_Execute_Query);
@@ -660,9 +649,9 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBox_Account_Access_Level);
             this.groupBox1.Controls.Add(this.textBox_email);
-            this.groupBox1.Location = new System.Drawing.Point(3, 14);
+            this.groupBox1.Location = new System.Drawing.Point(3, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(458, 375);
+            this.groupBox1.Size = new System.Drawing.Size(478, 449);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -673,7 +662,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Blue",
             "Black"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 301);
+            this.comboBox1.Location = new System.Drawing.Point(15, 194);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 114;
@@ -683,12 +672,17 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 285);
+            this.label9.Location = new System.Drawing.Point(15, 178);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 13);
             this.label9.TabIndex = 115;
             this.label9.Text = "Change App Color";
             this.label9.Visible = false;
+            // 
+            // timer7
+            // 
+            this.timer7.Interval = 200;
+            this.timer7.Tick += new System.EventHandler(this.timer7_Tick);
             // 
             // AccountCreator
             // 
@@ -719,7 +713,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -775,10 +768,10 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Timer timer7;
     }
 }

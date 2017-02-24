@@ -47,7 +47,7 @@ namespace SpawnCreator
 
 
 
-            timer1.Start();
+            //timer1.Start(); // Select entry, name from item_template
 
             MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
             string insertQuery = "SELECT name FROM " + mainmenu.textBox_mysql_charactersDB.Text + ".characters;";
@@ -55,31 +55,50 @@ namespace SpawnCreator
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
 
-            try
-            {
+            
+                //connection.Open();
+                //var insertQuery = "SELECT name FROM Customers";
+                //using (var command = new MySqlCommand(insertQuery, connection))
+                //{
+                    using (var reader = command.ExecuteReader())
+                    {
+                        //Iterate through the rows and add it to the combobox's items
+                        while (reader.Read())
+                        {
+                            txtSender.Items.Add(reader.GetString("name"));
+                            lstReceivers.Items.Add(reader.GetString("name"));
+                        }
+                    }
+                //}
+            
 
-                MySqlDataReader reader = command.ExecuteReader();
-                lstReceivers.Items.Clear();
-                lstReceivers.BeginUpdate();
-                while (reader.Read())
-                {
-                    Classes.Item it = new Classes.Item();
-                    //it.Entry = reader.GetInt32("guid");
-                    it.Name = reader.GetString("name");
-                    items.Add(it);
-                    ListViewItem item = lstReceivers.Items.Add(it.Entry.ToString());
-                    item.SubItems.Add(it.Name);
-                }
-                lstSearchItems.EndUpdate();
-                reader.Close();
+            //try
+            //{
+
+            //    MySqlDataReader reader = command.ExecuteReader();
+            //    lstReceivers.Items.Clear();
+            //    lstReceivers.BeginUpdate();
+            //    while (reader.Read())
+            //    {
+            //        Classes.Item it = new Classes.Item();
+            //        //it.Entry = reader.GetInt32("guid");
+            //        it.Name = reader.GetString("name");
+            //        items.Add(it);
+            //        ListViewItem item = lstReceivers.Items.Add(it.Entry.ToString());
+            //        item.SubItems.Add(it.Name);
+            //    }
+            //    lstSearchItems.EndUpdate();
+            //    reader.Close();
 
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            connection.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //connection.Close();
+
+            //=========================================
 
             //MySqlCommand cmd = new MySqlCommand("SELECT name, entry FROM world.item_template;");
             //MySqlDataReader reader = cmd.ExecuteReader();
@@ -131,37 +150,7 @@ namespace SpawnCreator
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "SELECT name, entry FROM " + mainmenu.textbox_mysql_worldDB.Text + ".item_template WHERE name LIKE '%" + txtSearch.Text + "%';";
-            //string insertQuery = textBox_SelectMaxPlus1.Text;
-            connection.Open();
-            MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
-            try
-            {
-
-                MySqlDataReader reader = command.ExecuteReader();
-                lstSearchItems.Items.Clear();
-                lstSearchItems.BeginUpdate();
-                while (reader.Read())
-                {
-                    Classes.Item it = new Classes.Item();
-                    it.Entry = reader.GetInt32("entry");
-                    it.Name = reader.GetString("name");
-                    items.Add(it);
-                    ListViewItem item = lstSearchItems.Items.Add(it.Entry.ToString());
-                    item.SubItems.Add(it.Name);
-                }
-                lstSearchItems.EndUpdate();
-                reader.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            connection.Close();
+            
         }
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
@@ -193,10 +182,10 @@ namespace SpawnCreator
         private void timer1_Tick(object sender, EventArgs e)
         {
             MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "SELECT name, entry FROM " + mainmenu.textbox_mysql_worldDB.Text + ".item_template;";
+            string insertQuery_2 = "SELECT name, entry FROM " + mainmenu.textbox_mysql_worldDB.Text + ".item_template;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
             connection.Open();
-            MySqlCommand command = new MySqlCommand(insertQuery, connection);
+            MySqlCommand command = new MySqlCommand(insertQuery_2, connection);
 
             try
             {
@@ -286,6 +275,42 @@ namespace SpawnCreator
         private void btnSend_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button_search_Click(object sender, EventArgs e)
+        {
+
+            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
+            string insertQuery = "SELECT name, entry FROM " + mainmenu.textbox_mysql_worldDB.Text + ".item_template WHERE name LIKE '%" + txtSearch.Text + "%';";
+            //string insertQuery = textBox_SelectMaxPlus1.Text;
+            connection.Open();
+            MySqlCommand command = new MySqlCommand(insertQuery, connection);
+
+            try
+            {
+
+                MySqlDataReader reader = command.ExecuteReader();
+                lstSearchItems.Items.Clear();
+                lstSearchItems.BeginUpdate();
+                while (reader.Read())
+                {
+                    Classes.Item it = new Classes.Item();
+                    it.Entry = reader.GetInt32("entry");
+                    it.Name = reader.GetString("name");
+                    items.Add(it);
+                    ListViewItem item = lstSearchItems.Items.Add(it.Entry.ToString());
+                    item.SubItems.Add(it.Name);
+                }
+                lstSearchItems.EndUpdate();
+                reader.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
         }
     }
 }

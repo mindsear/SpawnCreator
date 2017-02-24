@@ -116,6 +116,7 @@ namespace SpawnCreator
 
         private void AccountCreator_Load(object sender, EventArgs e)
         {
+            //timer7.Start(); // Refresh accounts
             timer1.Start();
             comboBox_Account_Access_level.SelectedIndex = 3; // 3 (Admin)
             comboBox_Expansion.SelectedIndex = 2; // 2 (WOTLK)
@@ -123,6 +124,8 @@ namespace SpawnCreator
 
             ShowExistingAccounts(sender, e);
         }
+
+        // Copy to Clipboard - Button
         private void label86_Click(object sender, EventArgs e)
         {
             if (textBox_username.Text == "")
@@ -198,13 +201,10 @@ namespace SpawnCreator
 
             try
             {
-
-                //ShowExistingAccounts(sender, e); // Refresh dataGridView1
-                label_Executed_Successfully.Visible = true;
-               
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    
+                
+                if (command.ExecuteNonQuery() >= 1)
+                {   
+                    //this is good -- awww yeah!
                     label_Executed_Successfully.Visible = true;
                 }
 
@@ -435,6 +435,11 @@ namespace SpawnCreator
                     label8.ForeColor = Color.White;
                     break;
             }
+        }
+
+        private void timer7_Tick(object sender, EventArgs e)
+        {
+            ShowExistingAccounts(sender, e); // Refresh dataGridView1
         }
     }
 }

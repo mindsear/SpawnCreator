@@ -52,20 +52,7 @@ namespace SpawnCreator
             {
 
                 textBox1.Text = command.ExecuteScalar().ToString();
-                //label_query_executed_successfully2.Visible = false;
-
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    //label7.Visible = true;
-                    //label_query_executed_successfully2.Visible = false;
-                }
-                else
-                {
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
-                }
+               
             }
             catch (Exception ex)
             {
@@ -183,15 +170,9 @@ namespace SpawnCreator
             {
                 if (command.ExecuteNonQuery() == 1)
                 {
-                    // label_query_executed_successfully2.Visible = true;
                     timer3.Start();
                 }
-                else
-                {
-                    //label_query_executed_successfully2.Visible = true;
-                    timer3.Start();
-
-                }
+                
             }
             catch (Exception ex)
             {
@@ -210,18 +191,8 @@ namespace SpawnCreator
 
             try
             {
-
                 textBox1.Text = command.ExecuteScalar().ToString();
 
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    textBox1.Text = command.ExecuteScalar().ToString();
-                }
-                else
-                {
-                    textBox1.Text = command.ExecuteScalar().ToString();
-                    
-                }
             }
             catch (Exception ex)
             {

@@ -150,7 +150,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(51, 19);
+            this.label89.Location = new System.Drawing.Point(52, 23);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -211,7 +211,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(51, 1);
+            this.label_stopwatch.Location = new System.Drawing.Point(52, 5);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;

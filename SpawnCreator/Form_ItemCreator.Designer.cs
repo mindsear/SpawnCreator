@@ -221,7 +221,6 @@
             this.textBox51 = new System.Windows.Forms.TextBox();
             this.label56 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.label_query_executed_successfully2 = new System.Windows.Forms.Label();
             this.button_execute_query = new System.Windows.Forms.Button();
             this.textBox92 = new System.Windows.Forms.TextBox();
@@ -3394,7 +3393,6 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.button8);
             this.groupBox10.Controls.Add(this.label_query_executed_successfully2);
             this.groupBox10.Controls.Add(this.button_execute_query);
             this.groupBox10.Controls.Add(this.textBox92);
@@ -3442,32 +3440,16 @@
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(125, 1112);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(595, 259);
+            this.groupBox10.Size = new System.Drawing.Size(595, 266);
             this.groupBox10.TabIndex = 73;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Spell Options";
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.DimGray;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Yellow;
-            this.button8.Location = new System.Drawing.Point(439, 180);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(153, 27);
-            this.button8.TabIndex = 79;
-            this.button8.Text = "Back to Main Menu";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Visible = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // label_query_executed_successfully2
             // 
             this.label_query_executed_successfully2.AutoSize = true;
             this.label_query_executed_successfully2.ForeColor = System.Drawing.Color.Green;
-            this.label_query_executed_successfully2.Location = new System.Drawing.Point(130, 219);
+            this.label_query_executed_successfully2.Location = new System.Drawing.Point(137, 228);
             this.label_query_executed_successfully2.Name = "label_query_executed_successfully2";
             this.label_query_executed_successfully2.Size = new System.Drawing.Size(212, 16);
             this.label_query_executed_successfully2.TabIndex = 78;
@@ -3481,7 +3463,7 @@
             this.button_execute_query.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_execute_query.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_execute_query.ForeColor = System.Drawing.Color.White;
-            this.button_execute_query.Location = new System.Drawing.Point(160, 180);
+            this.button_execute_query.Location = new System.Drawing.Point(167, 189);
             this.button_execute_query.Name = "button_execute_query";
             this.button_execute_query.Size = new System.Drawing.Size(153, 27);
             this.button_execute_query.TabIndex = 44;
@@ -4043,7 +4025,7 @@
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Location = new System.Drawing.Point(167, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(742, 507);
+            this.panel1.Size = new System.Drawing.Size(746, 507);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -4121,7 +4103,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(53, 18);
+            this.label89.Location = new System.Drawing.Point(55, 22);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -4186,7 +4168,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(52, 0);
+            this.label_stopwatch.Location = new System.Drawing.Point(54, 4);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -4301,7 +4283,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timer2
@@ -4659,7 +4641,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label85;
         internal System.Windows.Forms.Label label_mysql_status2;
-        internal System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label label_stopwatch;
         private System.Windows.Forms.Button button_maxPlus1fromDB;
@@ -4676,10 +4657,10 @@
         private System.Windows.Forms.Timer timer5;
         private System.Windows.Forms.Timer timer6;
         private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.Button button8;
         internal System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.TextBox textBox105;
         private System.Windows.Forms.ComboBox comboBox29;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -305,7 +305,7 @@ namespace SpawnCreator
 
             try
             {
-                if (command.ExecuteNonQuery() == 1)
+                if (command.ExecuteNonQuery() >= 1)
                 {
                     //timer5.Start();
                     label_Executed_Successfully.Visible = true;

@@ -104,12 +104,13 @@
             // 
             // textBox_comment
             // 
-            this.textBox_comment.Location = new System.Drawing.Point(205, 327);
+            this.textBox_comment.Location = new System.Drawing.Point(205, 359);
             this.textBox_comment.Multiline = true;
             this.textBox_comment.Name = "textBox_comment";
             this.textBox_comment.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox_comment.Size = new System.Drawing.Size(415, 37);
             this.textBox_comment.TabIndex = 118;
+            this.toolTip1.SetToolTip(this.textBox_comment, "A comment as to why the something was disabled, ");
             this.textBox_comment.TextChanged += new System.EventHandler(this.textBox_comment_TextChanged);
             // 
             // label_Executed_Successfully
@@ -117,7 +118,7 @@
             this.label_Executed_Successfully.AutoSize = true;
             this.label_Executed_Successfully.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
             this.label_Executed_Successfully.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label_Executed_Successfully.Location = new System.Drawing.Point(299, 436);
+            this.label_Executed_Successfully.Location = new System.Drawing.Point(301, 463);
             this.label_Executed_Successfully.Name = "label_Executed_Successfully";
             this.label_Executed_Successfully.Size = new System.Drawing.Size(223, 17);
             this.label_Executed_Successfully.TabIndex = 123;
@@ -452,7 +453,7 @@
             this.button_Execute_Query.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Execute_Query.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
             this.button_Execute_Query.ForeColor = System.Drawing.Color.White;
-            this.button_Execute_Query.Location = new System.Drawing.Point(336, 385);
+            this.button_Execute_Query.Location = new System.Drawing.Point(338, 412);
             this.button_Execute_Query.Name = "button_Execute_Query";
             this.button_Execute_Query.Size = new System.Drawing.Size(148, 38);
             this.button_Execute_Query.TabIndex = 116;
@@ -507,7 +508,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(347, 247);
+            this.label6.Location = new System.Drawing.Point(347, 258);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 138;
@@ -515,7 +516,7 @@
             // 
             // textBox_params_1
             // 
-            this.textBox_params_1.Location = new System.Drawing.Point(317, 263);
+            this.textBox_params_1.Location = new System.Drawing.Point(317, 274);
             this.textBox_params_1.Name = "textBox_params_1";
             this.textBox_params_1.Size = new System.Drawing.Size(116, 20);
             this.textBox_params_1.TabIndex = 137;
@@ -526,11 +527,13 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(389, 311);
+            this.label7.Location = new System.Drawing.Point(378, 343);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 139;
             this.label7.Text = "Comment";
+            this.toolTip1.SetToolTip(this.label7, "A comment as to why the something was disabled, \r\nor any other text that you want" +
+        "");
             // 
             // button_flags_dis_map
             // 
@@ -594,7 +597,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(200, 76);
+            this.textBox1.Size = new System.Drawing.Size(211, 100);
             this.textBox1.TabIndex = 145;
             // 
             // label10
@@ -611,7 +614,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel2.Location = new System.Drawing.Point(483, 286);
+            this.linkLabel2.Location = new System.Drawing.Point(483, 310);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(113, 13);
             this.linkLabel2.TabIndex = 147;
