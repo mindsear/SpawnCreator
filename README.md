@@ -1,7 +1,6 @@
 # SpawnCreator
 Continuing Asandru's application
 (item creator, npc, quest, gameobject, accout creator for TrinityCore TDB 335.62)
-
 http://www.ac-web.org/forums/showthread.php?225077-Trinity-Item-Creator
 
 Note: You need XAMPP (MariaDB 10) in order to get this application working.
