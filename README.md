@@ -5,7 +5,7 @@ http://www.ac-web.org/forums/showthread.php?225077-Trinity-Item-Creator
 
 _________________________________________________________________________________________
 
-Note: You need XAMPP (MariaDB 10) in order to get this application working.  
+You can use XAMPP (MariaDB 10) or MySQL Server (Portable) >= 5.5.   
 Download XAMPP:
 https://www.apachefriends.org/index.html
 
