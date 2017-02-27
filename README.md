@@ -9,7 +9,8 @@ Download XAMPP:
 https://www.apachefriends.org/index.html
 
 If you're using MySQL Portable 5.5 or 5.6
-execute the following query
+execute the following query:
+
 **UPDATE mysql.user SET Password=PASSWORD('') WHERE User='root';**
 
 Screenshots
