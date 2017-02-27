@@ -73,6 +73,11 @@ namespace SpawnCreator
             //label_Npc_creator.Text = "working..";
         }
 
+        internal bool button1_Click()
+        {
+            throw new NotImplementedException();
+        }
+
         private void panel3_MouseLeave(object sender, EventArgs e)
         {
             panel3.BackColor = Color.Gainsboro;
@@ -209,8 +214,8 @@ namespace SpawnCreator
                 panel5.Visible = true;
                 panel6.Visible = true;
                 panel7.Visible = true;
-                //panel8.Visible = true; //Mail sender
-                //label15.Visible = true; // Mail Sender
+                panel8.Visible = true; //Mail sender
+                label15.Visible = true; // Mail Sender
                 label11.Visible = true;
                 label12.Visible = true;
                 label14.Visible = true;               
@@ -218,6 +223,8 @@ namespace SpawnCreator
                 panel_Quest_Creator.Visible = true;
                 label_Account_Creator.Visible = true;
                 panel_Account_Creator.Visible = true;
+
+                button1.Visible = false;
 
                 Form_ItemCreator form_itemCreator = new Form_ItemCreator();
                 form_itemCreator.label_mysql_status2.Text = "Connected!";
@@ -298,6 +305,10 @@ namespace SpawnCreator
             textbox_mysql_worldDB.Text  = Properties.Settings.Default.mysql_worldDB;
             textBox_mysql_authDB.Text   = Properties.Settings.Default.mysql_authDB;
             textBox_mysql_charactersDB.Text = Properties.Settings.Default.mysql_charactersDB;
+
+            // Here you can write app version
+            label_version.Text = "v2.3";
+
         }
 
         private void Form_MainMenu_FormClosed(object sender, FormClosedEventArgs e)
@@ -497,6 +508,44 @@ namespace SpawnCreator
 
             MailSender mail = new MailSender();
             mail.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Visible = true;
+            label2.Visible = true;
+            label_Npc_creator.Visible = true;
+            label_GO_creator.Visible = true;
+            label_Quest_creator.Visible = true;
+            panel1.Visible = true;
+            panel2.Visible = true;
+            panel3.Visible = true;
+            panel4.Visible = true;
+            panel5.Visible = true;
+            panel6.Visible = true;
+            panel7.Visible = true;
+            panel8.Visible = true; //Mail sender
+            label15.Visible = true; // Mail Sender
+            label11.Visible = true;
+            label12.Visible = true;
+            label14.Visible = true;
+            label_version.Visible = true;
+            panel_Quest_Creator.Visible = true;
+            label_Account_Creator.Visible = true;
+            panel_Account_Creator.Visible = true;
+
+            label85.Visible = false;
+
+            Form_ItemCreator form_itemCreator = new Form_ItemCreator();
+            form_itemCreator.label_mysql_status2.Visible = false;
+            label_mysql_status.Visible = false;
+            form_itemCreator.label91.Visible = false;
+            form_itemCreator.button_maxPlus1fromDB.Enabled = false;
+            form_itemCreator.timer1.Enabled = false;
+
+            textbox_mysql_username.Visible = true;
+            textbox_mysql_pass.Visible = true;
+            tabControl1.Visible = false;            
         }
     }
 }

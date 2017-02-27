@@ -153,7 +153,7 @@
             this.panel3.Controls.Add(this.pictureBox9);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(0, 32);
+            this.panel3.Location = new System.Drawing.Point(0, 28);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 463);
             this.panel3.TabIndex = 81;
@@ -163,7 +163,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(52, 23);
+            this.label89.Location = new System.Drawing.Point(52, 19);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -226,7 +226,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(52, 5);
+            this.label_stopwatch.Location = new System.Drawing.Point(52, 1);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -318,7 +318,7 @@
             this.panel2.Controls.Add(this.label81);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(825, 34);
+            this.panel2.Size = new System.Drawing.Size(825, 28);
             this.panel2.TabIndex = 80;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
@@ -330,9 +330,9 @@
             this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label78.ForeColor = System.Drawing.Color.Black;
-            this.label78.Location = new System.Drawing.Point(729, 4);
+            this.label78.Location = new System.Drawing.Point(735, 0);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 26);
+            this.label78.Size = new System.Drawing.Size(26, 28);
             this.label78.TabIndex = 114;
             this.label78.Text = "<";
             this.toolTip1.SetToolTip(this.label78, "Back to Main Menu");
@@ -346,9 +346,9 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(761, 4);
+            this.label1.Location = new System.Drawing.Point(767, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 26);
+            this.label1.Size = new System.Drawing.Size(26, 28);
             this.label1.TabIndex = 80;
             this.label1.Text = "--";
             this.toolTip1.SetToolTip(this.label1, "Minimize");
@@ -362,9 +362,9 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(793, 4);
+            this.label2.Location = new System.Drawing.Point(799, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 26);
+            this.label2.Size = new System.Drawing.Size(26, 28);
             this.label2.TabIndex = 79;
             this.label2.Text = "X";
             this.toolTip1.SetToolTip(this.label2, "Close");
@@ -378,7 +378,7 @@
             this.label_mysql_status2.BackColor = System.Drawing.Color.Transparent;
             this.label_mysql_status2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mysql_status2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label_mysql_status2.Location = new System.Drawing.Point(132, 8);
+            this.label_mysql_status2.Location = new System.Drawing.Point(132, 4);
             this.label_mysql_status2.Name = "label_mysql_status2";
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
@@ -390,7 +390,7 @@
             this.label85.BackColor = System.Drawing.Color.Transparent;
             this.label85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label85.ForeColor = System.Drawing.Color.White;
-            this.label85.Location = new System.Drawing.Point(10, 8);
+            this.label85.Location = new System.Drawing.Point(10, 4);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
@@ -492,9 +492,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.textBox15);
-            this.groupBox1.Location = new System.Drawing.Point(6, 3);
+            this.groupBox1.Location = new System.Drawing.Point(6, -4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(630, 1030);
+            this.groupBox1.Size = new System.Drawing.Size(630, 1037);
             this.groupBox1.TabIndex = 272;
             this.groupBox1.TabStop = false;
             // 
@@ -580,7 +580,7 @@
             this.button3.Location = new System.Drawing.Point(41, 19);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(140, 34);
-            this.button3.TabIndex = 333;
+            this.button3.TabIndex = 11;
             this.button3.Text = "event_phase_mask";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -595,7 +595,7 @@
             this.button1.Location = new System.Drawing.Point(274, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 34);
-            this.button1.TabIndex = 334;
+            this.button1.TabIndex = 12;
             this.button1.Text = "event_flags";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -610,7 +610,7 @@
             this.button2.Location = new System.Drawing.Point(409, 573);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(140, 39);
-            this.button2.TabIndex = 345;
+            this.button2.TabIndex = 20;
             this.button2.Text = "Predefined SAI Templates";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Visible = false;
@@ -698,7 +698,7 @@
             this.button10.Location = new System.Drawing.Point(223, 926);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(156, 31);
-            this.button10.TabIndex = 338;
+            this.button10.TabIndex = 30;
             this.button10.Text = "Execute Query";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -739,7 +739,7 @@
             this.comboBox6.Location = new System.Drawing.Point(12, 655);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(323, 21);
-            this.comboBox6.TabIndex = 337;
+            this.comboBox6.TabIndex = 21;
             this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
             // comboBox5
@@ -869,7 +869,7 @@
             this.comboBox5.Location = new System.Drawing.Point(10, 442);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(390, 21);
-            this.comboBox5.TabIndex = 336;
+            this.comboBox5.TabIndex = 13;
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // comboBox4
@@ -947,7 +947,7 @@
             this.comboBox4.Location = new System.Drawing.Point(27, 211);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(281, 21);
-            this.comboBox4.TabIndex = 335;
+            this.comboBox4.TabIndex = 6;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // numericUpDown2
@@ -955,7 +955,7 @@
             this.numericUpDown2.Location = new System.Drawing.Point(295, 129);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(93, 20);
-            this.numericUpDown2.TabIndex = 331;
+            this.numericUpDown2.TabIndex = 5;
             this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown2.Value = new decimal(new int[] {
             100,
@@ -974,7 +974,7 @@
             0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(93, 20);
-            this.numericUpDown1.TabIndex = 329;
+            this.numericUpDown1.TabIndex = 3;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
@@ -990,7 +990,7 @@
             this.comboBox1.Location = new System.Drawing.Point(114, 78);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(276, 21);
-            this.comboBox1.TabIndex = 328;
+            this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox27
@@ -999,7 +999,7 @@
             this.textBox27.Location = new System.Drawing.Point(103, 871);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(394, 20);
-            this.textBox27.TabIndex = 327;
+            this.textBox27.TabIndex = 29;
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox27.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -1021,7 +1021,7 @@
             this.textBox28.Location = new System.Drawing.Point(186, 806);
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(93, 20);
-            this.textBox28.TabIndex = 325;
+            this.textBox28.TabIndex = 28;
             this.textBox28.Text = "0";
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox28.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1045,7 +1045,7 @@
             this.textBox21.Location = new System.Drawing.Point(234, 711);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(93, 20);
-            this.textBox21.TabIndex = 323;
+            this.textBox21.TabIndex = 24;
             this.textBox21.Text = "0";
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox21.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1069,7 +1069,7 @@
             this.textBox22.Location = new System.Drawing.Point(82, 806);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(99, 20);
-            this.textBox22.TabIndex = 321;
+            this.textBox22.TabIndex = 27;
             this.textBox22.Text = "0";
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox22.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1105,7 +1105,7 @@
             this.textBox23.Location = new System.Drawing.Point(184, 761);
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(93, 20);
-            this.textBox23.TabIndex = 318;
+            this.textBox23.TabIndex = 26;
             this.textBox23.Text = "0";
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox23.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1129,7 +1129,7 @@
             this.textBox24.Location = new System.Drawing.Point(82, 761);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(97, 20);
-            this.textBox24.TabIndex = 316;
+            this.textBox24.TabIndex = 25;
             this.textBox24.Text = "0";
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox24.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1153,7 +1153,7 @@
             this.textBox25.Location = new System.Drawing.Point(24, 711);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(93, 20);
-            this.textBox25.TabIndex = 314;
+            this.textBox25.TabIndex = 22;
             this.textBox25.Text = "0";
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox25.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1165,7 +1165,7 @@
             this.textBox26.Location = new System.Drawing.Point(126, 711);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(93, 20);
-            this.textBox26.TabIndex = 313;
+            this.textBox26.TabIndex = 23;
             this.textBox26.Text = "0";
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox26.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1237,7 +1237,7 @@
             this.textBox16.Location = new System.Drawing.Point(220, 493);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(93, 20);
-            this.textBox16.TabIndex = 310;
+            this.textBox16.TabIndex = 16;
             this.textBox16.Text = "0";
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox16.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1273,7 +1273,7 @@
             this.textBox17.Location = new System.Drawing.Point(220, 536);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(93, 20);
-            this.textBox17.TabIndex = 308;
+            this.textBox17.TabIndex = 19;
             this.textBox17.Text = "0";
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox17.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1309,7 +1309,7 @@
             this.textBox4.Location = new System.Drawing.Point(518, 79);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(93, 20);
-            this.textBox4.TabIndex = 278;
+            this.textBox4.TabIndex = 4;
             this.textBox4.Text = "0";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1357,7 +1357,7 @@
             this.textBox1.Location = new System.Drawing.Point(10, 79);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(93, 20);
-            this.textBox1.TabIndex = 280;
+            this.textBox1.TabIndex = 1;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1369,7 +1369,7 @@
             this.textBox19.Location = new System.Drawing.Point(114, 536);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(91, 20);
-            this.textBox19.TabIndex = 304;
+            this.textBox19.TabIndex = 18;
             this.textBox19.Text = "0";
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox19.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1405,7 +1405,7 @@
             this.textBox20.Location = new System.Drawing.Point(10, 536);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(93, 20);
-            this.textBox20.TabIndex = 302;
+            this.textBox20.TabIndex = 17;
             this.textBox20.Text = "0";
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox20.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1441,7 +1441,7 @@
             this.textBox11.Location = new System.Drawing.Point(62, 294);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(93, 20);
-            this.textBox11.TabIndex = 300;
+            this.textBox11.TabIndex = 9;
             this.textBox11.Text = "0";
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox11.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1465,7 +1465,7 @@
             this.textBox8.Location = new System.Drawing.Point(169, 254);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(93, 20);
-            this.textBox8.TabIndex = 286;
+            this.textBox8.TabIndex = 8;
             this.textBox8.Text = "0";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1477,7 +1477,7 @@
             this.textBox12.Location = new System.Drawing.Point(10, 493);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(93, 20);
-            this.textBox12.TabIndex = 298;
+            this.textBox12.TabIndex = 14;
             this.textBox12.Text = "0";
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox12.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1501,7 +1501,7 @@
             this.textBox7.Location = new System.Drawing.Point(62, 254);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(93, 20);
-            this.textBox7.TabIndex = 288;
+            this.textBox7.TabIndex = 7;
             this.textBox7.Text = "0";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1513,7 +1513,7 @@
             this.textBox13.Location = new System.Drawing.Point(114, 493);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(91, 20);
-            this.textBox13.TabIndex = 296;
+            this.textBox13.TabIndex = 15;
             this.textBox13.Text = "0";
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox13.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -1585,7 +1585,7 @@
             this.textBox15.Location = new System.Drawing.Point(169, 294);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(93, 20);
-            this.textBox15.TabIndex = 292;
+            this.textBox15.TabIndex = 10;
             this.textBox15.Text = "0";
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox15.TextChanged += new System.EventHandler(this.textBox1_TextChanged);

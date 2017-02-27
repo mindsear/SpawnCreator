@@ -33,6 +33,8 @@
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label_Success = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label_mysql_status2 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
@@ -159,6 +161,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button17 = new System.Windows.Forms.Button();
             this.label82 = new System.Windows.Forms.Label();
             this.button_waypoints = new System.Windows.Forms.Button();
             this.label79 = new System.Windows.Forms.Label();
@@ -267,9 +270,9 @@
             this.label80.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label80.ForeColor = System.Drawing.Color.Black;
-            this.label80.Location = new System.Drawing.Point(857, 6);
+            this.label80.Location = new System.Drawing.Point(855, -1);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(26, 26);
+            this.label80.Size = new System.Drawing.Size(26, 32);
             this.label80.TabIndex = 3;
             this.label80.Text = "--";
             this.toolTip1.SetToolTip(this.label80, "Minimize");
@@ -283,9 +286,9 @@
             this.label81.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label81.ForeColor = System.Drawing.Color.Black;
-            this.label81.Location = new System.Drawing.Point(885, 6);
+            this.label81.Location = new System.Drawing.Point(888, -1);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(26, 26);
+            this.label81.Size = new System.Drawing.Size(26, 32);
             this.label81.TabIndex = 2;
             this.label81.Text = "X";
             this.toolTip1.SetToolTip(this.label81, "Close");
@@ -296,6 +299,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.panel2.Controls.Add(this.label_Success);
+            this.panel2.Controls.Add(this.label87);
             this.panel2.Controls.Add(this.label78);
             this.panel2.Controls.Add(this.label_mysql_status2);
             this.panel2.Controls.Add(this.label85);
@@ -303,12 +308,40 @@
             this.panel2.Controls.Add(this.label81);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(914, 36);
+            this.panel2.Size = new System.Drawing.Size(914, 28);
             this.panel2.TabIndex = 78;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
+            // 
+            // label_Success
+            // 
+            this.label_Success.AutoSize = true;
+            this.label_Success.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Success.ForeColor = System.Drawing.Color.Lime;
+            this.label_Success.Location = new System.Drawing.Point(700, 5);
+            this.label_Success.Name = "label_Success";
+            this.label_Success.Size = new System.Drawing.Size(75, 17);
+            this.label_Success.TabIndex = 23;
+            this.label_Success.Text = "Success!";
+            this.label_Success.Visible = false;
+            // 
+            // label87
+            // 
+            this.label87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.label87.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label87.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label87.ForeColor = System.Drawing.Color.Black;
+            this.label87.Location = new System.Drawing.Point(791, 0);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(26, 31);
+            this.label87.TabIndex = 22;
+            this.label87.Text = "✔";
+            this.toolTip1.SetToolTip(this.label87, "Execute Query");
+            this.label87.Click += new System.EventHandler(this.label87_Click);
+            this.label87.MouseEnter += new System.EventHandler(this.label87_MouseEnter);
+            this.label87.MouseLeave += new System.EventHandler(this.label87_MouseLeave);
             // 
             // label78
             // 
@@ -316,9 +349,9 @@
             this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label78.ForeColor = System.Drawing.Color.Black;
-            this.label78.Location = new System.Drawing.Point(825, 6);
+            this.label78.Location = new System.Drawing.Point(823, 0);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 26);
+            this.label78.Size = new System.Drawing.Size(26, 35);
             this.label78.TabIndex = 21;
             this.label78.Text = "<";
             this.toolTip1.SetToolTip(this.label78, "Back To Main Menu");
@@ -332,7 +365,7 @@
             this.label_mysql_status2.BackColor = System.Drawing.Color.Transparent;
             this.label_mysql_status2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mysql_status2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label_mysql_status2.Location = new System.Drawing.Point(132, 8);
+            this.label_mysql_status2.Location = new System.Drawing.Point(132, 6);
             this.label_mysql_status2.Name = "label_mysql_status2";
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
@@ -344,7 +377,7 @@
             this.label85.BackColor = System.Drawing.Color.Transparent;
             this.label85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label85.ForeColor = System.Drawing.Color.White;
-            this.label85.Location = new System.Drawing.Point(10, 8);
+            this.label85.Location = new System.Drawing.Point(10, 6);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
@@ -362,9 +395,9 @@
             this.panel3.Controls.Add(this.pictureBox9);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(0, 35);
+            this.panel3.Location = new System.Drawing.Point(0, 28);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(167, 499);
+            this.panel3.Size = new System.Drawing.Size(167, 504);
             this.panel3.TabIndex = 79;
             // 
             // label89
@@ -372,7 +405,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(52, 22);
+            this.label89.Location = new System.Drawing.Point(52, 20);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -435,7 +468,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(51, 4);
+            this.label_stopwatch.Location = new System.Drawing.Point(51, 2);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -529,15 +562,15 @@
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.groupBox5);
-            this.panel1.Location = new System.Drawing.Point(167, 35);
+            this.panel1.Location = new System.Drawing.Point(167, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 496);
+            this.panel1.Size = new System.Drawing.Size(747, 502);
             this.panel1.TabIndex = 80;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textBox105
             // 
-            this.textBox105.Location = new System.Drawing.Point(555, 76);
+            this.textBox105.Location = new System.Drawing.Point(554, 74);
             this.textBox105.Name = "textBox105";
             this.textBox105.Size = new System.Drawing.Size(100, 20);
             this.textBox105.TabIndex = 209;
@@ -551,7 +584,7 @@
             this.comboBox11.Items.AddRange(new object[] {
             "Add New NPC",
             "Replace NPC"});
-            this.comboBox11.Location = new System.Drawing.Point(389, 76);
+            this.comboBox11.Location = new System.Drawing.Point(388, 74);
             this.comboBox11.Name = "comboBox11";
             this.comboBox11.Size = new System.Drawing.Size(154, 23);
             this.comboBox11.TabIndex = 208;
@@ -563,7 +596,7 @@
             this.groupBox6.Controls.Add(this.button12);
             this.groupBox6.Controls.Add(this.textBox42);
             this.groupBox6.Controls.Add(this.button11);
-            this.groupBox6.Location = new System.Drawing.Point(15, 733);
+            this.groupBox6.Location = new System.Drawing.Point(14, 731);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(256, 128);
             this.groupBox6.TabIndex = 207;
@@ -591,7 +624,7 @@
             this.button12.Location = new System.Drawing.Point(14, 58);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(116, 34);
-            this.button12.TabIndex = 206;
+            this.button12.TabIndex = 53;
             this.button12.Text = "Max+1";
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
@@ -602,7 +635,7 @@
             this.textBox42.Location = new System.Drawing.Point(14, 32);
             this.textBox42.Name = "textBox42";
             this.textBox42.Size = new System.Drawing.Size(116, 20);
-            this.textBox42.TabIndex = 126;
+            this.textBox42.TabIndex = 52;
             this.textBox42.Text = "0";
             this.textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox42.TextChanged += new System.EventHandler(this.textBox42_TextChanged);
@@ -619,7 +652,7 @@
             this.button11.Location = new System.Drawing.Point(147, 32);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(96, 60);
-            this.button11.TabIndex = 205;
+            this.button11.TabIndex = 54;
             this.button11.Text = "Generate Loot";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
@@ -631,7 +664,7 @@
             this.label70.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.ForeColor = System.Drawing.Color.Blue;
-            this.label70.Location = new System.Drawing.Point(182, 4);
+            this.label70.Location = new System.Drawing.Point(181, 2);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(364, 36);
             this.label70.TabIndex = 1;
@@ -664,7 +697,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 58);
+            this.groupBox1.Location = new System.Drawing.Point(16, 56);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(337, 308);
             this.groupBox1.TabIndex = 0;
@@ -716,7 +749,7 @@
             this.textBox12.Location = new System.Drawing.Point(111, 92);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(212, 20);
-            this.textBox12.TabIndex = 113;
+            this.textBox12.TabIndex = 3;
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBox1
@@ -743,7 +776,7 @@
             this.comboBox1.Location = new System.Drawing.Point(147, 138);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(95, 21);
-            this.comboBox1.TabIndex = 117;
+            this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox8
@@ -752,7 +785,7 @@
             this.textBox8.Location = new System.Drawing.Point(167, 235);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(94, 20);
-            this.textBox8.TabIndex = 113;
+            this.textBox8.TabIndex = 8;
             this.textBox8.Text = "0";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
@@ -787,7 +820,7 @@
             this.textBox9.Location = new System.Drawing.Point(61, 235);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(93, 20);
-            this.textBox9.TabIndex = 111;
+            this.textBox9.TabIndex = 7;
             this.textBox9.Text = "0";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox9_KeyPress);
@@ -822,7 +855,7 @@
             this.textBox10.Location = new System.Drawing.Point(63, 196);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(93, 20);
-            this.textBox10.TabIndex = 109;
+            this.textBox10.TabIndex = 5;
             this.textBox10.Text = "0";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox10_KeyPress);
@@ -857,7 +890,7 @@
             this.textBox7.Location = new System.Drawing.Point(111, 42);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(212, 20);
-            this.textBox7.TabIndex = 111;
+            this.textBox7.TabIndex = 2;
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox11
@@ -866,7 +899,7 @@
             this.textBox11.Location = new System.Drawing.Point(168, 196);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(93, 20);
-            this.textBox11.TabIndex = 107;
+            this.textBox11.TabIndex = 6;
             this.textBox11.Text = "0";
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
@@ -889,7 +922,7 @@
             this.textBox1.Location = new System.Drawing.Point(9, 43);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(82, 20);
-            this.textBox1.TabIndex = 99;
+            this.textBox1.TabIndex = 1;
             this.textBox1.Text = "100100";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
@@ -897,7 +930,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SpawnCreator.Properties.Resources._wow__orc__render__by_popokupingupop90_dam60zw;
-            this.pictureBox2.Location = new System.Drawing.Point(258, 371);
+            this.pictureBox2.Location = new System.Drawing.Point(257, 369);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(129, 113);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -935,7 +968,7 @@
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(389, 124);
+            this.groupBox2.Location = new System.Drawing.Point(388, 122);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(325, 331);
             this.groupBox2.TabIndex = 1;
@@ -1002,7 +1035,7 @@
             this.comboBox5.Location = new System.Drawing.Point(153, 286);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(156, 21);
-            this.comboBox5.TabIndex = 150;
+            this.comboBox5.TabIndex = 22;
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // comboBox2
@@ -1019,7 +1052,7 @@
             this.comboBox2.Location = new System.Drawing.Point(30, 286);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(109, 21);
-            this.comboBox2.TabIndex = 129;
+            this.comboBox2.TabIndex = 21;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label22
@@ -1052,7 +1085,7 @@
             this.textBox20.Location = new System.Drawing.Point(225, 236);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(93, 20);
-            this.textBox20.TabIndex = 126;
+            this.textBox20.TabIndex = 20;
             this.textBox20.Text = "1";
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox20.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox20_KeyPress);
@@ -1075,7 +1108,7 @@
             this.textBox19.Location = new System.Drawing.Point(117, 236);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(93, 20);
-            this.textBox19.TabIndex = 124;
+            this.textBox19.TabIndex = 19;
             this.textBox19.Text = "0";
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox19.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
@@ -1098,7 +1131,7 @@
             this.textBox18.Location = new System.Drawing.Point(5, 236);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(93, 20);
-            this.textBox18.TabIndex = 121;
+            this.textBox18.TabIndex = 18;
             this.textBox18.Text = "0";
             this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox18.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox18_KeyPress);
@@ -1121,7 +1154,7 @@
             this.textBox17.Location = new System.Drawing.Point(177, 192);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(93, 20);
-            this.textBox17.TabIndex = 119;
+            this.textBox17.TabIndex = 17;
             this.textBox17.Text = "0";
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox17.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox17_KeyPress);
@@ -1144,7 +1177,7 @@
             this.textBox16.Location = new System.Drawing.Point(76, 192);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(93, 20);
-            this.textBox16.TabIndex = 117;
+            this.textBox16.TabIndex = 16;
             this.textBox16.Text = "0";
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox16.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox16_KeyPress);
@@ -1167,7 +1200,7 @@
             this.textBox14.Location = new System.Drawing.Point(76, 153);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(93, 20);
-            this.textBox14.TabIndex = 115;
+            this.textBox14.TabIndex = 14;
             this.textBox14.Text = "0";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox14_KeyPress);
@@ -1190,7 +1223,7 @@
             this.textBox15.Location = new System.Drawing.Point(178, 153);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(93, 20);
-            this.textBox15.TabIndex = 113;
+            this.textBox15.TabIndex = 15;
             this.textBox15.Text = "0";
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox15_KeyPress);
@@ -1213,7 +1246,7 @@
             this.textBox5.Location = new System.Drawing.Point(76, 95);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(93, 20);
-            this.textBox5.TabIndex = 109;
+            this.textBox5.TabIndex = 12;
             this.textBox5.Text = "0";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
@@ -1248,7 +1281,7 @@
             this.textBox2.Location = new System.Drawing.Point(116, 42);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(93, 20);
-            this.textBox2.TabIndex = 101;
+            this.textBox2.TabIndex = 10;
             this.textBox2.Text = "0";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
@@ -1259,7 +1292,7 @@
             this.textBox6.Location = new System.Drawing.Point(178, 95);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(93, 20);
-            this.textBox6.TabIndex = 107;
+            this.textBox6.TabIndex = 13;
             this.textBox6.Text = "0";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
@@ -1294,7 +1327,7 @@
             this.textBox3.Location = new System.Drawing.Point(8, 42);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(93, 20);
-            this.textBox3.TabIndex = 103;
+            this.textBox3.TabIndex = 9;
             this.textBox3.Text = "0";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
@@ -1305,7 +1338,7 @@
             this.textBox4.Location = new System.Drawing.Point(225, 42);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(93, 20);
-            this.textBox4.TabIndex = 105;
+            this.textBox4.TabIndex = 11;
             this.textBox4.Text = "0";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
@@ -1333,7 +1366,7 @@
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.textBox22);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.Location = new System.Drawing.Point(17, 392);
+            this.groupBox3.Location = new System.Drawing.Point(16, 390);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(232, 290);
             this.groupBox3.TabIndex = 2;
@@ -1357,7 +1390,7 @@
             this.textBox27.Location = new System.Drawing.Point(124, 257);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(93, 20);
-            this.textBox27.TabIndex = 145;
+            this.textBox27.TabIndex = 32;
             this.textBox27.Text = "0";
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox27.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -1380,7 +1413,7 @@
             this.textBox28.Location = new System.Drawing.Point(16, 257);
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(93, 20);
-            this.textBox28.TabIndex = 143;
+            this.textBox28.TabIndex = 31;
             this.textBox28.Text = "0";
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox28.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -1398,7 +1431,7 @@
             this.comboBox4.Location = new System.Drawing.Point(26, 213);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(171, 21);
-            this.comboBox4.TabIndex = 142;
+            this.comboBox4.TabIndex = 30;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label30
@@ -1431,7 +1464,7 @@
             this.textBox25.Location = new System.Drawing.Point(117, 171);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(93, 20);
-            this.textBox25.TabIndex = 139;
+            this.textBox25.TabIndex = 29;
             this.textBox25.Text = "0";
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox25.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -1454,7 +1487,7 @@
             this.textBox26.Location = new System.Drawing.Point(9, 171);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(93, 20);
-            this.textBox26.TabIndex = 137;
+            this.textBox26.TabIndex = 28;
             this.textBox26.Text = "0";
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox26.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox26_KeyPress);
@@ -1477,7 +1510,7 @@
             this.textBox23.Location = new System.Drawing.Point(117, 132);
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(93, 20);
-            this.textBox23.TabIndex = 135;
+            this.textBox23.TabIndex = 27;
             this.textBox23.Text = "0";
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox23.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox23_KeyPress);
@@ -1500,7 +1533,7 @@
             this.textBox24.Location = new System.Drawing.Point(9, 132);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(93, 20);
-            this.textBox24.TabIndex = 133;
+            this.textBox24.TabIndex = 26;
             this.textBox24.Text = "0";
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox24.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox24_KeyPress);
@@ -1521,7 +1554,7 @@
             this.comboBox3.Location = new System.Drawing.Point(44, 84);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(133, 21);
-            this.comboBox3.TabIndex = 132;
+            this.comboBox3.TabIndex = 25;
             // 
             // label26
             // 
@@ -1553,7 +1586,7 @@
             this.textBox21.Location = new System.Drawing.Point(117, 35);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(93, 20);
-            this.textBox21.TabIndex = 128;
+            this.textBox21.TabIndex = 24;
             this.textBox21.Text = "0";
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox21_KeyPress);
@@ -1576,7 +1609,7 @@
             this.textBox22.Location = new System.Drawing.Point(9, 35);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(93, 20);
-            this.textBox22.TabIndex = 126;
+            this.textBox22.TabIndex = 23;
             this.textBox22.Text = "0";
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox22.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox22_KeyPress);
@@ -1609,7 +1642,7 @@
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox4.Location = new System.Drawing.Point(277, 474);
+            this.groupBox4.Location = new System.Drawing.Point(276, 472);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(436, 422);
             this.groupBox4.TabIndex = 3;
@@ -1638,7 +1671,7 @@
             this.button1.Location = new System.Drawing.Point(138, 35);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 46);
-            this.button1.TabIndex = 152;
+            this.button1.TabIndex = 43;
             this.button1.Text = "Add Gossip Menus";
             this.toolTip1.SetToolTip(this.button1, "Max + 1 from Database");
             this.button1.UseVisualStyleBackColor = false;
@@ -1654,7 +1687,7 @@
             this.button16.Location = new System.Drawing.Point(24, 63);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(100, 23);
-            this.button16.TabIndex = 207;
+            this.button16.TabIndex = 42;
             this.button16.Text = "Max+1";
             this.button16.UseVisualStyleBackColor = false;
             this.button16.Click += new System.EventHandler(this.button16_Click);
@@ -1677,7 +1710,7 @@
             this.textBox13.Location = new System.Drawing.Point(24, 35);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 111;
+            this.textBox13.TabIndex = 41;
             this.textBox13.Text = "0";
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
@@ -1694,7 +1727,7 @@
             this.button13.Location = new System.Drawing.Point(6, 54);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(93, 57);
-            this.button13.TabIndex = 171;
+            this.button13.TabIndex = 37;
             this.button13.Text = "Add Vendor Items";
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
@@ -1710,7 +1743,7 @@
             this.button9.Location = new System.Drawing.Point(281, 87);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(150, 24);
-            this.button9.TabIndex = 170;
+            this.button9.TabIndex = 40;
             this.button9.Text = "Flags Extra";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -1725,7 +1758,7 @@
             this.button8.Location = new System.Drawing.Point(116, 54);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(315, 24);
-            this.button8.TabIndex = 169;
+            this.button8.TabIndex = 38;
             this.button8.Text = "Mechanic Immune Mask";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -1740,7 +1773,7 @@
             this.button7.Location = new System.Drawing.Point(116, 87);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(148, 24);
-            this.button7.TabIndex = 168;
+            this.button7.TabIndex = 39;
             this.button7.Text = "Type Flags";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -1782,7 +1815,7 @@
             this.comboBox7.Location = new System.Drawing.Point(148, 380);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(148, 21);
-            this.comboBox7.TabIndex = 166;
+            this.comboBox7.TabIndex = 51;
             // 
             // label39
             // 
@@ -1802,7 +1835,7 @@
             this.textBox33.Location = new System.Drawing.Point(280, 341);
             this.textBox33.Name = "textBox33";
             this.textBox33.Size = new System.Drawing.Size(93, 20);
-            this.textBox33.TabIndex = 164;
+            this.textBox33.TabIndex = 50;
             this.textBox33.Text = "0";
             this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox33.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -1825,7 +1858,7 @@
             this.textBox34.Location = new System.Drawing.Point(174, 341);
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(93, 20);
-            this.textBox34.TabIndex = 162;
+            this.textBox34.TabIndex = 49;
             this.textBox34.Text = "0";
             this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox34.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -1848,7 +1881,7 @@
             this.textBox31.Location = new System.Drawing.Point(66, 340);
             this.textBox31.Name = "textBox31";
             this.textBox31.Size = new System.Drawing.Size(93, 20);
-            this.textBox31.TabIndex = 160;
+            this.textBox31.TabIndex = 48;
             this.textBox31.Text = "0";
             this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox31.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -1871,7 +1904,7 @@
             this.textBox32.Location = new System.Drawing.Point(280, 295);
             this.textBox32.Name = "textBox32";
             this.textBox32.Size = new System.Drawing.Size(93, 20);
-            this.textBox32.TabIndex = 158;
+            this.textBox32.TabIndex = 47;
             this.textBox32.Text = "0";
             this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox32.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -1894,7 +1927,7 @@
             this.textBox29.Location = new System.Drawing.Point(174, 295);
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(93, 20);
-            this.textBox29.TabIndex = 156;
+            this.textBox29.TabIndex = 46;
             this.textBox29.Text = "0";
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox29.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -1917,7 +1950,7 @@
             this.textBox30.Location = new System.Drawing.Point(66, 295);
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(93, 20);
-            this.textBox30.TabIndex = 154;
+            this.textBox30.TabIndex = 45;
             this.textBox30.Text = "0";
             this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox30.TextChanged += new System.EventHandler(this.textBox30_TextChanged);
@@ -1948,7 +1981,7 @@
             this.comboBox6.Location = new System.Drawing.Point(123, 247);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(202, 21);
-            this.comboBox6.TabIndex = 152;
+            this.comboBox6.TabIndex = 44;
             // 
             // button6
             // 
@@ -1960,7 +1993,7 @@
             this.button6.Location = new System.Drawing.Point(338, 19);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(93, 24);
-            this.button6.TabIndex = 149;
+            this.button6.TabIndex = 36;
             this.button6.Text = "DynamicFlags";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -1975,7 +2008,7 @@
             this.button5.Location = new System.Drawing.Point(228, 19);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(93, 24);
-            this.button5.TabIndex = 148;
+            this.button5.TabIndex = 35;
             this.button5.Text = "Unit Flags 2";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -1990,7 +2023,7 @@
             this.button4.Location = new System.Drawing.Point(116, 19);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 24);
-            this.button4.TabIndex = 147;
+            this.button4.TabIndex = 34;
             this.button4.Text = "Unit Flags";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -2005,13 +2038,14 @@
             this.button3.Location = new System.Drawing.Point(6, 19);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(93, 24);
-            this.button3.TabIndex = 123;
+            this.button3.TabIndex = 33;
             this.button3.Text = "Npc Flag";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button17);
             this.groupBox5.Controls.Add(this.label82);
             this.groupBox5.Controls.Add(this.button_waypoints);
             this.groupBox5.Controls.Add(this.label79);
@@ -2088,11 +2122,26 @@
             this.groupBox5.Controls.Add(this.label50);
             this.groupBox5.Controls.Add(this.textBox41);
             this.groupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox5.Location = new System.Drawing.Point(13, 902);
+            this.groupBox5.Location = new System.Drawing.Point(12, 900);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(700, 578);
+            this.groupBox5.Size = new System.Drawing.Size(700, 592);
             this.groupBox5.TabIndex = 107;
             this.groupBox5.TabStop = false;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.DimGray;
+            this.button17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.Color.White;
+            this.button17.Location = new System.Drawing.Point(514, 497);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(132, 36);
+            this.button17.TabIndex = 209;
+            this.button17.Text = "Spawn NPC";
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Visible = false;
             // 
             // label82
             // 
@@ -2114,7 +2163,7 @@
             this.button_waypoints.Location = new System.Drawing.Point(512, 237);
             this.button_waypoints.Name = "button_waypoints";
             this.button_waypoints.Size = new System.Drawing.Size(173, 37);
-            this.button_waypoints.TabIndex = 207;
+            this.button_waypoints.TabIndex = 81;
             this.button_waypoints.Text = "How to add waypoints";
             this.button_waypoints.UseVisualStyleBackColor = false;
             this.button_waypoints.Click += new System.EventHandler(this.button_waypoints_Click);
@@ -2140,7 +2189,7 @@
             this.button15.Location = new System.Drawing.Point(13, 339);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(131, 46);
-            this.button15.TabIndex = 205;
+            this.button15.TabIndex = 88;
             this.button15.Text = "Make NPC say/yell/whisper";
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
@@ -2155,7 +2204,7 @@
             this.button14.Location = new System.Drawing.Point(553, 356);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(132, 68);
-            this.button14.TabIndex = 172;
+            this.button14.TabIndex = 100;
             this.button14.Text = "Add mount/emote/auras to NPC";
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
@@ -2178,7 +2227,7 @@
             this.textBox66.Location = new System.Drawing.Point(402, 159);
             this.textBox66.Name = "textBox66";
             this.textBox66.Size = new System.Drawing.Size(91, 20);
-            this.textBox66.TabIndex = 203;
+            this.textBox66.TabIndex = 73;
             this.textBox66.Text = "0";
             this.textBox66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox66.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2201,7 +2250,7 @@
             this.textBox65.Location = new System.Drawing.Point(361, 339);
             this.textBox65.Name = "textBox65";
             this.textBox65.Size = new System.Drawing.Size(93, 20);
-            this.textBox65.TabIndex = 201;
+            this.textBox65.TabIndex = 87;
             this.textBox65.Text = "0";
             this.textBox65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox65.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2224,7 +2273,7 @@
             this.textBox61.Location = new System.Drawing.Point(256, 339);
             this.textBox61.Name = "textBox61";
             this.textBox61.Size = new System.Drawing.Size(93, 20);
-            this.textBox61.TabIndex = 199;
+            this.textBox61.TabIndex = 86;
             this.textBox61.Text = "0";
             this.textBox61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox61.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2247,7 +2296,7 @@
             this.textBox60.Location = new System.Drawing.Point(607, 197);
             this.textBox60.Name = "textBox60";
             this.textBox60.Size = new System.Drawing.Size(90, 20);
-            this.textBox60.TabIndex = 197;
+            this.textBox60.TabIndex = 78;
             this.textBox60.Text = "0";
             this.textBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox60.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2257,7 +2306,7 @@
             this.label_query_executed_successfully2.AutoSize = true;
             this.label_query_executed_successfully2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_query_executed_successfully2.ForeColor = System.Drawing.Color.Green;
-            this.label_query_executed_successfully2.Location = new System.Drawing.Point(207, 518);
+            this.label_query_executed_successfully2.Location = new System.Drawing.Point(195, 542);
             this.label_query_executed_successfully2.Name = "label_query_executed_successfully2";
             this.label_query_executed_successfully2.Size = new System.Drawing.Size(293, 17);
             this.label_query_executed_successfully2.TabIndex = 196;
@@ -2272,10 +2321,10 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(272, 467);
+            this.button10.Location = new System.Drawing.Point(261, 499);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(156, 31);
-            this.button10.TabIndex = 195;
+            this.button10.TabIndex = 101;
             this.button10.Text = "Execute Query";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -2298,7 +2347,7 @@
             this.textBox59.Location = new System.Drawing.Point(414, 399);
             this.textBox59.Name = "textBox59";
             this.textBox59.Size = new System.Drawing.Size(93, 20);
-            this.textBox59.TabIndex = 193;
+            this.textBox59.TabIndex = 90;
             this.textBox59.Text = "12340";
             this.textBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox59.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2321,7 +2370,7 @@
             this.textBox62.Location = new System.Drawing.Point(169, 400);
             this.textBox62.Name = "textBox62";
             this.textBox62.Size = new System.Drawing.Size(225, 20);
-            this.textBox62.TabIndex = 187;
+            this.textBox62.TabIndex = 89;
             this.textBox62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label73
@@ -2342,7 +2391,7 @@
             this.textBox63.Location = new System.Drawing.Point(503, 197);
             this.textBox63.Name = "textBox63";
             this.textBox63.Size = new System.Drawing.Size(93, 20);
-            this.textBox63.TabIndex = 185;
+            this.textBox63.TabIndex = 77;
             this.textBox63.Text = "0";
             this.textBox63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox63.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2365,7 +2414,7 @@
             this.textBox64.Location = new System.Drawing.Point(406, 300);
             this.textBox64.Name = "textBox64";
             this.textBox64.Size = new System.Drawing.Size(93, 20);
-            this.textBox64.TabIndex = 183;
+            this.textBox64.TabIndex = 85;
             this.textBox64.Text = "0";
             this.textBox64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox64.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2388,7 +2437,7 @@
             this.textBox53.Location = new System.Drawing.Point(303, 300);
             this.textBox53.Name = "textBox53";
             this.textBox53.Size = new System.Drawing.Size(93, 20);
-            this.textBox53.TabIndex = 181;
+            this.textBox53.TabIndex = 84;
             this.textBox53.Text = "0";
             this.textBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox53.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2411,7 +2460,7 @@
             this.textBox54.Location = new System.Drawing.Point(202, 301);
             this.textBox54.Name = "textBox54";
             this.textBox54.Size = new System.Drawing.Size(93, 20);
-            this.textBox54.TabIndex = 179;
+            this.textBox54.TabIndex = 83;
             this.textBox54.Text = "0";
             this.textBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox54.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2434,7 +2483,7 @@
             this.textBox55.Location = new System.Drawing.Point(402, 198);
             this.textBox55.Name = "textBox55";
             this.textBox55.Size = new System.Drawing.Size(93, 20);
-            this.textBox55.TabIndex = 177;
+            this.textBox55.TabIndex = 76;
             this.textBox55.Text = "0";
             this.textBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox55.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2458,7 +2507,7 @@
             this.textBox56.Location = new System.Drawing.Point(604, 42);
             this.textBox56.Name = "textBox56";
             this.textBox56.Size = new System.Drawing.Size(93, 20);
-            this.textBox56.TabIndex = 175;
+            this.textBox56.TabIndex = 64;
             this.textBox56.Text = "0";
             this.textBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.textBox56, "Maximum money that the creature drops when killed, in copper.");
@@ -2483,7 +2532,7 @@
             this.textBox57.Location = new System.Drawing.Point(494, 42);
             this.textBox57.Name = "textBox57";
             this.textBox57.Size = new System.Drawing.Size(93, 20);
-            this.textBox57.TabIndex = 173;
+            this.textBox57.TabIndex = 63;
             this.textBox57.Text = "0";
             this.textBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.textBox57, "Minimum money that the creature drops when killed, in copper.");
@@ -2507,7 +2556,7 @@
             this.textBox58.Location = new System.Drawing.Point(494, 78);
             this.textBox58.Name = "textBox58";
             this.textBox58.Size = new System.Drawing.Size(93, 20);
-            this.textBox58.TabIndex = 171;
+            this.textBox58.TabIndex = 65;
             this.textBox58.Text = "0";
             this.textBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox58.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2530,7 +2579,7 @@
             this.textBox47.Location = new System.Drawing.Point(604, 78);
             this.textBox47.Name = "textBox47";
             this.textBox47.Size = new System.Drawing.Size(93, 20);
-            this.textBox47.TabIndex = 169;
+            this.textBox47.TabIndex = 66;
             this.textBox47.Text = "0";
             this.textBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox47.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2553,7 +2602,7 @@
             this.textBox48.Location = new System.Drawing.Point(335, 78);
             this.textBox48.Name = "textBox48";
             this.textBox48.Size = new System.Drawing.Size(93, 20);
-            this.textBox48.TabIndex = 167;
+            this.textBox48.TabIndex = 62;
             this.textBox48.Text = "0";
             this.textBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox48.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2576,7 +2625,7 @@
             this.textBox49.Location = new System.Drawing.Point(230, 78);
             this.textBox49.Name = "textBox49";
             this.textBox49.Size = new System.Drawing.Size(93, 20);
-            this.textBox49.TabIndex = 165;
+            this.textBox49.TabIndex = 61;
             this.textBox49.Text = "0";
             this.textBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox49.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2599,7 +2648,7 @@
             this.textBox50.Location = new System.Drawing.Point(122, 78);
             this.textBox50.Name = "textBox50";
             this.textBox50.Size = new System.Drawing.Size(93, 20);
-            this.textBox50.TabIndex = 163;
+            this.textBox50.TabIndex = 60;
             this.textBox50.Text = "0";
             this.textBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox50.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2622,7 +2671,7 @@
             this.textBox51.Location = new System.Drawing.Point(16, 78);
             this.textBox51.Name = "textBox51";
             this.textBox51.Size = new System.Drawing.Size(93, 20);
-            this.textBox51.TabIndex = 161;
+            this.textBox51.TabIndex = 59;
             this.textBox51.Text = "0";
             this.textBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox51.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2645,7 +2694,7 @@
             this.textBox52.Location = new System.Drawing.Point(334, 42);
             this.textBox52.Name = "textBox52";
             this.textBox52.Size = new System.Drawing.Size(93, 20);
-            this.textBox52.TabIndex = 159;
+            this.textBox52.TabIndex = 58;
             this.textBox52.Text = "0";
             this.textBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox52.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2668,7 +2717,7 @@
             this.textBox43.Location = new System.Drawing.Point(230, 42);
             this.textBox43.Name = "textBox43";
             this.textBox43.Size = new System.Drawing.Size(93, 20);
-            this.textBox43.TabIndex = 157;
+            this.textBox43.TabIndex = 57;
             this.textBox43.Text = "0";
             this.textBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox43.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2691,7 +2740,7 @@
             this.textBox44.Location = new System.Drawing.Point(122, 42);
             this.textBox44.Name = "textBox44";
             this.textBox44.Size = new System.Drawing.Size(93, 20);
-            this.textBox44.TabIndex = 155;
+            this.textBox44.TabIndex = 56;
             this.textBox44.Text = "0";
             this.textBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox44.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2714,7 +2763,7 @@
             this.textBox45.Location = new System.Drawing.Point(16, 42);
             this.textBox45.Name = "textBox45";
             this.textBox45.Size = new System.Drawing.Size(93, 20);
-            this.textBox45.TabIndex = 153;
+            this.textBox45.TabIndex = 55;
             this.textBox45.Text = "0";
             this.textBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox45.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2737,7 +2786,7 @@
             this.textBox46.Location = new System.Drawing.Point(230, 198);
             this.textBox46.Name = "textBox46";
             this.textBox46.Size = new System.Drawing.Size(93, 20);
-            this.textBox46.TabIndex = 151;
+            this.textBox46.TabIndex = 72;
             this.textBox46.Text = "0";
             this.textBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox46.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2755,7 +2804,7 @@
             this.comboBox10.Location = new System.Drawing.Point(9, 253);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(171, 21);
-            this.comboBox10.TabIndex = 150;
+            this.comboBox10.TabIndex = 79;
             // 
             // label52
             // 
@@ -2786,7 +2835,7 @@
             this.comboBox9.Location = new System.Drawing.Point(13, 301);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(144, 21);
-            this.comboBox9.TabIndex = 148;
+            this.comboBox9.TabIndex = 82;
             this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox9_SelectedIndexChanged);
             // 
             // label49
@@ -2819,7 +2868,7 @@
             this.textBox35.Location = new System.Drawing.Point(230, 159);
             this.textBox35.Name = "textBox35";
             this.textBox35.Size = new System.Drawing.Size(93, 20);
-            this.textBox35.TabIndex = 145;
+            this.textBox35.TabIndex = 69;
             this.textBox35.Text = "0";
             this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox35.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2842,7 +2891,7 @@
             this.textBox36.Location = new System.Drawing.Point(122, 159);
             this.textBox36.Name = "textBox36";
             this.textBox36.Size = new System.Drawing.Size(93, 20);
-            this.textBox36.TabIndex = 143;
+            this.textBox36.TabIndex = 68;
             this.textBox36.Text = "0";
             this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox36.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2859,7 +2908,7 @@
             this.comboBox8.Location = new System.Drawing.Point(214, 253);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(273, 21);
-            this.comboBox8.TabIndex = 142;
+            this.comboBox8.TabIndex = 80;
             this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
             // 
             // label44
@@ -2892,7 +2941,7 @@
             this.textBox37.Location = new System.Drawing.Point(122, 198);
             this.textBox37.Name = "textBox37";
             this.textBox37.Size = new System.Drawing.Size(93, 20);
-            this.textBox37.TabIndex = 139;
+            this.textBox37.TabIndex = 71;
             this.textBox37.Text = "0";
             this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox37.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2915,7 +2964,7 @@
             this.textBox38.Location = new System.Drawing.Point(17, 198);
             this.textBox38.Name = "textBox38";
             this.textBox38.Size = new System.Drawing.Size(93, 20);
-            this.textBox38.TabIndex = 137;
+            this.textBox38.TabIndex = 70;
             this.textBox38.Text = "0";
             this.textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox38.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2938,7 +2987,7 @@
             this.textBox39.Location = new System.Drawing.Point(17, 159);
             this.textBox39.Name = "textBox39";
             this.textBox39.Size = new System.Drawing.Size(93, 20);
-            this.textBox39.TabIndex = 135;
+            this.textBox39.TabIndex = 67;
             this.textBox39.Text = "0";
             this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox39.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2961,7 +3010,7 @@
             this.textBox40.Location = new System.Drawing.Point(606, 159);
             this.textBox40.Name = "textBox40";
             this.textBox40.Size = new System.Drawing.Size(91, 20);
-            this.textBox40.TabIndex = 133;
+            this.textBox40.TabIndex = 75;
             this.textBox40.Text = "0";
             this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox40.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -2984,7 +3033,7 @@
             this.textBox41.Location = new System.Drawing.Point(503, 159);
             this.textBox41.Name = "textBox41";
             this.textBox41.Size = new System.Drawing.Size(93, 20);
-            this.textBox41.TabIndex = 128;
+            this.textBox41.TabIndex = 74;
             this.textBox41.Text = "0";
             this.textBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox41.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
@@ -3016,7 +3065,7 @@
             // 
             // timer6
             // 
-            this.timer6.Interval = 6000;
+            this.timer6.Interval = 5000;
             this.timer6.Tick += new System.EventHandler(this.timer6_Tick);
             // 
             // timer7
@@ -3026,7 +3075,7 @@
             // 
             // timer8
             // 
-            this.timer8.Interval = 6000;
+            this.timer8.Interval = 5000;
             this.timer8.Tick += new System.EventHandler(this.timer8_Tick);
             // 
             // NPC_Creator
@@ -3083,7 +3132,6 @@
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Panel panel2;
         internal System.Windows.Forms.Label label_mysql_status2;
-        private System.Windows.Forms.Label label85;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Label label_file_saved;
@@ -3116,7 +3164,6 @@
         public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
         public System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label10;
@@ -3292,5 +3339,10 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.TextBox textBox105;
         private System.Windows.Forms.ComboBox comboBox11;
+        private System.Windows.Forms.Label label_Success;
+        private System.Windows.Forms.Button button17;
+        public System.Windows.Forms.Label label87;
+        internal System.Windows.Forms.Button button2;
+        internal System.Windows.Forms.Label label85;
     }
 }

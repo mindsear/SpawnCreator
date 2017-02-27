@@ -173,3 +173,4 @@ E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Predefined_SAI_Templates.r
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.MailSender.resources
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.QuestTemplate.resources
 E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.QuestFlags_Form.resources
+E:\SpawnCreator\SpawnCreator\obj\Release\SpawnCreator.Spawn_NPC.resources

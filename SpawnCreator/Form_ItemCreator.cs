@@ -1075,6 +1075,7 @@ namespace SpawnCreator
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             label4.BackColor = Color.Transparent;
             label4.ForeColor = Color.Black;
@@ -1294,6 +1295,7 @@ namespace SpawnCreator
             toolTip1.SetToolTip(this.textBox2, this.textBox2.Text);
             Definers.output_itemName = textBox2.Text;
 
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1302,6 +1304,7 @@ namespace SpawnCreator
             toolTip1.SetToolTip(this.textBox3, this.textBox3.Text);
             Definers.output_itemDescription = textBox3.Text;
 
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1327,11 +1330,13 @@ namespace SpawnCreator
         {
             Form_SocketOptions form_SocketOptions = new Form_SocketOptions();
             form_SocketOptions.ShowDialog();
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Form_ClassMasksDialog form_ClassMasksDialog = new Form_ClassMasksDialog();
             form_ClassMasksDialog.ShowDialog();
@@ -1339,6 +1344,7 @@ namespace SpawnCreator
 
         private void button3_Click(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Form_FlagMasksDialog form_FlagMasksDialog = new Form_FlagMasksDialog();
             form_FlagMasksDialog.ShowDialog();
@@ -1346,6 +1352,7 @@ namespace SpawnCreator
 
         private void button4_Click(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Form_RaceMasksDialog form_RaceMasksDialog = new Form_RaceMasksDialog();
             form_RaceMasksDialog.ShowDialog();
@@ -1353,6 +1360,7 @@ namespace SpawnCreator
 
         private void button5_Click(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Form_FlagExtraMasksDialog form_FlagExtraMasksDialog = new Form_FlagExtraMasksDialog();
             form_FlagExtraMasksDialog.ShowDialog();
@@ -1360,6 +1368,7 @@ namespace SpawnCreator
 
         private void button6_Click(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Form_BagFamilyMasksDialog form_BagFamilyMasksDialog = new Form_BagFamilyMasksDialog();
             form_BagFamilyMasksDialog.ShowDialog();
@@ -1367,6 +1376,7 @@ namespace SpawnCreator
 
         private void button7_Click(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Form_FlagCustomDialog form_FlagCustomDialog = new Form_FlagCustomDialog();
             form_FlagCustomDialog.ShowDialog();
@@ -1418,10 +1428,10 @@ namespace SpawnCreator
         {
             if (mouseDown)
             {
-                this.Location = new Point(
-                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+                Location = new Point(
+                    (Location.X - lastLocation.X) + e.X, (Location.Y - lastLocation.Y) + e.Y);
 
-                this.Update();
+                Update();
             }
         }
 
@@ -1497,12 +1507,13 @@ namespace SpawnCreator
             {
                 Definers.output_itemEntry = x;
             }
-
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemQuality = comboBox1.SelectedIndex;
 
@@ -1555,23 +1566,27 @@ namespace SpawnCreator
             {
                 Definers.output_itemlevel = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             Definers.output_itembinding = comboBox5.SelectedIndex;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_iteminvetorytype = comboBox4.SelectedIndex;
         }
 
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemmaterial = comboBox7.SelectedIndex;
         }
@@ -1583,7 +1598,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemarmor = x;
             }
-
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1594,6 +1609,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemstatvalue1 = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1604,6 +1620,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemstatvalue2 = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1614,6 +1631,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemstatvalue3 = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1624,6 +1642,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemstatvalue4 = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1634,6 +1653,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemstatvalue5 = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1644,6 +1664,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemstatvalue6 = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1654,6 +1675,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemstatvalue7 = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1664,6 +1686,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemstatvalue8 = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1674,6 +1697,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemstatvalue9 = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -1684,65 +1708,76 @@ namespace SpawnCreator
             {
                 Definers.output_itemstatvalue10 = x;
             }
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemtype1 = comboBox10.SelectedIndex;
         }
 
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemtype2 = comboBox11.SelectedIndex;
         }
 
         private void comboBox12_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemtype3 = comboBox12.SelectedIndex;
         }
 
         private void comboBox13_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemtype4 = comboBox13.SelectedIndex;
         }
 
         private void comboBox14_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemtype5 = comboBox14.SelectedIndex;
         }
 
         private void comboBox15_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemtype6 = comboBox15.SelectedIndex;
         }
 
         private void comboBox16_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemtype7 = comboBox16.SelectedIndex;
         }
 
         private void comboBox17_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemtype8 = comboBox17.SelectedIndex;
         }
 
         private void comboBox18_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemtype9 = comboBox18.SelectedIndex;
         }
 
         private void comboBox19_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             Definers.output_itemtype10 = comboBox19.SelectedIndex;
         }
@@ -1764,7 +1799,7 @@ namespace SpawnCreator
             {
                 Definers.output_itemdurability = x;
             }
-
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
         
@@ -1835,6 +1870,56 @@ namespace SpawnCreator
 
         private void button_maxPlus1fromDB_Click(object sender, EventArgs e)
         {
+
+            // Server = localhost; Database = finalfilemysql; Uid = root; Pwd = Root;
+
+            //try
+            //{
+            //    //This is my connection string i have assigned the database file address path 
+
+            //    string MyConnection2 = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=ascent" /*+ mainmenu.textbox_mysql_pass.Text*/;
+
+            //    //This is my insert query in which i am taking input from the user through windows forms 
+
+            //    string Query = "INSERT INTO world.disables (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`) VALUES (3, 10, 0, '', '', 'cacaccaat');";
+
+            //    //This is  MySqlConnection here i have created the object and pass my connection string. 
+
+            //    MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+
+            //    //This is command class which will handle the query and connection object. 
+
+            //    MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+
+            //    MySqlDataReader MyReader2;
+
+            //    MyConn2.Open();
+
+            //    MyReader2 = MyCommand2.ExecuteReader();     // Here our query will be executed and data saved into the database. 
+
+
+            //    MessageBox.Show("Save Data");
+
+            //    while (MyReader2.Read())
+            //    {
+            //        textBox1.Text = MyCommand2.ExecuteScalar().ToString();
+            //    }
+            //    MyConn2.Close();
+            //}
+            //catch (Exception /*ex*/)
+
+            //{
+            //    //MessageBox.Show(ex.Message);
+            //}
+
+
+            //==============================================================================================
+
+            //string str = @"Server=" + mainmenu.textbox_mysql_hostname.Text + ";Database=" + mainmenu.textbox_mysql_worldDB.Text + /*";Port=" + mainmenu.textbox_mysql_port.Text + */ "; Uid=" + mainmenu.textbox_mysql_username.Text + ";Pwd=" + mainmenu.textbox_mysql_pass.Text + ";";
+            //MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(str);
+
+            //----------------------------------------
+
             MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
             string insertQuery = "SELECT max(entry)+1 FROM " + mainmenu.textbox_mysql_worldDB.Text + ".item_template;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
@@ -1845,7 +1930,7 @@ namespace SpawnCreator
             {
 
                 textBox1.Text = command.ExecuteScalar().ToString();
-                
+
             }
             catch (Exception ex)
             {
@@ -1856,6 +1941,7 @@ namespace SpawnCreator
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             if (comboBox3.Text == "Red")
             {
@@ -1928,7 +2014,7 @@ namespace SpawnCreator
             {
                 if (command.ExecuteNonQuery() >= 1)
                 {
-                    
+                    label_Success.Visible = true;
                     label_query_executed_successfully2.Visible = true;
                 }
                 
@@ -1940,243 +2026,293 @@ namespace SpawnCreator
             connection.Close();
         }
 
+
+        // THIS IS STUPID
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox28_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox30_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox32_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox33_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox34_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox35_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox36_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox37_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox38_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox20_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox11_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox9_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox39_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox40_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox50_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox41_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox42_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox21_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox22_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox13_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox14_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox15_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox43_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox23_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox45_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox46_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox47_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox48_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox49_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox44_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox51_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox66_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox52_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox53_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox54_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox55_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox56_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox57_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox58_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -2187,226 +2323,271 @@ namespace SpawnCreator
 
         private void textBox59_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox26_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox27_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox60_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox61_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox62_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox63_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox64_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox65_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox67_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox68_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox74_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox85_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox91_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox97_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox24_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox25_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox26_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox27_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void comboBox28_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox69_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox75_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox84_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox90_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox96_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox70_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox76_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox83_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox78_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox95_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox71_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox77_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox82_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox88_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox94_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox93_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox87_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox81_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox89_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox72_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox73_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox79_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox80_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox86_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
         private void textBox92_TextChanged(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
         }
 
@@ -2597,6 +2778,29 @@ namespace SpawnCreator
         {
             if (comboBox29.SelectedIndex == 0) textBox105.Text = "INSERT";
             else if (comboBox29.SelectedIndex == 1) textBox105.Text = "REPLACE";
+        }
+
+        private void label91_MouseEnter(object sender, EventArgs e)
+        {
+            label91.BackColor = Color.LawnGreen;
+            label91.ForeColor = Color.Black;
+        }
+
+        private void label91_MouseLeave(object sender, EventArgs e)
+        {
+            label91.BackColor = Color.FromArgb(58, 89, 114);
+            label91.ForeColor = Color.Black;
+        }
+
+        private void label91_Click(object sender, EventArgs e)
+        {
+            // Execute Query
+            button_execute_query_Click(sender, e);
+        }
+
+        private void textBox105_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

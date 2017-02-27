@@ -36,8 +36,9 @@
     <ApplicationIcon>spawncreator_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data">
-      <HintPath>C:\Users\Sorin\Desktop\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Sorin\.nuget\packages\MySql.Data\6.9.9\lib\net45\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -288,6 +289,12 @@
       <DependentUpon>SmartScripts.cs</DependentUpon>
     </Compile>
     <Compile Include="SpawnFunctions.cs" />
+    <Compile Include="Spawn_NPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spawn_NPC.Designer.cs">
+      <DependentUpon>Spawn_NPC.cs</DependentUpon>
+    </Compile>
     <Compile Include="type_flags.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -422,6 +429,9 @@
     <EmbeddedResource Include="SmartScripts.resx">
       <DependentUpon>SmartScripts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Spawn_NPC.resx">
+      <DependentUpon>Spawn_NPC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="type_flags.resx">
       <DependentUpon>type_flags.cs</DependentUpon>
     </EmbeddedResource>
@@ -495,6 +505,11 @@
     <None Include="Resources\arrow_right.png" />
     <None Include="Resources\arrow_left.png" />
     <None Include="Resources\mail_green.png" />
+    <None Include="Resources\UI-GoldIcon.png" />
+    <None Include="Resources\UI-SilverIcon.png" />
+    <None Include="Resources\UI-CopperIcon.png" />
+    <None Include="Resources\mail_body_frame.png" />
+    <None Include="Resources\magnifier.png" />
     <Content Include="spawncreator_icon.ico" />
   </ItemGroup>
   <ItemGroup />

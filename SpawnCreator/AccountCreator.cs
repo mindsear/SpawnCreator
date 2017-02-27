@@ -38,20 +38,16 @@ namespace SpawnCreator
             MySqlConnection conDataBase = new MySqlConnection(constring);
             MySqlCommand com = new MySqlCommand("select id, username, email from " + mainmenu.textBox_mysql_authDB.Text + ".account;", conDataBase);
 
-            //MySqlCommand com2 = new MySqlCommand("select * from mountlist.mountlist;", conDataBase);
-
             try
             {
                 MySqlDataAdapter sda = new MySqlDataAdapter();
                 sda.SelectCommand = com;
-                //sda.SelectCommand = com2;
                 DataTable dbdataset = new DataTable();
                 sda.Fill(dbdataset);
                 BindingSource bsource = new BindingSource();
 
                 bsource.DataSource = dbdataset;
                 dataGridView1.DataSource = bsource;
-                //dataGridView2.DataSource = bsource;
                 sda.Update(dbdataset);
 
             }
@@ -65,10 +61,10 @@ namespace SpawnCreator
         {
             if (_mouseDown)
             {
-                this.Location = new Point(
-                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+                Location = new Point(
+                    (Location.X - lastLocation.X) + e.X, (Location.Y - lastLocation.Y) + e.Y);
 
-                this.Update();
+                Update();
             }
         }
 
@@ -79,7 +75,7 @@ namespace SpawnCreator
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void panel2_MouseUp(object sender, MouseEventArgs e)

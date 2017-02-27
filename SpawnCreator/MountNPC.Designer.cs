@@ -284,7 +284,7 @@
             this.comboBox1.Location = new System.Drawing.Point(20, 91);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(293, 21);
-            this.comboBox1.TabIndex = 228;
+            this.comboBox1.TabIndex = 6;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
@@ -305,7 +305,7 @@
             this.textBox5.Location = new System.Drawing.Point(341, 91);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(219, 20);
-            this.textBox5.TabIndex = 226;
+            this.textBox5.TabIndex = 7;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -376,7 +376,7 @@
             this.textBox4.Location = new System.Drawing.Point(440, 40);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(93, 20);
-            this.textBox4.TabIndex = 214;
+            this.textBox4.TabIndex = 5;
             this.textBox4.Text = "0";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -400,7 +400,7 @@
             this.textBox2.Location = new System.Drawing.Point(341, 40);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(93, 20);
-            this.textBox2.TabIndex = 210;
+            this.textBox2.TabIndex = 4;
             this.textBox2.Text = "0";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -426,7 +426,7 @@
             this.textBox1.Location = new System.Drawing.Point(241, 40);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(93, 20);
-            this.textBox1.TabIndex = 208;
+            this.textBox1.TabIndex = 3;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -442,7 +442,7 @@
             this.button1.Location = new System.Drawing.Point(20, 121);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(540, 24);
-            this.button1.TabIndex = 207;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -467,7 +467,7 @@
             this.textBox65.Location = new System.Drawing.Point(139, 40);
             this.textBox65.Name = "textBox65";
             this.textBox65.Size = new System.Drawing.Size(95, 20);
-            this.textBox65.TabIndex = 205;
+            this.textBox65.TabIndex = 2;
             this.textBox65.Text = "0";
             this.textBox65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox65.TextChanged += new System.EventHandler(this.textBox65_TextChanged);
@@ -492,7 +492,7 @@
             this.textBox61.Name = "textBox61";
             this.textBox61.ReadOnly = true;
             this.textBox61.Size = new System.Drawing.Size(93, 20);
-            this.textBox61.TabIndex = 203;
+            this.textBox61.TabIndex = 1;
             this.textBox61.Text = "0";
             this.textBox61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -511,7 +511,7 @@
             this.textBox6.Location = new System.Drawing.Point(324, 251);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(352, 20);
-            this.textBox6.TabIndex = 227;
+            this.textBox6.TabIndex = 9;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);

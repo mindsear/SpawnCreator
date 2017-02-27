@@ -77,10 +77,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -130,7 +130,7 @@
             this.panel2.Controls.Add(this.label81);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(651, 34);
+            this.panel2.Size = new System.Drawing.Size(651, 28);
             this.panel2.TabIndex = 78;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
@@ -142,9 +142,9 @@
             this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label78.ForeColor = System.Drawing.Color.Black;
-            this.label78.Location = new System.Drawing.Point(560, 4);
+            this.label78.Location = new System.Drawing.Point(560, 0);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 26);
+            this.label78.Size = new System.Drawing.Size(26, 28);
             this.label78.TabIndex = 114;
             this.label78.Text = "<";
             this.toolTip1.SetToolTip(this.label78, "Back to Main Menu");
@@ -158,9 +158,9 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(592, 4);
+            this.label1.Location = new System.Drawing.Point(592, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 26);
+            this.label1.Size = new System.Drawing.Size(26, 28);
             this.label1.TabIndex = 80;
             this.label1.Text = "--";
             this.toolTip1.SetToolTip(this.label1, "Minimize");
@@ -174,9 +174,9 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(624, 4);
+            this.label2.Location = new System.Drawing.Point(625, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 26);
+            this.label2.Size = new System.Drawing.Size(26, 28);
             this.label2.TabIndex = 79;
             this.label2.Text = "X";
             this.toolTip1.SetToolTip(this.label2, "Close");
@@ -190,7 +190,7 @@
             this.label_mysql_status2.BackColor = System.Drawing.Color.Transparent;
             this.label_mysql_status2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mysql_status2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label_mysql_status2.Location = new System.Drawing.Point(131, 8);
+            this.label_mysql_status2.Location = new System.Drawing.Point(130, 4);
             this.label_mysql_status2.Name = "label_mysql_status2";
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
@@ -202,7 +202,7 @@
             this.label85.BackColor = System.Drawing.Color.Transparent;
             this.label85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label85.ForeColor = System.Drawing.Color.White;
-            this.label85.Location = new System.Drawing.Point(10, 8);
+            this.label85.Location = new System.Drawing.Point(9, 4);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
@@ -220,7 +220,7 @@
             this.panel3.Controls.Add(this.pictureBox9);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(0, 32);
+            this.panel3.Location = new System.Drawing.Point(0, 28);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 463);
             this.panel3.TabIndex = 79;
@@ -230,7 +230,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(51, 23);
+            this.label89.Location = new System.Drawing.Point(51, 19);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -293,7 +293,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(51, 5);
+            this.label_stopwatch.Location = new System.Drawing.Point(51, 1);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -383,7 +383,7 @@
             this.button_Execute_Query.Location = new System.Drawing.Point(174, 218);
             this.button_Execute_Query.Name = "button_Execute_Query";
             this.button_Execute_Query.Size = new System.Drawing.Size(130, 28);
-            this.button_Execute_Query.TabIndex = 80;
+            this.button_Execute_Query.TabIndex = 7;
             this.button_Execute_Query.Text = "Execute Query";
             this.button_Execute_Query.UseVisualStyleBackColor = false;
             this.button_Execute_Query.Click += new System.EventHandler(this.button_Execute_Query_Click);
@@ -394,7 +394,7 @@
             this.textBox_username.Location = new System.Drawing.Point(115, 13);
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(292, 21);
-            this.textBox_username.TabIndex = 81;
+            this.textBox_username.TabIndex = 1;
             this.textBox_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_username.TextChanged += new System.EventHandler(this.textBox_username_TextChanged);
             // 
@@ -404,7 +404,7 @@
             this.textBox_pass.Location = new System.Drawing.Point(115, 40);
             this.textBox_pass.Name = "textBox_pass";
             this.textBox_pass.Size = new System.Drawing.Size(292, 21);
-            this.textBox_pass.TabIndex = 82;
+            this.textBox_pass.TabIndex = 2;
             this.textBox_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_pass.TextChanged += new System.EventHandler(this.textBox_pass_TextChanged);
             // 
@@ -452,7 +452,7 @@
             this.comboBox_Account_Access_level.Location = new System.Drawing.Point(216, 98);
             this.comboBox_Account_Access_level.Name = "comboBox_Account_Access_level";
             this.comboBox_Account_Access_level.Size = new System.Drawing.Size(191, 23);
-            this.comboBox_Account_Access_level.TabIndex = 86;
+            this.comboBox_Account_Access_level.TabIndex = 4;
             this.comboBox_Account_Access_level.SelectedIndexChanged += new System.EventHandler(this.comboBox_Account_Access_level_SelectedIndexChanged);
             // 
             // label_Executed_Successfully
@@ -524,7 +524,7 @@
             this.textBox_email.Location = new System.Drawing.Point(115, 67);
             this.textBox_email.Name = "textBox_email";
             this.textBox_email.Size = new System.Drawing.Size(292, 21);
-            this.textBox_email.TabIndex = 106;
+            this.textBox_email.TabIndex = 3;
             this.textBox_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Expansion
@@ -548,7 +548,7 @@
             this.comboBox_Expansion.Location = new System.Drawing.Point(216, 127);
             this.comboBox_Expansion.Name = "comboBox_Expansion";
             this.comboBox_Expansion.Size = new System.Drawing.Size(191, 23);
-            this.comboBox_Expansion.TabIndex = 109;
+            this.comboBox_Expansion.TabIndex = 5;
             this.comboBox_Expansion.SelectedIndexChanged += new System.EventHandler(this.comboBox_Expansion_SelectedIndexChanged);
             // 
             // label7
@@ -577,7 +577,7 @@
             this.textBox_realmID.Location = new System.Drawing.Point(216, 156);
             this.textBox_realmID.Name = "textBox_realmID";
             this.textBox_realmID.Size = new System.Drawing.Size(109, 21);
-            this.textBox_realmID.TabIndex = 111;
+            this.textBox_realmID.TabIndex = 6;
             this.textBox_realmID.Text = "-1";
             this.textBox_realmID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_realmID.TextChanged += new System.EventHandler(this.textBox_realmID_TextChanged);
@@ -611,21 +611,6 @@
             this.panel1.Size = new System.Drawing.Size(484, 459);
             this.panel1.TabIndex = 115;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(10, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 114;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
@@ -649,11 +634,36 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBox_Account_Access_Level);
             this.groupBox1.Controls.Add(this.textBox_email);
-            this.groupBox1.Location = new System.Drawing.Point(3, 0);
+            this.groupBox1.Location = new System.Drawing.Point(3, -4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(478, 449);
+            this.groupBox1.Size = new System.Drawing.Size(478, 453);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(10, 261);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 178);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 13);
+            this.label9.TabIndex = 115;
+            this.label9.Text = "Change App Color";
+            this.label9.Visible = false;
             // 
             // comboBox1
             // 
@@ -668,16 +678,6 @@
             this.comboBox1.TabIndex = 114;
             this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 178);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 13);
-            this.label9.TabIndex = 115;
-            this.label9.Text = "Change App Color";
-            this.label9.Visible = false;
             // 
             // timer7
             // 

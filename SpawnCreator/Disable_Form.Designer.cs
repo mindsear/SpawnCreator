@@ -41,6 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox_entry = new System.Windows.Forms.TextBox();
             this.label89 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
@@ -67,13 +69,11 @@
             this.textBox_params_0 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_params_1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.button_flags_dis_map = new System.Windows.Forms.Button();
             this.button_flags_dis_vmap = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -109,7 +109,7 @@
             this.textBox_comment.Name = "textBox_comment";
             this.textBox_comment.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox_comment.Size = new System.Drawing.Size(415, 37);
-            this.textBox_comment.TabIndex = 118;
+            this.textBox_comment.TabIndex = 5;
             this.toolTip1.SetToolTip(this.textBox_comment, "A comment as to why the something was disabled, ");
             this.textBox_comment.TextChanged += new System.EventHandler(this.textBox_comment_TextChanged);
             // 
@@ -143,7 +143,7 @@
             this.comboBox_SourceType.Location = new System.Drawing.Point(183, 153);
             this.comboBox_SourceType.Name = "comboBox_SourceType";
             this.comboBox_SourceType.Size = new System.Drawing.Size(246, 21);
-            this.comboBox_SourceType.TabIndex = 122;
+            this.comboBox_SourceType.TabIndex = 1;
             this.comboBox_SourceType.SelectedIndexChanged += new System.EventHandler(this.comboBox_SourceType_SelectedIndexChanged);
             // 
             // label78
@@ -152,9 +152,9 @@
             this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label78.ForeColor = System.Drawing.Color.Black;
-            this.label78.Location = new System.Drawing.Point(560, 4);
+            this.label78.Location = new System.Drawing.Point(560, 0);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 26);
+            this.label78.Size = new System.Drawing.Size(26, 28);
             this.label78.TabIndex = 114;
             this.label78.Text = "<";
             this.toolTip1.SetToolTip(this.label78, "Back to Main Menu");
@@ -168,9 +168,9 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(592, 4);
+            this.label1.Location = new System.Drawing.Point(592, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 26);
+            this.label1.Size = new System.Drawing.Size(26, 28);
             this.label1.TabIndex = 80;
             this.label1.Text = "--";
             this.toolTip1.SetToolTip(this.label1, "Minimize");
@@ -184,9 +184,9 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(624, 4);
+            this.label2.Location = new System.Drawing.Point(625, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 26);
+            this.label2.Size = new System.Drawing.Size(26, 28);
             this.label2.TabIndex = 79;
             this.label2.Text = "X";
             this.toolTip1.SetToolTip(this.label2, "Close");
@@ -204,12 +204,33 @@
             this.label4.Text = "             Entry             ";
             this.toolTip1.SetToolTip(this.label4, "Entry of Spell/Quest/Map/BG/Achievement/Map");
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(378, 343);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.TabIndex = 139;
+            this.label7.Text = "Comment";
+            this.toolTip1.SetToolTip(this.label7, "A comment as to why the something was disabled, \r\nor any other text that you want" +
+        "");
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(464, 191);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 146;
+            this.label10.Text = "Notes";
+            this.toolTip1.SetToolTip(this.label10, "Entry of Spell/Quest/Map/BG/Achievement/Map");
+            // 
             // textBox_entry
             // 
             this.textBox_entry.Location = new System.Drawing.Point(455, 153);
             this.textBox_entry.Name = "textBox_entry";
             this.textBox_entry.Size = new System.Drawing.Size(128, 20);
-            this.textBox_entry.TabIndex = 117;
+            this.textBox_entry.TabIndex = 2;
             this.textBox_entry.Text = "0";
             this.textBox_entry.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_entry.TextChanged += new System.EventHandler(this.textBox_entry_TextChanged);
@@ -220,7 +241,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(50, 23);
+            this.label89.Location = new System.Drawing.Point(50, 18);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -262,7 +283,7 @@
             this.panel2.Controls.Add(this.label81);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(651, 34);
+            this.panel2.Size = new System.Drawing.Size(651, 28);
             this.panel2.TabIndex = 114;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
@@ -274,7 +295,7 @@
             this.label_mysql_status2.BackColor = System.Drawing.Color.Transparent;
             this.label_mysql_status2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mysql_status2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label_mysql_status2.Location = new System.Drawing.Point(132, 8);
+            this.label_mysql_status2.Location = new System.Drawing.Point(134, 4);
             this.label_mysql_status2.Name = "label_mysql_status2";
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
@@ -286,7 +307,7 @@
             this.label85.BackColor = System.Drawing.Color.Transparent;
             this.label85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label85.ForeColor = System.Drawing.Color.White;
-            this.label85.Location = new System.Drawing.Point(10, 8);
+            this.label85.Location = new System.Drawing.Point(12, 4);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
@@ -304,7 +325,7 @@
             this.panel3.Controls.Add(this.pictureBox9);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(0, 32);
+            this.panel3.Location = new System.Drawing.Point(0, 28);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 463);
             this.panel3.TabIndex = 115;
@@ -366,7 +387,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(49, 5);
+            this.label_stopwatch.Location = new System.Drawing.Point(49, 1);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -456,7 +477,7 @@
             this.button_Execute_Query.Location = new System.Drawing.Point(338, 412);
             this.button_Execute_Query.Name = "button_Execute_Query";
             this.button_Execute_Query.Size = new System.Drawing.Size(148, 38);
-            this.button_Execute_Query.TabIndex = 116;
+            this.button_Execute_Query.TabIndex = 6;
             this.button_Execute_Query.Text = "Execute Query";
             this.button_Execute_Query.UseVisualStyleBackColor = false;
             this.button_Execute_Query.Click += new System.EventHandler(this.button_Execute_Query_Click);
@@ -500,7 +521,7 @@
             this.textBox_params_0.Location = new System.Drawing.Point(317, 218);
             this.textBox_params_0.Name = "textBox_params_0";
             this.textBox_params_0.Size = new System.Drawing.Size(116, 20);
-            this.textBox_params_0.TabIndex = 135;
+            this.textBox_params_0.TabIndex = 3;
             this.textBox_params_0.Text = "0";
             this.textBox_params_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_params_0.TextChanged += new System.EventHandler(this.textBox_params_0_TextChanged);
@@ -519,21 +540,10 @@
             this.textBox_params_1.Location = new System.Drawing.Point(317, 274);
             this.textBox_params_1.Name = "textBox_params_1";
             this.textBox_params_1.Size = new System.Drawing.Size(116, 20);
-            this.textBox_params_1.TabIndex = 137;
+            this.textBox_params_1.TabIndex = 4;
             this.textBox_params_1.Text = "0";
             this.textBox_params_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_params_1.TextChanged += new System.EventHandler(this.textBox_params_1_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(378, 343);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 139;
-            this.label7.Text = "Comment";
-            this.toolTip1.SetToolTip(this.label7, "A comment as to why the something was disabled, \r\nor any other text that you want" +
-        "");
             // 
             // button_flags_dis_map
             // 
@@ -599,16 +609,6 @@
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(211, 100);
             this.textBox1.TabIndex = 145;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(464, 191);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
-            this.label10.TabIndex = 146;
-            this.label10.Text = "Notes";
-            this.toolTip1.SetToolTip(this.label10, "Entry of Spell/Quest/Map/BG/Achievement/Map");
             // 
             // linkLabel2
             // 

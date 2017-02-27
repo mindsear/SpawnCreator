@@ -140,7 +140,7 @@
             this.panel3.Controls.Add(this.pictureBox9);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(0, 32);
+            this.panel3.Location = new System.Drawing.Point(0, 28);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 491);
             this.panel3.TabIndex = 81;
@@ -150,7 +150,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(52, 23);
+            this.label89.Location = new System.Drawing.Point(52, 18);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -211,7 +211,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(52, 5);
+            this.label_stopwatch.Location = new System.Drawing.Point(52, 1);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -303,7 +303,7 @@
             this.panel2.Controls.Add(this.label81);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(774, 34);
+            this.panel2.Size = new System.Drawing.Size(774, 28);
             this.panel2.TabIndex = 80;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
@@ -315,9 +315,9 @@
             this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label78.ForeColor = System.Drawing.Color.Black;
-            this.label78.Location = new System.Drawing.Point(683, 4);
+            this.label78.Location = new System.Drawing.Point(683, 0);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 26);
+            this.label78.Size = new System.Drawing.Size(26, 28);
             this.label78.TabIndex = 114;
             this.label78.Text = "<";
             this.toolTip1.SetToolTip(this.label78, "Back to Main Menu");
@@ -331,9 +331,9 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(715, 4);
+            this.label1.Location = new System.Drawing.Point(715, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 26);
+            this.label1.Size = new System.Drawing.Size(26, 28);
             this.label1.TabIndex = 80;
             this.label1.Text = "--";
             this.toolTip1.SetToolTip(this.label1, "Minimize");
@@ -347,9 +347,9 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(747, 4);
+            this.label2.Location = new System.Drawing.Point(747, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 26);
+            this.label2.Size = new System.Drawing.Size(26, 28);
             this.label2.TabIndex = 79;
             this.label2.Text = "X";
             this.toolTip1.SetToolTip(this.label2, "Close");
@@ -363,7 +363,7 @@
             this.label_mysql_status2.BackColor = System.Drawing.Color.Transparent;
             this.label_mysql_status2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mysql_status2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label_mysql_status2.Location = new System.Drawing.Point(130, 8);
+            this.label_mysql_status2.Location = new System.Drawing.Point(130, 4);
             this.label_mysql_status2.Name = "label_mysql_status2";
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
@@ -375,7 +375,7 @@
             this.label85.BackColor = System.Drawing.Color.Transparent;
             this.label85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label85.ForeColor = System.Drawing.Color.White;
-            this.label85.Location = new System.Drawing.Point(10, 8);
+            this.label85.Location = new System.Drawing.Point(10, 4);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
@@ -414,7 +414,7 @@
             this.ResetBTN.Location = new System.Drawing.Point(687, 422);
             this.ResetBTN.Name = "ResetBTN";
             this.ResetBTN.Size = new System.Drawing.Size(75, 36);
-            this.ResetBTN.TabIndex = 96;
+            this.ResetBTN.TabIndex = 16;
             this.ResetBTN.Text = "Reset";
             this.ResetBTN.UseVisualStyleBackColor = false;
             this.ResetBTN.Click += new System.EventHandler(this.ResetBTN_Click);
@@ -428,7 +428,7 @@
             this.GenerateConditionBTN.Location = new System.Drawing.Point(583, 422);
             this.GenerateConditionBTN.Name = "GenerateConditionBTN";
             this.GenerateConditionBTN.Size = new System.Drawing.Size(86, 36);
-            this.GenerateConditionBTN.TabIndex = 95;
+            this.GenerateConditionBTN.TabIndex = 15;
             this.GenerateConditionBTN.Text = "Execute Query";
             this.GenerateConditionBTN.UseVisualStyleBackColor = false;
             this.GenerateConditionBTN.Click += new System.EventHandler(this.GenerateConditionBTN_Click);
@@ -448,7 +448,7 @@
             -2147483648});
             this.ErrorTextIDNUD.Name = "ErrorTextIDNUD";
             this.ErrorTextIDNUD.Size = new System.Drawing.Size(90, 20);
-            this.ErrorTextIDNUD.TabIndex = 94;
+            this.ErrorTextIDNUD.TabIndex = 12;
             this.ErrorTextIDNUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // ErrorTypeNUD
@@ -466,7 +466,7 @@
             -2147483648});
             this.ErrorTypeNUD.Name = "ErrorTypeNUD";
             this.ErrorTypeNUD.Size = new System.Drawing.Size(88, 20);
-            this.ErrorTypeNUD.TabIndex = 93;
+            this.ErrorTypeNUD.TabIndex = 11;
             this.ErrorTypeNUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // ScriptNameTXT
@@ -474,7 +474,7 @@
             this.ScriptNameTXT.Location = new System.Drawing.Point(571, 388);
             this.ScriptNameTXT.Name = "ScriptNameTXT";
             this.ScriptNameTXT.Size = new System.Drawing.Size(192, 20);
-            this.ScriptNameTXT.TabIndex = 92;
+            this.ScriptNameTXT.TabIndex = 13;
             this.ScriptNameTXT.TextChanged += new System.EventHandler(this.textBox_sourceType_TextChanged);
             // 
             // CommentTXT
@@ -482,7 +482,7 @@
             this.CommentTXT.Location = new System.Drawing.Point(193, 438);
             this.CommentTXT.Name = "CommentTXT";
             this.CommentTXT.Size = new System.Drawing.Size(369, 20);
-            this.CommentTXT.TabIndex = 91;
+            this.CommentTXT.TabIndex = 14;
             this.CommentTXT.TextChanged += new System.EventHandler(this.textBox_sourceType_TextChanged);
             // 
             // label15
@@ -536,7 +536,7 @@
             -2147483648});
             this.NegativeConditionNUD.Name = "NegativeConditionNUD";
             this.NegativeConditionNUD.Size = new System.Drawing.Size(94, 20);
-            this.NegativeConditionNUD.TabIndex = 86;
+            this.NegativeConditionNUD.TabIndex = 10;
             this.NegativeConditionNUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // label11
@@ -591,7 +591,7 @@
             -2147483648});
             this.ConditionValue3NUD.Name = "ConditionValue3NUD";
             this.ConditionValue3NUD.Size = new System.Drawing.Size(92, 20);
-            this.ConditionValue3NUD.TabIndex = 7;
+            this.ConditionValue3NUD.TabIndex = 9;
             this.ConditionValue3NUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // label10
@@ -618,7 +618,7 @@
             -2147483648});
             this.ConditionValue2NUD.Name = "ConditionValue2NUD";
             this.ConditionValue2NUD.Size = new System.Drawing.Size(94, 20);
-            this.ConditionValue2NUD.TabIndex = 5;
+            this.ConditionValue2NUD.TabIndex = 8;
             this.ConditionValue2NUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // label9
@@ -645,7 +645,7 @@
             -2147483648});
             this.ConditionValue1NUD.Name = "ConditionValue1NUD";
             this.ConditionValue1NUD.Size = new System.Drawing.Size(90, 20);
-            this.ConditionValue1NUD.TabIndex = 3;
+            this.ConditionValue1NUD.TabIndex = 7;
             this.ConditionValue1NUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // label8
@@ -716,7 +716,7 @@
             this.comboBox1.Location = new System.Drawing.Point(63, 28);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(168, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboBox1.TabIndex = 6;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox2
@@ -745,7 +745,7 @@
             -2147483648});
             this.ElseGroupNUD.Name = "ElseGroupNUD";
             this.ElseGroupNUD.Size = new System.Drawing.Size(135, 20);
-            this.ElseGroupNUD.TabIndex = 1;
+            this.ElseGroupNUD.TabIndex = 5;
             this.ElseGroupNUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // label6
@@ -822,7 +822,7 @@
             -2147483648});
             this.ConditionTargetNUD.Name = "ConditionTargetNUD";
             this.ConditionTargetNUD.Size = new System.Drawing.Size(103, 20);
-            this.ConditionTargetNUD.TabIndex = 9;
+            this.ConditionTargetNUD.TabIndex = 4;
             this.ConditionTargetNUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // label4
@@ -849,7 +849,7 @@
             -2147483648});
             this.SourceIDNUD.Name = "SourceIDNUD";
             this.SourceIDNUD.Size = new System.Drawing.Size(97, 20);
-            this.SourceIDNUD.TabIndex = 7;
+            this.SourceIDNUD.TabIndex = 3;
             this.SourceIDNUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // SourceIDLBL
@@ -885,7 +885,7 @@
             -2147483648});
             this.SourceEntryNUD.Name = "SourceEntryNUD";
             this.SourceEntryNUD.Size = new System.Drawing.Size(103, 20);
-            this.SourceEntryNUD.TabIndex = 4;
+            this.SourceEntryNUD.TabIndex = 2;
             this.SourceEntryNUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // SourceGroupNUD
@@ -903,7 +903,7 @@
             -2147483648});
             this.SourceGroupNUD.Name = "SourceGroupNUD";
             this.SourceGroupNUD.Size = new System.Drawing.Size(98, 20);
-            this.SourceGroupNUD.TabIndex = 3;
+            this.SourceGroupNUD.TabIndex = 1;
             this.SourceGroupNUD.ValueChanged += new System.EventHandler(this.SourceEntryNUD_ValueChanged);
             // 
             // label16

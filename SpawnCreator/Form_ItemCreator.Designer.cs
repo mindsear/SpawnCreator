@@ -63,6 +63,7 @@
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -266,8 +267,11 @@
             this.textBox68 = new System.Windows.Forms.TextBox();
             this.label73 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox105 = new System.Windows.Forms.TextBox();
+            this.comboBox29 = new System.Windows.Forms.ComboBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label_Success = new System.Windows.Forms.Label();
             this.label_mysql_status2 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -292,8 +296,6 @@
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer6 = new System.Windows.Forms.Timer(this.components);
-            this.textBox105 = new System.Windows.Forms.TextBox();
-            this.comboBox29 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -783,9 +785,9 @@
             this.label80.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label80.ForeColor = System.Drawing.Color.Black;
-            this.label80.Location = new System.Drawing.Point(855, 2);
+            this.label80.Location = new System.Drawing.Point(854, 0);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(26, 26);
+            this.label80.Size = new System.Drawing.Size(26, 27);
             this.label80.TabIndex = 3;
             this.label80.Text = "--";
             this.toolTip1.SetToolTip(this.label80, "Minimize");
@@ -799,9 +801,9 @@
             this.label81.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label81.ForeColor = System.Drawing.Color.Black;
-            this.label81.Location = new System.Drawing.Point(888, 2);
+            this.label81.Location = new System.Drawing.Point(888, 0);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(26, 26);
+            this.label81.Size = new System.Drawing.Size(26, 27);
             this.label81.TabIndex = 2;
             this.label81.Text = "X";
             this.toolTip1.SetToolTip(this.label81, "Close");
@@ -815,15 +817,31 @@
             this.label90.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label90.ForeColor = System.Drawing.Color.Black;
-            this.label90.Location = new System.Drawing.Point(824, 2);
+            this.label90.Location = new System.Drawing.Point(824, 0);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(26, 26);
+            this.label90.Size = new System.Drawing.Size(26, 27);
             this.label90.TabIndex = 23;
             this.label90.Text = "<";
             this.toolTip1.SetToolTip(this.label90, "Back To Main Menu");
             this.label90.Click += new System.EventHandler(this.label90_Click);
             this.label90.MouseEnter += new System.EventHandler(this.label90_MouseEnter);
             this.label90.MouseLeave += new System.EventHandler(this.label90_MouseLeave);
+            // 
+            // label91
+            // 
+            this.label91.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.label91.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label91.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.ForeColor = System.Drawing.Color.Black;
+            this.label91.Location = new System.Drawing.Point(795, 0);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(26, 28);
+            this.label91.TabIndex = 24;
+            this.label91.Text = "✔";
+            this.toolTip1.SetToolTip(this.label91, "Execute Query");
+            this.label91.Click += new System.EventHandler(this.label91_Click);
+            this.label91.MouseEnter += new System.EventHandler(this.label91_MouseEnter);
+            this.label91.MouseLeave += new System.EventHandler(this.label91_MouseLeave);
             // 
             // groupBox2
             // 
@@ -4029,6 +4047,29 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // textBox105
+            // 
+            this.textBox105.Location = new System.Drawing.Point(554, 49);
+            this.textBox105.Name = "textBox105";
+            this.textBox105.Size = new System.Drawing.Size(100, 20);
+            this.textBox105.TabIndex = 211;
+            this.textBox105.Visible = false;
+            this.textBox105.TextChanged += new System.EventHandler(this.textBox105_TextChanged);
+            // 
+            // comboBox29
+            // 
+            this.comboBox29.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox29.Font = new System.Drawing.Font("Arial", 9F);
+            this.comboBox29.FormattingEnabled = true;
+            this.comboBox29.Items.AddRange(new object[] {
+            "Add New Item",
+            "Replace Item"});
+            this.comboBox29.Location = new System.Drawing.Point(388, 49);
+            this.comboBox29.Name = "comboBox29";
+            this.comboBox29.Size = new System.Drawing.Size(154, 23);
+            this.comboBox29.TabIndex = 210;
+            this.comboBox29.SelectedIndexChanged += new System.EventHandler(this.comboBox29_SelectedIndexChanged);
+            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::SpawnCreator.Properties.Resources._250px_Mage_Crest;
@@ -4042,12 +4083,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.panel2.Controls.Add(this.label_Success);
+            this.panel2.Controls.Add(this.label91);
             this.panel2.Controls.Add(this.label90);
             this.panel2.Controls.Add(this.label_mysql_status2);
             this.panel2.Controls.Add(this.label85);
             this.panel2.Controls.Add(this.label80);
             this.panel2.Controls.Add(this.label81);
-            this.panel2.Location = new System.Drawing.Point(-1, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(914, 28);
             this.panel2.TabIndex = 77;
@@ -4055,6 +4098,18 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
+            // 
+            // label_Success
+            // 
+            this.label_Success.AutoSize = true;
+            this.label_Success.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Success.ForeColor = System.Drawing.Color.Lime;
+            this.label_Success.Location = new System.Drawing.Point(696, 6);
+            this.label_Success.Name = "label_Success";
+            this.label_Success.Size = new System.Drawing.Size(75, 17);
+            this.label_Success.TabIndex = 25;
+            this.label_Success.Text = "Success!";
+            this.label_Success.Visible = false;
             // 
             // label_mysql_status2
             // 
@@ -4093,7 +4148,7 @@
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(-1, 27);
+            this.panel3.Location = new System.Drawing.Point(0, 27);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 507);
             this.panel3.TabIndex = 78;
@@ -4103,7 +4158,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(55, 22);
+            this.label89.Location = new System.Drawing.Point(55, 20);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -4168,7 +4223,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(54, 4);
+            this.label_stopwatch.Location = new System.Drawing.Point(54, 2);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -4310,28 +4365,6 @@
             // 
             this.timer6.Interval = 6000;
             this.timer6.Tick += new System.EventHandler(this.timer6_Tick);
-            // 
-            // textBox105
-            // 
-            this.textBox105.Location = new System.Drawing.Point(554, 49);
-            this.textBox105.Name = "textBox105";
-            this.textBox105.Size = new System.Drawing.Size(100, 20);
-            this.textBox105.TabIndex = 211;
-            this.textBox105.Visible = false;
-            // 
-            // comboBox29
-            // 
-            this.comboBox29.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox29.Font = new System.Drawing.Font("Arial", 9F);
-            this.comboBox29.FormattingEnabled = true;
-            this.comboBox29.Items.AddRange(new object[] {
-            "Add New Item",
-            "Replace Item"});
-            this.comboBox29.Location = new System.Drawing.Point(388, 49);
-            this.comboBox29.Name = "comboBox29";
-            this.comboBox29.Size = new System.Drawing.Size(154, 23);
-            this.comboBox29.TabIndex = 210;
-            this.comboBox29.SelectedIndexChanged += new System.EventHandler(this.comboBox29_SelectedIndexChanged);
             // 
             // Form_ItemCreator
             // 
@@ -4643,10 +4676,8 @@
         internal System.Windows.Forms.Label label_mysql_status2;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label label_stopwatch;
-        private System.Windows.Forms.Button button_maxPlus1fromDB;
         private System.Windows.Forms.ToolTip toolTip2;
         internal System.Windows.Forms.Label label83;
-        private System.Windows.Forms.Button button_execute_query;
         internal System.Windows.Forms.Label label_query_executed_successfully2;
         private System.Windows.Forms.Panel panel7;
         internal System.Windows.Forms.Label label86;
@@ -4658,9 +4689,13 @@
         private System.Windows.Forms.Timer timer6;
         private System.Windows.Forms.Label label89;
         internal System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label90;
         private System.Windows.Forms.TextBox textBox105;
         private System.Windows.Forms.ComboBox comboBox29;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label_Success;
+        internal System.Windows.Forms.Button button_execute_query;
+        internal System.Windows.Forms.Button button_maxPlus1fromDB;
+        internal System.Windows.Forms.Label label91;
+        internal System.Windows.Forms.Label label90;
+        internal System.Windows.Forms.Timer timer1;
     }
 }

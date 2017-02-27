@@ -161,9 +161,9 @@
             this.label80.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label80.ForeColor = System.Drawing.Color.Black;
-            this.label80.Location = new System.Drawing.Point(857, 6);
+            this.label80.Location = new System.Drawing.Point(857, 0);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(26, 26);
+            this.label80.Size = new System.Drawing.Size(26, 28);
             this.label80.TabIndex = 3;
             this.label80.Text = "--";
             this.toolTip1.SetToolTip(this.label80, "Minimize");
@@ -177,9 +177,9 @@
             this.label81.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label81.ForeColor = System.Drawing.Color.Black;
-            this.label81.Location = new System.Drawing.Point(885, 6);
+            this.label81.Location = new System.Drawing.Point(889, 0);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(26, 26);
+            this.label81.Size = new System.Drawing.Size(26, 28);
             this.label81.TabIndex = 2;
             this.label81.Text = "X";
             this.toolTip1.SetToolTip(this.label81, "Close");
@@ -197,7 +197,7 @@
             this.panel2.Controls.Add(this.label81);
             this.panel2.Location = new System.Drawing.Point(-4, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(914, 36);
+            this.panel2.Size = new System.Drawing.Size(914, 28);
             this.panel2.TabIndex = 78;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
@@ -209,9 +209,9 @@
             this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label78.ForeColor = System.Drawing.Color.Black;
-            this.label78.Location = new System.Drawing.Point(825, 6);
+            this.label78.Location = new System.Drawing.Point(825, 0);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 26);
+            this.label78.Size = new System.Drawing.Size(26, 28);
             this.label78.TabIndex = 22;
             this.label78.Text = "<";
             this.toolTip1.SetToolTip(this.label78, "Back To Main Menu");
@@ -225,7 +225,7 @@
             this.label_mysql_status2.BackColor = System.Drawing.Color.Transparent;
             this.label_mysql_status2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mysql_status2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label_mysql_status2.Location = new System.Drawing.Point(132, 8);
+            this.label_mysql_status2.Location = new System.Drawing.Point(132, 4);
             this.label_mysql_status2.Name = "label_mysql_status2";
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
@@ -237,7 +237,7 @@
             this.label85.BackColor = System.Drawing.Color.Transparent;
             this.label85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label85.ForeColor = System.Drawing.Color.White;
-            this.label85.Location = new System.Drawing.Point(10, 8);
+            this.label85.Location = new System.Drawing.Point(10, 4);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
@@ -255,7 +255,7 @@
             this.panel3.Controls.Add(this.pictureBox9);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(-1, 35);
+            this.panel3.Location = new System.Drawing.Point(0, 28);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 499);
             this.panel3.TabIndex = 79;
@@ -265,7 +265,7 @@
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(51, 22);
+            this.label89.Location = new System.Drawing.Point(51, 20);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(59, 12);
             this.label89.TabIndex = 21;
@@ -328,7 +328,7 @@
             this.label_stopwatch.AutoSize = true;
             this.label_stopwatch.BackColor = System.Drawing.Color.White;
             this.label_stopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stopwatch.Location = new System.Drawing.Point(50, 4);
+            this.label_stopwatch.Location = new System.Drawing.Point(50, 1);
             this.label_stopwatch.Name = "label_stopwatch";
             this.label_stopwatch.Size = new System.Drawing.Size(63, 15);
             this.label_stopwatch.TabIndex = 21;
@@ -419,9 +419,9 @@
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(166, 35);
+            this.panel1.Location = new System.Drawing.Point(166, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(744, 499);
+            this.panel1.Size = new System.Drawing.Size(744, 506);
             this.panel1.TabIndex = 80;
             // 
             // textBox105
@@ -492,7 +492,7 @@
             this.textBox31.Location = new System.Drawing.Point(82, 73);
             this.textBox31.Name = "textBox31";
             this.textBox31.Size = new System.Drawing.Size(181, 20);
-            this.textBox31.TabIndex = 158;
+            this.textBox31.TabIndex = 34;
             this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox32
@@ -501,7 +501,7 @@
             this.textBox32.Location = new System.Drawing.Point(120, 112);
             this.textBox32.Name = "textBox32";
             this.textBox32.Size = new System.Drawing.Size(98, 20);
-            this.textBox32.TabIndex = 162;
+            this.textBox32.TabIndex = 35;
             this.textBox32.Text = "12340";
             this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox32.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -512,7 +512,7 @@
             this.textBox30.Location = new System.Drawing.Point(30, 34);
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(282, 20);
-            this.textBox30.TabIndex = 160;
+            this.textBox30.TabIndex = 33;
             this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label33
@@ -578,7 +578,7 @@
             this.button_execute_query.Location = new System.Drawing.Point(252, 46);
             this.button_execute_query.Name = "button_execute_query";
             this.button_execute_query.Size = new System.Drawing.Size(153, 27);
-            this.button_execute_query.TabIndex = 80;
+            this.button_execute_query.TabIndex = 36;
             this.button_execute_query.Text = "Execute Query";
             this.button_execute_query.UseVisualStyleBackColor = false;
             this.button_execute_query.Click += new System.EventHandler(this.button_execute_query_Click);
@@ -627,7 +627,7 @@
             this.textBox34.Location = new System.Drawing.Point(223, 203);
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(99, 20);
-            this.textBox34.TabIndex = 164;
+            this.textBox34.TabIndex = 7;
             this.textBox34.Text = "1";
             this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox34.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -651,7 +651,7 @@
             this.textBox4.Location = new System.Drawing.Point(44, 154);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(243, 20);
-            this.textBox4.TabIndex = 114;
+            this.textBox4.TabIndex = 4;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.textBox4, "Shows unique text in the object\'s casting bar when the object is used. ");
             // 
@@ -707,7 +707,7 @@
             this.comboBox1.Location = new System.Drawing.Point(95, 98);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(129, 21);
-            this.comboBox1.TabIndex = 111;
+            this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
@@ -729,7 +729,7 @@
             this.textBox3.Location = new System.Drawing.Point(115, 203);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(98, 20);
-            this.textBox3.TabIndex = 108;
+            this.textBox3.TabIndex = 6;
             this.textBox3.Text = "0";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
@@ -741,7 +741,7 @@
             this.textBox28.Location = new System.Drawing.Point(8, 203);
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(99, 20);
-            this.textBox28.TabIndex = 106;
+            this.textBox28.TabIndex = 5;
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button_maxPlus1fromDB
@@ -768,7 +768,7 @@
             this.textBox2.Location = new System.Drawing.Point(95, 32);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(225, 20);
-            this.textBox2.TabIndex = 100;
+            this.textBox2.TabIndex = 2;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -802,7 +802,7 @@
             this.textBox1.Location = new System.Drawing.Point(7, 32);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(82, 20);
-            this.textBox1.TabIndex = 99;
+            this.textBox1.TabIndex = 1;
             this.textBox1.Text = "400400";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
@@ -922,7 +922,7 @@
             this.textBox21.Location = new System.Drawing.Point(12, 360);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(98, 20);
-            this.textBox21.TabIndex = 155;
+            this.textBox21.TabIndex = 30;
             this.textBox21.Text = "0";
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -959,7 +959,7 @@
             this.textBox13.Location = new System.Drawing.Point(230, 360);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(98, 20);
-            this.textBox13.TabIndex = 139;
+            this.textBox13.TabIndex = 32;
             this.textBox13.Text = "0";
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -970,7 +970,7 @@
             this.textBox22.Location = new System.Drawing.Point(12, 242);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(98, 20);
-            this.textBox22.TabIndex = 153;
+            this.textBox22.TabIndex = 21;
             this.textBox22.Text = "0";
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox22.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1007,7 +1007,7 @@
             this.textBox14.Location = new System.Drawing.Point(230, 242);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(98, 20);
-            this.textBox14.TabIndex = 137;
+            this.textBox14.TabIndex = 23;
             this.textBox14.Text = "0";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1018,7 +1018,7 @@
             this.textBox23.Location = new System.Drawing.Point(12, 321);
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(98, 20);
-            this.textBox23.TabIndex = 151;
+            this.textBox23.TabIndex = 27;
             this.textBox23.Text = "0";
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox23.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1055,7 +1055,7 @@
             this.textBox15.Location = new System.Drawing.Point(230, 321);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(98, 20);
-            this.textBox15.TabIndex = 135;
+            this.textBox15.TabIndex = 29;
             this.textBox15.Text = "0";
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1066,7 +1066,7 @@
             this.textBox24.Location = new System.Drawing.Point(12, 282);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(98, 20);
-            this.textBox24.TabIndex = 149;
+            this.textBox24.TabIndex = 24;
             this.textBox24.Text = "0";
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox24.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1103,7 +1103,7 @@
             this.textBox16.Location = new System.Drawing.Point(230, 282);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(98, 20);
-            this.textBox16.TabIndex = 133;
+            this.textBox16.TabIndex = 26;
             this.textBox16.Text = "0";
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox16.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1114,7 +1114,7 @@
             this.textBox25.Location = new System.Drawing.Point(12, 203);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(98, 20);
-            this.textBox25.TabIndex = 147;
+            this.textBox25.TabIndex = 18;
             this.textBox25.Text = "0";
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox25.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1138,7 +1138,7 @@
             this.textBox26.Location = new System.Drawing.Point(12, 85);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(98, 20);
-            this.textBox26.TabIndex = 146;
+            this.textBox26.TabIndex = 9;
             this.textBox26.Text = "0";
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox26.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1149,7 +1149,7 @@
             this.textBox17.Location = new System.Drawing.Point(230, 203);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(98, 20);
-            this.textBox17.TabIndex = 131;
+            this.textBox17.TabIndex = 20;
             this.textBox17.Text = "0";
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox17.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1173,7 +1173,7 @@
             this.textBox18.Location = new System.Drawing.Point(230, 85);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(98, 20);
-            this.textBox18.TabIndex = 130;
+            this.textBox18.TabIndex = 11;
             this.textBox18.Text = "0";
             this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox18.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1184,7 +1184,7 @@
             this.textBox27.Location = new System.Drawing.Point(12, 164);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(98, 20);
-            this.textBox27.TabIndex = 144;
+            this.textBox27.TabIndex = 15;
             this.textBox27.Text = "0";
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox27.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1221,7 +1221,7 @@
             this.textBox19.Location = new System.Drawing.Point(230, 164);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(98, 20);
-            this.textBox19.TabIndex = 128;
+            this.textBox19.TabIndex = 17;
             this.textBox19.Text = "0";
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox19.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1232,7 +1232,7 @@
             this.textBox29.Location = new System.Drawing.Point(12, 125);
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(98, 20);
-            this.textBox29.TabIndex = 142;
+            this.textBox29.TabIndex = 12;
             this.textBox29.Text = "0";
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox29.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1256,7 +1256,7 @@
             this.textBox20.Location = new System.Drawing.Point(230, 125);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(98, 20);
-            this.textBox20.TabIndex = 126;
+            this.textBox20.TabIndex = 14;
             this.textBox20.Text = "0";
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox20.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1280,7 +1280,7 @@
             this.textBox9.Location = new System.Drawing.Point(121, 360);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(98, 20);
-            this.textBox9.TabIndex = 124;
+            this.textBox9.TabIndex = 31;
             this.textBox9.Text = "0";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1304,7 +1304,7 @@
             this.textBox10.Location = new System.Drawing.Point(121, 242);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(98, 20);
-            this.textBox10.TabIndex = 122;
+            this.textBox10.TabIndex = 22;
             this.textBox10.Text = "0";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1328,7 +1328,7 @@
             this.textBox11.Location = new System.Drawing.Point(121, 321);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(98, 20);
-            this.textBox11.TabIndex = 120;
+            this.textBox11.TabIndex = 28;
             this.textBox11.Text = "0";
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1352,7 +1352,7 @@
             this.textBox12.Location = new System.Drawing.Point(121, 282);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(98, 20);
-            this.textBox12.TabIndex = 118;
+            this.textBox12.TabIndex = 25;
             this.textBox12.Text = "0";
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1416,7 +1416,7 @@
             this.comboBox2.Location = new System.Drawing.Point(25, 32);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(289, 21);
-            this.comboBox2.TabIndex = 116;
+            this.comboBox2.TabIndex = 8;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // textBox8
@@ -1425,7 +1425,7 @@
             this.textBox8.Location = new System.Drawing.Point(121, 203);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(98, 20);
-            this.textBox8.TabIndex = 116;
+            this.textBox8.TabIndex = 19;
             this.textBox8.Text = "0";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1449,7 +1449,7 @@
             this.textBox7.Location = new System.Drawing.Point(121, 85);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(98, 20);
-            this.textBox7.TabIndex = 114;
+            this.textBox7.TabIndex = 10;
             this.textBox7.Text = "0";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1473,7 +1473,7 @@
             this.textBox6.Location = new System.Drawing.Point(121, 164);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(98, 20);
-            this.textBox6.TabIndex = 112;
+            this.textBox6.TabIndex = 16;
             this.textBox6.Text = "0";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);
@@ -1497,7 +1497,7 @@
             this.textBox5.Location = new System.Drawing.Point(121, 125);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(98, 20);
-            this.textBox5.TabIndex = 110;
+            this.textBox5.TabIndex = 13;
             this.textBox5.Text = "0";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox28_KeyPress);

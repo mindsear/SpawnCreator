@@ -333,6 +333,26 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap magnifier {
+            get {
+                object obj = ResourceManager.GetObject("magnifier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mail_body_frame {
+            get {
+                object obj = ResourceManager.GetObject("mail_body_frame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mail_green {
             get {
                 object obj = ResourceManager.GetObject("mail_green", resourceCulture);
@@ -506,6 +526,36 @@ namespace SpawnCreator.Properties {
         internal static System.Drawing.Bitmap TrainerGossipIcon {
             get {
                 object obj = ResourceManager.GetObject("TrainerGossipIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_CopperIcon {
+            get {
+                object obj = ResourceManager.GetObject("UI-CopperIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_GoldIcon {
+            get {
+                object obj = ResourceManager.GetObject("UI-GoldIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_SilverIcon {
+            get {
+                object obj = ResourceManager.GetObject("UI-SilverIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

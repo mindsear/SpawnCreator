@@ -1726,6 +1726,7 @@ namespace SpawnCreator
 
         private void timer5_Tick(object sender, EventArgs e)
         {
+            label_Success.Visible = true;
             label_query_executed_successfully2.Visible = true;
             timer5.Stop();
 
@@ -1734,6 +1735,7 @@ namespace SpawnCreator
 
         private void timer6_Tick(object sender, EventArgs e)
         {
+            label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
             timer6.Stop();
         }
@@ -2170,6 +2172,24 @@ namespace SpawnCreator
         {
             if (comboBox11.SelectedIndex == 0) textBox105.Text = "INSERT";
             else if (comboBox11.SelectedIndex == 1) textBox105.Text = "REPLACE";
+        }
+
+        private void label87_MouseEnter(object sender, EventArgs e)
+        {
+            label87.BackColor = Color.LawnGreen;
+            label87.ForeColor = Color.Black;
+        }
+
+        private void label87_MouseLeave(object sender, EventArgs e)
+        {
+            label87.BackColor = Color.FromArgb(58, 89, 114);
+            label87.ForeColor = Color.Black;
+        }
+
+        private void label87_Click(object sender, EventArgs e)
+        {
+            // Execute Query
+            button10_Click(sender, e);
         }
     }
 }

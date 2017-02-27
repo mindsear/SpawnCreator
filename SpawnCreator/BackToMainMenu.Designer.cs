@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackToMainMenu));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label_Quest_creator = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label_Quest_creator = new System.Windows.Forms.Label();
             this.label_GO_creator = new System.Windows.Forms.Label();
             this.label_Npc_creator = new System.Windows.Forms.Label();
             this.label_Account_Creator = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.label_version = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -83,22 +83,6 @@
             // toolTip1
             // 
             this.toolTip1.Tag = "";
-            // 
-            // label_Quest_creator
-            // 
-            this.label_Quest_creator.BackColor = System.Drawing.Color.Transparent;
-            this.label_Quest_creator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_Quest_creator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Quest_creator.ForeColor = System.Drawing.Color.Black;
-            this.label_Quest_creator.Location = new System.Drawing.Point(0, 0);
-            this.label_Quest_creator.Name = "label_Quest_creator";
-            this.label_Quest_creator.Size = new System.Drawing.Size(177, 30);
-            this.label_Quest_creator.TabIndex = 0;
-            this.label_Quest_creator.Text = "Quest Creator";
-            this.label_Quest_creator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_Quest_creator.Click += new System.EventHandler(this.label_Quest_creator_Click_1);
-            this.label_Quest_creator.MouseEnter += new System.EventHandler(this.label_Quest_creator_MouseEnter_1);
-            this.label_Quest_creator.MouseLeave += new System.EventHandler(this.label_Quest_creator_MouseLeave_1);
             // 
             // label8
             // 
@@ -129,6 +113,22 @@
             this.label7.Click += new System.EventHandler(this.label7_Click_1);
             this.label7.MouseEnter += new System.EventHandler(this.label7_MouseEnter_1);
             this.label7.MouseLeave += new System.EventHandler(this.label7_MouseLeave_1);
+            // 
+            // label_Quest_creator
+            // 
+            this.label_Quest_creator.BackColor = System.Drawing.Color.Transparent;
+            this.label_Quest_creator.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_Quest_creator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Quest_creator.ForeColor = System.Drawing.Color.Black;
+            this.label_Quest_creator.Location = new System.Drawing.Point(0, 0);
+            this.label_Quest_creator.Name = "label_Quest_creator";
+            this.label_Quest_creator.Size = new System.Drawing.Size(177, 30);
+            this.label_Quest_creator.TabIndex = 0;
+            this.label_Quest_creator.Text = "Quest Creator";
+            this.label_Quest_creator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Quest_creator.Click += new System.EventHandler(this.label_Quest_creator_Click_1);
+            this.label_Quest_creator.MouseEnter += new System.EventHandler(this.label_Quest_creator_MouseEnter_1);
+            this.label_Quest_creator.MouseLeave += new System.EventHandler(this.label_Quest_creator_MouseLeave_1);
             // 
             // label_GO_creator
             // 
@@ -466,16 +466,16 @@
             this.label9.MouseEnter += new System.EventHandler(this.label9_MouseEnter);
             this.label9.MouseLeave += new System.EventHandler(this.label9_MouseLeave);
             // 
-            // label15
+            // label_version
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Maroon;
-            this.label15.Location = new System.Drawing.Point(405, 35);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(33, 16);
-            this.label15.TabIndex = 123;
-            this.label15.Text = "v2.2";
+            this.label_version.AutoSize = true;
+            this.label_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_version.ForeColor = System.Drawing.Color.Maroon;
+            this.label_version.Location = new System.Drawing.Point(405, 35);
+            this.label_version.Name = "label_version";
+            this.label_version.Size = new System.Drawing.Size(33, 16);
+            this.label_version.TabIndex = 123;
+            this.label_version.Text = "v2.2";
             // 
             // panel9
             // 
@@ -486,7 +486,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(177, 30);
             this.panel9.TabIndex = 124;
-            this.panel9.Visible = false;
             // 
             // label10
             // 
@@ -499,7 +498,6 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Mail Sender";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.Visible = false;
             this.label10.Click += new System.EventHandler(this.label10_Click);
             this.label10.MouseEnter += new System.EventHandler(this.label10_MouseEnter);
             this.label10.MouseLeave += new System.EventHandler(this.label10_MouseLeave);
@@ -522,7 +520,7 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(489, 401);
             this.Controls.Add(this.panel9);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label_version);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel6);
@@ -598,8 +596,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label10;
+        internal System.Windows.Forms.Label label_version;
     }
 }

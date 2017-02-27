@@ -445,7 +445,8 @@ namespace SpawnCreator
 
         private void BackToMainMenu_Load(object sender, EventArgs e)
         {
-            
+            label_version.Text = "v2.3";
+
             try
             {
                 string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
@@ -694,7 +695,10 @@ namespace SpawnCreator
 
         private void label10_Click(object sender, EventArgs e)
         {
+            Close();
 
+            MailSender mail = new MailSender();
+            mail.Show();
         }
 
         private void label_Quest_creator_Click_1(object sender, EventArgs e)
