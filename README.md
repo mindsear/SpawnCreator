@@ -8,10 +8,9 @@ Note: You need XAMPP (MariaDB 10) in order to get this application working.
 Download XAMPP:
 https://www.apachefriends.org/index.html
 
-If you're using MySQL Portable 5.5 or 5.6
-execute the following query:
-
-**UPDATE mysql.user SET Password=PASSWORD('') WHERE User='root';**
+If you're using MySQL Portable 5.5 or 5.6 execute the following query: \n
+**UPDATE mysql.user SET Password=PASSWORD('') WHERE User='root';** \n
+Restart MySQL.
 
 Screenshots
 
