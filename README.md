@@ -1,9 +1,12 @@
 # SpawnCreator
 Continuing Asandru's application
-(item creator, npc, quest, gameobject, accout creator for TrinityCore TDB 335.62)
+(item creator, npc, quest, gameobject, accout creator for TrinityCore TDB 335.62)  
+
 http://www.ac-web.org/forums/showthread.php?225077-Trinity-Item-Creator  
 
 http://forum.emucraft.com/showthread.php?tid=11  
+
+Programming language used: C# (Visual Studio 2015) .NET Framework 4.5.2
 
 _________________________________________________________________________________________
 
