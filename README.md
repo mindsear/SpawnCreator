@@ -1,12 +1,20 @@
 # SpawnCreator
 Continuing Asandru's application
 (item creator, npc, quest, gameobject, accout creator for TrinityCore TDB 335.62)
-http://www.ac-web.org/forums/showthread.php?225077-Trinity-Item-Creator
+http://www.ac-web.org/forums/showthread.php?225077-Trinity-Item-Creator  
 
-Note: You need XAMPP (MariaDB 10) in order to get this application working.
+_________________________________________________________________________________________
 
-Download XAMPP:
-https://www.apachefriends.org/index.html
+You can use XAMPP (MariaDB 10) or MySQL Server (Portable) >= 5.5.  
+Download XAMPP: https://www.apachefriends.org/index.html  
+
+_________________________________________________________________________________________
+
+If you're using MySQL Portable 5.5 or 5.6 execute the following query:  
+**UPDATE mysql.user SET Password=PASSWORD('') WHERE User='root';**  
+Restart MySQL.
+
+_________________________________________________________________________________________
 
 Screenshots
 
