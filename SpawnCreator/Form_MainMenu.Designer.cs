@@ -84,6 +84,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.CB_NoMySQL = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -331,7 +333,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(156, 29);
+            this.tabControl1.Location = new System.Drawing.Point(156, 57);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(335, 262);
@@ -395,6 +397,7 @@
             this.button_fill_default.Size = new System.Drawing.Size(25, 185);
             this.button_fill_default.TabIndex = 13;
             this.button_fill_default.Text = "fill";
+            this.toolTip1.SetToolTip(this.button_fill_default, "Fill default values");
             this.button_fill_default.UseVisualStyleBackColor = false;
             this.button_fill_default.Click += new System.EventHandler(this.button_fill_default_Click);
             // 
@@ -479,10 +482,13 @@
             // 
             // textbox_mysql_pass
             // 
+            this.textbox_mysql_pass.AutoCompleteCustomSource.AddRange(new string[] {
+            "ascent"});
             this.textbox_mysql_pass.Location = new System.Drawing.Point(100, 88);
             this.textbox_mysql_pass.Name = "textbox_mysql_pass";
             this.textbox_mysql_pass.Size = new System.Drawing.Size(179, 20);
             this.textbox_mysql_pass.TabIndex = 4;
+            this.textbox_mysql_pass.TextChanged += new System.EventHandler(this.textbox_mysql_pass_TextChanged);
             // 
             // textbox_mysql_username
             // 
@@ -744,12 +750,42 @@
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DimGray;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(26, 364);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 25);
+            this.button2.TabIndex = 124;
+            this.button2.Text = "Control Panel";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // CB_NoMySQL
+            // 
+            this.CB_NoMySQL.AutoSize = true;
+            this.CB_NoMySQL.Location = new System.Drawing.Point(20, 308);
+            this.CB_NoMySQL.Name = "CB_NoMySQL";
+            this.CB_NoMySQL.Size = new System.Drawing.Size(118, 30);
+            this.CB_NoMySQL.TabIndex = 125;
+            this.CB_NoMySQL.Text = "Start without\r\nMySQL Connection";
+            this.CB_NoMySQL.UseVisualStyleBackColor = true;
+            this.CB_NoMySQL.Visible = false;
+            this.CB_NoMySQL.CheckedChanged += new System.EventHandler(this.CB_NoMySQL_CheckedChanged);
+            // 
             // Form_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(491, 398);
+            this.Controls.Add(this.CB_NoMySQL);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.label_version);
@@ -829,18 +865,11 @@
         internal System.Windows.Forms.Label label_mysql_status;
         private System.Windows.Forms.Label label85;
         private System.Windows.Forms.Timer timer1;
-        internal System.Windows.Forms.TextBox textbox_mysql_worldDB;
-        internal System.Windows.Forms.TextBox textbox_mysql_pass;
-        internal System.Windows.Forms.TextBox textbox_mysql_username;
-        internal System.Windows.Forms.TextBox textbox_mysql_port;
-        internal System.Windows.Forms.TextBox textbox_mysql_hostname;
         private System.Windows.Forms.Panel panel_Account_Creator;
         private System.Windows.Forms.Label label_Account_Creator;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label6;
-        internal System.Windows.Forms.TextBox textBox_mysql_charactersDB;
         private System.Windows.Forms.Label label5;
-        internal System.Windows.Forms.TextBox textBox_mysql_authDB;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel5;
@@ -854,6 +883,15 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label15;
         internal System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.Button button2;
+        internal System.Windows.Forms.CheckBox CB_NoMySQL;
+        internal System.Windows.Forms.TextBox textbox_mysql_worldDB;
+        internal System.Windows.Forms.TextBox textbox_mysql_username;
+        internal System.Windows.Forms.TextBox textbox_mysql_port;
+        internal System.Windows.Forms.TextBox textbox_mysql_hostname;
+        internal System.Windows.Forms.TextBox textBox_mysql_charactersDB;
+        internal System.Windows.Forms.TextBox textBox_mysql_authDB;
+        internal System.Windows.Forms.TextBox textbox_mysql_pass;
     }
 }
 

@@ -19,8 +19,13 @@ namespace SpawnCreator
             InitializeComponent();
         }
 
-        Form_MainMenu mainmenu = new Form_MainMenu();
-
+        private readonly Form_MainMenu form_MM;
+        public BackToMainMenu(Form_MainMenu form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = form_MainMenu;
+        }
+        
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://emucraft.com");
@@ -61,16 +66,6 @@ namespace SpawnCreator
         {
             panel2.BackColor = Color.Gainsboro;
             label2.ForeColor = Color.Black;
-        }
-
-        private void panel2_Click(object sender, EventArgs e)
-        {
-            Form_ItemCreator form2 = new Form_ItemCreator();
-            form2.Show();
-            Hide();
-
-            //same as Form_MainMenu
-            //form2.timer1.Enabled = true;
         }
 
         private void panel3_MouseEnter(object sender, EventArgs e)
@@ -178,126 +173,7 @@ namespace SpawnCreator
         {
 
         }
-
-        private void button_mysql_connect_Click(object sender, EventArgs e)
-        {
-            
-            Properties.Settings.Default.Save();
-            try
-            {
-                string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
-                MySqlConnection myConn = new MySqlConnection(myConnection);
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                myConn.Open();
-                DataSet ds = new DataSet();
-
-                label1.Visible = true;
-                label2.Visible = true;
-                label_Npc_creator.Visible = true;
-                label_GO_creator.Visible = true;
-                label_Quest_creator.Visible = true;
-                panel1.Visible = true;
-                panel2.Visible = true;
-                panel3.Visible = true;
-                panel4.Visible = true;
-                panel_Quest_Creator.Visible = true;
-                label_Account_Creator.Visible = true;
-                panel_Account_Creator.Visible = true;
-
-                Form_ItemCreator form_itemCreator = new Form_ItemCreator();
-                form_itemCreator.label_mysql_status2.Text = "Connected!";
-                form_itemCreator.label_mysql_status2.ForeColor = Color.LawnGreen;
-                label_mysql_status.Text = "Connected!";
-                label_mysql_status.ForeColor = Color.LawnGreen;
-
-                //textbox_mysql_username.Visible = true;
-                //textbox_mysql_pass.Visible = true;
-                //tabControl1.Visible = false;
-
-                timer1.Enabled = true;
-                myConn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void button_clearAll_Click(object sender, EventArgs e)
-        {
-            //textbox_mysql_hostname.Text = "";
-            //textbox_mysql_port.Text = "";
-            //textbox_mysql_username.Text = "";
-            //textbox_mysql_worldDB.Text = "";
-            //textbox_mysql_pass.Text = "";
-            //textBox_mysql_authDB.Text = "";
-            //textBox_mysql_charactersDB.Text = "";
-        }
-
-        private void button_fill_default_Click(object sender, EventArgs e)
-        {
-            //textbox_mysql_hostname.Text = "127.0.0.1";
-            //textbox_mysql_port.Text = "3306";
-            //textbox_mysql_username.Text = "root";
-            //textbox_mysql_worldDB.Text = "world";
-            //textBox_mysql_authDB.Text = "auth";
-            //textBox_mysql_charactersDB.Text = "characters";
-            //textbox_mysql_pass.Text     = "";
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
-                MySqlConnection myConn = new MySqlConnection(myConnection);
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-                //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                myConn.Open();
-                DataSet ds = new DataSet();
-
-                //Form_ItemCreator form_itemCreator = new Form_ItemCreator();
-                //form_itemCreator.label_mysql_status2.Text = "Connected!";
-                //form_itemCreator.label_mysql_status2.ForeColor = Color.Green;
-
-                label_mysql_status.Text = "Connected!";
-                label_mysql_status.ForeColor = Color.LawnGreen;
-
-                myConn.Close();
-            }
-            catch (Exception /*ex*/)
-            {
-                //MessageBox.Show(ex.Message);
-                label_mysql_status.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status.ForeColor = Color.Black;
-            }
-        }
-
-        private void Form_MainMenu_Load(object sender, EventArgs e)
-        {
-            mainmenu.textbox_mysql_pass.Text = Properties.Settings.Default.mysql_pass;
-            mainmenu.textbox_mysql_username.Text = Properties.Settings.Default.mysql_username;
-            mainmenu.textbox_mysql_hostname.Text = Properties.Settings.Default.mysql_hostname;
-            mainmenu.textbox_mysql_port.Text = Properties.Settings.Default.mysql_port;
-            mainmenu.textbox_mysql_worldDB.Text = Properties.Settings.Default.mysql_worldDB;
-            mainmenu.textBox_mysql_authDB.Text = Properties.Settings.Default.mysql_authDB;
-            mainmenu.textBox_mysql_charactersDB.Text = Properties.Settings.Default.mysql_charactersDB;
-        }
-
-        private void Form_MainMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Properties.Settings.Default.mysql_pass = mainmenu.textbox_mysql_pass.Text;
-            Properties.Settings.Default.mysql_username = mainmenu.textbox_mysql_username.Text;
-            Properties.Settings.Default.mysql_hostname = mainmenu.textbox_mysql_hostname.Text;
-            Properties.Settings.Default.mysql_port = mainmenu.textbox_mysql_port.Text;
-            Properties.Settings.Default.mysql_worldDB = mainmenu.textbox_mysql_worldDB.Text;
-            Properties.Settings.Default.mysql_authDB = mainmenu.textBox_mysql_authDB.Text;
-            Properties.Settings.Default.mysql_charactersDB = mainmenu.textBox_mysql_charactersDB.Text;
-            Properties.Settings.Default.Save();
-        }
+        
 
         private void textbox_mysql_port_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -354,9 +230,10 @@ namespace SpawnCreator
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Form_ItemCreator form2 = new Form_ItemCreator();
-            form2.Show();
             Close();
+            Form_ItemCreator form2 = new Form_ItemCreator(form_MM);
+            form2.Show();
+            
 
             //form2.timer1.Enabled = true;
         }
@@ -392,7 +269,7 @@ namespace SpawnCreator
         private void label_Account_Creator_Click_1(object sender, EventArgs e)
         {
             Close();
-            AccountCreator acc = new AccountCreator();
+            AccountCreator acc = new AccountCreator(form_MM);
             acc.Show();
         }
 
@@ -445,76 +322,89 @@ namespace SpawnCreator
 
         private void BackToMainMenu_Load(object sender, EventArgs e)
         {
-            label_version.Text = "v2.3";
+            Form_MainMenu mainmenu = new Form_MainMenu();
+            label_version.Text = mainmenu.version;
 
-            try
-            {
-                string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
-                MySqlConnection myConn = new MySqlConnection(myConnection);
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
+            //try
+            //{
+            //    string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
+            //    MySqlConnection myConn = new MySqlConnection(myConnection);
+            //    MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                myConn.Open();
-                DataSet ds = new DataSet();
+            //    MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
+            //    myConn.Open();
+            //    DataSet ds = new DataSet();
 
-                label1.Visible = true;
-                label2.Visible = true;
-                label_Npc_creator.Visible = true;
-                label_GO_creator.Visible = true;
-                label_Quest_creator.Visible = true;
-                panel1.Visible = true;
-                panel2.Visible = true;
-                panel3.Visible = true;
-                panel4.Visible = true;
-                panel_Quest_Creator.Visible = true;
-                label_Account_Creator.Visible = true;
-                panel_Account_Creator.Visible = true;
+            //    label1.Visible = true;
+            //    label2.Visible = true;
+            //    label_Npc_creator.Visible = true;
+            //    label_GO_creator.Visible = true;
+            //    label_Quest_creator.Visible = true;
+            //    panel1.Visible = true;
+            //    panel2.Visible = true;
+            //    panel3.Visible = true;
+            //    panel4.Visible = true;
+            //    panel_Quest_Creator.Visible = true;
+            //    label_Account_Creator.Visible = true;
+            //    panel_Account_Creator.Visible = true;
 
-                Form_ItemCreator form_itemCreator = new Form_ItemCreator();
-                form_itemCreator.label_mysql_status2.Text = "Connected!";
-                form_itemCreator.label_mysql_status2.ForeColor = Color.LawnGreen;
-                label_mysql_status.Text = "Connected!";
-                label_mysql_status.ForeColor = Color.LawnGreen;
+            //    Form_ItemCreator form_itemCreator = new Form_ItemCreator();
+            //    form_itemCreator.label_mysql_status2.Text = "Connected!";
+            //    form_itemCreator.label_mysql_status2.ForeColor = Color.LawnGreen;
+            //    label_mysql_status.Text = "Connected!";
+            //    label_mysql_status.ForeColor = Color.LawnGreen;
 
-                mainmenu.textbox_mysql_username.Visible = true;
-                mainmenu.textbox_mysql_pass.Visible = true;
+            //    mainmenu.textbox_mysql_username.Visible = true;
+            //    mainmenu.textbox_mysql_pass.Visible = true;
                 //mainmenu.tabControl1.Visible = false;
 
                 timer1.Enabled = true;
-                myConn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //    myConn.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
+            //    MySqlConnection myConn = new MySqlConnection(myConnection);
+            //    MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
+            //    //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
+            //    MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
+            //    myConn.Open();
+            //    DataSet ds = new DataSet();
+
+            //    //Form_ItemCreator form_itemCreator = new Form_ItemCreator();
+            //    //form_itemCreator.label_mysql_status2.Text = "Connected!";
+            //    //form_itemCreator.label_mysql_status2.ForeColor = Color.Green;
+
+            //    label_mysql_status.Text = "Connected!";
+            //    label_mysql_status.ForeColor = Color.LawnGreen;
+
+            //    myConn.Close();
+            //}
+            //catch (Exception /*ex*/)
+            //{
+            //    //MessageBox.Show(ex.Message);
+            //    label_mysql_status.Text = "Connection Lost - MySQL is not running";
+            //    label_mysql_status.ForeColor = Color.Black;
+            //}
+
+            Process[] mysql = Process.GetProcessesByName("mysqld");
+            if (mysql.Length == 0)
             {
-                string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
-                MySqlConnection myConn = new MySqlConnection(myConnection);
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-                //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                myConn.Open();
-                DataSet ds = new DataSet();
-
-                //Form_ItemCreator form_itemCreator = new Form_ItemCreator();
-                //form_itemCreator.label_mysql_status2.Text = "Connected!";
-                //form_itemCreator.label_mysql_status2.ForeColor = Color.Green;
-
-                label_mysql_status.Text = "Connected!";
-                label_mysql_status.ForeColor = Color.LawnGreen;
-
-                myConn.Close();
-            }
-            catch (Exception /*ex*/)
-            {
-                //MessageBox.Show(ex.Message);
                 label_mysql_status.Text = "Connection Lost - MySQL is not running";
                 label_mysql_status.ForeColor = Color.Black;
+            }
+            else
+            {
+                label_mysql_status.Text = "Connected!";
+                label_mysql_status.ForeColor = Color.Lime;
             }
         }
 
@@ -580,17 +470,10 @@ namespace SpawnCreator
             label_Npc_creator.ForeColor = Color.Black;
         }
 
-        private void label_Npc_creator_Click(object sender, EventArgs e)
-        {
-            Close();
-            NPC_Creator npc = new NPC_Creator();
-            npc.Show();
-        }
-
         private void label_GO_creator_Click_1(object sender, EventArgs e)
         {
             Close();
-            GameObject_Creator go = new GameObject_Creator();
+            GameObject_Creator go = new GameObject_Creator(form_MM);
             go.Show();
         }
 
@@ -645,7 +528,7 @@ namespace SpawnCreator
         private void label11_Click(object sender, EventArgs e)
         {
             //Disable - Click
-            Disable_Form disable = new Disable_Form();
+            Disable_Form disable = new Disable_Form(form_MM);
             disable.Show();
             Hide();
         }
@@ -658,7 +541,7 @@ namespace SpawnCreator
             Hide();
 
             //And then Show Conditions Form
-            Conditions_Form con = new Conditions_Form();
+            Conditions_Form con = new Conditions_Form(form_MM);
             con.Show();
         }
 
@@ -677,7 +560,7 @@ namespace SpawnCreator
         private void label9_Click(object sender, EventArgs e)
         {
             Hide();
-            SmartScripts smart = new SmartScripts();
+            SmartScripts smart = new SmartScripts(form_MM);
             smart.Show();
         }
 
@@ -697,7 +580,7 @@ namespace SpawnCreator
         {
             Close();
 
-            MailSender mail = new MailSender();
+            MailSender mail = new MailSender(form_MM);
             mail.Show();
         }
 
@@ -705,8 +588,15 @@ namespace SpawnCreator
         {
             Close();
 
-            QuestTemplate quest = new QuestTemplate();
+            QuestTemplate quest = new QuestTemplate(form_MM);
             quest.Show();
+        }
+
+        private void label_Npc_creator_Click(object sender, EventArgs e)
+        {
+            Close();
+            NPC_Creator npc = new NPC_Creator(form_MM);
+            npc.Show();
         }
     }
 }

@@ -20,6 +20,14 @@ namespace SpawnCreator
         {
             InitializeComponent();
         }
+
+        private readonly Form_MainMenu form_MM;
+        public Form_ItemCreator(Form_MainMenu form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = form_MainMenu; 
+        }
+
         Form_MainMenu mainmenu = new Form_MainMenu();
         // Fix flickering .. still showing a flicker at the top left corner, wtf? really?
         protected override CreateParams CreateParams
@@ -619,7 +627,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".item_template (entry, quality, class, subclass, name, description, ";
+            BuildSQLFile = textBox105.Text + " INTO " + form_MM.GetWorldDB() + ".item_template (entry, quality, class, subclass, name, description, ";
             BuildSQLFile += "displayid, inventorytype, bonding, buycount, buyprice, sellprice, stackable, maxcount, ";
             BuildSQLFile += "sheath, material, itemlevel, itemset, randomproperty, randomsuffix, gemproperties, ";
             BuildSQLFile += "socketColor_1, socketContent_1, socketColor_2, socketContent_2, socketColor_3, socketContent_3, ";
@@ -639,16 +647,17 @@ namespace SpawnCreator
             BuildSQLFile += "spellID_3, spellTrigger_3, spellCharges_3, spellppmRate_3, spellCooldown_3, spellcategory_3, spellcategorycooldown_3, ";
             BuildSQLFile += "spellID_4, spellTrigger_4, spellCharges_4, spellppmRate_4, spellCooldown_4, spellcategory_4, spellcategorycooldown_4, ";
             BuildSQLFile += "spellID_5, spellTrigger_5, spellCharges_5, spellppmRate_5, spellCooldown_5, spellcategory_5, spellcategorycooldown_5) ";
-            BuildSQLFile += "VALUES\n";
+            BuildSQLFile += "VALUES \n";
             BuildSQLFile += "(";
 
             // values now
-            BuildSQLFile += textBox1.Text + ", "; // entry
+            BuildSQLFile += NUD_item_Entry.Text + ", "; // entry
             BuildSQLFile += comboBox1.SelectedIndex + ", "; // quality
             BuildSQLFile += comboBox2.SelectedIndex + ", "; // class
             BuildSQLFile += comboBox3.SelectedIndex + ", "; // subclass
             BuildSQLFile += "'" + textBox2.Text + "', "; // name
             BuildSQLFile += "'" + textBox3.Text + "', "; // description
+            if (textBox4.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox4.Text + ", "; // displayid
 
             // another fix for inventoryType if weapon is two handed
@@ -684,18 +693,40 @@ namespace SpawnCreator
                 BuildSQLFile += comboBox4.SelectedIndex + ", "; // inventorytype
 
             BuildSQLFile += comboBox5.SelectedIndex + ", "; // bonding
+
+            if (textBox5.Text == "") BuildSQLFile += "1, "; else
             BuildSQLFile += textBox5.Text + ", "; // buycount
+
+            if (textBox6.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox6.Text + ", "; // buyprice
+
+            if (textBox7.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox7.Text + ", "; // sellprice
+
+            if (textBox8.Text == "") BuildSQLFile += "1, "; else
             BuildSQLFile += textBox8.Text + ", "; // stackable
+
+            if (textBox9.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox9.Text + ", "; // maxcount
+
             BuildSQLFile += comboBox6.SelectedIndex + ", "; // sheath
             BuildSQLFile += comboBox7.SelectedIndex + ", "; // material
+
+            if (textBox10.Text == "") BuildSQLFile += "1, "; else
             BuildSQLFile += textBox10.Text + ", "; // itemlevel
+
+            if (textBox11.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox11.Text + ", "; // itemset
+
+            if (textBox12.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox12.Text + ", "; // randomProperty
+
+            if (textBox13.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox13.Text + ", "; // randomSuffix
+
+            if (textBox14.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox14.Text + ", "; // gemProperties
+
             BuildSQLFile += socketColor1 + ", "; // socketColor1
             BuildSQLFile += output_socketContent1 + ", "; // socketContent1
             BuildSQLFile += socketColor2 + ", "; // socketColor2
@@ -959,17 +990,40 @@ namespace SpawnCreator
             else
                 BuildSQLFile += stat_type10 + ", ";
 
+            if (textBox16.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox16.Text + ", "; // stat_value1
+
+            if (textBox17.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox17.Text + ", "; // stat_value2
+
+            if (textBox18.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox18.Text + ", "; // stat_value3
+
+            if (textBox19.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox19.Text + ", "; // stat_value4
+
+            if (textBox20.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox20.Text + ", "; // stat_value5
+
+            if (textBox21.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox21.Text + ", "; // stat_value6
+
+            if (textBox22.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox22.Text + ", "; // stat_value7
+
+            if (textBox23.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox23.Text + ", "; // stat_value8
+
+            if (textBox24.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox24.Text + ", "; // stat_value9
+
+            if (textBox25.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox25.Text + ", "; // stat_value10
+
+            if (textBox26.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox26.Text + ", "; // scalingStatDistribution
+
+            if (textBox27.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox27.Text + ", "; // scalingStatValue
 
             if (classMaskE == 0) // fix 
@@ -986,89 +1040,236 @@ namespace SpawnCreator
             BuildSQLFile += flagExtraMaskE + ", "; // flagsExtra
             BuildSQLFile += BagFamilyMasksE + ", "; // bagFamily
             BuildSQLFile += flagCustomE + ", "; // flagCustom
+
+            if (textBox29.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox29.Text + ", "; // armor
+
+            if (textBox28.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox28.Text + ", "; // block
+
+            if (textBox30.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox30.Text + ", "; // armorDamageModifier
+
+            if (textBox31.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox31.Text + ", "; // maxDurability
+
+            if (textBox32.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox32.Text + ", "; // holy_res
+
+            if (textBox33.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox33.Text + ", "; // frost_res
+
+            if (textBox34.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox34.Text + ", "; // fire_res
+
+            if (textBox35.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox35.Text + ", "; // shadow_res
+
+            if (textBox36.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox36.Text + ", "; // nature_res
+
+            if (textBox37.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox37.Text + ", "; // arcane_res
+
+            if (textBox38.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox38.Text + ", "; // rangedModRange
+
             BuildSQLFile += comboBox20.SelectedIndex + ", "; // ammoType
             BuildSQLFile += comboBox21.SelectedIndex + ", "; // dmg_type1
+
+            if (textBox39.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox39.Text + ", "; // dmg_min1
+
+            if (textBox40.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox40.Text + ", "; // dmg_max1
+
             BuildSQLFile += comboBox22.SelectedIndex + ", "; // dmg_type2
+
+            if (textBox41.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox41.Text + ", "; // dmg_min2
+
+            if (textBox42.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox42.Text + ", "; // dmg_max2
+
+            if (textBox43.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox43.Text + ", "; // requiredLevel
+
+            if (textBox49.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox49.Text + ", "; // requiredReputationFaction
+
             BuildSQLFile += comboBox23.SelectedIndex + ", "; // requiredReputationRank
+
+            if (textBox45.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox45.Text + ", "; // requiredSkill
+
+            if (textBox46.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox46.Text + ", "; // requiredSkillRank
+
+            if (textBox47.Text == "") BuildSQLFile += "0, "; else 
             BuildSQLFile += textBox47.Text + ", "; // requiredSpell
+
+            if (textBox48.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox48.Text + ", "; // requiredCityRank
+
+            if (textBox44.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox44.Text + ", "; // requiredHonorRank
+
+            if (textBox50.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox50.Text + ", "; // delay
+
+            if (textBox51.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox51.Text + ", "; // duration
+
+            if (textBox52.Text == "") BuildSQLFile += "-1, "; else 
             BuildSQLFile += textBox52.Text + ", "; // requiredDisenchantSkill
+
+            if (textBox53.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox53.Text + ", "; // disenchantID
+
+            if (textBox54.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox54.Text + ", "; // containerSlots
+
+            if (textBox55.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox55.Text + ", "; // itemLimitCategory
+
+            if (textBox16.Text == "") BuildSQLFile += "-1, "; else 
             BuildSQLFile += textBox56.Text + ", "; // SoundOverrideSubclass
+
+            if (textBox57.Text == "") BuildSQLFile += "0, "; else 
             BuildSQLFile += textBox57.Text + ", "; // holidayID
+
+            if (textBox58.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox58.Text + ", "; // map
+
+            if (textBox59.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox59.Text + ", "; // area
+
+            if (textBox60.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox60.Text + ", "; // minMoneyLoot
+
+            if (textBox61.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox61.Text + ", "; // maxMoneyLoot
+
+            if (textBox62.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox62.Text + ", "; // pageMaterial
+
+            if (textBox63.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox63.Text + ", "; // pageText
+
+            if (textBox64.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox64.Text + ", "; // languageID
+
+            if (textBox65.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox65.Text + ", "; // lockID
+
+            if (textBox66.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox66.Text + ", "; // startQuest
+
+            if (textBox67.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox67.Text + ", "; // verifiedBuild
+
+            if (textBox68.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox68.Text + ", "; // spellID_1
+
             BuildSQLFile += comboBox24.SelectedIndex + ", "; // spellTrigger_1
+
+            if (textBox69.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox69.Text + ", "; // spellCharges_1
+
+            if (textBox70.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox70.Text + ", "; // spellppmRate_1
+
+            if (textBox71.Text == "") BuildSQLFile += "-1, "; else
             BuildSQLFile += textBox71.Text + ", "; // spellCooldown_1
+
+            if (textBox72.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox72.Text + ", "; // spellCategory_1
+
+            if (textBox73.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox73.Text + ", "; // spellCategoryCooldown_1
+
+            if (textBox74.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox74.Text + ", "; // spellID_2
+
             BuildSQLFile += comboBox25.SelectedIndex + ", "; // spellTrigger_2
+
+            if (textBox75.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox75.Text + ", "; // spellCharges_2
+
+            if (textBox76.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox76.Text + ", "; // spellppmRate_2
+
+            if (textBox77.Text == "") BuildSQLFile += "-1, "; else
             BuildSQLFile += textBox77.Text + ", "; // spellCooldown_2
+
+            if (textBox78.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox78.Text + ", "; // spellCategory_2
+
+            if (textBox79.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox79.Text + ", "; // spellCategoryCooldown_2
+
+            if (textBox85.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox85.Text + ", "; // spellID_3
+
             BuildSQLFile += comboBox26.SelectedIndex + ", "; // spellTrigger_3
+
+            if (textBox84.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox84.Text + ", "; // spellCharges_3
+
+            if (textBox83.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox83.Text + ", "; // spellppmRate_3
+
+            if (textBox82.Text == "") BuildSQLFile += "-1, "; else
             BuildSQLFile += textBox82.Text + ", "; // spellCooldown_3
+
+            if (textBox81.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox81.Text + ", "; // spellCategory_3
+
+            if (textBox80.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox80.Text + ", "; // spellCategoryCooldown_3
+
+            if (textBox91.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox91.Text + ", "; // spellID_4
+
             BuildSQLFile += comboBox27.SelectedIndex + ", "; // spellTrigger_4
+
+            if (textBox90.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox90.Text + ", "; // spellCharges_4
+
+            if (textBox89.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox89.Text + ", "; // spellppmRate_4
+
+            if (textBox88.Text == "") BuildSQLFile += "-1, "; else
             BuildSQLFile += textBox88.Text + ", "; // spellCooldown_4
+
+            if (textBox87.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox87.Text + ", "; // spellCategory_4
+
+            if (textBox86.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox86.Text + ", "; // spellCategoryCooldown_4
+
+            if (textBox97.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox97.Text + ", "; // spellID_5
+
             BuildSQLFile += comboBox28.SelectedIndex + ", "; // spellTrigger_5
+
+            if (textBox96.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox96.Text + ", "; // spellCharges_5
+
+            if (textBox95.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox95.Text + ", "; // spellppmRate_5
+
+            if (textBox94.Text == "") BuildSQLFile += "-1, "; else
             BuildSQLFile += textBox94.Text + ", "; // spellCooldown_5
+
+            if (textBox93.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox93.Text + ", "; // spellCategory_5
-            BuildSQLFile += textBox92.Text; // spellCategoryCooldown_5
-            BuildSQLFile += ");";
+
+            if (textBox92.Text == "") BuildSQLFile += "0, "; else
+            BuildSQLFile += textBox92.Text + "); \n"; // spellCategoryCooldown_5
 
             stringSQLShare = BuildSQLFile;
-            stringEntryShare = textBox1.Text;
+            stringEntryShare = NUD_item_Entry.Text;
 
             // End of _Generate method
         }
@@ -1395,21 +1596,34 @@ namespace SpawnCreator
 
             //PopUPSaveOptionsDialog();
 
+            if (NUD_item_Entry.Text == "")
+            {
+                MessageBox.Show("Entry should not be empty", "Error");
+                return;
+            }
+
             if (textBox2.Text == "")
             {
                 MessageBox.Show("Name should not be empty", "Error");
                 return;
             }
 
+            //Make a button (another option) to write to a file without overwriting
+            //using (var writer = File.AppendText("items.sql"))
+            //{
+            //    writer.Write(stringSQLShare);
+            //    timer3.Start();
+            //}
+
             using (var sfd = new SaveFileDialog())
             {
                 sfd.Filter = "sql files (*.sql)|*.sql";
                 sfd.FilterIndex = 2;
-                sfd.FileName = "Item_" + Form_ItemCreator.stringEntryShare;
+                sfd.FileName = "Item_" + stringEntryShare;
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    File.WriteAllText(sfd.FileName, Form_ItemCreator.stringSQLShare);
+                    File.WriteAllText(sfd.FileName, stringSQLShare);
                     timer3.Start();
                 }
             }
@@ -1819,28 +2033,46 @@ namespace SpawnCreator
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Form_MainMenu mainmenu = new Form_MainMenu();
+            //Form_MainMenu mainmenu = new Form_MainMenu();
 
-            try
+            //try
+            //{
+            //    string myConnection = "datasource=" + form_MM.GetHost() + ";" +
+            //                          "port=" + form_MM.GetPort() + ";" +
+            //                          "username=" + form_MM.GetUser() + ";" +
+            //                          "password=" + form_MM.GetPass() + ";";
+
+            //    MySqlConnection myConn = new MySqlConnection(myConnection);
+            //    MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
+            //    //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
+            //    MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
+            //    myConn.Open();
+            //    DataSet ds = new DataSet();
+
+            //    label_mysql_status2.Text = "Connected!";
+            //    label_mysql_status2.ForeColor = Color.LawnGreen;
+
+            //    myConn.Close();
+            //}
+            //catch (Exception /*ex*/)
+            //{
+            //    //MessageBox.Show(ex.Message);
+            //    label_mysql_status2.Text = "Connection Lost - MySQL is not running";
+            //    label_mysql_status2.ForeColor = Color.Red;
+            //}
+
+            Process[] mysql = Process.GetProcessesByName("mysqld");
+            if (mysql.Length == 0)
             {
-                string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
-                MySqlConnection myConn = new MySqlConnection(myConnection);
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-                //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                myConn.Open();
-                DataSet ds = new DataSet();
+                label_mysql_status2.Text = "Connection Lost - MySQL is not running";
+                label_mysql_status2.ForeColor = Color.Red;
 
+            }
+            else
+            {
                 label_mysql_status2.Text = "Connected!";
                 label_mysql_status2.ForeColor = Color.LawnGreen;
 
-                myConn.Close();
-            }
-            catch (Exception /*ex*/)
-            {
-                //MessageBox.Show(ex.Message);
-                label_mysql_status2.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status2.ForeColor = Color.Red;
             }
         }
 
@@ -1920,8 +2152,14 @@ namespace SpawnCreator
 
             //----------------------------------------
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "SELECT max(entry)+1 FROM " + mainmenu.textbox_mysql_worldDB.Text + ".item_template;";
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
+
+            string insertQuery = "SELECT max(entry)+1 FROM " + form_MM.GetWorldDB() + ".item_template;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -1929,7 +2167,7 @@ namespace SpawnCreator
             try
             {
 
-                textBox1.Text = command.ExecuteScalar().ToString();
+                NUD_item_Entry.Text = command.ExecuteScalar().ToString();
 
             }
             catch (Exception ex)
@@ -1994,7 +2232,7 @@ namespace SpawnCreator
         {
             _Generate(sender, e);
 
-            if (textBox1.Text == "")
+            if (NUD_item_Entry.Text == "")
             {
                 MessageBox.Show("Entry should not be empty", "Error");
                 return;
@@ -2005,7 +2243,13 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
+
             string insertQuery = stringSQLShare;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -2597,6 +2841,12 @@ namespace SpawnCreator
         {
             _Generate(sender, e);
 
+            if (NUD_item_Entry.Text == "")
+            {
+                MessageBox.Show("Entry should not be empty", "Error");
+                return;
+            }
+
             if (textBox2.Text == "")
             {
                 MessageBox.Show("Name should not be empty", "Error");
@@ -2756,7 +3006,7 @@ namespace SpawnCreator
         private void label90_Click(object sender, EventArgs e)
         {
             Close();
-            BackToMainMenu backtomainmenu = new BackToMainMenu();
+            BackToMainMenu backtomainmenu = new BackToMainMenu(form_MM);
             backtomainmenu.Show();
 
             
@@ -2782,14 +3032,15 @@ namespace SpawnCreator
 
         private void label91_MouseEnter(object sender, EventArgs e)
         {
-            label91.BackColor = Color.LawnGreen;
-            label91.ForeColor = Color.Black;
+            label91.BackColor = Color.Green;
+            label91.ForeColor = Color.White;
         }
 
         private void label91_MouseLeave(object sender, EventArgs e)
         {
-            label91.BackColor = Color.FromArgb(58, 89, 114);
-            label91.ForeColor = Color.Black;
+            //label91.BackColor = Color.FromArgb(58, 89, 114);
+            label91.BackColor = Color.DimGray;
+            label91.ForeColor = Color.White;
         }
 
         private void label91_Click(object sender, EventArgs e)
@@ -2801,6 +3052,17 @@ namespace SpawnCreator
         private void textBox105_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void NUD_item_Entry_ValueChanged(object sender, EventArgs e)
+        {
+            int x = 0;
+            if (Int32.TryParse(NUD_item_Entry.Text, out x))
+            {
+                Definers.output_itemEntry = x;
+            }
+            label_Success.Visible = false;
+            label_query_executed_successfully2.Visible = false;
         }
     }
 }

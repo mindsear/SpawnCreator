@@ -14,9 +14,17 @@ namespace SpawnCreator
 {
     public partial class AddGossipMenus : Form
     {
+
         public AddGossipMenus()
         {
             InitializeComponent();
+        }
+        private readonly Form_MainMenu form_MM;
+
+        public AddGossipMenus(Form_MainMenu _form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = _form_MainMenu; 
         }
 
         private void AddGossipMenus_Load(object sender, EventArgs e)
@@ -55,7 +63,7 @@ namespace SpawnCreator
         private void button1_Click(object sender, EventArgs e)
         {
             Form_MainMenu mainmenu = new Form_MainMenu();
-
+            var npc = new NPC_Creator();
 
             if (textBox5.Text == "")
             {
@@ -63,8 +71,14 @@ namespace SpawnCreator
                 return;
             }  
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".gossip_menu_option " +
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass()
+                );
+
+            string insertQuery = "INSERT INTO " + form_MM.GetWorldDB() + ".gossip_menu_option " +
                 "(menu_id, id, option_icon, option_text, OptionBroadcastTextID, option_id, npc_option_npcflag, action_menu_id, action_poi_id, box_coded, box_money, box_text, BoxBroadcastTextID, VerifiedBuild) " +
                 "VALUES (" +
                 textBox61.Text + ", " + // menu_id
@@ -108,6 +122,11 @@ namespace SpawnCreator
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             label9.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

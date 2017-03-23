@@ -20,6 +20,13 @@ namespace SpawnCreator
             InitializeComponent();
         }
 
+        private readonly Form_MainMenu form_MM;
+        public QuestTemplate(Form_MainMenu form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = form_MainMenu;
+        }
+
         private bool _mouseDown;
         private Point lastLocation;
 
@@ -85,7 +92,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".quest_template ";
+            BuildSQLFile = textBox105.Text + " INTO " + form_MM.GetWorldDB() + ".quest_template ";
             BuildSQLFile += "(ID, QuestType, QuestLevel, MinLevel, QuestSortID, QuestInfoID, SuggestedGroupNum, RequiredFactionId1, RequiredFactionId2, RequiredFactionValue1, ";
             BuildSQLFile += "RequiredFactionValue2, RewardNextQuest, RewardXPDifficulty, RewardMoney, RewardBonusMoney, RewardDisplaySpell, RewardSpell, RewardHonor, ";
             BuildSQLFile += "RewardKillHonor, StartItem, Flags, RequiredPlayerKills, RewardItem1, RewardAmount1, RewardItem2, RewardAmount2, RewardItem3, RewardAmount3, RewardItem4, ";
@@ -211,7 +218,7 @@ namespace SpawnCreator
             BuildSQLFile += "); \n";
 
             //Creature Quest Starter
-            BuildSQLFile += textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_queststarter ";
+            BuildSQLFile += textBox105.Text + " INTO " + form_MM.GetWorldDB() + ".creature_queststarter ";
             BuildSQLFile += "(id, quest) ";
             BuildSQLFile += "VALUES \n";
             BuildSQLFile += "(";
@@ -220,7 +227,7 @@ namespace SpawnCreator
             BuildSQLFile += "); \n";
 
             //Creature Quest Ender
-            BuildSQLFile += textBox105.Text + " INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_questender ";
+            BuildSQLFile += textBox105.Text + " INTO " + form_MM.GetWorldDB() + ".creature_questender ";
             BuildSQLFile += "(id, quest) ";
             BuildSQLFile += "VALUES \n";
             BuildSQLFile += "(";
@@ -256,7 +263,7 @@ namespace SpawnCreator
         {
             Close();
 
-            BackToMainMenu back = new BackToMainMenu();
+            BackToMainMenu back = new BackToMainMenu(form_MM);
             back.Show();
         }
 
@@ -385,26 +392,16 @@ namespace SpawnCreator
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            try
+            Process[] mysql = Process.GetProcessesByName("mysqld");
+            if (mysql.Length == 0)
             {
-                string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
-                MySqlConnection myConn = new MySqlConnection(myConnection);
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-                //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                myConn.Open();
-                DataSet ds = new DataSet();
-
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;
-
-                myConn.Close();
-            }
-            catch (Exception /*ex*/)
-            {
-                //MessageBox.Show(ex.Message);
                 label_mysql_status2.Text = "Connection Lost - MySQL is not running";
                 label_mysql_status2.ForeColor = Color.Red;
+            }
+            else
+            {
+                label_mysql_status2.Text = "Connected!";
+                label_mysql_status2.ForeColor = Color.LawnGreen;
             }
         }
 
@@ -414,8 +411,13 @@ namespace SpawnCreator
            //  Max + 1 from Database - Button  \\
           //------------------------------------\\
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "SELECT max(ID)+1 FROM " + mainmenu.textbox_mysql_worldDB.Text + ".quest_template;";
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
+            string insertQuery = "SELECT max(ID)+1 FROM " + form_MM.GetWorldDB() + ".quest_template;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -552,7 +554,12 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
             string insertQuery = stringSQLShare;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);

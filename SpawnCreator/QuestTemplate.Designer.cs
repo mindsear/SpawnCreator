@@ -434,11 +434,11 @@
             this.label84.Cursor = System.Windows.Forms.Cursors.Default;
             this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label84.ForeColor = System.Drawing.Color.Black;
-            this.label84.Location = new System.Drawing.Point(21, 9);
+            this.label84.Location = new System.Drawing.Point(20, 9);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(116, 20);
+            this.label84.Size = new System.Drawing.Size(121, 20);
             this.label84.TabIndex = 1;
-            this.label84.Text = "   Quest Create";
+            this.label84.Text = "   Quest Creator";
             // 
             // panel5
             // 

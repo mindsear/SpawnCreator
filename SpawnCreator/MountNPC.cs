@@ -18,6 +18,14 @@ namespace SpawnCreator
         {
             InitializeComponent();
         }
+
+        private readonly Form_MainMenu form_MM;
+        public MountNPC(Form_MainMenu _form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = _form_MainMenu;
+        }
+
         Form_MainMenu mainmenu = new Form_MainMenu();
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -31,31 +39,35 @@ namespace SpawnCreator
             //    ;
             comboBox1.SelectedIndex = 0; // default
 
-            string constring = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
-            MySqlConnection conDataBase = new MySqlConnection(constring);
-            MySqlCommand com = new MySqlCommand("select name, modelid1 from " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template where name LIKE '%" + textBox6.Text + "%';", conDataBase);
+            //string constring = "datasource=" + form_MM.GetHost() + ";" +
+            //                   "port=" + form_MM.GetPort() + ";" +
+            //                   "username=" + form_MM.GetUser() + ";" +
+            //                   "password=" + form_MM.GetPass() + ";"
+            //                    ;
+            //MySqlConnection conDataBase = new MySqlConnection(constring);
+            //MySqlCommand com = new MySqlCommand("SELECT name, modelid1 FROM " + form_MM.GetWorldDB() + ".creature_template WHERE name LIKE \"%" + textBox6.Text + "%\";", conDataBase);
 
-            //MySqlCommand com2 = new MySqlCommand("select * from mountlist.mountlist;", conDataBase);
+            ////MySqlCommand com2 = new MySqlCommand("select * from mountlist.mountlist;", conDataBase);
 
-            try
-            {
-                MySqlDataAdapter sda = new MySqlDataAdapter();
-                sda.SelectCommand = com;
-                //sda.SelectCommand = com2;
-                DataTable dbdataset = new DataTable();
-                sda.Fill(dbdataset);
-                BindingSource bsource = new BindingSource();
+            //try
+            //{
+            //    MySqlDataAdapter sda = new MySqlDataAdapter();
+            //    sda.SelectCommand = com;
+            //    //sda.SelectCommand = com2;
+            //    DataTable dbdataset = new DataTable();
+            //    sda.Fill(dbdataset);
+            //    BindingSource bsource = new BindingSource();
 
-                bsource.DataSource = dbdataset;
-                dataGridView1.DataSource = bsource;
-                //dataGridView2.DataSource = bsource;
-                sda.Update(dbdataset);
+            //    bsource.DataSource = dbdataset;
+            //    dataGridView1.DataSource = bsource;
+            //    //dataGridView2.DataSource = bsource;
+            //    sda.Update(dbdataset);
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -71,9 +83,12 @@ namespace SpawnCreator
             //    textBox1.Text.Remove(textBox1.Text.Length - 1);
             //}
 
-            string constring = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
+            string constring = "datasource=" + form_MM.GetHost() + ";" +
+                               "port=" + form_MM.GetPort() + ";" +
+                               "username=" + form_MM.GetUser() + ";" +
+                               "password=" + form_MM.GetPass() + ";" ;
             MySqlConnection conDataBase = new MySqlConnection(constring);
-            MySqlCommand com = new MySqlCommand("select name, modelid1 from " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template where name LIKE '%" + textBox6.Text + "%';", conDataBase);
+            MySqlCommand com = new MySqlCommand("SELECT name, modelid1 FROM " + form_MM.GetWorldDB() + ".creature_template WHERE name LIKE \"%" + textBox6.Text + "%\";", conDataBase);
             
 
             try
@@ -89,10 +104,10 @@ namespace SpawnCreator
                 sda.Update(dbdataset);
 
             }
-            catch (Exception /*ex*/)
+            catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
-                MessageBox.Show("If the name contains an apostrophe type like this example:\ncrusader\\'s black warhorse");
+                MessageBox.Show(ex.Message);
+                //MessageBox.Show("If the name contains an apostrophe type like this example:\ncrusader\\'s black warhorse");
             }
         }
 
@@ -322,8 +337,14 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "REPLACE INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template_addon " +
+            MySqlConnection connection = new MySqlConnection(
+                               "datasource=" + form_MM.GetHost() + ";" +
+                               "port=" + form_MM.GetPort() + ";" +
+                               "username=" + form_MM.GetUser() + ";" +
+                               "password=" + form_MM.GetPass() + ";" 
+                               );
+
+            string insertQuery = "INSERT INTO " + form_MM.GetWorldDB() + ".creature_template_addon " +
                 "(entry, path_id, mount, bytes1, bytes2, emote, auras) " +
                 "VALUES (" +
                 textBox61.Text + ", " + // entry

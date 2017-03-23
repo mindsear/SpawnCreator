@@ -21,6 +21,13 @@ namespace SpawnCreator
             InitializeComponent();
         }
 
+        private readonly Form_MainMenu form_MM;
+        public AccountCreator(Form_MainMenu form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = form_MainMenu;
+        }
+
         private bool _mouseDown;
         private Point lastLocation;
 
@@ -34,9 +41,13 @@ namespace SpawnCreator
 
         private void ShowExistingAccounts(object sender, EventArgs e)
         {
-            string constring = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
+            string constring = "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";";
+
             MySqlConnection conDataBase = new MySqlConnection(constring);
-            MySqlCommand com = new MySqlCommand("select id, username, email from " + mainmenu.textBox_mysql_authDB.Text + ".account;", conDataBase);
+            MySqlCommand com = new MySqlCommand("select id, username, email from " + form_MM.GetAuthDB() + ".account;", conDataBase);
 
             try
             {
@@ -85,28 +96,16 @@ namespace SpawnCreator
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Form_MainMenu mainmenu = new Form_MainMenu();
-
-            try
+            Process[] mysql = Process.GetProcessesByName("mysqld");
+            if (mysql.Length == 0)
             {
-                string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
-                MySqlConnection myConn = new MySqlConnection(myConnection);
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-                //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                myConn.Open();
-                DataSet ds = new DataSet();
-
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;
-
-                myConn.Close();
-            }
-            catch (Exception /*ex*/)
-            {
-                //MessageBox.Show(ex.Message);
                 label_mysql_status2.Text = "Connection Lost - MySQL is not running";
                 label_mysql_status2.ForeColor = Color.Red;
+            }
+            else
+            {
+                label_mysql_status2.Text = "Connected!";
+                label_mysql_status2.ForeColor = Color.LawnGreen;
             }
         }
 
@@ -134,10 +133,10 @@ namespace SpawnCreator
                 MessageBox.Show("Password should not be empty", "Error");
                 return;
             }
-            Clipboard.SetText("INSERT INTO " + mainmenu.textBox_mysql_authDB.Text + ".account(username, sha_pass_hash, expansion, email) " + "\n" +
+            Clipboard.SetText("INSERT INTO " + form_MM.GetAuthDB() + ".account(username, sha_pass_hash, expansion, email) " + "\n" +
                 "VALUES(UPPER('" + textBox_username.Text + "'), (SHA1(CONCAT(UPPER('" + textBox_username.Text + "'), ':', UPPER('" + textBox_pass.Text + "')))), " + textBox_Expansion.Text + ", '" + textBox_email.Text + "'); " + "\n" +
-                "INSERT INTO " + mainmenu.textBox_mysql_authDB.Text + ".account_access(id, gmlevel, RealmID) " + "\n" +
-                "VALUES((SELECT id FROM " + mainmenu.textBox_mysql_authDB.Text + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + ");");
+                "INSERT INTO " + form_MM.GetAuthDB() + ".account_access(id, gmlevel, RealmID) " + "\n" +
+                "VALUES((SELECT id FROM " + form_MM.GetAuthDB() + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + ");");
             //label87.Visible = true;
             timer4.Start();
         }
@@ -187,11 +186,17 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "INSERT INTO " + mainmenu.textBox_mysql_authDB.Text + 
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
+
+            string insertQuery = "INSERT INTO " + form_MM.GetAuthDB() + 
                 ".account (username, sha_pass_hash, expansion, email) " + "\n" +
                 "VALUES(UPPER('" + textBox_username.Text + "'), (SHA1(CONCAT(UPPER('" + textBox_username.Text + "'), ':', UPPER('" + textBox_pass.Text + "')))), " + textBox_Expansion.Text + ", '" + textBox_email.Text + "'); " + "\n" +
-                "INSERT INTO " + mainmenu.textBox_mysql_authDB.Text + ".account_access(id, gmlevel, RealmID) VALUES((SELECT id FROM " + mainmenu.textBox_mysql_authDB.Text + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + ");";
+                "INSERT INTO " + form_MM.GetAuthDB() + ".account_access(id, gmlevel, RealmID) VALUES((SELECT id FROM " + form_MM.GetAuthDB() + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + ");";
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
 
@@ -200,7 +205,7 @@ namespace SpawnCreator
                 
                 if (command.ExecuteNonQuery() >= 1)
                 {   
-                    //this is good -- awww yeah!
+                    //this is good !
                     label_Executed_Successfully.Visible = true;
                 }
 
@@ -247,10 +252,10 @@ namespace SpawnCreator
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    File.WriteAllText(sfd.FileName, "INSERT INTO " + mainmenu.textBox_mysql_authDB.Text + ".account(username, sha_pass_hash, expansion, email) " + "\n" +
+                    File.WriteAllText(sfd.FileName, "INSERT INTO " + form_MM.GetAuthDB() + ".account(username, sha_pass_hash, expansion, email) " + "\n" +
                 "VALUES(UPPER('" + textBox_username.Text + "'), (SHA1(CONCAT(UPPER('" + textBox_username.Text + "'), ':', UPPER('" + textBox_pass.Text + "')))), " + textBox_Expansion.Text + ", '" + textBox_email.Text + "'); " + "\n" +
-                "INSERT INTO " + mainmenu.textBox_mysql_authDB.Text + ".account_access(id, gmlevel, RealmID) " + "\n" +
-                "VALUES((SELECT id FROM " + mainmenu.textBox_mysql_authDB.Text + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + ");");
+                "INSERT INTO " + form_MM.GetAuthDB() + ".account_access(id, gmlevel, RealmID) " + "\n" +
+                "VALUES((SELECT id FROM " + form_MM.GetAuthDB() + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + ");");
                     //label88.Visible = true;
                     //label87.Visible = false;
                     timer2.Start();
@@ -302,7 +307,7 @@ namespace SpawnCreator
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
-            BackToMainMenu backtomainmenu = new BackToMainMenu();
+            BackToMainMenu backtomainmenu = new BackToMainMenu(form_MM);
             backtomainmenu.Show();
 
         }
@@ -377,7 +382,7 @@ namespace SpawnCreator
         private void label78_Click(object sender, EventArgs e)
         {
             Close();
-            BackToMainMenu backtomainmenu = new BackToMainMenu();
+            BackToMainMenu backtomainmenu = new BackToMainMenu(form_MM);
             backtomainmenu.Show();
         }
 
@@ -436,6 +441,11 @@ namespace SpawnCreator
         private void timer7_Tick(object sender, EventArgs e)
         {
             ShowExistingAccounts(sender, e); // Refresh dataGridView1
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

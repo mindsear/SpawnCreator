@@ -292,21 +292,27 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(427, 75);
+            this.label5.Location = new System.Drawing.Point(417, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 227;
             this.label5.Text = "Auras";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.label5, "This field controls any auras to be applied on the creature (both in effect and v" +
+        "isually). \r\nTo apply multiple auras, you can add more aura entries, separating e" +
+        "ach entry by a space.");
             // 
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(341, 91);
+            this.textBox5.Location = new System.Drawing.Point(327, 91);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(219, 20);
+            this.textBox5.Size = new System.Drawing.Size(233, 20);
             this.textBox5.TabIndex = 7;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox5, "This field controls any auras to be applied on the creature (both in effect and v" +
+        "isually). \r\nTo apply multiple auras, you can add more aura entries, separating e" +
+        "ach entry by a space.");
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label11
@@ -503,6 +509,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(352, 200);
             this.dataGridView1.TabIndex = 209;
+            this.dataGridView1.Visible = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBox6
@@ -513,6 +520,7 @@
             this.textBox6.Size = new System.Drawing.Size(352, 20);
             this.textBox6.TabIndex = 9;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox6.Visible = false;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             // 
@@ -527,6 +535,7 @@
             this.label6.TabIndex = 228;
             this.label6.Text = "Search creature (mount) by name (from your DB)";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.Visible = false;
             // 
             // label7
             // 

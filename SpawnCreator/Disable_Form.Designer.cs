@@ -522,7 +522,6 @@
             this.textBox_params_0.Name = "textBox_params_0";
             this.textBox_params_0.Size = new System.Drawing.Size(116, 20);
             this.textBox_params_0.TabIndex = 3;
-            this.textBox_params_0.Text = "0";
             this.textBox_params_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_params_0.TextChanged += new System.EventHandler(this.textBox_params_0_TextChanged);
             // 
@@ -541,7 +540,6 @@
             this.textBox_params_1.Name = "textBox_params_1";
             this.textBox_params_1.Size = new System.Drawing.Size(116, 20);
             this.textBox_params_1.TabIndex = 4;
-            this.textBox_params_1.Text = "0";
             this.textBox_params_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_params_1.TextChanged += new System.EventHandler(this.textBox_params_1_TextChanged);
             // 

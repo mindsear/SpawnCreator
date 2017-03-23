@@ -84,6 +84,12 @@
     <Compile Include="Conditions_Form.Designer.cs">
       <DependentUpon>Conditions_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlPanel.Designer.cs">
+      <DependentUpon>ControlPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Definers.cs" />
     <Compile Include="Definitions\ConditionSourceTypes.cs" />
     <Compile Include="Definitions\ConditionTypes.cs" />
@@ -239,6 +245,7 @@
     <Compile Include="MountNPC.Designer.cs">
       <DependentUpon>MountNPC.cs</DependentUpon>
     </Compile>
+    <Compile Include="MySql_Connect.cs" />
     <Compile Include="NpcFlag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Conditions_Form.resx">
       <DependentUpon>Conditions_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlPanel.resx">
+      <DependentUpon>ControlPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Disable_Form.resx">
       <DependentUpon>Disable_Form.cs</DependentUpon>

@@ -74,7 +74,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_realmID = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -88,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -341,9 +339,9 @@
             this.label84.ForeColor = System.Drawing.Color.Black;
             this.label84.Location = new System.Drawing.Point(21, 9);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(124, 20);
+            this.label84.Size = new System.Drawing.Size(129, 20);
             this.label84.TabIndex = 1;
-            this.label84.Text = " Account Create";
+            this.label84.Text = " Account Creator";
             // 
             // panel5
             // 
@@ -490,7 +488,7 @@
             // 
             // textBox_Account_Access_Level
             // 
-            this.textBox_Account_Access_Level.Location = new System.Drawing.Point(413, 96);
+            this.textBox_Account_Access_Level.Location = new System.Drawing.Point(413, 101);
             this.textBox_Account_Access_Level.Name = "textBox_Account_Access_Level";
             this.textBox_Account_Access_Level.Size = new System.Drawing.Size(36, 20);
             this.textBox_Account_Access_Level.TabIndex = 104;
@@ -529,7 +527,7 @@
             // 
             // textBox_Expansion
             // 
-            this.textBox_Expansion.Location = new System.Drawing.Point(413, 132);
+            this.textBox_Expansion.Location = new System.Drawing.Point(412, 130);
             this.textBox_Expansion.Name = "textBox_Expansion";
             this.textBox_Expansion.Size = new System.Drawing.Size(36, 20);
             this.textBox_Expansion.TabIndex = 110;
@@ -583,22 +581,12 @@
             this.textBox_realmID.TextChanged += new System.EventHandler(this.textBox_realmID_TextChanged);
             this.textBox_realmID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_realmID_KeyPress);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SpawnCreator.Properties.Resources.e4f12de124503ec0306394bb969ddd8d;
-            this.pictureBox3.Location = new System.Drawing.Point(348, 156);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(132, 83);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 113;
-            this.pictureBox3.TabStop = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(10, 290);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(459, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(459, 156);
             this.dataGridView1.TabIndex = 114;
             // 
             // panel1
@@ -616,7 +604,6 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button_Execute_Query);
@@ -639,6 +626,7 @@
             this.groupBox1.Size = new System.Drawing.Size(478, 453);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button1
             // 
@@ -710,7 +698,6 @@
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -763,7 +750,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_realmID;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView dataGridView1;

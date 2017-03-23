@@ -20,6 +20,13 @@ namespace SpawnCreator
             InitializeComponent();
         }
 
+        private readonly Form_MainMenu form_MM;
+        public SmartScripts(Form_MainMenu form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = form_MainMenu;
+        }
+
         private bool _mouseDown;
         private Point lastLocation;
 
@@ -114,7 +121,7 @@ namespace SpawnCreator
                             // Prepare SQL
                             // select insertion columns
                             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".smart_scripts";
+            BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".smart_scripts";
             BuildSQLFile += "(entryorguid, source_type, id, link, event_type, event_phase_mask, event_chance, event_flags, event_param1, event_param2, event_param3, ";
             BuildSQLFile += "event_param4, action_type, action_param1, action_param2, action_param3, action_param4, action_param5, action_param6, target_type, target_param1, target_param2, target_param3, target_x, target_y, target_z, target_o, comment) ";
 
@@ -123,38 +130,85 @@ namespace SpawnCreator
             BuildSQLFile += "(";
             BuildSQLFile += textBox1.Text + ", "; // entryorguid
             BuildSQLFile += textBox2.Text + ", "; // source_type
+
+            if (numericUpDown1.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += numericUpDown1.Text + ", "; // id
+
+            if (textBox4.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox4.Text + ", "; // link
+
+            if (textBox5.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox5.Text + ", "; // event_type
+
             BuildSQLFile += event_phase_mask_st + ", "; // event_phase_mask
+
+            if (numericUpDown2.Text == "") BuildSQLFile += "100, "; else
             BuildSQLFile += numericUpDown2.Text + ", "; // event_chance
+
             BuildSQLFile += event_flags_st + ", "; // event_flags
+
+            if (textBox7.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox7.Text + ", "; // event_param1
+
+            if (textBox8.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox8.Text + ", "; // event_param2
+
+            if (textBox11.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox11.Text + ", "; // event_param3
+
+            if (textBox15.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox15.Text + ", "; // event_param4
+
+            if (textBox14.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox14.Text + ", "; // action_type
+
+            if (textBox12.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox12.Text + ", "; // action_param1
+
+            if (textBox13.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox13.Text + ", "; // action_param2
+
+            if (textBox16.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox16.Text + ", "; // action_param3
+
+            if (textBox20.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox20.Text + ", "; // action_param4
+
+            if (textBox19.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox19.Text + ", "; // action_param5
+
+            if (textBox17.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox17.Text + ", "; // action_param6
+
+            if (textBox18.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox18.Text + ", "; // target_type
+
+            if (textBox25.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox25.Text + ", "; // target_param1
+
+            if (textBox26.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox26.Text + ", "; // target_param2
+
+            if (textBox21.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox21.Text + ", "; // target_param3
+
+            if (textBox24.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox24.Text + ", "; // target_x
+
+            if (textBox23.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox23.Text + ", "; // target_y
+
+            if (textBox22.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox22.Text + ", "; // target_z
+
+            if (textBox28.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox28.Text + ", '"; // target_o
-            BuildSQLFile += textBox27.Text; // comment
-            BuildSQLFile += "');";
+
+            BuildSQLFile += textBox27.Text + "');"; // comment
 
             stringSQLShare = BuildSQLFile;
             stringEntryShare = textBox1.Text;
-
-            
+  
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1523,7 +1577,7 @@ namespace SpawnCreator
         private void label78_Click(object sender, EventArgs e)
         {
             Close();
-            BackToMainMenu backtomainmenu = new BackToMainMenu();
+            BackToMainMenu backtomainmenu = new BackToMainMenu(form_MM);
             backtomainmenu.Show();
         }
 
@@ -1613,26 +1667,16 @@ namespace SpawnCreator
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            try
+            Process[] mysql = Process.GetProcessesByName("mysqld");
+            if (mysql.Length == 0)
             {
-                string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
-                MySqlConnection myConn = new MySqlConnection(myConnection);
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-                //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                myConn.Open();
-                DataSet ds = new DataSet();
-
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;
-
-                myConn.Close();
-            }
-            catch (Exception /*ex*/)
-            {
-                //MessageBox.Show(ex.Message);
                 label_mysql_status2.Text = "Connection Lost - MySQL is not running";
                 label_mysql_status2.ForeColor = Color.Red;
+            }
+            else
+            {
+                label_mysql_status2.Text = "Connected!";
+                label_mysql_status2.ForeColor = Color.LawnGreen;
             }
         }
 
@@ -1660,7 +1704,12 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
             string insertQuery = stringSQLShare;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -1671,10 +1720,6 @@ namespace SpawnCreator
                 {
                     //timer5.Start();
                     label_query_executed_successfully2.Visible = true;
-                }
-                else
-                {
-                    MessageBox.Show("Error");
                 }
 
             }

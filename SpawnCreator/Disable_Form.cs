@@ -19,6 +19,14 @@ namespace SpawnCreator
         {
             InitializeComponent();
         }
+
+        private readonly Form_MainMenu form_MM;
+        public Disable_Form(Form_MainMenu form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = form_MainMenu;
+        }
+
         Form_MainMenu mainmenu = new Form_MainMenu();
         public static string stringSQLShare;
         public static string stringEntryShare;
@@ -46,7 +54,7 @@ namespace SpawnCreator
         private void label78_Click(object sender, EventArgs e)
         {
             Close();
-            BackToMainMenu backtomainmenu = new BackToMainMenu();
+            BackToMainMenu backtomainmenu = new BackToMainMenu(form_MM);
             backtomainmenu.Show();
         }
 
@@ -256,8 +264,8 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".disables ";
-            BuildSQLFile += "(sourceType, entry, flags, params_0, params_1, comment)";
+            BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".disables ";
+            BuildSQLFile += "(sourceType, entry, flags, params_0, params_1, comment) ";
 
             //Values
             BuildSQLFile += "VALUES\n ";
@@ -298,7 +306,13 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
+
             string insertQuery = stringSQLShare;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -413,7 +427,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".disables ";
+            BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".disables ";
             BuildSQLFile += "(sourceType, entry, flags, params_0, params_1, comment)";
 
             //Values
@@ -530,26 +544,16 @@ namespace SpawnCreator
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            try
+            Process[] mysql = Process.GetProcessesByName("mysqld");
+            if (mysql.Length == 0)
             {
-                string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
-                MySqlConnection myConn = new MySqlConnection(myConnection);
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-                //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                myConn.Open();
-                DataSet ds = new DataSet();
-
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;
-
-                myConn.Close();
-            }
-            catch (Exception /*ex*/)
-            {
-                //MessageBox.Show(ex.Message);
                 label_mysql_status2.Text = "Connection Lost - MySQL is not running";
                 label_mysql_status2.ForeColor = Color.Red;
+            }
+            else
+            {
+                label_mysql_status2.Text = "Connected!";
+                label_mysql_status2.ForeColor = Color.LawnGreen;
             }
         }
 
@@ -656,7 +660,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".disables ";
+            BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".disables ";
             BuildSQLFile += "(sourceType, entry, flags, params_0, params_1, comment)";
 
             //Values

@@ -40,12 +40,19 @@ namespace SpawnCreator
             InitializeComponent();
         }
 
+        private readonly Form_MainMenu form_MM;
+        public MailSender(Form_MainMenu form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = form_MainMenu;
+        }
+
         private void GenerateSqlCode_MailSender(object sender, EventArgs e)
         {
             long money = 0;
 
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + mainmenu.textBox_mysql_charactersDB.Text + ".mail ";
+            BuildSQLFile = "INSERT INTO " + form_MM.GetCharDB() + ".mail ";
             BuildSQLFile += "(id, messageType, stationery, mailTemplateId, sender, receiver, subject, body, has_items, expire_time, deliver_time, money, cod, checked) ";
             
             BuildSQLFile += "VALUES \n";
@@ -61,7 +68,8 @@ namespace SpawnCreator
             BuildSQLFile += "\"" + txtBody.Text    + "\", "; // body
             BuildSQLFile += comboBox_has_items.Text + ", "; // has_items
             BuildSQLFile += unixTimestamp + 2550000 + ", "; // expire_time // default = 29 days
-            BuildSQLFile += unixTimestamp + ", "; // deliver_time
+            BuildSQLFile += unixTimestamp + ", "; // deliver_time // instant
+
             money = Convert.ToInt64(copper.Value);
             money += Convert.ToInt64(silver.Value * 100);
             money += Convert.ToInt64(gold.Value * 10000);
@@ -72,7 +80,7 @@ namespace SpawnCreator
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            BuildSQLFile += "INSERT INTO " + mainmenu.textBox_mysql_charactersDB.Text + ".mail_items (mail_id, item_guid, receiver) ";
+            BuildSQLFile += "INSERT INTO " + form_MM.GetCharDB() + ".mail_items (mail_id, item_guid, receiver) ";
             BuildSQLFile += "VALUES \n";
 
             BuildSQLFile += "(";
@@ -84,7 +92,7 @@ namespace SpawnCreator
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            BuildSQLFile += "INSERT INTO " + mainmenu.textBox_mysql_charactersDB.Text + ".item_instance ";
+            BuildSQLFile += "INSERT INTO " + form_MM.GetCharDB() + ".item_instance ";
             BuildSQLFile += "(guid, itemEntry, owner_guid, creatorGuid, giftCreatorGuid, count, duration, charges, flags, enchantments, randomPropertyId, durability, playedTime, text) ";
 
             BuildSQLFile += "VALUES \n";
@@ -129,12 +137,14 @@ namespace SpawnCreator
 
            // timer1.Start();
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text +
-                                                             ";port="      + mainmenu.textbox_mysql_port.Text     +
-                                                             ";username="  + mainmenu.textbox_mysql_username.Text +
-                                                             ";password="  + mainmenu.textbox_mysql_pass.Text);
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
 
-            string insertQuery = "SELECT name FROM " + mainmenu.textBox_mysql_charactersDB.Text + ".characters;";
+            string insertQuery = "SELECT name FROM " + form_MM.GetCharDB() + ".characters;";
             
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -166,7 +176,7 @@ namespace SpawnCreator
 
             //==========================================================================================================
 
-            string insertQuery_ = "select max(id)+1 from " + mainmenu.textBox_mysql_charactersDB.Text + ".mail;";
+            string insertQuery_ = "select max(id)+1 from " + form_MM.GetCharDB() + ".mail;";
             MySqlCommand command_ = new MySqlCommand(insertQuery_, connection);
             try
             {
@@ -180,7 +190,7 @@ namespace SpawnCreator
 
             //==========================================================================================
 
-            string insertQuery_2 = "select max(guid)+1 from " + mainmenu.textBox_mysql_charactersDB.Text + ".item_instance;";
+            string insertQuery_2 = "select max(guid)+1 from " + form_MM.GetCharDB() + ".item_instance;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
             connection.Open();
 
@@ -241,8 +251,13 @@ namespace SpawnCreator
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery_190 = "select online from " + mainmenu.textBox_mysql_charactersDB.Text + ".characters where name='" +
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
+            string insertQuery_190 = "select online from " + form_MM.GetCharDB() + ".characters where name='" +
                                         comboBox_receiver.Text + "';";
             connection.Open();
 
@@ -276,7 +291,7 @@ namespace SpawnCreator
 
             ///====================================================================
 
-            string insertQuery_78 = "select online from " + mainmenu.textBox_mysql_charactersDB.Text + ".characters where name='" +
+            string insertQuery_78 = "select online from " + form_MM.GetCharDB() + ".characters where name='" +
                                         comboBox_sender.Text + "';";
             connection.Open();
 
@@ -425,7 +440,12 @@ namespace SpawnCreator
                 return;
             }
             
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
             string insertQuery = stringSQLShare;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -501,14 +521,15 @@ namespace SpawnCreator
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text +
-                                                             ";port=" + mainmenu.textbox_mysql_port.Text +
-                                                             ";username=" + mainmenu.textbox_mysql_username.Text +
-                                                             ";password=" + mainmenu.textbox_mysql_pass.Text);
-
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
 
             //Refresh max(guid)+1 from item_instance
-            string insertQuery_2 = "select max(guid)+1 from " + mainmenu.textBox_mysql_charactersDB.Text + ".item_instance;";
+            string insertQuery_2 = "select max(guid)+1 from " + form_MM.GetCharDB() + ".item_instance;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
             connection.Open();
 
@@ -528,7 +549,7 @@ namespace SpawnCreator
             ////===============================================================================================
 
             //Refresh max (Mail ID) + 1 
-            string _insertQuery = "select max(id)+1 from " + mainmenu.textBox_mysql_charactersDB.Text + ".mail;";
+            string _insertQuery = "select max(id)+1 from " + form_MM.GetCharDB() + ".mail;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
             connection.Open();
 
@@ -579,12 +600,14 @@ namespace SpawnCreator
         //     comboBox_sender
         private void txtSender_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text +
-                                                             ";port=" + mainmenu.textbox_mysql_port.Text +
-                                                             ";username=" + mainmenu.textbox_mysql_username.Text +
-                                                             ";password=" + mainmenu.textbox_mysql_pass.Text);
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
 
-            string insertQuery_3 = "select guid from " + mainmenu.textBox_mysql_charactersDB.Text + ".characters where name='" +
+            string insertQuery_3 = "select guid from " + form_MM.GetCharDB() + ".characters where name='" +
                                     comboBox_sender.Text + "'";
 
             connection.Open();
@@ -603,7 +626,7 @@ namespace SpawnCreator
 
             //======================================
 
-            string insertQuery_78 = "select online from " + mainmenu.textBox_mysql_charactersDB.Text + ".characters where name='" +
+            string insertQuery_78 = "select online from " + form_MM.GetCharDB() + ".characters where name='" +
                                         comboBox_sender.Text + "';";
             connection.Open();
 
@@ -643,12 +666,14 @@ namespace SpawnCreator
         {
             label27.Visible = false;
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text +
-                                                            ";port=" + mainmenu.textbox_mysql_port.Text +
-                                                            ";username=" + mainmenu.textbox_mysql_username.Text +
-                                                            ";password=" + mainmenu.textbox_mysql_pass.Text);
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
 
-            string insertQuery_4 = "select guid from " + mainmenu.textBox_mysql_charactersDB.Text + ".characters where name='" +
+            string insertQuery_4 = "select guid from " + form_MM.GetCharDB() + ".characters where name='" +
                                     comboBox_receiver.Text + "';";
 
             connection.Open();
@@ -667,7 +692,7 @@ namespace SpawnCreator
 
             //======================================
 
-            string insertQuery_78 = "select online from " + mainmenu.textBox_mysql_charactersDB.Text + ".characters where name='" +
+            string insertQuery_78 = "select online from " + form_MM.GetCharDB() + ".characters where name='" +
                                         comboBox_receiver.Text + "';";
             connection.Open();
 
@@ -746,12 +771,14 @@ namespace SpawnCreator
                     button_search_npc.Visible = false;
                     dataGridView1.Visible = false;
 
-                    MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text +
-                                                                     ";port=" + mainmenu.textbox_mysql_port.Text +
-                                                                     ";username=" + mainmenu.textbox_mysql_username.Text +
-                                                                     ";password=" + mainmenu.textbox_mysql_pass.Text);
+                    MySqlConnection connection = new MySqlConnection(
+                        "datasource=" + form_MM.GetHost() + ";" +
+                        "port=" + form_MM.GetPort() + ";" +
+                        "username=" + form_MM.GetUser() + ";" +
+                        "password=" + form_MM.GetPass() + ";"
+                        );
 
-                    string insertQuery = "SELECT name FROM " + mainmenu.textBox_mysql_charactersDB.Text + ".characters;";
+                    string insertQuery = "SELECT name FROM " + form_MM.GetCharDB() + ".characters;";
 
                     connection.Open();
                     MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -785,9 +812,13 @@ namespace SpawnCreator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string constring = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
+            string constring = "datasource=" + form_MM.GetHost() + ";" +
+                               "port=" + form_MM.GetPort() + ";" +
+                               "username=" + form_MM.GetUser() + ";" +
+                               "password=" + form_MM.GetPass() + ";"
+                                ;
             MySqlConnection conDataBase = new MySqlConnection(constring);
-            MySqlCommand com = new MySqlCommand("SELECT entry,name from " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template WHERE name LIKE \"" + textBox_search_npc.Text + "\";", conDataBase);
+            MySqlCommand com = new MySqlCommand("SELECT entry,name from " + form_MM.GetWorldDB() + ".creature_template WHERE name LIKE \"" + textBox_search_npc.Text + "\";", conDataBase);
 
             try
             {
@@ -931,8 +962,13 @@ namespace SpawnCreator
 
         private void button_search_Click_1(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "SELECT entry,name FROM " + mainmenu.textbox_mysql_worldDB.Text + ".item_template WHERE name LIKE \"%" + txtSearch.Text + "%\";";
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
+            string insertQuery = "SELECT entry,name FROM " + form_MM.GetWorldDB() + ".item_template WHERE name LIKE \"%" + txtSearch.Text + "%\";";
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
 
@@ -993,7 +1029,7 @@ namespace SpawnCreator
         private void label78_Click(object sender, EventArgs e)
         {
             Close();
-            BackToMainMenu backtomainmenu = new BackToMainMenu();
+            BackToMainMenu backtomainmenu = new BackToMainMenu(form_MM);
             backtomainmenu.Show();
         }
 
@@ -1137,6 +1173,16 @@ namespace SpawnCreator
         {
             label_stopwatch.Text = dt.AddSeconds(i).ToString("HH:mm:ss");
             i++;
+        }
+
+        private void btnSend_MouseEnter(object sender, EventArgs e)
+        {
+            btnSend.BackColor = Color.Green;
+        }
+
+        private void btnSend_MouseLeave(object sender, EventArgs e)
+        {
+            btnSend.BackColor = Color.DimGray;
         }
     }
 }

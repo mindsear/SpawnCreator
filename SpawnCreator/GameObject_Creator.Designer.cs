@@ -376,9 +376,9 @@
             this.label84.ForeColor = System.Drawing.Color.Black;
             this.label84.Location = new System.Drawing.Point(6, 9);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(155, 20);
+            this.label84.Size = new System.Drawing.Size(156, 20);
             this.label84.TabIndex = 1;
-            this.label84.Text = "Game Object Create";
+            this.label84.Text = "GameObject Creator";
             // 
             // panel5
             // 

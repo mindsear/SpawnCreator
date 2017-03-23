@@ -22,6 +22,13 @@ namespace SpawnCreator
             InitializeComponent();
         }
 
+        private readonly Form_MainMenu form_MM;
+        public GenerateLoot(Form_MainMenu form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = form_MainMenu;
+        }
+
         private void GenerateLoot_Load(object sender, EventArgs e)
         {
             //NPC_Creator npc = new NPC_Creator();
@@ -44,8 +51,14 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_loot_template " +
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + 
+                ";port=" + form_MM.GetPort() + 
+                ";username=" + form_MM.GetUser() + 
+                ";password=" + form_MM.GetPass() 
+                );
+
+            string insertQuery = "INSERT INTO " + form_MM.GetWorldDB() + ".creature_loot_template " +
                 "(Entry, Item, Reference, Chance, QuestRequired, LootMode, GroupId, MinCount, MaxCount, Comment) " +
                 "VALUES (" +
                 textBox61.Text + ", " + // Entry

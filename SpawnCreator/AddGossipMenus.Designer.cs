@@ -31,6 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGossipMenus));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox_option_icon = new System.Windows.Forms.TextBox();
+            this.comboBox_option_id = new System.Windows.Forms.ComboBox();
+            this.comboBox_option_icon = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,25 +67,10 @@
             this.label75 = new System.Windows.Forms.Label();
             this.textBox61 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.comboBox_option_icon = new System.Windows.Forms.ComboBox();
-            this.comboBox_option_id = new System.Windows.Forms.ComboBox();
-            this.textBox_option_icon = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -115,6 +115,210 @@
             this.groupBox1.Size = new System.Drawing.Size(922, 303);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DimGray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(764, 274);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(158, 23);
+            this.button2.TabIndex = 239;
+            this.button2.Text = "Fill Multivendor Example";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(108, 42);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(95, 20);
+            this.numericUpDown1.TabIndex = 238;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.numericUpDown1, "The id associated with this gossip_menu_option. \r\nMust be unique for a given menu" +
+        "_id starting from 0 (zero)");
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SpawnCreator.Properties.Resources.GossipGossipIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(420, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 237;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textBox_option_icon
+            // 
+            this.textBox_option_icon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_option_icon.Location = new System.Drawing.Point(360, 19);
+            this.textBox_option_icon.Name = "textBox_option_icon";
+            this.textBox_option_icon.Size = new System.Drawing.Size(40, 20);
+            this.textBox_option_icon.TabIndex = 236;
+            this.textBox_option_icon.Text = "0";
+            this.textBox_option_icon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_option_icon.Visible = false;
+            this.textBox_option_icon.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
+            // 
+            // comboBox_option_id
+            // 
+            this.comboBox_option_id.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_option_id.FormattingEnabled = true;
+            this.comboBox_option_id.Items.AddRange(new object[] {
+            "GOSSIP_OPTION_NONE",
+            "GOSSIP_OPTION_GOSSIP",
+            "GOSSIP_OPTION_QUESTGIVER",
+            "GOSSIP_OPTION_VENDOR",
+            "GOSSIP_OPTION_TAXIVENDOR",
+            "GOSSIP_OPTION_TRAINER",
+            "GOSSIP_OPTION_SPIRITHEALER",
+            "GOSSIP_OPTION_SPIRITGUIDE",
+            "GOSSIP_OPTION_INNKEEPER",
+            "GOSSIP_OPTION_BANKER",
+            "GOSSIP_OPTION_PETITIONER",
+            "GOSSIP_OPTION_TABARDDESIGNER",
+            "GOSSIP_OPTION_BATTLEFIELD",
+            "GOSSIP_OPTION_AUCTIONEER",
+            "GOSSIP_OPTION_STABLEPET",
+            "GOSSIP_OPTION_ARMORER",
+            "GOSSIP_OPTION_UNLEARNTALENTS",
+            "GOSSIP_OPTION_UNLEARNPETTALENTS",
+            "GOSSIP_OPTION_LEARNDUALSPEC",
+            "GOSSIP_OPTION_OUTDOORPVP",
+            "GOSSIP_OPTION_MAX"});
+            this.comboBox_option_id.Location = new System.Drawing.Point(145, 105);
+            this.comboBox_option_id.Name = "comboBox_option_id";
+            this.comboBox_option_id.Size = new System.Drawing.Size(210, 21);
+            this.comboBox_option_id.TabIndex = 235;
+            this.comboBox_option_id.SelectedIndexChanged += new System.EventHandler(this.comboBox_option_id_SelectedIndexChanged);
+            // 
+            // comboBox_option_icon
+            // 
+            this.comboBox_option_icon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_option_icon.FormattingEnabled = true;
+            this.comboBox_option_icon.Items.AddRange(new object[] {
+            "GOSSIP_ICON_CHAT",
+            "GOSSIP_ICON_VENDOR",
+            "GOSSIP_ICON_TAXI",
+            "GOSSIP_ICON_TRAINER",
+            "GOSSIP_ICON_INTERACT_1",
+            "GOSSIP_ICON_INTERACT_2",
+            "GOSSIP_ICON_MONEY_BAG",
+            "GOSSIP_ICON_TALK",
+            "GOSSIP_ICON_TABARD",
+            "GOSSIP_ICON_BATTLE",
+            "GOSSIP_ICON_DOT"});
+            this.comboBox_option_icon.Location = new System.Drawing.Point(209, 41);
+            this.comboBox_option_icon.Name = "comboBox_option_icon";
+            this.comboBox_option_icon.Size = new System.Drawing.Size(205, 21);
+            this.comboBox_option_icon.TabIndex = 234;
+            this.comboBox_option_icon.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(308, 147);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 13);
+            this.label13.TabIndex = 233;
+            this.label13.Text = "box_text";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(140, 163);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(408, 20);
+            this.textBox9.TabIndex = 232;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(820, 89);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(61, 13);
+            this.label14.TabIndex = 231;
+            this.label14.Text = "box_money";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Location = new System.Drawing.Point(802, 105);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(93, 20);
+            this.textBox10.TabIndex = 230;
+            this.textBox10.Text = "0";
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox10.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(567, 147);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(105, 13);
+            this.label15.TabIndex = 229;
+            this.label15.Text = "BoxBroadcastTextID";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(570, 163);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(102, 20);
+            this.textBox11.TabIndex = 228;
+            this.textBox11.Text = "0";
+            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(708, 147);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(65, 13);
+            this.label16.TabIndex = 227;
+            this.label16.Text = "VerifiedBuild";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(694, 163);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(102, 20);
+            this.textBox12.TabIndex = 226;
+            this.textBox12.Text = "0";
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox12.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(142, 26);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(18, 13);
+            this.label12.TabIndex = 210;
+            this.label12.Text = "ID";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -277,9 +481,9 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(413, 20);
             this.textBox5.TabIndex = 212;
-            this.toolTip1.SetToolTip(this.textBox5, "This is is the text that you want displayed in the player selectable option. Exam" +
-        "ples would be \"Please train me.\", \"I would like to browse your goods.\", \"Learn D" +
-        "ual Spec\"");
+            this.toolTip1.SetToolTip(this.textBox5, "This is is the text that you want displayed in the player selectable option. \r\nEx" +
+        "amples would be \"Please train me.\", \"I would like to browse your goods.\", \"Learn" +
+        " Dual Spec\"");
             this.textBox5.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
             // 
             // label2
@@ -362,216 +566,13 @@
             this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label10.Location = new System.Drawing.Point(248, -2);
+            this.label10.Location = new System.Drawing.Point(260, -2);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(362, 15);
             this.label10.TabIndex = 206;
             this.label10.Text = "https://trinitycore.atlassian.net/wiki/display/tc/gossip_menu_option";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(142, 26);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(18, 13);
-            this.label12.TabIndex = 210;
-            this.label12.Text = "ID";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(308, 147);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 13);
-            this.label13.TabIndex = 233;
-            this.label13.Text = "box_text";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(140, 163);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(408, 20);
-            this.textBox9.TabIndex = 232;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(820, 89);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 13);
-            this.label14.TabIndex = 231;
-            this.label14.Text = "box_money";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(802, 105);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(93, 20);
-            this.textBox10.TabIndex = 230;
-            this.textBox10.Text = "0";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(567, 147);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(105, 13);
-            this.label15.TabIndex = 229;
-            this.label15.Text = "BoxBroadcastTextID";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(570, 163);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(102, 20);
-            this.textBox11.TabIndex = 228;
-            this.textBox11.Text = "0";
-            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(708, 147);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(65, 13);
-            this.label16.TabIndex = 227;
-            this.label16.Text = "VerifiedBuild";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(694, 163);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(102, 20);
-            this.textBox12.TabIndex = 226;
-            this.textBox12.Text = "0";
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox12.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
-            // 
-            // comboBox_option_icon
-            // 
-            this.comboBox_option_icon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_option_icon.FormattingEnabled = true;
-            this.comboBox_option_icon.Items.AddRange(new object[] {
-            "GOSSIP_ICON_CHAT",
-            "GOSSIP_ICON_VENDOR",
-            "GOSSIP_ICON_TAXI",
-            "GOSSIP_ICON_TRAINER",
-            "GOSSIP_ICON_INTERACT_1",
-            "GOSSIP_ICON_INTERACT_2",
-            "GOSSIP_ICON_MONEY_BAG",
-            "GOSSIP_ICON_TALK",
-            "GOSSIP_ICON_TABARD",
-            "GOSSIP_ICON_BATTLE",
-            "GOSSIP_ICON_DOT"});
-            this.comboBox_option_icon.Location = new System.Drawing.Point(209, 41);
-            this.comboBox_option_icon.Name = "comboBox_option_icon";
-            this.comboBox_option_icon.Size = new System.Drawing.Size(205, 21);
-            this.comboBox_option_icon.TabIndex = 234;
-            this.comboBox_option_icon.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboBox_option_id
-            // 
-            this.comboBox_option_id.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_option_id.FormattingEnabled = true;
-            this.comboBox_option_id.Items.AddRange(new object[] {
-            "GOSSIP_OPTION_NONE",
-            "GOSSIP_OPTION_GOSSIP",
-            "GOSSIP_OPTION_QUESTGIVER",
-            "GOSSIP_OPTION_VENDOR",
-            "GOSSIP_OPTION_TAXIVENDOR",
-            "GOSSIP_OPTION_TRAINER",
-            "GOSSIP_OPTION_SPIRITHEALER",
-            "GOSSIP_OPTION_SPIRITGUIDE",
-            "GOSSIP_OPTION_INNKEEPER",
-            "GOSSIP_OPTION_BANKER",
-            "GOSSIP_OPTION_PETITIONER",
-            "GOSSIP_OPTION_TABARDDESIGNER",
-            "GOSSIP_OPTION_BATTLEFIELD",
-            "GOSSIP_OPTION_AUCTIONEER",
-            "GOSSIP_OPTION_STABLEPET",
-            "GOSSIP_OPTION_ARMORER",
-            "GOSSIP_OPTION_UNLEARNTALENTS",
-            "GOSSIP_OPTION_UNLEARNPETTALENTS",
-            "GOSSIP_OPTION_LEARNDUALSPEC",
-            "GOSSIP_OPTION_OUTDOORPVP",
-            "GOSSIP_OPTION_MAX"});
-            this.comboBox_option_id.Location = new System.Drawing.Point(145, 105);
-            this.comboBox_option_id.Name = "comboBox_option_id";
-            this.comboBox_option_id.Size = new System.Drawing.Size(210, 21);
-            this.comboBox_option_id.TabIndex = 235;
-            this.comboBox_option_id.SelectedIndexChanged += new System.EventHandler(this.comboBox_option_id_SelectedIndexChanged);
-            // 
-            // textBox_option_icon
-            // 
-            this.textBox_option_icon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_option_icon.Location = new System.Drawing.Point(360, 19);
-            this.textBox_option_icon.Name = "textBox_option_icon";
-            this.textBox_option_icon.Size = new System.Drawing.Size(40, 20);
-            this.textBox_option_icon.TabIndex = 236;
-            this.textBox_option_icon.Text = "0";
-            this.textBox_option_icon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_option_icon.Visible = false;
-            this.textBox_option_icon.TextChanged += new System.EventHandler(this.textBox_option_icon_TextChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SpawnCreator.Properties.Resources.GossipGossipIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(420, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 237;
-            this.pictureBox1.TabStop = false;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(108, 42);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(95, 20);
-            this.numericUpDown1.TabIndex = 238;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.numericUpDown1, "The id associated with this gossip_menu_option. Must be unique for a given menu_i" +
-        "d starting from 0 (zero)");
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.DimGray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(764, 274);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 23);
-            this.button2.TabIndex = 239;
-            this.button2.Text = "Fill Multivendor Example";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Visible = false;
             // 
             // AddGossipMenus
             // 
@@ -591,8 +592,8 @@
             this.Load += new System.EventHandler(this.AddGossipMenus_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

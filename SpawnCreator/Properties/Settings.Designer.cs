@@ -334,5 +334,29 @@ namespace SpawnCreator.Properties {
                 this["QuestFlags"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AuthAndWorldPath {
+            get {
+                return ((string)(this["AuthAndWorldPath"]));
+            }
+            set {
+                this["AuthAndWorldPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MySQL_Path {
+            get {
+                return ((string)(this["MySQL_Path"]));
+            }
+            set {
+                this["MySQL_Path"] = value;
+            }
+        }
     }
 }

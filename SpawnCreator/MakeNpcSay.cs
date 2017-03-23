@@ -19,15 +19,22 @@ namespace SpawnCreator
             InitializeComponent();
         }
 
+        private readonly Form_MainMenu form_MM;
+        public MakeNpcSay(Form_MainMenu _form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = _form_MainMenu; 
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBox4.Text = comboBox1.Text;
 
-            if (comboBox1.Text == "Say") textBox4.Text = "12";
-            else if (comboBox1.Text == "Yell") textBox4.Text = "14";
-            else if (comboBox1.Text == "Emote") textBox4.Text = "16";
-            else if (comboBox1.Text == "Boss Emote") textBox4.Text = "41";
-            else if (comboBox1.Text == "Whisper") textBox4.Text = "15";
+            if      (comboBox1.Text == "Say") textBox4.Text          = "12";
+            else if (comboBox1.Text == "Yell") textBox4.Text         = "14";
+            else if (comboBox1.Text == "Emote") textBox4.Text        = "16";
+            else if (comboBox1.Text == "Boss Emote") textBox4.Text   = "41";
+            else if (comboBox1.Text == "Whisper") textBox4.Text      = "15";
             else if (comboBox1.Text == "Boss Whisper") textBox4.Text = "42";
         }
 
@@ -61,8 +68,14 @@ namespace SpawnCreator
             }
            
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "REPLACE INTO " + mainmenu.textbox_mysql_worldDB.Text + ".creature_text " +
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
+
+            string insertQuery = "INSERT INTO " + form_MM.GetWorldDB() + ".creature_text " +
                 "(entry, text, type, probability, language) " +
                 "VALUES (" +
                 textBox61.Text + ", '" + // entry
@@ -71,7 +84,7 @@ namespace SpawnCreator
                 textBox10.Text + ", " + // probability
                 textBox1.Text + ");" + // language
 
-                "REPLACE INTO " + mainmenu.textbox_mysql_worldDB.Text + ".smart_scripts " +
+                "INSERT INTO " + form_MM.GetWorldDB() + ".smart_scripts " +
                 "(entryorguid, event_type, action_type, event_chance, event_param1, event_param2, event_param3, event_param4) " +
                 "VALUES (" +
                 textBox61.Text + ", " + // entryorguid

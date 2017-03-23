@@ -120,17 +120,17 @@
   <data name="label1.Text" xml:space="preserve">
     <value>
 Go in game and choose an NPC to spawn, I will use a rabbit 
-for example
+For example:
 
 
 
-Find out the NPC GUID
-target your npc and then type:
+Find out the NPC GUID.
+Target your npc and then type:
 
 
 
 Move to the location you wish the NPC to move then enter:
-.wp add 'GUID' (without comma's) In my case it's
+.wp add 'GUID' (without quotes) In my case it's
 
 
 
