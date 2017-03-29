@@ -28,6 +28,28 @@ namespace SpawnCreator
             form_MM = form_MainMenu;
         }
 
+        MySqlConnection connection = new MySqlConnection();
+        public void GetMySqlConnection()
+        {
+            MySqlConnection _connection = new MySqlConnection(
+                               "datasource = " + form_MM.GetHost() + "; " +
+                               "port=" + form_MM.GetPort() + ";" +
+                               "username=" + form_MM.GetUser() + ";" +
+                               "password=" + form_MM.GetPass() + ";"
+                            );
+            connection = _connection;
+        }
+
+        public static string stringSqlShare;
+        private void GenerateSQL()
+        {
+            string BuildSQL = "INSERT INTO " + form_MM.GetAuthDB() + ".account (username, sha_pass_hash, expansion, email) " + "\n" +
+                "VALUES (UPPER('" + textBox_username.Text + "'), (SHA1(CONCAT(UPPER('" + textBox_username.Text + "'), ':', UPPER('" + textBox_pass.Text + "')))), " + textBox_Expansion.Text + ", '" + textBox_email.Text + "'); " + "\n" +
+                "INSERT INTO " + form_MM.GetAuthDB() + ".account_access (id, gmlevel, RealmID) " + "\n" +
+                "VALUES ((SELECT id FROM " + form_MM.GetAuthDB() + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + "); \n";
+            stringSqlShare = BuildSQL;
+        }
+
         private bool _mouseDown;
         private Point lastLocation;
 
@@ -44,7 +66,7 @@ namespace SpawnCreator
             string constring = "datasource=" + form_MM.GetHost() + ";" +
                 "port=" + form_MM.GetPort() + ";" +
                 "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass() + ";";
+                "password=" + form_MM.GetPass() + ";" ;
 
             MySqlConnection conDataBase = new MySqlConnection(constring);
             MySqlCommand com = new MySqlCommand("select id, username, email from " + form_MM.GetAuthDB() + ".account;", conDataBase);
@@ -94,19 +116,32 @@ namespace SpawnCreator
             _mouseDown = false;
         }
 
+        public bool IsProcessOpen(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    label_mysql_status2.Text = "Connected!";
+                    label_mysql_status2.ForeColor = Color.LawnGreen;
+                    button_Execute_Query.Visible = true;
+                    button1.Visible = true; // Refresh button
+                    dataGridView1.Enabled = true;
+                    return true;
+                }
+            }
+
+            label_mysql_status2.Text = "Connection Lost - MySQL is not running";
+            label_mysql_status2.ForeColor = Color.Red;
+            button_Execute_Query.Visible = false;
+            button1.Visible = false; // Refresh button
+            dataGridView1.Enabled = false;
+            return false;
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Process[] mysql = Process.GetProcessesByName("mysqld");
-            if (mysql.Length == 0)
-            {
-                label_mysql_status2.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status2.ForeColor = Color.Red;
-            }
-            else
-            {
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;
-            }
+            IsProcessOpen();
         }
 
         private void AccountCreator_Load(object sender, EventArgs e)
@@ -117,12 +152,24 @@ namespace SpawnCreator
             comboBox_Expansion.SelectedIndex = 2; // 2 (WOTLK)
             timer6.Start();
 
-            ShowExistingAccounts(sender, e);
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                label_mysql_status2.Visible = false;
+                label85.Visible = false;
+                timer1.Enabled = false;
+                button_Execute_Query.Visible = false;
+                button1.Visible = false; // refresh
+                dataGridView1.Enabled = false;
+            }
+            else
+                ShowExistingAccounts(sender, e);
         }
 
         // Copy to Clipboard - Button
         private void label86_Click(object sender, EventArgs e)
         {
+            GenerateSQL();
+
             if (textBox_username.Text == "")
             {
                 MessageBox.Show("Username should not be empty", "Error");
@@ -133,10 +180,7 @@ namespace SpawnCreator
                 MessageBox.Show("Password should not be empty", "Error");
                 return;
             }
-            Clipboard.SetText("INSERT INTO " + form_MM.GetAuthDB() + ".account(username, sha_pass_hash, expansion, email) " + "\n" +
-                "VALUES(UPPER('" + textBox_username.Text + "'), (SHA1(CONCAT(UPPER('" + textBox_username.Text + "'), ':', UPPER('" + textBox_pass.Text + "')))), " + textBox_Expansion.Text + ", '" + textBox_email.Text + "'); " + "\n" +
-                "INSERT INTO " + form_MM.GetAuthDB() + ".account_access(id, gmlevel, RealmID) " + "\n" +
-                "VALUES((SELECT id FROM " + form_MM.GetAuthDB() + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + ");");
+            Clipboard.SetText(stringSqlShare);
             //label87.Visible = true;
             timer4.Start();
         }
@@ -174,6 +218,7 @@ namespace SpawnCreator
 
         private void button_Execute_Query_Click(object sender, EventArgs e)
         {
+            GenerateSQL();
 
             if (textBox_username.Text == "")
             {
@@ -186,29 +231,19 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection(
-                "datasource=" + form_MM.GetHost() + ";" +
-                "port=" + form_MM.GetPort() + ";" +
-                "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass() + ";"
-                );
+            GetMySqlConnection();
 
-            string insertQuery = "INSERT INTO " + form_MM.GetAuthDB() + 
-                ".account (username, sha_pass_hash, expansion, email) " + "\n" +
-                "VALUES(UPPER('" + textBox_username.Text + "'), (SHA1(CONCAT(UPPER('" + textBox_username.Text + "'), ':', UPPER('" + textBox_pass.Text + "')))), " + textBox_Expansion.Text + ", '" + textBox_email.Text + "'); " + "\n" +
-                "INSERT INTO " + form_MM.GetAuthDB() + ".account_access(id, gmlevel, RealmID) VALUES((SELECT id FROM " + form_MM.GetAuthDB() + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + ");";
             connection.Open();
-            MySqlCommand command = new MySqlCommand(insertQuery, connection);
+            MySqlCommand command = new MySqlCommand(stringSqlShare, connection);
 
             try
             {
-                
                 if (command.ExecuteNonQuery() >= 1)
                 {   
-                    //this is good !
+                    //this is correct !
                     label_Executed_Successfully.Visible = true;
+                    button1_Click_1(sender, e);
                 }
-
             }
             catch (Exception ex)
             {
@@ -234,6 +269,8 @@ namespace SpawnCreator
 
         private void label83_Click(object sender, EventArgs e)
         {
+            GenerateSQL();
+
             if (textBox_username.Text == "")
             {
                 MessageBox.Show("Username should not be empty", "Error");
@@ -252,10 +289,7 @@ namespace SpawnCreator
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    File.WriteAllText(sfd.FileName, "INSERT INTO " + form_MM.GetAuthDB() + ".account(username, sha_pass_hash, expansion, email) " + "\n" +
-                "VALUES(UPPER('" + textBox_username.Text + "'), (SHA1(CONCAT(UPPER('" + textBox_username.Text + "'), ':', UPPER('" + textBox_pass.Text + "')))), " + textBox_Expansion.Text + ", '" + textBox_email.Text + "'); " + "\n" +
-                "INSERT INTO " + form_MM.GetAuthDB() + ".account_access(id, gmlevel, RealmID) " + "\n" +
-                "VALUES((SELECT id FROM " + form_MM.GetAuthDB() + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + ");");
+                    File.WriteAllText(sfd.FileName, stringSqlShare);
                     //label88.Visible = true;
                     //label87.Visible = false;
                     timer2.Start();
@@ -315,25 +349,21 @@ namespace SpawnCreator
         private void label2_MouseEnter(object sender, EventArgs e)
         {
             label2.BackColor = Color.Firebrick;
-            label2.ForeColor = Color.White;
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
         {
             label2.BackColor = Color.FromArgb(58, 89, 114);
-            label2.ForeColor = Color.Black;
         }
 
         private void label1_MouseEnter(object sender, EventArgs e)
         {
             label1.BackColor = Color.Firebrick;
-            label1.ForeColor = Color.White;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             label1.BackColor = Color.FromArgb(58, 89, 114);
-            label1.ForeColor = Color.Black;
         }
 
         private void comboBox_Expansion_SelectedIndexChanged(object sender, EventArgs e)
@@ -343,6 +373,7 @@ namespace SpawnCreator
             if (comboBox_Expansion.Text      == "0 (Vanilla)") textBox_Expansion.Text   = "0";
             else if (comboBox_Expansion.Text == "1 (TBC)") textBox_Expansion.Text       = "1";
             else if (comboBox_Expansion.Text == "2 (WOTLK)") textBox_Expansion.Text     = "2";
+
             else if (comboBox_Expansion.Text == "3 (Cataclysm)") textBox_Expansion.Text = "3";
             else if (comboBox_Expansion.Text == "4 (MoP)") textBox_Expansion.Text       = "4";
             else if (comboBox_Expansion.Text == "5 (WoD)") textBox_Expansion.Text       = "5";
@@ -370,13 +401,11 @@ namespace SpawnCreator
         private void label78_MouseEnter(object sender, EventArgs e)
         {
             label78.BackColor = Color.Firebrick;
-            label78.ForeColor = Color.White;
         }
 
         private void label78_MouseLeave(object sender, EventArgs e)
         {
             label78.BackColor = Color.FromArgb(58, 89, 114);
-            label78.ForeColor = Color.Black;
         }
 
         private void label78_Click(object sender, EventArgs e)
@@ -446,6 +475,17 @@ namespace SpawnCreator
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.F2)
+            {
+                //Application.Exit();
+                
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

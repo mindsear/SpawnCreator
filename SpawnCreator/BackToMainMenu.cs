@@ -357,8 +357,22 @@ namespace SpawnCreator
             //    mainmenu.textbox_mysql_username.Visible = true;
             //    mainmenu.textbox_mysql_pass.Visible = true;
                 //mainmenu.tabControl1.Visible = false;
-
-                timer1.Enabled = true;
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                //Start without mysql con
+                label_mysql_status.Visible = false;
+                label85.Visible = false;
+                timer1.Start();
+                timer2.Stop();
+            }
+            else
+            {
+                label_mysql_status.Visible = true;
+                label85.Visible = true;
+                timer1.Stop();
+                timer2.Start();     
+            }
+                    
             //    myConn.Close();
             //}
             //catch (Exception ex)
@@ -367,8 +381,83 @@ namespace SpawnCreator
             //}
         }
 
+        public bool StartWithoutMySQL(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    // If starting without mysql, don't show lables
+                    //label_mysql_status.Visible = true;
+                    //label85.Visible = true;
+                    return true;
+                }
+            }
+
+            label_mysql_status.Visible = false;
+            label85.Visible = false;
+            return false;
+        }
+
+        public bool StartWithMySQL(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    label_mysql_status.Text = "Connected!";
+                    label_mysql_status.ForeColor = Color.LawnGreen;
+                    label2.Enabled = true; // Item Creator
+                    panel2.Enabled = true; // Item Creator
+                    label_Npc_creator.Enabled = true;
+                    panel3.Enabled = true; // npc creator
+                    label_GO_creator.Enabled = true;
+                    panel4.Enabled = true; // Go creator
+                    label_Quest_creator.Enabled = true;
+                    panel_Quest_Creator.Enabled = true;
+                    label_Account_Creator.Enabled = true;
+                    panel_Account_Creator.Enabled = true;
+                    label11.Enabled = true; // Disable Form
+                    panel5.Enabled = true; // Disable Form
+                    label12.Enabled = true; // Conditions
+                    panel6.Enabled = true; // Conditions
+                    label9.Enabled = true; // Smart Scripts
+                    panel8.Enabled = true; // Smart Scripts
+                    label10.Enabled = true; // Mail Sender
+                    panel9.Enabled = true; // Mail Sender
+                    return true; 
+                }
+            }
+
+            label_mysql_status.Text = "Connection Lost - MySQL is not running";
+            label_mysql_status.ForeColor = Color.Black;
+
+            label2.Enabled = false; // Item Creator
+            panel2.Enabled = false; // Item Creator
+            label_Npc_creator.Enabled = false;
+            panel3.Enabled = false; // npc creator
+            label_GO_creator.Enabled = false;
+            panel4.Enabled = false; // Go creator
+            label_Quest_creator.Enabled = false;
+            panel_Quest_Creator.Enabled = false;
+            label_Account_Creator.Enabled = false;
+            panel_Account_Creator.Enabled = false;
+            label11.Enabled = false; // Disable Form
+            panel5.Enabled = false; // Disable Form
+            label12.Enabled = false; // Conditions
+            panel6.Enabled = false; // Conditions
+            label9.Enabled = false; // Smart Scripts
+            panel8.Enabled = false; // Smart Scripts
+            label10.Enabled = false; // Mail Sender
+            panel9.Enabled = false; // Mail Sender
+            return false;
+        }
+
         private void timer1_Tick_1(object sender, EventArgs e)
         {
+            
+            StartWithoutMySQL();
+
             //try
             //{
             //    string myConnection = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text;
@@ -395,17 +484,19 @@ namespace SpawnCreator
             //    label_mysql_status.ForeColor = Color.Black;
             //}
 
-            Process[] mysql = Process.GetProcessesByName("mysqld");
-            if (mysql.Length == 0)
-            {
-                label_mysql_status.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status.ForeColor = Color.Black;
-            }
-            else
-            {
-                label_mysql_status.Text = "Connected!";
-                label_mysql_status.ForeColor = Color.Lime;
-            }
+            //=========================================================
+
+            //Process[] mysql = Process.GetProcessesByName("mysqld");
+            //if (mysql.Length == 0)
+            //{
+            //    label_mysql_status.Text = "Connection Lost - MySQL is not running";
+            //    label_mysql_status.ForeColor = Color.Black;
+            //}
+            //else
+            //{
+            //    label_mysql_status.Text = "Connected!";
+            //    label_mysql_status.ForeColor = Color.Lime;
+            //}
         }
 
         private void panel_Quest_Creator_MouseEnter(object sender, EventArgs e)
@@ -597,6 +688,12 @@ namespace SpawnCreator
             Close();
             NPC_Creator npc = new NPC_Creator(form_MM);
             npc.Show();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            //Start with mysql connnection
+            StartWithMySQL();
         }
     }
 }

@@ -18,7 +18,13 @@ namespace SpawnCreator
         {
             InitializeComponent();
         }
-        
+
+        private readonly Form_MainMenu form_MM;
+        public SaveOptionsDialog(Form_MainMenu form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = form_MainMenu;
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -60,7 +66,7 @@ namespace SpawnCreator
         private void button_execute_query_Click(object sender, EventArgs e)
         {
             Form_ItemCreator frm = new Form_ItemCreator();
-            if (frm.textBox1.Text == "")
+            if (frm.NUD_item_Entry.Text == "")
             {
                 MessageBox.Show("Entry column should not be empty", "Error");
                 return;
@@ -68,7 +74,12 @@ namespace SpawnCreator
 
             //Clipboard.SetText(Form_ItemCreator.stringSQLShare);
             Form_MainMenu mainmenu = new Form_MainMenu();
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
+            MySqlConnection connection = new MySqlConnection(
+                "datasource=" + form_MM.GetHost() + ";" +
+                "port=" + form_MM.GetPort() + ";" +
+                "username=" + form_MM.GetUser() + ";" +
+                "password=" + form_MM.GetPass() + ";"
+                );
             string insertQuery = Form_ItemCreator.stringSQLShare;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -82,13 +93,6 @@ namespace SpawnCreator
                    // this.Close();
                     //frm.label83.ForeColor = Color.GreenYellow;
                     label_query_executed_successfully.Visible = true;
-                }
-                else
-                {
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
                 }
             }
             catch (Exception ex)

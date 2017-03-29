@@ -127,11 +127,14 @@
   <data name="ActiveQuestIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ActiveQuestIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Interact" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Interact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Pickup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pickup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TrainerGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrainerGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help_Circle_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help_Circle_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Inv_enchant_disenchant" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inv_enchant_disenchant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,6 +160,12 @@
   <data name="250px-Mage_Crest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\250px-Mage_Crest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PVP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PVP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="3D-Orc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3D-Orc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,9 +181,6 @@
   <data name="socket-yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socket-yellow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="skull_f18221f5f36c13224" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skull_f18221f5f36c13224.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Buy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Buy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,11 +190,11 @@
   <data name="BattleMasterGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BattleMasterGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Quest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="56176" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\56176.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Gunner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gunner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,17 +202,20 @@
   <data name="TaxiGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TaxiGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Directions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Directions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Repair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Repair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TrainerGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TrainerGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Interact" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Interact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BankerGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BankerGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inv_misc_questionmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inv_misc_questionmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="questionmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\questionmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="beta_axe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\beta_axe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,8 +223,8 @@
   <data name="vehichleCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vehichleCursor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PVP" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PVP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="magnifier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magnifier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mail_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mail_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,14 +235,14 @@
   <data name="Taxi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Taxi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Quest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Quest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="skull_f18221f5f36c13224" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\skull_f18221f5f36c13224.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HealerGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HealerGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Directions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Directions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Inv_misc_questionmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inv_misc_questionmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BinderGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BinderGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -277,7 +286,7 @@
   <data name="UI-SilverIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UI-SilverIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="magnifier" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\magnifier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Help_Circle_Blue1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help_Circle_Blue1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -120,6 +120,28 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="textBox8.ToolTip" xml:space="preserve">
+    <value>This field defines under what category the quest falls in the quest log.
+If value &gt; 0 then value is Zone IDs taken from AreaTable.dbc.
+if value &lt; 0 then (-value) is quest sort id: (in general profession or class quests. Also see RequiredSkillPoints ) Value is ID from QuestSort.dbc</value>
+  </data>
+  <data name="label10.ToolTip" xml:space="preserve">
+    <value>This field defines under what category the quest falls in the quest log.
+If value &gt; 0 then value is Zone IDs taken from AreaTable.dbc.
+if value &lt; 0 then (-value) is quest sort id: (in general profession or class quests. Also see RequiredSkillPoints ) Value is ID from QuestSort.dbc</value>
+  </data>
   <data name="textBox3.ToolTip" xml:space="preserve">
     <value>Level of quest. Player receives full experience amount only if their level is less than or equal to Level+5. 
 If Level is set to -1, the player's level will be used as (Quest)Level for the experience calculation.</value>
@@ -132,7 +154,7 @@ If Level is set to -1, the player's level will be used as (Quest)Level for the e
     <value>114, 17</value>
   </metadata>
   <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>201, 17</value>
+    <value>195, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

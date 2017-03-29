@@ -83,7 +83,7 @@
             // 
             this.label_copy_to_clipboard.AutoSize = true;
             this.label_copy_to_clipboard.ForeColor = System.Drawing.Color.Green;
-            this.label_copy_to_clipboard.Location = new System.Drawing.Point(0, 163);
+            this.label_copy_to_clipboard.Location = new System.Drawing.Point(-2, 163);
             this.label_copy_to_clipboard.Name = "label_copy_to_clipboard";
             this.label_copy_to_clipboard.Size = new System.Drawing.Size(178, 13);
             this.label_copy_to_clipboard.TabIndex = 77;

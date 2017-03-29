@@ -33,6 +33,19 @@ namespace SpawnCreator
         {
             //NPC_Creator npc = new NPC_Creator();
             //textBox61.Text = npc.textBox42.Text;
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                // If CheckBox is Checked (Start without MySQL)
+                button1.Enabled = false;
+                button1.Visible = false;
+                label11.Visible = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                label11.Visible = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,7 +72,7 @@ namespace SpawnCreator
                 );
 
             string insertQuery = "INSERT INTO " + form_MM.GetWorldDB() + ".creature_loot_template " +
-                "(Entry, Item, Reference, Chance, QuestRequired, LootMode, GroupId, MinCount, MaxCount, Comment) " +
+                "(Entry, Item, Reference, Chance, QuestRequired, LootMode, GroupId, MinCount, MaxCount, Comment) \n" +
                 "VALUES (" +
                 textBox61.Text + ", " + // Entry
                 textBox65.Text + ", " + // ItemID
@@ -82,14 +95,6 @@ namespace SpawnCreator
                 if (command.ExecuteNonQuery() == 1)
                 {
                     label9.Visible = true;
-                }
-                else
-                {
-                    label9.Visible = true;
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
                 }
             }
             catch (Exception ex)
@@ -271,6 +276,27 @@ namespace SpawnCreator
         private void textBox61_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText("INSERT INTO " + form_MM.GetWorldDB() + ".creature_loot_template " +
+                "(Entry, Item, Reference, Chance, QuestRequired, LootMode, GroupId, MinCount, MaxCount, Comment) \n" +
+                "VALUES (" +
+                textBox61.Text + ", " + // Entry
+                textBox65.Text + ", " + // ItemID
+                textBox1.Text + ", " + // Reference
+                textBox2.Text + ", " + // Chance
+                textBox4.Text + ", " + // QuestRequired
+                textBox3.Text + ", " + // LootMode
+                textBox8.Text + ", " + // GroupId
+                textBox7.Text + ", " + // MinCount
+                textBox6.Text + ", " + // MaxCount
+                "'" + textBox5.Text + // Comment
+                "');");
+
+            label9.Text = "Query has been copied to clipboard!";
+            label9.Visible = true;
         }
     }
 }

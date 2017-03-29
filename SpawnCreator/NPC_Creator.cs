@@ -30,14 +30,21 @@ namespace SpawnCreator
             form_MM = form_MainMenu;
         }
 
-        private void SelectMaxPlus1()
+        MySqlConnection connection = new MySqlConnection();
+        public void GetMySqlConnection()
         {
-            MySqlConnection connection = new MySqlConnection(
-                "datasource=" + form_MM.GetHost() + ";" +
-                "port=" + form_MM.GetPort() + ";" +
-                "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass() + ";"
-                );
+            MySqlConnection _connection = new MySqlConnection(
+                               "datasource = " + form_MM.GetHost() + "; " +
+                               "port=" + form_MM.GetPort() + ";" +
+                               "username=" + form_MM.GetUser() + ";" +
+                               "password=" + form_MM.GetPass() + ";"
+                            );
+            connection = _connection;
+        }
+
+        private void SelectMaxPlus1_FROM_creature_template()
+        {
+            GetMySqlConnection();
 
             string insertQuery = "SELECT max(entry)+1 FROM " + form_MM.GetWorldDB() + ".creature_template;";
 
@@ -80,8 +87,6 @@ namespace SpawnCreator
         {
 
         }
-
-        
 
         private void _Generate_SQL_NPC(object sender, EventArgs e)
         {
@@ -770,7 +775,6 @@ namespace SpawnCreator
                     break;
             }
 
-            Form_MainMenu mainmenu = new Form_MainMenu();
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
@@ -787,7 +791,7 @@ namespace SpawnCreator
             // values now
             BuildSQLFile += "VALUES \n";
             BuildSQLFile += "(";
-            BuildSQLFile += NUD_Entry.Text + ", "; // entry
+            BuildSQLFile += NUD_Entry.Value + ", "; // entry
             BuildSQLFile += textBox3.Text + ", "; // difficulty_entry_1
             BuildSQLFile += textBox2.Text + ", "; // difficulty_entry_2
             BuildSQLFile += textBox4.Text + ", "; // difficulty_entry_3
@@ -1247,7 +1251,7 @@ namespace SpawnCreator
 
             if (textBox59.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox59.Text; // VerifiedBuild
-            BuildSQLFile += ");";
+            BuildSQLFile += "); \n";
 
             stringSQLShare = BuildSQLFile;
             stringEntryShare = NUD_Entry.Text;
@@ -1295,6 +1299,10 @@ namespace SpawnCreator
             mount.Close();
             MakeNpcSay npcsay = new MakeNpcSay();
             npcsay.Close();
+            AddGossipMenus gossip = new AddGossipMenus();
+            gossip.Close();
+            HowToAddWaypoints way = new HowToAddWaypoints();
+            way.Close();
 
             Application.Exit();
         }
@@ -1307,13 +1315,11 @@ namespace SpawnCreator
         private void label81_MouseEnter(object sender, EventArgs e)
         {
             label81.BackColor = Color.Firebrick;
-            label81.ForeColor = Color.White;
         }
 
         private void label81_MouseLeave(object sender, EventArgs e)
         {
             label81.BackColor = Color.FromArgb(58, 89, 114);
-            label81.ForeColor = Color.Black;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -1326,8 +1332,7 @@ namespace SpawnCreator
             //size = 914, 533
 
             timer9.Start();
-
-
+            
             textBox45.KeyPress += onlyNumbers; // spell1
             textBox44.KeyPress += onlyNumbers; // spell2
             textBox45.KeyPress += onlyNumbers; // spell3
@@ -1353,400 +1358,62 @@ namespace SpawnCreator
             timer2.Start(); //stopwatch
 
 
-           SelectMaxPlus1();
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                label_mysql_status2.Visible = false;
+                label85.Visible = false;
+                timer1.Enabled = false; //check if mysql is running
+                label_mysql_status2.Visible = false;
+                label85.Visible = false; // MySQl Status - label
+                button2.Visible = false; //max+1 button
+                button10.Visible = false; // Execute Query - Bottom Button
+                button16.Visible = false; // Max+1 Gossip Menu
+                button12.Visible = false; // max+1 lootID
+            }
+            else
+                SelectMaxPlus1_FROM_creature_template();
+        }
 
+        public bool IsProcessOpen(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    label_mysql_status2.Text = "Connected!";
+                    label_mysql_status2.ForeColor = Color.LawnGreen;
+                    button2.Visible = true; //max+1 button
+                    button10.Visible = true; // Execute Query - Bottom Button
+                    button16.Visible = true; // Max+1 Gossip Menu
+                    button12.Visible = true; // max+1 lootID
+                    btn_DeleteQuery.Enabled = true;
+                    return true;
+                }
+            }
 
-
-            // Create table mountlist
-            //"-- DROP TABLE " + mainmenu.textbox_mysql_worldDB.Text + ".mountlist;" +
-            //"CREATE TABLE IF NOT EXISTS mountlist.mountlist (" +
-            //"`Name` CHAR(100) NULL DEFAULT NULL," +
-            //"`Model_ID` MEDIUMINT(8) NULL DEFAULT NULL" +
-            //")" +
-            //"COLLATE='latin1_swedish_ci'" +
-            //"ENGINE=InnoDB" +
-            //";" +
-            // "INSERT INTO mountlist.mountlist (Name, Model_ID) VALUES " +
-            //"('Amani War Bear', 22464), " +
-            //"('Argent Charger', 28919), " +
-            //"('Argent Hippogryph', 22471), " +
-            //"('Argent Warhorse', 28918), " +
-            //"('Armored Blue Wind Rider', 27914), " +
-            //"('Armored Snowy Gryphon', 27913), " +
-            //"('Ashes of Al\\'ar', 17890), " +
-            //"('Big Battle Bear', 25335), " +
-            //"('Big Blizzard Bear', 27567), " +
-            //"('Big Love Rocket', 30989), " +
-            //"('Black Battlestrider', 14372), " +
-            //"('Black Hawkstrider', 19478), " +
-            //"('Black Qiraji Battle Tank', 15676), " +
-            //"('Black Ram', 2784), " +
-            //"('Black Skeletal Horse', 29130), " +
-            //"('Black Stallion', 2402), " +
-            //"('Black War Kodo', 14348), " +
-            //"('Black War Ram', 14577), " +
-            //"('Black War Steed', 14337), " +
-            //"('Blazing Hippogryph', 31803), " +
-            //"('Blue Dragonhawk', 27525), " +
-            //"('Blue Hawkstrider', 19480), " +
-            //"('Blue Mechanostrider', 6569), " +
-            //"('Blue Qiraji Battle Tank', 15672), " +
-            //"('Blue Riding Nether Ray', 21156), " +
-            //"('Blue Skeletal Horse', 10671), " +
-            //"('Blue Skeletal Warhorse', 10718), " +
-            //"('Blue Wind Rider', 17700), " +
-            //"('Brewfest Kodo', 24758), " +
-            //"('Brewfest Ram', 22265), " +
-            //"('Brown Elekk', 17063), " +
-            //"('Brown Horse', 2404), " +
-            //"('Brown Kodo', 11641), " +
-            //"('Brown Ram', 2785), " +
-            //"('Brown Skeletal Horse', 10672), " +
-            //"('Brutal Nether Drake', 27507), " +
-            //"('Celestial Steed', 31958), " +
-            //"('Cenarion War Hippogryph', 22473), " +
-            //"('Chestnut Mare', 2405), " +
-            //"('Crusader\\'s Black Warhorse', 29938), " +
-            //"('Crusader\\'s White Warhorse', 29937), " +
-            //"('Darkspear Raptor', 29261), " +
-            //"('Darnassian Nightsaber', 29256), " +
-            //"('Deadly Gladiator\\'s Frost Wyrm', 25511), " +
-            //"('Rivendare\\'s Deathcharger', 10718), " +
-            //"('Ebon Gryphon', 17694), " +
-            //"('Exodar Elekk', 29255), " +
-            //"('Fiery Warhorse', 19250), " +
-            //"('Fluorescent Green Mechanostrider', 9475), " +
-            //"('Flying Broom', 21939), " +
-            //"('Flying Carpet', 28082), " +
-            //"('Flying Machine Control', 1126), " +
-            //"('Forsaken Warhorse', 29257), " +
-            //"('Frost Ram', 2787), " +
-            //"('Frosty Flying Carpet', 28063), " +
-            //"('Furious Gladiator\\'s Frost Wyrm', 25593), " +
-            //"('Gnomeregan Mechanostrider', 28571), " +
-            //"('Golden Gryphon', 17697), " +
-            //"('Gray Elekk', 19869), " +
-            //"('Gray Kodo', 12246), " +
-            //"('Gray Ram', 2736), " +
-            //"('Great Blue Elekk', 19871), " +
-            //"('Great Brewfest Kodo', 24757), " +
-            //"('Great Brown Kodo', 14578), " +
-            //"('Great Elite Elekk', 17906), " +
-            //"('Great Golden Kodo', 28556), " +
-            //"('Great Golden Kodo', 28556), " +
-            //"('Great Gray Kodo', 14579), " +
-            //"('Great Green Elekk', 19873), " +
-            //"('Great Purple Elekk', 19872), " +
-            //"('Great Red Elekk', 28606), " +
-            //"('Great Red Elekk', 28606), " +
-            //"('Great White Kodo', 14349), " +
-            //"('Green Kodo', 12245), " +
-            //"('Green Mechanostrider', 10661), " +
-            //"('Green Qiraji Battle Tank', 15679), " +
-            //"('Green Riding Nether Ray', 21152), " +
-            //"('Green Skeletal Warhorse', 10720), " +
-            //"('Green Wind Rider', 17701), " +
-            //"('Winter Wolf', 1166), " +
-            //"('Black War Wolf', 14334), " +
-            //"('Black Wolf', 207), " +
-            //"('Brown Wolf', 2328), " +
-            //"('Dire Wolf', 17283), " +
-            //"('Frostwolf Howler', 14776), " +
-            //"('Red Wolf', 2326), " +
-            //"('Swift Brown Wolf', 14573), " +
-            //"('Swift Gray Wolf', 14574), " +
-            //"('Swift Timber Wolf', 14575), " +
-            //"('Timber Wolf', 247), " +
-            //"('Invincible\\'s Reins', 31007), " +
-            //"('Ironforge Ram', 29258), " +
-            //"('Loaned Gryphon', 17697), " +
-            //"('Loaned Wind Rider', 17699), " +
-            //"('Magic Broom', 21939), " +
-            //"('Magic Rooster', 29344), " +
-            //"('Magnificent Flying Carpet', 28117), " +
-            //"('Mechano-hog', 25871), " +
-            //"('Mekgineer\\'s Chopper', 25870), " +
-            //"('Merciless Nether Drake', 22620), " +
-            //"('Mimiron\\'s Head', 28890), " +
-            //"('Ochre Skeletal Warhorse', 29754), " +
-            //"('Orgrimmar Wolf', 29260), " +
-            //"('Palomino', 2408), " +
-            //"('Pinto', 2409), " +
-            //"('White Polar Bear', 28428), " +
-            //"('Purple Elekk', 19870), " +
-            //"('Purple Hawkstrider', 19479), " +
-            //"('Purple Mechanostrider', 10662), " +
-            //"('Purple Riding Nether Ray', 21155), " +
-            //"('Purple Skeletal Warhorse', 10721), " +
-            //"('Quel\\'dorei Steed', 28888), " +
-            //"('Red and Blue Mechanostrider', 10664), " +
-            //"('Red Dragonhawk', 28402), " +
-            //"('Red Hawkstrider', 18696), " +
-            //"('Red Mechanostrider', 9473), " +
-            //"('Red Qiraji Battle Tank', 15681), " +
-            //"('Red Riding Nether Ray', 21158), " +
-            //"('Red Skeletal Horse', 10670), " +
-            //"('Red Skeletal Warhorse', 10719), " +
-            //"('Albino Drake', 25836), " +
-            //"('Ancient Frostsaber', 9695), " +
-            //"('Armored Brown Bear', 27820), " +
-            //"('Azure Drake', 24743), " +
-            //"('Azure Netherwing Drake', 21521), " +
-            //"('Black Drake', 6374), " +
-            //"('Black Polar Bear', 27659), " +
-            //"('Black Proto-Drake', 28040), " +
-            //"('Black War Bear', 27818), " +
-            //"('Black War Elekk', 23928), " +
-            //"('Black War Mammoth', 27247), " +
-            //"('Black War Mammoth', 27245), " +
-            //"('Black War Tiger', 14330), " +
-            //"('Bloodbathed Frostbrood Vanquisher', 31156), " +
-            //"('Blue Drake Mount', 25832), " +
-            //"('Blue Proto-Drake', 28041), " +
-            //"('Bronze Drake', 25852), " +
-            //"('Brown Polar Bear', 27660), " +
-            //"('Cobalt Netherwing Drake', 21525), " +
-            //"('Cobalt Riding Talbuk', 21073), " +
-            //"('Cobalt War Talbuk', 19375), " +
-            //"('Crimson Deathcharger', 25279), " +
-            //"('Dark Riding Talbuk', 21074), " +
-            //"('Dark War Talbuk', 19303), " +
-            //"('Golden Sabercat', 9714), " +
-            //"('Grand Black War Mammoth', 27240), " +
-            //"('Grand Black War Mammoth', 27241), " +
-            //"('Grand Ice Mammoth', 27239), " +
-            //"('Grand Ice Mammoth', 27242), " +
-            //"('Green Proto-Drake', 28053), " +
-            //"('Ice Mammoth', 27246), " +
-            //"('Ice Mammoth', 27248), " +
-            //"('Icebound Frostbrood Vanquisher', 31154), " +
-            //"('Ironbound Proto-Drake', 28953), " +
-            //"('Black Nightsaber', 9991), " +
-            //"('Onyx Netherwing Drake', 21520), " +
-            //"('Onyxian Drake', 6369), " +
-            //"('Plagued Proto-Drake', 28042), " +
-            //"('Primal Leopard', 4805), " +
-            //"('Purple Netherwing Drake', 21523), " +
-            //"('Raven Lord', 21473), " +
-            //"('Red Drake', 25835), " +
-            //"('Red Proto-Drake', 28044), " +
-            //"('Rusted Proto-Drake', 28954), " +
-            //"('Silver Riding Talbuk', 21075), " +
-            //"('Silver War Talbuk', 19378), " +
-            //"('Spectral Tiger', 21973), " +
-            //"('Spotted Frostsaber', 6444), " +
-            //"('Striped Dawnsaber', 29755), " +
-            //"('Striped Frostsaber', 6080), " +
-            //"('Striped Nightsaber', 6448), " +
-            //"('Swift Dawnsaber', 14329), " +
-            //"('Swift Frostsaber', 14331), " +
-            //"('Swift Mistsaber', 14332), " +
-            //"('Swift Spectral Tiger', 21974), " +
-            //"('Swift Stormsaber', 14632), " +
-            //"('Tan Riding Talbuk', 21077), " +
-            //"('Tan War Talbuk', 19376), " +
-            //"('Tawny Sabercat', 6442), " +
-            //"('Time-Lost Proto-Drake', 28045), " +
-            //"('Traveler\\'s Tundra Mammoth', 27237), " +
-            //"('Traveler\\'s Tundra Mammoth', 27238), " +
-            //"('Twilight Drake', 6372), " +
-            //"('Veridian Netherwing Drake', 21522), " +
-            //"('Violet Netherwing Drake', 21524), " +
-            //"('Violet Proto-Drake', 28043), " +
-            //"('White Polar Bear', 28428), " +
-            //"('White Riding Talbuk', 21076), " +
-            //"('White War Talbuk', 19377), " +
-            //"('Winterspring Frostsaber', 10426), " +
-            //"('Wooly Mammoth', 26423), " +
-            //"('Wooly Mammoth', 27243), " +
-            //"('Relentless Gladiator\\'s Frost Wyrm', 29794), " +
-            //"('Sea Turtle', 29161), " +
-            //"('Silver Covenant Hippogryph', 22474), " +
-            //"('Silver Riding Nether Ray', 21157), " +
-            //"('Silvermoon Hawkstrider', 29262), " +
-            //"('Snowy Gryphon', 17696), " +
-            //"('Stormpike Battle Charger', 14777), " +
-            //"('Stormwind Steed', 28912), " +
-            //"('Sunreaver Dragonhawk', 29363), " +
-            //"('Sunreaver Hawkstrider', 28889), " +
-            //"('Swift Alliance Steed', 29284), " +
-            //"('Swift Blue Gryphon', 17759), " +
-            //"('Swift Blue Raptor', 14339), " +
-            //"('Swift Brewfest Ram', 22350), " +
-            //"('Swift Brown Ram', 14347), " +
-            //"('Swift Brown Steed', 14583), " +
-            //"('Swift Burgundy Wolf', 14335), " +
-            //"('Swift Flying Broom', 21939), " +
-            //"('Swift Gray Ram', 14576), " +
-            //"('Swift Gray Steed', 29043), " +
-            //"('Swift Green Gryphon', 17703), " +
-            //"('Swift Green Hawkstrider', 19484), " +
-            //"('Swift Green Mechanostrider', 14374), " +
-            //"('Swift Green Wind Rider', 17720), " +
-            //"('Swift Horde Wolf', 30070), " +
-            //"('Swift Flying Broom', 21939), " +
-            //"('Swift Mooncloth Carpet', 28063), " +
-            //"('Swift Moonsaber', 14333), " +
-            //"('Swift Nether Drake', 20344), " +
-            //"('Swift Olive Raptor', 14344), " +
-            //"('Swift Orange Raptor', 14342), " +
-            //"('Swift Palomino', 14582), " +
-            //"('Swift Pink Hawkstrider', 18697), " +
-            //"('Swift Purple Gryphon', 17717), " +
-            //"('Swift Purple Hawkstrider', 19482), " +
-            //"('Swift Purple Raptor', 14343), " +
-            //"('Swift Purple Wind Rider', 17721), " +
-            //"('Swift Razzashi Raptor', 15289), " +
-            //"('Swift Red Gryphon', 17718), " +
-            //"('Swift Red Hawkstrider', 28607), " +
-            //"('Swift Red Wind Rider', 17719), " +
-            //"('Swift Spellfire Carpet', 28064), " +
-            //"('Swift Violet Ram', 28612), " +
-            //"('Swift Warstrider', 20359), " +
-            //"('Swift White Hawkstrider', 19483), " +
-            //"('Swift White Mechanostrider', 14376), " +
-            //"('Swift White Ram', 14346), " +
-            //"('Swift White Steed', 14338), " +
-            //"('Swift Yellow Mechanostrider', 14377), " +
-            //"('Swift Yellow Wind Rider', 17722), " +
-            //"('Swift Zhevra', 24745), " +
-            //"('Swift Zulian Tiger', 15290), " +
-            //"('Tawny Wind Rider', 17699), " +
-            //"('Teal Kodo', 12242), " +
-            //"('Headless Horseman\\'s Mount', 22653), " +
-            //"('Thunder Bluff Kodo', 29259), " +
-            //"('Turbo-Charged Flying Machine', 22720), " +
-            //"('Turbostrider', 14375), " +
-            //"('Vengeful Nether Drake', 24725), " +
-            //"('Black War Raptor', 14388), " +
-            //"('Emerald Raptor', 4806), " +
-            //"('Ivory Raptor', 6471), " +
-            //"('Mottled Red Raptor', 6469), " +
-            //"('Turquoise Raptor', 6472), " +
-            //"('Venomhide Ravasaur', 5291), " +
-            //"('Violet Raptor', 6473), " +
-            //"('White Kodo', 12241), " +
-            //"('White Ram X', 10003), " +
-            //"('White Skeletal Warhorse', 28605), " +
-            //"('White Stallion', 2410), " +
-            //"('Winged Steed of the Ebon Blade', 28108), " +
-            //"('Wooly White Rhino', 31721), " +
-            //"('Wrathful Gladiator\\'s Frost Wyrm', 31047), " +
-            //"('X-51 Nether-Rocket', 23656), " +
-            //"('X-51 Nether-Rocket X-TREME', 23647), " +
-            //"('X-53 Touring Rocket', 31992), " +
-            //"('Yellow Qiraji Battle Tank', 15680), " +
-            //"('Magnificent Flying Carpet', 28060), " +
-            //"('Armored Brown Bear', 27821), " +
-            //"('Black Drake Mount', 25831), " +
-            //"('Black War Bear', 27819), " +
-            //"('Bronze Drake Mount', 25833), " +
-            //"('Onyxian Drake', 30346), " +
-            //"('Red Drake Mount', 25854), " +
-            //"('Twilight Drake Mount', 27796), " +
-            //"('Wooly Mammoth', 27244), " +
-            //"('Wooly Mammoth Bull', 26425), " +
-            //"('Sunreaver Dragonhawk', 29695), " +
-            //"('Sunreaver Dragonhawk', 29696), " +
-            //"('Swift Horde Wolf', 29283), " +
-            //"('Swift Zhevra', 24693), " +
-            //"('Headless Horseman\\'s Mount', 25159), " +
-            //"('Headless Horseman\\'s Mount', 25958), " +
-            //"('Venomhide Ravasaur', 29102), " +
-            //"('White Ram', 2786);"
-
-
-
-            //=========================================================================================================
-
-            //string connection_string = @"server=" + mainmenu.textbox_mysql_hostname.Text + ";" +
-            //            "userid=" + mainmenu.textbox_mysql_username.Text + ";" +
-            //            //"port=" +       textBox2.Text + ";" +
-            //            "password=" + textBox_MySQL_Password.Text;
-
-            //MySqlConnection connection = null;
-
-            //try
-            //{
-            //    connection = new MySqlConnection(connection_string);
-            //    connection.Open();
-
-            //    string SELECT_MaxEntryPlus1_FROM_CREATURE_TEMPLATE = "SELECT max(entry) + 1 FROM " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template;";
-
-            //    MySqlCommand command1 = new MySqlCommand(SELECT_MaxEntryPlus1_FROM_CREATURE_TEMPLATE, connection);
-
-            //    string max_plus_1 = Convert.ToString(command1.ExecuteScalar());
-
-            //    NUD_Entry.Text = max_plus_1;
-
-            //}
-            //catch (MySqlException ex)
-            //{
-            //    //Console.WriteLine("Error: {0}", ex.ToString());
-            //    MessageBox.Show("Error: " + ex.ToString());
-            //}
-            //finally
-            //{
-            //    if (connection != null)
-            //    {
-            //        connection.Close();
-            //    }
-            //}
-
+            label_mysql_status2.Text = "Connection Lost - MySQL is not running";
+            label_mysql_status2.ForeColor = Color.Red;
+            button2.Visible = false; //max+1 button
+            button10.Visible = false; // Execute Query - Bottom Button
+            button16.Visible = false; // Max+1 Gossip Menu
+            button12.Visible = false; // max+1 lootID
+            btn_DeleteQuery.Enabled = false;
+            return false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    string myConnection = "datasource=" + /*mainmenu.textbox_mysql_hostname.Text*/ TB_MySQL_IP.Text + 
-            //        ";port=" + /*mainmenu.textbox_mysql_port.Text*/ TB_MySQL_Port.Text + 
-            //        ";username=" + /*mainmenu.textbox_mysql_username.Text*/ TB_MySQL_User.Text + 
-            //        ";password=" + /*mainmenu.textbox_mysql_pass.Text*/ TB_MySQL_Pass.Text;
-
-            //    MySqlConnection myConn = new MySqlConnection(myConnection);
-            //    MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-            //    //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
-            //    MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-            //    myConn.Open();
-            //    DataSet ds = new DataSet();
-
-            //    label_mysql_status2.Text = "Connected!";
-            //    label_mysql_status2.ForeColor = Color.LawnGreen;
-
-            //    myConn.Close();
-            //}
-            //catch (Exception /*ex*/)
-            //{
-            //    //MessageBox.Show(ex.Message);
-            //    label_mysql_status2.Text = "Connection Lost - MySQL is not running";
-            //    label_mysql_status2.ForeColor = Color.Red;
-            //}
-
-            Process[] mysql = Process.GetProcessesByName("mysqld");
-            if (mysql.Length == 0)
-            {
-                label_mysql_status2.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status2.ForeColor = Color.Red;              
-            }
-
-            else
-            {
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;                
-            }
+            IsProcessOpen();
         }
 
         private void label80_MouseEnter(object sender, EventArgs e)
         {
             label80.BackColor = Color.Firebrick;
-            label80.ForeColor = Color.White;
         }
 
         private void label80_MouseLeave(object sender, EventArgs e)
         {
             label80.BackColor = Color.FromArgb(58, 89, 114);
-            label80.ForeColor = Color.Black;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -1877,12 +1544,7 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection(
-                                        "datasource=" + form_MM.GetHost() + ";" +
-                "port=" + form_MM.GetPort() + ";" +
-                "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass()
-                                        );
+            GetMySqlConnection();
 
             string insertQuery = stringSQLShare;
             connection.Open();
@@ -1996,7 +1658,7 @@ namespace SpawnCreator
         //max + 1 button
         private void button2_Click(object sender, EventArgs e)
         {
-             SelectMaxPlus1();
+             SelectMaxPlus1_FROM_creature_template();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -2029,17 +1691,10 @@ namespace SpawnCreator
             onlyNumbers(sender, e);
         }
 
+        // Max+1 LootID
         private void button12_Click(object sender, EventArgs e)
         {
-            // Max+1 LootID
-
-            MySqlConnection connection = new MySqlConnection
-                (
-                    "datasource=" + form_MM.GetHost() + ";" +
-                "port=" + form_MM.GetPort() + ";" +
-                "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass()
-                );
+            GetMySqlConnection();
 
             string insertQuery = "SELECT max(entry)+1 FROM " + form_MM.GetWorldDB() + ".creature_loot_template;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
@@ -2179,7 +1834,7 @@ namespace SpawnCreator
         private void button13_Click(object sender, EventArgs e)
         {
             
-            AddVendorItems vendor = new AddVendorItems();
+            AddVendorItems vendor = new AddVendorItems(form_MM);
             vendor.Show();
             //entry                 entry (NPC_Create)
             vendor.textBox61.Text = NUD_Entry.Text;
@@ -2205,13 +1860,11 @@ namespace SpawnCreator
         private void label78_MouseEnter(object sender, EventArgs e)
         {
             label78.BackColor = Color.Firebrick;
-            label78.ForeColor = Color.White;
         }
 
         private void label78_MouseLeave(object sender, EventArgs e)
         {
             label78.BackColor = Color.FromArgb(58, 89, 114);
-            label78.ForeColor = Color.Black;
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -2274,17 +1927,10 @@ namespace SpawnCreator
             waypoints.ShowDialog();
         }
 
+        // Max+1 Gossip Menu ID
         private void button16_Click(object sender, EventArgs e)
         {
-            // Max+1 Gossip Menu ID
-
-            MySqlConnection connection = new MySqlConnection
-                (
-                    "datasource=" + form_MM.GetHost() + ";" +
-                "port=" + form_MM.GetPort() + ";" +
-                "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass()
-                );
+            GetMySqlConnection();
 
             string insertQuery = "SELECT max(menu_id)+1 FROM " + form_MM.GetWorldDB() + ".gossip_menu_option;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
@@ -2294,7 +1940,6 @@ namespace SpawnCreator
             try
             {
                 textBox13.Text = command.ExecuteScalar().ToString();
-                
             }
             catch (Exception ex)
             {
@@ -2368,20 +2013,18 @@ namespace SpawnCreator
 
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btn_DeleteQuery.Visible = false;
             if (comboBox11.SelectedIndex == 0) textBox105.Text = "INSERT";
             else if (comboBox11.SelectedIndex == 1) textBox105.Text = "REPLACE";
-        }
+            else if (comboBox11.SelectedIndex == 2)
+            {
+                if (form_MM.CB_NoMySQL.Checked || label_mysql_status2.Text == "Connection Lost - MySQL is not running")
+                {
+                    btn_DeleteQuery.Enabled = false;
+                }
 
-        private void label87_MouseEnter(object sender, EventArgs e)
-        {
-            label87.BackColor = Color.Green;
-            label87.ForeColor = Color.White;
-        }
-
-        private void label87_MouseLeave(object sender, EventArgs e)
-        {
-            label87.BackColor = Color.DimGray;
-            label87.ForeColor = Color.White;
+                btn_DeleteQuery.Visible = true;
+            }
         }
 
         private void label87_Click(object sender, EventArgs e)
@@ -2425,6 +2068,122 @@ namespace SpawnCreator
         private void timer9_Tick(object sender, EventArgs e)
         {
             TXT_SQL_MouseEnter(sender, e);
+        }
+
+        // button_SaveInTheSameFile
+        private void button19_Click(object sender, EventArgs e)
+        {
+            _Generate_SQL_NPC(sender, e);
+
+            if (NUD_Entry.Text == "")
+            {
+                MessageBox.Show("Entry should not be empty", "Error");
+                return;
+            }
+            if (textBox7.Text == "")
+            {
+                MessageBox.Show("Name should not be empty", "Error");
+                return;
+            }
+            
+            //Save in the same file
+            using (var writer = File.AppendText("Creatures.sql"))
+            {
+                writer.Write(stringSQLShare);
+                button_SaveInTheSameFile.Text = "Saved!";
+                button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
+            }
+        }
+
+        // button_SaveInTheSameFile
+        private void button19_MouseEnter(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.BackColor = Color.Firebrick;
+            toolTip1.SetToolTip(button_SaveInTheSameFile, "Or Press F2");
+        }
+
+        private void button19_MouseLeave(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void ALL_textBoxes_MouseEnter(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.Text = "Save in the same file";
+            button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleRight;
+        }
+
+        private void NUD_Entry_ValueChanged(object sender, EventArgs e)
+        {
+            ALL_textBoxes_MouseEnter(sender, e);
+        }
+
+        private void All_comboBoxes_MouseEnter(object sender, EventArgs e)
+        {
+            ALL_textBoxes_MouseEnter(sender, e);
+        }
+
+        private void All_buttons_MouseEnter(object sender, EventArgs e)
+        {
+            ALL_textBoxes_MouseEnter(sender, e);
+        }
+
+        private void label92_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(label92, "A file labeled Creatures.sql will be created in the same directory as the SpawnCreator vX.X executable. \nSo you can save multiple data rows in a single .sql file.");
+            toolTip1.AutoPopDelay = 10000; // 10 seconds
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            object sender = new object();
+            EventArgs e = new EventArgs();
+
+            if (keyData == Keys.F2)
+            {
+                button19_Click(sender, e); // Save in the same file if "F2" key is pressed
+                return true;
+            }
+
+            else if (keyData == Keys.F5)
+            {
+                button10_Click(sender, e); // Execute Query if "F5" key is pressed
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void btn_DeleteQuery_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete Creature " + NUD_Entry.Text + " ?", "SpawnCreator " + form_MM.version, MessageBoxButtons.YesNo);
+            if (dr == DialogResult.No)
+                return;
+
+            else
+            {
+                GetMySqlConnection();
+
+                string insertQuery = "DELETE FROM " + form_MM.GetWorldDB() + ".creature_template WHERE entry=" + NUD_Entry.Text + ";" ;
+
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(insertQuery, connection);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Creature Deleted!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                connection.Close();
+            }
+        }
+
+        private void label92_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

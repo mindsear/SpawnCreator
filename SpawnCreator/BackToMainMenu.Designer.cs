@@ -51,8 +51,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -66,6 +64,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel_Account_Creator.SuspendLayout();
             this.panel_Quest_Creator.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -234,6 +233,7 @@
             this.label85.AutoSize = true;
             this.label85.BackColor = System.Drawing.Color.Transparent;
             this.label85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label85.ForeColor = System.Drawing.Color.White;
             this.label85.Location = new System.Drawing.Point(12, 7);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(101, 15);
@@ -335,27 +335,6 @@
             this.label3.Size = new System.Drawing.Size(16, 13);
             this.label3.TabIndex = 20;
             this.label3.Text = "[>";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(410, 367);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 15);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "updated by";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(410, 384);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 15);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "  mindsear";
             // 
             // label12
             // 
@@ -477,9 +456,9 @@
             this.label_version.ForeColor = System.Drawing.Color.Maroon;
             this.label_version.Location = new System.Drawing.Point(405, 35);
             this.label_version.Name = "label_version";
-            this.label_version.Size = new System.Drawing.Size(33, 16);
+            this.label_version.Size = new System.Drawing.Size(54, 16);
             this.label_version.TabIndex = 123;
-            this.label_version.Text = "v2.2";
+            this.label_version.Text = "version";
             // 
             // panel9
             // 
@@ -517,6 +496,11 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 10;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // BackToMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,8 +513,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel_Quest_Creator);
             this.Controls.Add(this.panel_Account_Creator);
@@ -589,8 +571,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
@@ -603,5 +583,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label10;
         internal System.Windows.Forms.Label label_version;
+        private System.Windows.Forms.Timer timer2;
     }
 }

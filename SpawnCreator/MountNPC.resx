@@ -120,6 +120,11 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="textBox5.ToolTip" xml:space="preserve">
+    <value>This field controls any auras to be applied on the creature (both in effect and visually). 
+To apply multiple auras, you can add more aura entries, separating each entry by a space.
+Remember that if a spell applies multiple auras.</value>
+  </data>
   <data name="textBox7.Text" xml:space="preserve">
     <value>Name - Model ID
 ---------------------------------------

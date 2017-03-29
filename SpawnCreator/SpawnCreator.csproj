@@ -520,6 +520,9 @@
     <None Include="Resources\UI-CopperIcon.png" />
     <None Include="Resources\mail_body_frame.png" />
     <None Include="Resources\magnifier.png" />
+    <None Include="Resources\questionmark.png" />
+    <None Include="Resources\Help_Circle_Blue.png" />
+    <None Include="Resources\Help_Circle_Blue1.png" />
     <Content Include="spawncreator_icon.ico" />
   </ItemGroup>
   <ItemGroup />

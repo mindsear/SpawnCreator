@@ -16,13 +16,30 @@ namespace SpawnCreator
     {
       //+++++++++++++++++++++++++++++++++++++++++++++++++++
       //                                                  +
-               public string version = "v2.4"; //         +
+               public string version = "v2.5"; //         +
       //                                                  +
       //+++++++++++++++++++++++++++++++++++++++++++++++++++
 
         public Form_MainMenu()
         {
             InitializeComponent();
+        }
+
+        public bool StartWithoutMySQL(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    label_mysql_status.Visible = true;
+                    lbl_MySQL_Status.Visible = true;
+                    return true;
+                }
+            }
+
+            label_mysql_status.Visible = false;
+            lbl_MySQL_Status.Visible = false;
+            return false;
         }
 
         //==================================================
@@ -290,6 +307,8 @@ namespace SpawnCreator
                 label_mysql_status.Text = "Connected!";
                 label_mysql_status.ForeColor = Color.Lime;
 
+                CB_NoMySQL.Visible = false;
+
                 textbox_mysql_username.Visible = true;
                 textbox_mysql_pass.Visible = true;
                 
@@ -325,6 +344,59 @@ namespace SpawnCreator
             //textbox_mysql_pass.Text     = "";
         }
 
+        public bool IsProcessOpen(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    label_mysql_status.Text = "Connected!";
+                    label_mysql_status.ForeColor = Color.LawnGreen;
+                    label2.Enabled = true; // Item Creator
+                    panel2.Enabled = true; // Item Creator
+                    label_Npc_creator.Enabled = true;
+                    panel3.Enabled = true; // npc creator
+                    label_GO_creator.Enabled = true;
+                    panel4.Enabled = true; // Go creator
+                    label_Quest_creator.Enabled = true;
+                    panel_Quest_Creator.Enabled = true;
+                    label_Account_Creator.Enabled = true;
+                    panel_Account_Creator.Enabled = true;
+                    label11.Enabled = true; // Disable Form
+                    panel5.Enabled = true; // Disable Form
+                    label12.Enabled = true; // Conditions
+                    panel6.Enabled = true; // Conditions
+                    label14.Enabled = true; // Smart Scripts
+                    panel7.Enabled = true; // Smart Scripts
+                    label15.Enabled = true; // Mail Sender
+                    panel8.Enabled = true; // Mail Sender
+                    return true;
+                }
+            }
+
+            label_mysql_status.Text = "Connection Lost - MySQL is not running";
+            label_mysql_status.ForeColor = Color.Black;
+            label2.Enabled = false; // Item Creator
+            panel2.Enabled = false; // Item Creator
+            label_Npc_creator.Enabled = false;
+            panel3.Enabled = false; // npc creator
+            label_GO_creator.Enabled = false;
+            panel4.Enabled = false; // Go creator
+            label_Quest_creator.Enabled = false;
+            panel_Quest_Creator.Enabled = false;
+            label_Account_Creator.Enabled = false;
+            panel_Account_Creator.Enabled = false;
+            label11.Enabled = false; // Disable Form
+            panel5.Enabled = false; // Disable Form
+            label12.Enabled = false; // Conditions
+            panel6.Enabled = false; // Conditions
+            label14.Enabled = false; // Smart Scripts
+            panel7.Enabled = false; // Smart Scripts
+            label15.Enabled = false; // Mail Sender
+            panel8.Enabled = false; // Mail Sender
+            return false;
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             //try
@@ -353,17 +425,7 @@ namespace SpawnCreator
             //    label_mysql_status.ForeColor = Color.Black;
             //}
 
-            Process[] mysql = Process.GetProcessesByName("mysqld");
-            if (mysql.Length == 0)
-            {
-                label_mysql_status.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status.ForeColor = Color.Black;
-            }
-            else
-            {
-                label_mysql_status.Text = "Connected!";
-                label_mysql_status.ForeColor = Color.LawnGreen;
-            }
+            IsProcessOpen();
         }
 
         private void Form_MainMenu_Load(object sender, EventArgs e)
@@ -583,40 +645,39 @@ namespace SpawnCreator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Visible = true;
-            label2.Visible = true;
-            label_Npc_creator.Visible = true;
-            label_GO_creator.Visible = true;
-            label_Quest_creator.Visible = true;
-            panel1.Visible = true;
-            panel2.Visible = true;
-            panel3.Visible = true;
-            panel4.Visible = true;
-            panel5.Visible = true;
-            panel6.Visible = true;
-            panel7.Visible = true;
-            panel8.Visible = true; //Mail sender
-            label15.Visible = true; // Mail Sender
-            label11.Visible = true;
-            label12.Visible = true;
-            label14.Visible = true;
-            label_version.Visible = true;
-            panel_Quest_Creator.Visible = true;
-            label_Account_Creator.Visible = true;
-            panel_Account_Creator.Visible = true;
+            //label1.Visible = true;
+            //label2.Visible = true;
+            //label_Npc_creator.Visible = true;
+            //label_GO_creator.Visible = true;
+            //label_Quest_creator.Visible = true;
+            //panel1.Visible = true;
+            //panel2.Visible = true;
+            //panel3.Visible = true;
+            //panel4.Visible = true;
+            //panel5.Visible = true;
+            //panel6.Visible = true;
+            //panel7.Visible = true;
+            //panel8.Visible = true; //Mail sender
+            //label15.Visible = true; // Mail Sender
+            //label11.Visible = true;
+            //label12.Visible = true;
+            //label14.Visible = true;
+            //label_version.Visible = true;
+            //panel_Quest_Creator.Visible = true;
+            //label_Account_Creator.Visible = true;
+            //panel_Account_Creator.Visible = true;
 
-            label85.Visible = false;
+            //lbl_MySQL_Status.Visible = false;
+            //label_mysql_status.Visible = false;
 
-            Form_ItemCreator form_itemCreator = new Form_ItemCreator();
-            form_itemCreator.label_mysql_status2.Visible = false;
-            label_mysql_status.Visible = false;
-            form_itemCreator.label91.Visible = false;
-            form_itemCreator.button_maxPlus1fromDB.Enabled = false;
-            form_itemCreator.timer1.Enabled = false;
+            //textbox_mysql_username.Visible = true;
+            //textbox_mysql_pass.Visible = true;
+            //tabControl1.Visible = false;          
 
-            textbox_mysql_username.Visible = true;
-            textbox_mysql_pass.Visible = true;
-            tabControl1.Visible = false;            
+            if (CB_NoMySQL.CheckState == CheckState.Unchecked)
+                CB_NoMySQL.Checked = true;
+            else
+                CB_NoMySQL.Checked = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -635,6 +696,7 @@ namespace SpawnCreator
 
         private void CB_NoMySQL_CheckedChanged(object sender, EventArgs e)
         {
+            StartWithoutMySQL();
             if (CB_NoMySQL.Checked)
             {
                 label1.Visible = true;
@@ -661,9 +723,17 @@ namespace SpawnCreator
 
                 button1.Visible = false;
                 tabControl1.Visible = false;
+
+                //CB_NoMySQL.Visible = false;
+
+                label_mysql_status.Visible = false;
+                lbl_MySQL_Status.Visible = false;
             }
             else
             {
+                label_mysql_status.Visible = true;
+                lbl_MySQL_Status.Visible = true;
+
                 label1.Visible = false;
                 label2.Visible = false;
                 label_Npc_creator.Visible = false;
@@ -686,7 +756,7 @@ namespace SpawnCreator
                 label_Account_Creator.Visible = false;
                 panel_Account_Creator.Visible = false;
 
-                button1.Visible = false;
+                //button1.Visible = false;
                 tabControl1.Visible = true;
             }
 
@@ -695,6 +765,16 @@ namespace SpawnCreator
         private void button3_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void CB_NoMySQL_MouseEnter(object sender, EventArgs e)
+        {
+            CB_NoMySQL.BackColor = Color.ForestGreen;
+        }
+
+        private void CB_NoMySQL_MouseLeave(object sender, EventArgs e)
+        {
+            CB_NoMySQL.BackColor = Color.DimGray;
         }
     }
 }

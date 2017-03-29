@@ -39,6 +39,19 @@ namespace SpawnCreator
             //    ;
             comboBox1.SelectedIndex = 0; // default
 
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                // If CheckBox is Checked (Start without MySQL)
+                button1.Enabled = false;
+                button1.Visible = false;
+                label11.Visible = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                label11.Visible = true;
+            }
             //string constring = "datasource=" + form_MM.GetHost() + ";" +
             //                   "port=" + form_MM.GetPort() + ";" +
             //                   "username=" + form_MM.GetUser() + ";" +
@@ -355,23 +368,15 @@ namespace SpawnCreator
                 textBox3.Text + ", '" + // emote
                 textBox5.Text + // auras
                 "');";
+
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
-            // Test
+            
             try
             {
                 if (command.ExecuteNonQuery() == 1)
                 {
                     label9.Visible = true;
-                }
-                else
-                {
-                    label9.Visible = true;
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
                 }
             }
             catch (Exception ex)
@@ -409,6 +414,23 @@ namespace SpawnCreator
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             label9.Visible = false;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Clipboard.SetText("INSERT INTO " + form_MM.GetWorldDB() + ".creature_template_addon " +
+                "(entry, path_id, mount, bytes1, bytes2, emote, auras) \n" +
+                "VALUES (" +
+                textBox61.Text + ", " + // entry
+                textBox65.Text + ", " + // path_id
+                textBox1.Text + ", " + // mount
+                textBox2.Text + ", " + // bytes1
+                textBox4.Text + ", " + // bytes2
+                textBox3.Text + ", '" + // emote
+                textBox5.Text + // auras
+                "');");
+            label9.Text = "Query has been copied to clipboard!";
+            label9.Visible = true;
         }
     }
 }

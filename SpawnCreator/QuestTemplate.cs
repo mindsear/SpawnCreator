@@ -10,21 +10,57 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace SpawnCreator
 {
     public partial class QuestTemplate : Form
     {
+
         public QuestTemplate()
         {
             InitializeComponent();
+            //textBox66.ForeColor = SystemColors.GrayText;
+            //textBox66.Text = "Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire.";
+            //this.textBox66.Leave += new System.EventHandler(this.textBox66_Leave);
+            //this.textBox66.Enter += new System.EventHandler(this.textBox66_Enter);
         }
+
+        //private void textBox66_Leave(object sender, EventArgs e)
+        //{
+        //    if (textBox66.Text.Length == 0)
+        //    {
+        //        textBox66.Text = "Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire.";
+        //        textBox66.ForeColor = SystemColors.GrayText;
+        //    }
+        //}
+
+        //private void textBox66_Enter(object sender, EventArgs e)
+        //{
+        //    if (textBox66.Text == "Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire.")
+        //    {
+        //        textBox66.Text = "";
+        //        textBox66.ForeColor = SystemColors.WindowText;
+        //    }
+        //}
 
         private readonly Form_MainMenu form_MM;
         public QuestTemplate(Form_MainMenu form_MainMenu)
         {
             InitializeComponent();
             form_MM = form_MainMenu;
+        }
+
+        MySqlConnection connection = new MySqlConnection();
+        public void GetMySqlConnection()
+        {
+            MySqlConnection _connection = new MySqlConnection(
+                               "datasource = " + form_MM.GetHost() + "; " +
+                               "port=" + form_MM.GetPort() + ";" +
+                               "username=" + form_MM.GetUser() + ";" +
+                               "password=" + form_MM.GetPass() + ";"
+                            );
+            connection = _connection;
         }
 
         private bool _mouseDown;
@@ -37,17 +73,37 @@ namespace SpawnCreator
 
         private void QuestTemplate_Load(object sender, EventArgs e)
         {
-            timer1.Start(); //Stopwatch
-            timer2.Start(); //Check if MySQL is still running
+            textBox66.SelectionStart = 0;  //This keeps the text
+            textBox66.SelectionLength = 0; //from being highlighted
+            textBox66.ForeColor = Color.Gray;
 
-            comboBox1.SelectedIndex = 0; // Show default
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                label_mysql_status2.Visible = false;
+                label85.Visible = false; // MySQL Status - Top Label
+                timer2.Enabled = false; //Check if MySQL is still running
+                button3.Visible = false; // max+1 button
+                button2.Visible = false; // execute query button
+            }
+            else
+            {
+                label_mysql_status2.Visible = true;
+                label85.Visible = true; // MySQL Status - Top Label
+                timer2.Enabled = true; //Check if MySQL is still running
+                button3.Visible = true; // max+1 button
+                button2.Visible = true; // execute query button
+            }
+
+            timer1.Start(); //Stopwatch
+
+            comboBox1.SelectedIndex = 2; // Show default - Quest Enabled
             comboBox2.SelectedIndex = 0; /*All Races*/
             comboBox3.SelectedIndex = 0; // INSERT
 
-            button3_Click(sender, e);
+            //button3_Click(sender, e); // max+1
 
-            textBox107.Text = textBox1.Text;
-            textBox108.Text = textBox1.Text;
+            textBox107.Text = NUD_Entry.Text;
+            textBox108.Text = NUD_Entry.Text;
         }
 
         private void GenerateSqlCode(object sender, EventArgs e)
@@ -110,7 +166,7 @@ namespace SpawnCreator
             // values now
             BuildSQLFile += "VALUES \n";
             BuildSQLFile += "(";
-            BuildSQLFile += textBox1.Text + ", "; // ID
+            BuildSQLFile += NUD_Entry.Value + ", "; // ID
             BuildSQLFile += textBox2.Text + ", "; // QuestType
             BuildSQLFile += textBox3.Text + ", "; // QuestLevel
             BuildSQLFile += textBox4.Text + ", "; // MinLevel
@@ -233,10 +289,10 @@ namespace SpawnCreator
             BuildSQLFile += "(";
             BuildSQLFile += textBox109.Text + ", "; // Creature Entry
             BuildSQLFile += textBox108.Text; // Quest ID
-            BuildSQLFile += ");";
+            BuildSQLFile += "); \n";
 
             stringSQLShare = BuildSQLFile;
-            stringEntryShare = textBox1.Text;
+            stringEntryShare = NUD_Entry.Text;
         }
 
         //private bool CheckTextBoxes( /*TextBox textbox, bool true*/)
@@ -297,37 +353,31 @@ namespace SpawnCreator
         private void label2_MouseEnter(object sender, EventArgs e)
         {
             label2.BackColor = Color.Firebrick;
-            label2.ForeColor = Color.White;
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
         {
             label2.BackColor = Color.FromArgb(58, 89, 114);
-            label2.ForeColor = Color.Black;
         }
 
         private void label1_MouseEnter(object sender, EventArgs e)
         {
             label1.BackColor = Color.Firebrick;
-            label1.ForeColor = Color.White;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             label1.BackColor = Color.FromArgb(58, 89, 114);
-            label1.ForeColor = Color.Black;
         }
 
         private void label78_MouseEnter(object sender, EventArgs e)
         {
             label78.BackColor = Color.Firebrick;
-            label78.ForeColor = Color.White;
         }
 
         private void label78_MouseLeave(object sender, EventArgs e)
         {
             label78.BackColor = Color.FromArgb(58, 89, 114);
-            label78.ForeColor = Color.Black;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -390,33 +440,48 @@ namespace SpawnCreator
             textBox2.Text = Convert.ToString(comboBox1.SelectedIndex);
         }
 
+        public bool IsProcessOpen(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    label_mysql_status2.Text = "Connected!";
+                    label_mysql_status2.ForeColor = Color.LawnGreen;
+                    button3.Visible = true; // max+1
+                    button2.Visible = true; // Execute Query
+                    label85.Visible = true; // MySQL Status
+                    btn_DeleteQuery.Enabled = true;
+                    //// Start with mysql
+                    //label_mysql_status2.Visible = true;
+                    //label85.Visible = true;
+                    //timer1.Enabled = true;
+                    return true;
+
+                }
+            }
+
+            label_mysql_status2.Text = "Connection Lost - MySQL is not running";
+            label_mysql_status2.ForeColor = Color.Red;
+            button3.Visible = false; // max+1
+            button2.Visible = false; // Execute Query
+            btn_DeleteQuery.Enabled = false;
+            return false;
+        }
+
         private void timer2_Tick(object sender, EventArgs e)
         {
-            Process[] mysql = Process.GetProcessesByName("mysqld");
-            if (mysql.Length == 0)
-            {
-                label_mysql_status2.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status2.ForeColor = Color.Red;
-            }
-            else
-            {
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;
-            }
+            IsProcessOpen();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             //--------------------------------\\
-           //  Max + 1 from Database - Button  \\
-          //------------------------------------\\
+            //  Max + 1 from Database - Button  \\
+            //------------------------------------\\
 
-            MySqlConnection connection = new MySqlConnection(
-                "datasource=" + form_MM.GetHost() + ";" +
-                "port=" + form_MM.GetPort() + ";" +
-                "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass() + ";"
-                );
+            GetMySqlConnection();
+
             string insertQuery = "SELECT max(ID)+1 FROM " + form_MM.GetWorldDB() + ".quest_template;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
             connection.Open();
@@ -424,7 +489,7 @@ namespace SpawnCreator
 
             try
             {
-                textBox1.Text = command.ExecuteScalar().ToString();
+                NUD_Entry.Value = Convert.ToDecimal(command.ExecuteScalar());
             }
             catch (Exception ex)
             {
@@ -448,12 +513,12 @@ namespace SpawnCreator
         {
             GenerateSqlCode(sender, e);
 
-            if (textBox1.Text == "")
+            if (NUD_Entry.Text == "")
             {
                 MessageBox.Show("ID should not be empty", "Error");
                 return;
             }
-            if (textBox1.Text == "0")
+            if (NUD_Entry.Text == "0")
             {
                 MessageBox.Show("ID should not be 0", "Error");
                 return;
@@ -493,12 +558,12 @@ namespace SpawnCreator
         {
             GenerateSqlCode(sender, e);
 
-            if (textBox1.Text == "")
+            if (NUD_Entry.Text == "")
             {
                 MessageBox.Show("ID should not be empty", "Error");
                 return;
             }
-            if (textBox1.Text == "0")
+            if (NUD_Entry.Text == "0")
             {
                 MessageBox.Show("ID should not be 0", "Error");
                 return;
@@ -528,12 +593,12 @@ namespace SpawnCreator
         {
             GenerateSqlCode(sender, e);
 
-            if (textBox1.Text == "")
+            if (NUD_Entry.Text == "")
             {
                 MessageBox.Show("ID should not be empty", "Error");
                 return;
             }
-            if (textBox1.Text == "0")
+            if (NUD_Entry.Text == "0")
             {
                 MessageBox.Show("ID should not be 0", "Error");
                 return;
@@ -554,12 +619,8 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection(
-                "datasource=" + form_MM.GetHost() + ";" +
-                "port=" + form_MM.GetPort() + ";" +
-                "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass() + ";"
-                );
+            GetMySqlConnection();
+
             string insertQuery = stringSQLShare;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -583,8 +644,7 @@ namespace SpawnCreator
         //All textBoxes
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox107.Text = textBox1.Text;
-            textBox108.Text = textBox1.Text;
+            
 
             label_query_executed_successfully.Visible = false;
             label_copied_to_clipboard.Visible = false;
@@ -612,8 +672,26 @@ namespace SpawnCreator
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox3.SelectedIndex == 0) textBox105.Text = "INSERT";
-            else if (comboBox3.SelectedIndex == 1) textBox105.Text = "REPLACE";
+            btn_DeleteQuery.Visible = false;
+            if (comboBox3.SelectedIndex == 0)
+            {
+                textBox105.Text = "INSERT";
+
+            }
+            else if (comboBox3.SelectedIndex == 1)
+            {
+                textBox105.Text = "REPLACE";
+
+            }
+            else if (comboBox3.SelectedIndex == 2)
+            {
+                if(form_MM.CB_NoMySQL.Checked || label_mysql_status2.Text == "Connection Lost - MySQL is not running")
+                {
+                    btn_DeleteQuery.Enabled = false;
+                }
+
+                btn_DeleteQuery.Visible = true;
+            }
         }
 
 
@@ -636,6 +714,157 @@ namespace SpawnCreator
             {
                 e.Handled = true;
             }
+        }
+
+        private void label119_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(label119, "A file labeled Quests.sql will be created in the same directory as the SpawnCreator vX.X executable. \nSo you can save multiple data rows in a single .sql file.");
+            toolTip1.AutoPopDelay = 10000; // 10 seconds
+        }
+
+        private void button_SaveInTheSameFile_Click(object sender, EventArgs e)
+        {
+            GenerateSqlCode(sender, e);
+
+            if (NUD_Entry.Text == "")
+            {
+                MessageBox.Show("ID should not be empty", "Error");
+                return;
+            }
+            if (NUD_Entry.Text == "0")
+            {
+                MessageBox.Show("ID should not be 0", "Error");
+                return;
+            }
+            if (textBox67.Text == "")
+            {
+                MessageBox.Show("Quest Title should not be empty", "Error");
+                return;
+            }
+            if (textBox106.Text == "")
+            {
+                MessageBox.Show("Creature Quest Starter Entry should not be empty", "Error");
+                return;
+            }
+            if (textBox109.Text == "")
+            {
+                MessageBox.Show("Creature Quest Ender Entry should not be empty", "Error");
+                return;
+            }
+
+            using (var writer = File.AppendText("Quests.sql"))
+            {
+                writer.Write(stringSQLShare);
+                button_SaveInTheSameFile.Text = "Saved!";
+                button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
+            }
+        }
+
+        private void NUD_Entry_ValueChanged(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.Text = "Save in the same file";
+            button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleRight;
+
+            textBox107.Text = NUD_Entry.Text;
+            textBox108.Text = NUD_Entry.Text;
+        }
+
+        private void All_textBoxes_MouseEnter(object sender, EventArgs e)
+        {
+            NUD_Entry_ValueChanged(sender, e);
+        }
+
+        private void All_ComboBoxes_MouseEnter(object sender, EventArgs e)
+        {
+            NUD_Entry_ValueChanged(sender, e);
+        }
+
+        private void button_SaveInTheSameFile_MouseEnter(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.BackColor = Color.Firebrick;
+        }
+
+        private void button_SaveInTheSameFile_MouseLeave(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void btn_DeleteItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete Quest " + NUD_Entry.Text + " ?", "SpawnCreator " + form_MM.version, MessageBoxButtons.YesNo);
+            if (dr == DialogResult.No)
+                return;
+
+            else
+            {
+                GetMySqlConnection();
+
+                string insertQuery = "DELETE FROM " + form_MM.GetWorldDB() + ".quest_template WHERE ID=" + NUD_Entry.Text + ";" +
+                                     "DELETE FROM " + form_MM.GetWorldDB() + ".creature_queststarter WHERE quest=" + NUD_Entry.Text + ";" +
+                                     "DELETE FROM " + form_MM.GetWorldDB() + ".creature_questender WHERE quest=" + NUD_Entry.Text + ";" ;
+
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(insertQuery, connection);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Quest Deleted!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                connection.Close();
+            }
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            object sender = new object();
+            EventArgs e = new EventArgs();
+
+            if (keyData == Keys.F2)
+            {
+                button_SaveInTheSameFile_Click(sender, e); // Save in the same file if "F2" key is pressed
+                return true;
+            }
+
+            else if (keyData == Keys.F5)
+            {
+                button2_Click(sender, e); // Execute Query if "F5" key is pressed
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void textBox66_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (textBox66.Text.Equals("Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire.") == true)
+            {
+                textBox66.Text = "";
+                textBox66.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox66_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (textBox66.Text.Equals(null) == true || textBox66.Text.Equals("") == true)
+            {
+                textBox66.Text = "Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire.";
+                textBox66.ForeColor = Color.Gray;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Value > 0: required creature_template ID the player needs to kill/cast on in order to complete the quest. \n" +
+                "Value < 0: required gameobject_template ID the player needs to cast on in order to complete the quest. \n" +
+                "If*RequiredSpellCast*is != 0, the objective is to cast on target, else kill. \n" +
+                "NOTE: If RequiredSpellCast is != 0 and the spell has effects Send Event or Quest Complete, this field may be left empty." 
+                 , "RequiredNpcOrGo", MessageBoxButtons.OK
+                );
         }
     }
 }

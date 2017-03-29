@@ -33,7 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_mysql_status = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
+            this.lbl_MySQL_Status = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -70,8 +70,6 @@
             this.panel_Account_Creator = new System.Windows.Forms.Panel();
             this.label_Account_Creator = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -106,7 +104,7 @@
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
             this.panel1.Controls.Add(this.label_mysql_status);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label85);
+            this.panel1.Controls.Add(this.lbl_MySQL_Status);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -144,17 +142,17 @@
             this.label8.MouseEnter += new System.EventHandler(this.label8_MouseEnter);
             this.label8.MouseLeave += new System.EventHandler(this.label8_MouseLeave);
             // 
-            // label85
+            // lbl_MySQL_Status
             // 
-            this.label85.AutoSize = true;
-            this.label85.BackColor = System.Drawing.Color.Transparent;
-            this.label85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.ForeColor = System.Drawing.Color.Black;
-            this.label85.Location = new System.Drawing.Point(12, 7);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(101, 15);
-            this.label85.TabIndex = 21;
-            this.label85.Text = "MySQL Status:";
+            this.lbl_MySQL_Status.AutoSize = true;
+            this.lbl_MySQL_Status.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_MySQL_Status.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_MySQL_Status.ForeColor = System.Drawing.Color.White;
+            this.lbl_MySQL_Status.Location = new System.Drawing.Point(12, 7);
+            this.lbl_MySQL_Status.Name = "lbl_MySQL_Status";
+            this.lbl_MySQL_Status.Size = new System.Drawing.Size(101, 15);
+            this.lbl_MySQL_Status.TabIndex = 21;
+            this.lbl_MySQL_Status.Text = "MySQL Status:";
             // 
             // label7
             // 
@@ -570,27 +568,6 @@
             // 
             this.toolTip1.Tag = "";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label9.Location = new System.Drawing.Point(409, 381);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 15);
-            this.label9.TabIndex = 116;
-            this.label9.Text = "  mindsear";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(409, 364);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 15);
-            this.label10.TabIndex = 115;
-            this.label10.Text = "updated by";
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gainsboro;
@@ -691,9 +668,9 @@
             this.label_version.ForeColor = System.Drawing.Color.Maroon;
             this.label_version.Location = new System.Drawing.Point(399, 35);
             this.label_version.Name = "label_version";
-            this.label_version.Size = new System.Drawing.Size(33, 16);
+            this.label_version.Size = new System.Drawing.Size(54, 16);
             this.label_version.TabIndex = 121;
-            this.label_version.Text = "v2.2";
+            this.label_version.Text = "version";
             this.label_version.Visible = false;
             this.label_version.Click += new System.EventHandler(this.label15_Click);
             // 
@@ -741,13 +718,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(15, 308);
+            this.button1.Location = new System.Drawing.Point(0, 321);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 45);
+            this.button1.Size = new System.Drawing.Size(155, 43);
             this.button1.TabIndex = 123;
-            this.button1.Text = "Try without MySQL Connection";
+            this.button1.Text = "Start without MySQL Connection";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
@@ -757,9 +733,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(26, 364);
+            this.button2.Location = new System.Drawing.Point(15, 370);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 25);
+            this.button2.Size = new System.Drawing.Size(120, 25);
             this.button2.TabIndex = 124;
             this.button2.Text = "Control Panel";
             this.button2.UseVisualStyleBackColor = false;
@@ -769,17 +745,23 @@
             // CB_NoMySQL
             // 
             this.CB_NoMySQL.AutoSize = true;
-            this.CB_NoMySQL.Location = new System.Drawing.Point(20, 308);
+            this.CB_NoMySQL.BackColor = System.Drawing.Color.DimGray;
+            this.CB_NoMySQL.Font = new System.Drawing.Font("Maiandra GD", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CB_NoMySQL.ForeColor = System.Drawing.Color.White;
+            this.CB_NoMySQL.Location = new System.Drawing.Point(0, 35);
             this.CB_NoMySQL.Name = "CB_NoMySQL";
-            this.CB_NoMySQL.Size = new System.Drawing.Size(118, 30);
+            this.CB_NoMySQL.Size = new System.Drawing.Size(120, 32);
             this.CB_NoMySQL.TabIndex = 125;
             this.CB_NoMySQL.Text = "Start without\r\nMySQL Connection";
-            this.CB_NoMySQL.UseVisualStyleBackColor = true;
+            this.CB_NoMySQL.UseVisualStyleBackColor = false;
             this.CB_NoMySQL.Visible = false;
             this.CB_NoMySQL.CheckedChanged += new System.EventHandler(this.CB_NoMySQL_CheckedChanged);
+            this.CB_NoMySQL.MouseEnter += new System.EventHandler(this.CB_NoMySQL_MouseEnter);
+            this.CB_NoMySQL.MouseLeave += new System.EventHandler(this.CB_NoMySQL_MouseLeave);
             // 
             // Form_MainMenu
             // 
+            this.AcceptButton = this.button_mysql_connect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
@@ -794,8 +776,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.panel_Account_Creator);
             this.Controls.Add(this.panel_Quest_Creator);
             this.Controls.Add(this.panel3);
@@ -863,15 +843,13 @@
         private System.Windows.Forms.Label label_mysql_hostname;
         private System.Windows.Forms.Button button_mysql_connect;
         internal System.Windows.Forms.Label label_mysql_status;
-        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Label lbl_MySQL_Status;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel_Account_Creator;
         private System.Windows.Forms.Label label_Account_Creator;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel6;

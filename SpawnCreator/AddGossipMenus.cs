@@ -31,6 +31,20 @@ namespace SpawnCreator
         {
             comboBox_option_icon.SelectedIndex = 0; // GOSSIP_ICON_CHAT
             comboBox_option_id.SelectedIndex = 1; // GOSSIP_OPTION_GOSSIP
+
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                // If CheckBox is Checked (Start without MySQL)
+                button1.Enabled = false;
+                button1.Visible = false;
+                label11.Visible = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                label11.Visible = true;
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,7 +93,8 @@ namespace SpawnCreator
                 );
 
             string insertQuery = "INSERT INTO " + form_MM.GetWorldDB() + ".gossip_menu_option " +
-                "(menu_id, id, option_icon, option_text, OptionBroadcastTextID, option_id, npc_option_npcflag, action_menu_id, action_poi_id, box_coded, box_money, box_text, BoxBroadcastTextID, VerifiedBuild) " +
+                "(menu_id, id, option_icon, option_text, OptionBroadcastTextID, option_id, npc_option_npcflag, " +
+                "action_menu_id, action_poi_id, box_coded, box_money, box_text, BoxBroadcastTextID, VerifiedBuild) \n" +
                 "VALUES (" +
                 textBox61.Text + ", " + // menu_id
                 numericUpDown1.Text + ", " + // id
@@ -127,6 +142,33 @@ namespace SpawnCreator
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(
+                "INSERT INTO " + form_MM.GetWorldDB() + ".gossip_menu_option " +
+                "(menu_id, id, option_icon, option_text, OptionBroadcastTextID, option_id, npc_option_npcflag, " +
+                "action_menu_id, action_poi_id, box_coded, box_money, box_text, BoxBroadcastTextID, VerifiedBuild) \n" +
+                "VALUES (" +
+                textBox61.Text + ", " + // menu_id
+                numericUpDown1.Text + ", " + // id
+                textBox_option_icon.Text + ", '" + // option_icon
+                textBox5.Text + "', " + // option_text
+                textBox4.Text + ", " + // OptionBroadcastTextID
+                textBox_option_id.Text + ", " + // option_id
+                textBox7.Text + ", " + // npc_option_npcflag
+                textBox6.Text + ", " + // action_menu_id
+                textBox3.Text + ", " + // action_poi_id
+                textBox2.Text + ", " + // box_coded
+                textBox10.Text + ", '" + // box_money
+                textBox9.Text + "', " + // box_text
+                textBox11.Text + ", " + // BoxBroadcastTextID
+                textBox12.Text + ");"
+                );
+            //MessageBox.Show("Query has been copied to clipboard!");
+            label9.Text = "Query has been copied to clipboard!";
+            label9.Visible = true;
         }
     }
 }

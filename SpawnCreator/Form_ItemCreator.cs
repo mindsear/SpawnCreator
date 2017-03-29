@@ -28,6 +28,18 @@ namespace SpawnCreator
             form_MM = form_MainMenu; 
         }
 
+        MySqlConnection connection = new MySqlConnection();
+        public void GetMySqlConnection()
+        {
+            MySqlConnection _connection = new MySqlConnection(
+                               "datasource = " + form_MM.GetHost() + "; " +
+                               "port=" + form_MM.GetPort() + ";" +
+                               "username=" + form_MM.GetUser() + ";" +
+                               "password=" + form_MM.GetPass() + ";"
+                            );
+            connection = _connection;
+        }
+
         Form_MainMenu mainmenu = new Form_MainMenu();
         // Fix flickering .. still showing a flicker at the top left corner, wtf? really?
         protected override CreateParams CreateParams
@@ -66,43 +78,25 @@ namespace SpawnCreator
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
-            timer1.Start(); //Check if MySQL is still running
             timer2.Start(); //Stopwatch
             comboBox29.SelectedIndex = 0; // INSERT
 
-            //MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            //string insertQuery = "SELECT max(entry)+1 FROM " + mainmenu.textbox_mysql_worldDB.Text + ".item_template;";
-            ////string insertQuery = textBox_SelectMaxPlus1.Text;
-            //connection.Open();
-            //MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
-            //try
-            //{
-
-            //    textBox1.Text = command.ExecuteScalar().ToString();
-            //    //label_query_executed_successfully2.Visible = false;
-
-            //    if (command.ExecuteNonQuery() >= 1)
-            //    {
-            //        textBox1.Text = command.ExecuteScalar().ToString();
-            //        //label7.Visible = true;
-            //        //label_query_executed_successfully2.Visible = false;
-            //    }
-            //    else
-            //    {
-            //        textBox1.Text = command.ExecuteScalar().ToString();
-            //        //MessageBox.Show("Data Not Inserted");
-            //        //label2.ForeColor = Color.Red;
-            //        //label2.Text = "Eroare!";
-            //        //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            //connection.Close();
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                label_mysql_status2.Visible = false;
+                label85.Visible = false; // MySQL Status - Top Label
+                timer1.Enabled = false; //Check if MySQL is still running
+                button_maxPlus1fromDB.Visible = false;
+                button_execute_query.Visible = false;
+            }
+            else
+            {
+                label_mysql_status2.Visible = true;
+                label85.Visible = true; // MySQL Status - Top Label
+                timer1.Enabled = true; //Check if MySQL is still running
+                button_maxPlus1fromDB.Visible = true;
+                button_execute_query.Visible = true;
+            }
 
             comboBox1.SelectedIndex = 2; // show default 'Uncommon (green)
             comboBox2.SelectedIndex = 0; // show default first item
@@ -651,7 +645,7 @@ namespace SpawnCreator
             BuildSQLFile += "(";
 
             // values now
-            BuildSQLFile += NUD_item_Entry.Text + ", "; // entry
+            BuildSQLFile += NUD_item_Entry.Value + ", "; // entry
             BuildSQLFile += comboBox1.SelectedIndex + ", "; // quality
             BuildSQLFile += comboBox2.SelectedIndex + ", "; // class
             BuildSQLFile += comboBox3.SelectedIndex + ", "; // subclass
@@ -1498,6 +1492,7 @@ namespace SpawnCreator
 
             label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
+            ALLtextBoxes_MouseEnter(sender, e);
         }
 
         private void textBox3_MouseEnter(object sender, EventArgs e)
@@ -1512,7 +1507,7 @@ namespace SpawnCreator
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             //In case windows is trying to shut down, don't hold the process up
-            //if (e.CloseReason == CloseReason.WindowsShutDown) return;
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
 
             //DialogResult dr = MessageBox.Show("Are you sure you want to exit application?", "Exit", MessageBoxButtons.YesNo);
             //if (dr == DialogResult.No)
@@ -1608,13 +1603,6 @@ namespace SpawnCreator
                 return;
             }
 
-            //Make a button (another option) to write to a file without overwriting
-            //using (var writer = File.AppendText("items.sql"))
-            //{
-            //    writer.Write(stringSQLShare);
-            //    timer3.Start();
-            //}
-
             using (var sfd = new SaveFileDialog())
             {
                 sfd.Filter = "sql files (*.sql)|*.sql";
@@ -1667,25 +1655,21 @@ namespace SpawnCreator
         private void label80_MouseEnter(object sender, EventArgs e)
         {
             label80.BackColor = Color.Firebrick;
-            label80.ForeColor = Color.White;
         }
 
         private void label80_MouseLeave(object sender, EventArgs e)
         {
             label80.BackColor = Color.FromArgb(58, 89, 114);
-            label80.ForeColor = Color.Black;
         }
 
         private void label81_MouseEnter(object sender, EventArgs e)
         {
             label81.BackColor = Color.Firebrick;
-            label81.ForeColor = Color.White;
         }
 
         private void label81_MouseLeave(object sender, EventArgs e)
         {
             label81.BackColor = Color.FromArgb(58, 89, 114);
-            label81.ForeColor = Color.Black;
         }
 
         private void panel4_MouseEnter(object sender, EventArgs e)
@@ -1998,11 +1982,27 @@ namespace SpawnCreator
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            object sender = new object();
+            EventArgs e = new EventArgs();
+
             if (keyData == Keys.Escape)
             {
                 Application.Exit();
                 return true;
             }
+
+           else if (keyData == Keys.F2)
+            {
+                button8_Click_2(sender, e); // Save in the same file if "F2" key is pressed
+                return true;
+            }
+
+            else if (keyData == Keys.F5)
+            {
+                button_execute_query_Click(sender, e); // Execute Query if "F5" key is pressed
+                return true;
+            }
+
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
@@ -2031,49 +2031,33 @@ namespace SpawnCreator
             Process.Start("http://emucraft.com");
         }
 
+        public bool IsProcessOpen(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    label_mysql_status2.Text = "Connected!";
+                    label_mysql_status2.ForeColor = Color.LawnGreen;
+                    button_maxPlus1fromDB.Visible = true;
+                    button_execute_query.Visible = true;
+                    btn_DeleteQuery.Enabled = true;
+                    return true;
+
+                }
+            }
+
+            label_mysql_status2.Text = "Connection Lost - MySQL is not running";
+            label_mysql_status2.ForeColor = Color.Red;
+            button_maxPlus1fromDB.Visible = false;
+            button_execute_query.Visible = false;
+            btn_DeleteQuery.Enabled = false;
+            return false;
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //Form_MainMenu mainmenu = new Form_MainMenu();
-
-            //try
-            //{
-            //    string myConnection = "datasource=" + form_MM.GetHost() + ";" +
-            //                          "port=" + form_MM.GetPort() + ";" +
-            //                          "username=" + form_MM.GetUser() + ";" +
-            //                          "password=" + form_MM.GetPass() + ";";
-
-            //    MySqlConnection myConn = new MySqlConnection(myConnection);
-            //    MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-            //    //myDataAdapter.SelectCommand = new MySqlCommand("select * from auth.account;");
-            //    MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-            //    myConn.Open();
-            //    DataSet ds = new DataSet();
-
-            //    label_mysql_status2.Text = "Connected!";
-            //    label_mysql_status2.ForeColor = Color.LawnGreen;
-
-            //    myConn.Close();
-            //}
-            //catch (Exception /*ex*/)
-            //{
-            //    //MessageBox.Show(ex.Message);
-            //    label_mysql_status2.Text = "Connection Lost - MySQL is not running";
-            //    label_mysql_status2.ForeColor = Color.Red;
-            //}
-
-            Process[] mysql = Process.GetProcessesByName("mysqld");
-            if (mysql.Length == 0)
-            {
-                label_mysql_status2.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status2.ForeColor = Color.Red;
-
-            }
-            else
-            {
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;
-
-            }
+            IsProcessOpen();
         }
 
         private void label86_Click(object sender, EventArgs e)
@@ -2102,73 +2086,16 @@ namespace SpawnCreator
 
         private void button_maxPlus1fromDB_Click(object sender, EventArgs e)
         {
-
-            // Server = localhost; Database = finalfilemysql; Uid = root; Pwd = Root;
-
-            //try
-            //{
-            //    //This is my connection string i have assigned the database file address path 
-
-            //    string MyConnection2 = "datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=ascent" /*+ mainmenu.textbox_mysql_pass.Text*/;
-
-            //    //This is my insert query in which i am taking input from the user through windows forms 
-
-            //    string Query = "INSERT INTO world.disables (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`) VALUES (3, 10, 0, '', '', 'cacaccaat');";
-
-            //    //This is  MySqlConnection here i have created the object and pass my connection string. 
-
-            //    MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-
-            //    //This is command class which will handle the query and connection object. 
-
-            //    MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-
-            //    MySqlDataReader MyReader2;
-
-            //    MyConn2.Open();
-
-            //    MyReader2 = MyCommand2.ExecuteReader();     // Here our query will be executed and data saved into the database. 
-
-
-            //    MessageBox.Show("Save Data");
-
-            //    while (MyReader2.Read())
-            //    {
-            //        textBox1.Text = MyCommand2.ExecuteScalar().ToString();
-            //    }
-            //    MyConn2.Close();
-            //}
-            //catch (Exception /*ex*/)
-
-            //{
-            //    //MessageBox.Show(ex.Message);
-            //}
-
-
-            //==============================================================================================
-
-            //string str = @"Server=" + mainmenu.textbox_mysql_hostname.Text + ";Database=" + mainmenu.textbox_mysql_worldDB.Text + /*";Port=" + mainmenu.textbox_mysql_port.Text + */ "; Uid=" + mainmenu.textbox_mysql_username.Text + ";Pwd=" + mainmenu.textbox_mysql_pass.Text + ";";
-            //MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(str);
-
-            //----------------------------------------
-
-            MySqlConnection connection = new MySqlConnection(
-                "datasource=" + form_MM.GetHost() + ";" +
-                "port=" + form_MM.GetPort() + ";" +
-                "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass() + ";"
-                );
+            
+            GetMySqlConnection();
 
             string insertQuery = "SELECT max(entry)+1 FROM " + form_MM.GetWorldDB() + ".item_template;";
-            //string insertQuery = textBox_SelectMaxPlus1.Text;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
 
             try
             {
-
                 NUD_item_Entry.Text = command.ExecuteScalar().ToString();
-
             }
             catch (Exception ex)
             {
@@ -2243,12 +2170,7 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection(
-                "datasource=" + form_MM.GetHost() + ";" +
-                "port=" + form_MM.GetPort() + ";" +
-                "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass() + ";"
-                );
+            GetMySqlConnection();
 
             string insertQuery = stringSQLShare;
             connection.Open();
@@ -3015,38 +2937,27 @@ namespace SpawnCreator
         private void label90_MouseEnter(object sender, EventArgs e)
         {
             label90.BackColor = Color.Firebrick;
-            label90.ForeColor = Color.White;
         }
 
         private void label90_MouseLeave(object sender, EventArgs e)
         {
             label90.BackColor = Color.FromArgb(58, 89, 114);
-            label90.ForeColor = Color.Black;
         }
 
         private void comboBox29_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btn_DeleteQuery.Visible = false;
             if (comboBox29.SelectedIndex == 0) textBox105.Text = "INSERT";
             else if (comboBox29.SelectedIndex == 1) textBox105.Text = "REPLACE";
-        }
+            else if (comboBox29.SelectedIndex == 2)
+            {
+                if (form_MM.CB_NoMySQL.Checked || label_mysql_status2.Text == "Connection Lost - MySQL is not running")
+                {
+                    btn_DeleteQuery.Enabled = false;
+                }
 
-        private void label91_MouseEnter(object sender, EventArgs e)
-        {
-            label91.BackColor = Color.Green;
-            label91.ForeColor = Color.White;
-        }
-
-        private void label91_MouseLeave(object sender, EventArgs e)
-        {
-            //label91.BackColor = Color.FromArgb(58, 89, 114);
-            label91.BackColor = Color.DimGray;
-            label91.ForeColor = Color.White;
-        }
-
-        private void label91_Click(object sender, EventArgs e)
-        {
-            // Execute Query
-            button_execute_query_Click(sender, e);
+                btn_DeleteQuery.Visible = true;
+            }
         }
 
         private void textBox105_TextChanged(object sender, EventArgs e)
@@ -3063,6 +2974,100 @@ namespace SpawnCreator
             }
             label_Success.Visible = false;
             label_query_executed_successfully2.Visible = false;
+            button8.Text = "Save in the same file";
+            button8.TextAlign = ContentAlignment.MiddleRight;
         }
+
+        private void button8_Click_2(object sender, EventArgs e)
+        {
+            _Generate(sender, e);
+
+            //PopUPSaveOptionsDialog();
+
+            if (NUD_item_Entry.Text == "")
+            {
+                MessageBox.Show("Entry should not be empty", "Error");
+                return;
+            }
+
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("Name should not be empty", "Error");
+                return;
+            }
+            
+            using (var writer = File.AppendText("items.sql"))
+            {
+                writer.Write(stringSQLShare);
+                button8.Text = "Saved!";
+                button8.TextAlign = ContentAlignment.MiddleCenter;
+            }
+        }
+
+        private void button8_MouseEnter(object sender, EventArgs e)
+        {
+            button8.BackColor = Color.Firebrick;
+        }
+
+        private void button8_MouseLeave(object sender, EventArgs e)
+        {
+            button8.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void label92_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(label92, "A file labeled Items.sql will be created in the same directory as the SpawnCreator vX.X executable. \nSo you can save multiple data rows in a single .sql file.");
+            toolTip1.AutoPopDelay = 10000; // 10 seconds
+        }
+
+        private void label92_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ALLtextBoxes_MouseEnter(object sender, EventArgs e)
+        {
+            button8.Text = "Save in the same file";
+            button8.TextAlign = ContentAlignment.MiddleRight;
+        }
+
+        private void ALLcomboBoxes_MouseEnter(object sender, EventArgs e)
+        {
+            ALLtextBoxes_MouseEnter(sender, e);
+        }
+
+        private void ALL_flags_buttons_MouseEnter(object sender, EventArgs e)
+        {
+            ALLtextBoxes_MouseEnter(sender, e);
+        }
+
+        private void btn_DeleteQuery_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete Item " + NUD_item_Entry.Text + " ?", "SpawnCreator " + form_MM.version, MessageBoxButtons.YesNo);
+            if (dr == DialogResult.No)
+                return;
+
+            else
+            {
+                GetMySqlConnection();
+
+                string insertQuery = "DELETE FROM " + form_MM.GetWorldDB() + ".item_template WHERE entry=" + NUD_item_Entry.Text + ";";
+
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(insertQuery, connection);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Item Deleted!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                connection.Close();
+            }
+        }
+        
     }
 }

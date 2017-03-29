@@ -37,8 +37,9 @@
             this.label78 = new System.Windows.Forms.Label();
             this.label_mysql_status2 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label92 = new System.Windows.Forms.Label();
+            this.button_SaveInTheSameFile = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.label89 = new System.Windows.Forms.Label();
             this.label_file_saved = new System.Windows.Forms.Label();
@@ -249,6 +250,7 @@
             this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.timer8 = new System.Windows.Forms.Timer(this.components);
             this.timer9 = new System.Windows.Forms.Timer(this.components);
+            this.btn_DeleteQuery = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -273,10 +275,10 @@
             this.label80.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label80.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.ForeColor = System.Drawing.Color.Black;
+            this.label80.ForeColor = System.Drawing.Color.White;
             this.label80.Location = new System.Drawing.Point(855, -1);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(26, 32);
+            this.label80.Size = new System.Drawing.Size(26, 30);
             this.label80.TabIndex = 3;
             this.label80.Text = "--";
             this.toolTip1.SetToolTip(this.label80, "Minimize");
@@ -289,10 +291,10 @@
             this.label81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label81.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.ForeColor = System.Drawing.Color.Black;
+            this.label81.ForeColor = System.Drawing.Color.White;
             this.label81.Location = new System.Drawing.Point(888, -1);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(26, 32);
+            this.label81.Size = new System.Drawing.Size(26, 30);
             this.label81.TabIndex = 2;
             this.label81.Text = "X";
             this.toolTip1.SetToolTip(this.label81, "Close");
@@ -335,10 +337,10 @@
             this.label78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.ForeColor = System.Drawing.Color.Black;
+            this.label78.ForeColor = System.Drawing.Color.White;
             this.label78.Location = new System.Drawing.Point(823, 0);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 35);
+            this.label78.Size = new System.Drawing.Size(26, 30);
             this.label78.TabIndex = 21;
             this.label78.Text = "<";
             this.toolTip1.SetToolTip(this.label78, "Back To Main Menu");
@@ -370,24 +372,11 @@
             this.label85.TabIndex = 18;
             this.label85.Text = "MySQL Status:";
             // 
-            // label87
-            // 
-            this.label87.BackColor = System.Drawing.Color.DimGray;
-            this.label87.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label87.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.ForeColor = System.Drawing.Color.White;
-            this.label87.Location = new System.Drawing.Point(630, 32);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(98, 21);
-            this.label87.TabIndex = 22;
-            this.label87.Text = "Execute Query";
-            this.label87.Click += new System.EventHandler(this.label87_Click);
-            this.label87.MouseEnter += new System.EventHandler(this.label87_MouseEnter);
-            this.label87.MouseLeave += new System.EventHandler(this.label87_MouseLeave);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.panel3.Controls.Add(this.label92);
+            this.panel3.Controls.Add(this.button_SaveInTheSameFile);
             this.panel3.Controls.Add(this.button18);
             this.panel3.Controls.Add(this.label89);
             this.panel3.Controls.Add(this.label_file_saved);
@@ -402,6 +391,40 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 504);
             this.panel3.TabIndex = 79;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.BackColor = System.Drawing.Color.Transparent;
+            this.label92.Cursor = System.Windows.Forms.Cursors.Help;
+            this.label92.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label92.ForeColor = System.Drawing.Color.Transparent;
+            this.label92.Image = global::SpawnCreator.Properties.Resources.Help_Circle_Blue1;
+            this.label92.Location = new System.Drawing.Point(1, 169);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(16, 14);
+            this.label92.TabIndex = 214;
+            this.label92.Text = "   ";
+            this.label92.Click += new System.EventHandler(this.label92_Click);
+            this.label92.MouseEnter += new System.EventHandler(this.label92_MouseEnter);
+            // 
+            // button_SaveInTheSameFile
+            // 
+            this.button_SaveInTheSameFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.button_SaveInTheSameFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_SaveInTheSameFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_SaveInTheSameFile.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SaveInTheSameFile.ForeColor = System.Drawing.Color.White;
+            this.button_SaveInTheSameFile.Location = new System.Drawing.Point(0, 159);
+            this.button_SaveInTheSameFile.Name = "button_SaveInTheSameFile";
+            this.button_SaveInTheSameFile.Size = new System.Drawing.Size(167, 34);
+            this.button_SaveInTheSameFile.TabIndex = 213;
+            this.button_SaveInTheSameFile.Text = "Save in the same file";
+            this.button_SaveInTheSameFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_SaveInTheSameFile.UseVisualStyleBackColor = false;
+            this.button_SaveInTheSameFile.Click += new System.EventHandler(this.button19_Click);
+            this.button_SaveInTheSameFile.MouseEnter += new System.EventHandler(this.button19_MouseEnter);
+            this.button_SaveInTheSameFile.MouseLeave += new System.EventHandler(this.button19_MouseLeave);
             // 
             // button18
             // 
@@ -436,7 +459,7 @@
             // 
             this.label_file_saved.AutoSize = true;
             this.label_file_saved.ForeColor = System.Drawing.Color.Lime;
-            this.label_file_saved.Location = new System.Drawing.Point(20, 216);
+            this.label_file_saved.Location = new System.Drawing.Point(20, 247);
             this.label_file_saved.Name = "label_file_saved";
             this.label_file_saved.Size = new System.Drawing.Size(130, 26);
             this.label_file_saved.TabIndex = 100;
@@ -448,7 +471,7 @@
             // 
             this.label_copied_to_clipboard.AutoSize = true;
             this.label_copied_to_clipboard.ForeColor = System.Drawing.Color.Lime;
-            this.label_copied_to_clipboard.Location = new System.Drawing.Point(30, 216);
+            this.label_copied_to_clipboard.Location = new System.Drawing.Point(30, 247);
             this.label_copied_to_clipboard.Name = "label_copied_to_clipboard";
             this.label_copied_to_clipboard.Size = new System.Drawing.Size(120, 26);
             this.label_copied_to_clipboard.TabIndex = 99;
@@ -461,7 +484,7 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.panel7.Controls.Add(this.label86);
             this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel7.Location = new System.Drawing.Point(0, 168);
+            this.panel7.Location = new System.Drawing.Point(0, 199);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
@@ -546,7 +569,7 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.panel5.Controls.Add(this.label83);
             this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel5.Location = new System.Drawing.Point(0, 124);
+            this.panel5.Location = new System.Drawing.Point(0, 115);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
@@ -573,8 +596,8 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.btn_DeleteQuery);
             this.panel1.Controls.Add(this.textBox105);
-            this.panel1.Controls.Add(this.label87);
             this.panel1.Controls.Add(this.comboBox11);
             this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Controls.Add(this.label70);
@@ -592,7 +615,7 @@
             // 
             // textBox105
             // 
-            this.textBox105.Location = new System.Drawing.Point(554, 72);
+            this.textBox105.Location = new System.Drawing.Point(405, 46);
             this.textBox105.Name = "textBox105";
             this.textBox105.Size = new System.Drawing.Size(100, 20);
             this.textBox105.TabIndex = 209;
@@ -605,12 +628,14 @@
             this.comboBox11.FormattingEnabled = true;
             this.comboBox11.Items.AddRange(new object[] {
             "Add New NPC",
-            "Replace NPC"});
+            "Replace NPC",
+            "Delete NPC"});
             this.comboBox11.Location = new System.Drawing.Point(388, 72);
             this.comboBox11.Name = "comboBox11";
             this.comboBox11.Size = new System.Drawing.Size(154, 23);
             this.comboBox11.TabIndex = 208;
             this.comboBox11.SelectedIndexChanged += new System.EventHandler(this.comboBox11_SelectedIndexChanged);
+            this.comboBox11.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // groupBox6
             // 
@@ -650,6 +675,7 @@
             this.button12.Text = "Max+1";
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.button12.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // textBox42
             // 
@@ -662,6 +688,7 @@
             this.textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox42.TextChanged += new System.EventHandler(this.textBox42_TextChanged);
             this.textBox42.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox42_KeyPress);
+            this.textBox42.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // button11
             // 
@@ -678,6 +705,7 @@
             this.button11.Text = "Generate Loot";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button11.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // label70
             // 
@@ -749,6 +777,7 @@
             0,
             0,
             0});
+            this.NUD_Entry.ValueChanged += new System.EventHandler(this.NUD_Entry_ValueChanged);
             // 
             // pictureBox1
             // 
@@ -787,6 +816,7 @@
             this.toolTip1.SetToolTip(this.button2, "Max + 1 from Database");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // textBox12
             // 
@@ -796,6 +826,7 @@
             this.textBox12.Size = new System.Drawing.Size(212, 20);
             this.textBox12.TabIndex = 3;
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox12.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // comboBox1
             // 
@@ -823,6 +854,7 @@
             this.comboBox1.Size = new System.Drawing.Size(95, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // textBox8
             // 
@@ -834,6 +866,7 @@
             this.textBox8.Text = "0";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
+            this.textBox8.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label10
             // 
@@ -869,6 +902,7 @@
             this.textBox9.Text = "0";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox9_KeyPress);
+            this.textBox9.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label8
             // 
@@ -904,6 +938,7 @@
             this.textBox10.Text = "0";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox10_KeyPress);
+            this.textBox10.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label12
             // 
@@ -938,6 +973,7 @@
             this.textBox7.TabIndex = 2;
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBox7.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // textBox11
             // 
@@ -949,6 +985,7 @@
             this.textBox11.Text = "0";
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
+            this.textBox11.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label1
             // 
@@ -1072,6 +1109,7 @@
             this.comboBox5.Size = new System.Drawing.Size(156, 21);
             this.comboBox5.TabIndex = 22;
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            this.comboBox5.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // comboBox2
             // 
@@ -1089,6 +1127,7 @@
             this.comboBox2.Size = new System.Drawing.Size(109, 21);
             this.comboBox2.TabIndex = 21;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // label22
             // 
@@ -1124,6 +1163,7 @@
             this.textBox20.Text = "1";
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox20.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox20_KeyPress);
+            this.textBox20.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label20
             // 
@@ -1147,6 +1187,7 @@
             this.textBox19.Text = "1";
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox19.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
+            this.textBox19.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label19
             // 
@@ -1170,6 +1211,7 @@
             this.textBox18.Text = "1";
             this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox18.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox18_KeyPress);
+            this.textBox18.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label18
             // 
@@ -1194,6 +1236,7 @@
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.textBox17, "Faction\r\n14 (Monster)\r\n35 (Friendly)");
             this.textBox17.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox17_KeyPress);
+            this.textBox17.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label17
             // 
@@ -1217,6 +1260,7 @@
             this.textBox16.Text = "0";
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox16.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox16_KeyPress);
+            this.textBox16.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label15
             // 
@@ -1240,6 +1284,7 @@
             this.textBox14.Text = "1";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox14_KeyPress);
+            this.textBox14.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label16
             // 
@@ -1263,6 +1308,7 @@
             this.textBox15.Text = "1";
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox15_KeyPress);
+            this.textBox15.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label5
             // 
@@ -1286,6 +1332,7 @@
             this.textBox5.Text = "0";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
+            this.textBox5.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label3
             // 
@@ -1321,6 +1368,7 @@
             this.textBox2.Text = "0";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.textBox2.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // textBox6
             // 
@@ -1332,6 +1380,7 @@
             this.textBox6.Text = "0";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
+            this.textBox6.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label2
             // 
@@ -1367,6 +1416,7 @@
             this.textBox3.Text = "0";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.textBox3.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // textBox4
             // 
@@ -1378,6 +1428,7 @@
             this.textBox4.Text = "0";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            this.textBox4.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // groupBox3
             // 
@@ -1430,6 +1481,7 @@
             this.textBox27.Text = "0";
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox27.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox27.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label32
             // 
@@ -1453,6 +1505,7 @@
             this.textBox28.Text = "0";
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox28.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox28.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // comboBox4
             // 
@@ -1469,6 +1522,7 @@
             this.comboBox4.Size = new System.Drawing.Size(171, 21);
             this.comboBox4.TabIndex = 30;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.comboBox4.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // label30
             // 
@@ -1504,6 +1558,7 @@
             this.textBox25.Text = "0";
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox25.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox25.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label29
             // 
@@ -1527,6 +1582,7 @@
             this.textBox26.Text = "0";
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox26.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox26_KeyPress);
+            this.textBox26.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label25
             // 
@@ -1550,6 +1606,7 @@
             this.textBox23.Text = "0";
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox23.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox23_KeyPress);
+            this.textBox23.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label27
             // 
@@ -1573,6 +1630,7 @@
             this.textBox24.Text = "0";
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox24.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox24_KeyPress);
+            this.textBox24.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // comboBox3
             // 
@@ -1591,6 +1649,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(133, 21);
             this.comboBox3.TabIndex = 25;
+            this.comboBox3.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // label26
             // 
@@ -1626,6 +1685,7 @@
             this.textBox21.Text = "0";
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox21_KeyPress);
+            this.textBox21.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label24
             // 
@@ -1649,6 +1709,7 @@
             this.textBox22.Text = "0";
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox22.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox22_KeyPress);
+            this.textBox22.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // groupBox4
             // 
@@ -1712,6 +1773,7 @@
             this.toolTip1.SetToolTip(this.button1, "Max + 1 from Database");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // button16
             // 
@@ -1727,6 +1789,7 @@
             this.button16.Text = "Max+1";
             this.button16.UseVisualStyleBackColor = false;
             this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.button16.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // label14
             // 
@@ -1751,6 +1814,7 @@
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             this.textBox13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox13_KeyPress);
+            this.textBox13.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // button13
             // 
@@ -1767,6 +1831,7 @@
             this.button13.Text = "Add Vendor Items";
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.button13.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             this.button13.MouseHover += new System.EventHandler(this.button13_MouseHover);
             // 
             // button9
@@ -1783,6 +1848,7 @@
             this.button9.Text = "Flags Extra";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // button8
             // 
@@ -1798,6 +1864,7 @@
             this.button8.Text = "Mechanic Immune Mask";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // button7
             // 
@@ -1813,6 +1880,7 @@
             this.button7.Text = "Type Flags";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // label41
             // 
@@ -1852,6 +1920,7 @@
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(148, 21);
             this.comboBox7.TabIndex = 51;
+            this.comboBox7.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // label39
             // 
@@ -1875,6 +1944,7 @@
             this.textBox33.Text = "0";
             this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox33.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox33.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label40
             // 
@@ -1898,6 +1968,7 @@
             this.textBox34.Text = "0";
             this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox34.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox34.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label37
             // 
@@ -1921,6 +1992,7 @@
             this.textBox31.Text = "0";
             this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox31.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox31.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label38
             // 
@@ -1944,6 +2016,7 @@
             this.textBox32.Text = "0";
             this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox32.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox32.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label35
             // 
@@ -1967,6 +2040,7 @@
             this.textBox29.Text = "0";
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox29.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox29.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label36
             // 
@@ -1991,6 +2065,7 @@
             this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox30.TextChanged += new System.EventHandler(this.textBox30_TextChanged);
             this.textBox30.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox30.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label34
             // 
@@ -2018,6 +2093,7 @@
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(202, 21);
             this.comboBox6.TabIndex = 44;
+            this.comboBox6.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // button6
             // 
@@ -2033,6 +2109,7 @@
             this.button6.Text = "DynamicFlags";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // button5
             // 
@@ -2048,6 +2125,7 @@
             this.button5.Text = "Unit Flags 2";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // button4
             // 
@@ -2063,6 +2141,7 @@
             this.button4.Text = "Unit Flags";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // button3
             // 
@@ -2078,6 +2157,7 @@
             this.button3.Text = "Npc Flag";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // groupBox5
             // 
@@ -2216,6 +2296,7 @@
             this.button_waypoints.Text = "How to add waypoints";
             this.button_waypoints.UseVisualStyleBackColor = false;
             this.button_waypoints.Click += new System.EventHandler(this.button_waypoints_Click);
+            this.button_waypoints.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // label79
             // 
@@ -2242,6 +2323,7 @@
             this.button15.Text = "Make NPC say/yell/whisper";
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.button15.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // button14
             // 
@@ -2257,6 +2339,7 @@
             this.button14.Text = "Add mount/emote/auras to NPC";
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.button14.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // label77
             // 
@@ -2280,6 +2363,7 @@
             this.textBox66.Text = "0";
             this.textBox66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox66.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox66.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label76
             // 
@@ -2303,6 +2387,7 @@
             this.textBox65.Text = "0";
             this.textBox65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox65.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox65.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label75
             // 
@@ -2326,6 +2411,7 @@
             this.textBox61.Text = "0";
             this.textBox61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox61.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox61.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label71
             // 
@@ -2349,6 +2435,7 @@
             this.textBox60.Text = "0";
             this.textBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox60.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox60.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label_query_executed_successfully2
             // 
@@ -2375,8 +2462,10 @@
             this.button10.Size = new System.Drawing.Size(156, 31);
             this.button10.TabIndex = 101;
             this.button10.Text = "Execute Query";
+            this.toolTip1.SetToolTip(this.button10, "Or Press F5");
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button10.MouseEnter += new System.EventHandler(this.All_buttons_MouseEnter);
             // 
             // label69
             // 
@@ -2400,6 +2489,7 @@
             this.textBox59.Text = "12340";
             this.textBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox59.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox59.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label72
             // 
@@ -2421,6 +2511,7 @@
             this.textBox62.Size = new System.Drawing.Size(225, 20);
             this.textBox62.TabIndex = 89;
             this.textBox62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox62.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label73
             // 
@@ -2444,6 +2535,7 @@
             this.textBox63.Text = "0";
             this.textBox63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox63.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox63.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label74
             // 
@@ -2467,6 +2559,7 @@
             this.textBox64.Text = "0";
             this.textBox64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox64.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox64.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label63
             // 
@@ -2490,6 +2583,7 @@
             this.textBox53.Text = "0";
             this.textBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox53.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox53.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label64
             // 
@@ -2513,6 +2607,7 @@
             this.textBox54.Text = "0";
             this.textBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox54.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox54.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label65
             // 
@@ -2536,6 +2631,7 @@
             this.textBox55.Text = "0";
             this.textBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox55.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox55.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label66
             // 
@@ -2561,6 +2657,7 @@
             this.textBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.textBox56, "Maximum money that the creature drops when killed, in copper.");
             this.textBox56.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox56.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label67
             // 
@@ -2586,6 +2683,7 @@
             this.textBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.textBox57, "Minimum money that the creature drops when killed, in copper.");
             this.textBox57.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox57.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label68
             // 
@@ -2609,6 +2707,7 @@
             this.textBox58.Text = "0";
             this.textBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox58.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox58.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label57
             // 
@@ -2632,6 +2731,7 @@
             this.textBox47.Text = "0";
             this.textBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox47.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox47.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label58
             // 
@@ -2655,6 +2755,7 @@
             this.textBox48.Text = "0";
             this.textBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox48.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox48.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label59
             // 
@@ -2678,6 +2779,7 @@
             this.textBox49.Text = "0";
             this.textBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox49.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox49.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label60
             // 
@@ -2701,6 +2803,7 @@
             this.textBox50.Text = "0";
             this.textBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox50.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox50.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label61
             // 
@@ -2724,6 +2827,7 @@
             this.textBox51.Text = "0";
             this.textBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox51.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox51.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label62
             // 
@@ -2747,6 +2851,7 @@
             this.textBox52.Text = "0";
             this.textBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox52.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox52.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label53
             // 
@@ -2770,6 +2875,7 @@
             this.textBox43.Text = "0";
             this.textBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox43.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox43.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label54
             // 
@@ -2793,6 +2899,7 @@
             this.textBox44.Text = "0";
             this.textBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox44.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox44.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label55
             // 
@@ -2816,6 +2923,7 @@
             this.textBox45.Text = "0";
             this.textBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox45.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox45.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label56
             // 
@@ -2839,6 +2947,7 @@
             this.textBox46.Text = "0";
             this.textBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox46.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox46.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // comboBox10
             // 
@@ -2854,6 +2963,7 @@
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(167, 21);
             this.comboBox10.TabIndex = 79;
+            this.comboBox10.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // label52
             // 
@@ -2886,6 +2996,7 @@
             this.comboBox9.Size = new System.Drawing.Size(144, 21);
             this.comboBox9.TabIndex = 82;
             this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox9_SelectedIndexChanged);
+            this.comboBox9.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // label49
             // 
@@ -2921,6 +3032,7 @@
             this.textBox35.Text = "0";
             this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox35.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox35.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label43
             // 
@@ -2944,6 +3056,7 @@
             this.textBox36.Text = "0";
             this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox36.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox36.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // comboBox8
             // 
@@ -2959,6 +3072,7 @@
             this.comboBox8.Size = new System.Drawing.Size(273, 21);
             this.comboBox8.TabIndex = 80;
             this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
+            this.comboBox8.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
             // 
             // label44
             // 
@@ -2994,6 +3108,7 @@
             this.textBox37.Text = "0";
             this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox37.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox37.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label46
             // 
@@ -3017,6 +3132,7 @@
             this.textBox38.Text = "0";
             this.textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox38.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox38.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label47
             // 
@@ -3040,6 +3156,7 @@
             this.textBox39.Text = "0";
             this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox39.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox39.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label48
             // 
@@ -3063,6 +3180,7 @@
             this.textBox40.Text = "0";
             this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox40.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox40.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // label50
             // 
@@ -3086,6 +3204,7 @@
             this.textBox41.Text = "0";
             this.textBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox41.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
+            this.textBox41.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
             // timer1
             // 
@@ -3131,6 +3250,22 @@
             // 
             this.timer9.Interval = 10;
             this.timer9.Tick += new System.EventHandler(this.timer9_Tick);
+            // 
+            // btn_DeleteQuery
+            // 
+            this.btn_DeleteQuery.BackColor = System.Drawing.Color.DimGray;
+            this.btn_DeleteQuery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DeleteQuery.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DeleteQuery.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteQuery.ForeColor = System.Drawing.Color.White;
+            this.btn_DeleteQuery.Location = new System.Drawing.Point(549, 72);
+            this.btn_DeleteQuery.Name = "btn_DeleteQuery";
+            this.btn_DeleteQuery.Size = new System.Drawing.Size(62, 23);
+            this.btn_DeleteQuery.TabIndex = 210;
+            this.btn_DeleteQuery.Text = "Delete";
+            this.btn_DeleteQuery.UseVisualStyleBackColor = false;
+            this.btn_DeleteQuery.Visible = false;
+            this.btn_DeleteQuery.Click += new System.EventHandler(this.btn_DeleteQuery_Click);
             // 
             // NPC_Creator
             // 
@@ -3395,12 +3530,14 @@
         private System.Windows.Forms.ComboBox comboBox11;
         private System.Windows.Forms.Label label_Success;
         private System.Windows.Forms.Button button17;
-        public System.Windows.Forms.Label label87;
         internal System.Windows.Forms.Label label85;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.TextBox TXT_SQL;
         internal System.Windows.Forms.NumericUpDown NUD_Entry;
         private System.Windows.Forms.Timer timer9;
         internal System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_SaveInTheSameFile;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.Button btn_DeleteQuery;
     }
 }

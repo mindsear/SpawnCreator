@@ -204,7 +204,7 @@ namespace SpawnCreator
             if (textBox28.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox28.Text + ", '"; // target_o
 
-            BuildSQLFile += textBox27.Text + "');"; // comment
+            BuildSQLFile += textBox27.Text + "'); \n"; // comment
 
             stringSQLShare = BuildSQLFile;
             stringEntryShare = textBox1.Text;
@@ -213,9 +213,9 @@ namespace SpawnCreator
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "0 - SMART_SCRIPT_TYPE_CREATURE") textBox2.Text = "0";
-            else if (comboBox1.Text == "1 - SMART_SCRIPT_TYPE_GAMEOBJECT") textBox2.Text = "1";
-            else if (comboBox1.Text == "2 - SMART_SCRIPT_TYPE_AREATRIGGER") textBox2.Text = "2";
+                 if (comboBox1.Text == "0 - SMART_SCRIPT_TYPE_CREATURE")         textBox2.Text = "0";
+            else if (comboBox1.Text == "1 - SMART_SCRIPT_TYPE_GAMEOBJECT")       textBox2.Text = "1";
+            else if (comboBox1.Text == "2 - SMART_SCRIPT_TYPE_AREATRIGGER")      textBox2.Text = "2";
             else if (comboBox1.Text == "9 - SMART_SCRIPT_TYPE_TIMED_ACTIONLIST") textBox2.Text = "9";
         }
 
@@ -1535,11 +1535,19 @@ namespace SpawnCreator
             comboBox4.SelectedIndex = 0;
             comboBox5.SelectedIndex = 0;
             comboBox6.SelectedIndex = 0;
-
-            timer1.Start(); //Check if mysql is still running
             timer2.Start(); // Stopwatch
 
-            
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                label_mysql_status2.Visible = false;
+                label85.Visible = false;
+                timer1.Enabled = false; //Check if mysql is still running
+                button10.Visible = false; // Execute Query
+                timer1.Enabled = false;
+            }
+            else
+                timer1.Enabled = true; //Check mysql connection
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -1632,52 +1640,61 @@ namespace SpawnCreator
         private void label2_MouseEnter(object sender, EventArgs e)
         {
             label2.BackColor = Color.Firebrick;
-            label2.ForeColor = Color.White;
+            //label2.ForeColor = Color.White;
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
         {
             label2.BackColor = Color.FromArgb(58, 89, 114);
-            label2.ForeColor = Color.Black;
+            //label2.ForeColor = Color.Black;
         }
         //=======================================================
         private void label1_MouseEnter(object sender, EventArgs e)
         {
             label1.BackColor = Color.Firebrick;
-            label1.ForeColor = Color.White;
+            //label1.ForeColor = Color.White;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             label1.BackColor = Color.FromArgb(58, 89, 114);
-            label1.ForeColor = Color.Black;
+            //label1.ForeColor = Color.Black;
         }
         //=======================================================
         private void label78_MouseEnter(object sender, EventArgs e)
         {
             label78.BackColor = Color.Firebrick;
-            label78.ForeColor = Color.White;
+            //label78.ForeColor = Color.White;
         }
 
         private void label78_MouseLeave(object sender, EventArgs e)
         {
             label78.BackColor = Color.FromArgb(58, 89, 114);
-            label78.ForeColor = Color.Black;
+            //label78.ForeColor = Color.Black;
+        }
+
+        public bool IsProcessOpen(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    label_mysql_status2.Text = "Connected!";
+                    label_mysql_status2.ForeColor = Color.LawnGreen;
+                    button10.Visible = true; // Execute Query
+                    return true;
+                }
+            }
+
+            label_mysql_status2.Text = "Connection Lost - MySQL is not running";
+            label_mysql_status2.ForeColor = Color.Red;
+            button10.Visible = false; // Execute Query
+            return false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Process[] mysql = Process.GetProcessesByName("mysqld");
-            if (mysql.Length == 0)
-            {
-                label_mysql_status2.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status2.ForeColor = Color.Red;
-            }
-            else
-            {
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;
-            }
+            IsProcessOpen();
         }
 
         int i = 1;
@@ -1862,6 +1879,80 @@ namespace SpawnCreator
         private void panel7_MouseLeave(object sender, EventArgs e)
         {
             panel7.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void button_SaveInTheSameFile_MouseEnter(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.BackColor = Color.Firebrick;
+        }
+
+        private void button_SaveInTheSameFile_MouseLeave(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void label92_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(label92, "A file labeled SmartScripts.sql will be created in the same directory as the SpawnCreator vX.X executable. \nSo you can save multiple data rows in a single .sql file.");
+            toolTip1.AutoPopDelay = 10000; // 10 seconds
+        }
+
+        private void button_SaveInTheSameFile_Click(object sender, EventArgs e)
+        {
+            _GenerateSqlCode_(sender, e);
+
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("EntryOrGuid should not be empty", "Error");
+                return;
+            }
+            if (textBox1.Text == "0")
+            {
+                MessageBox.Show("EntryOrGuid should not be zero", "Error");
+                return;
+            }
+
+            using (var writer = File.AppendText("SmartScripts.sql"))
+            {
+                writer.Write(stringSQLShare);
+                button_SaveInTheSameFile.Text = "Saved!";
+                button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
+            }
+        }
+
+        private void All_textBoxes_MouseEnter(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.Text = "Save in the same file";
+            button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleRight;
+        }
+
+        private void All_ComboBoxes_MouseEnter(object sender, EventArgs e)
+        {
+            All_textBoxes_MouseEnter(sender, e);
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            All_textBoxes_MouseEnter(sender, e);
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            object sender = new object();
+            EventArgs e = new EventArgs();
+
+            if (keyData == Keys.F2)
+            {
+                button_SaveInTheSameFile_Click(sender, e); // Save in the same file if "F2" key is pressed
+                return true;
+            }
+
+            else if (keyData == Keys.F5)
+            {
+                button10_Click(sender, e); // Execute Query if "F5" key is pressed
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

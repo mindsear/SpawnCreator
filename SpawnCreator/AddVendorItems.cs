@@ -19,6 +19,13 @@ namespace SpawnCreator
             InitializeComponent();
         }
 
+        private readonly Form_MainMenu form_MM;
+        public AddVendorItems(Form_MainMenu form_MainMenu)
+        {
+            InitializeComponent();
+            form_MM = form_MainMenu; 
+        }
+
         private void label10_Click(object sender, EventArgs e)
         {
             Process.Start("https://trinitycore.atlassian.net/wiki/display/tc/npc_vendor");
@@ -52,9 +59,14 @@ namespace SpawnCreator
                 return;
             }
 
-            MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
-            string insertQuery = "INSERT INTO " + mainmenu.textbox_mysql_worldDB.Text + ".npc_vendor " +
-                "(entry, slot, item, maxcount, incrtime, ExtendedCost, VerifiedBuild) " +
+            MySqlConnection connection = new MySqlConnection(
+                               "datasource=" + form_MM.GetHost() + ";" +
+                               "port=" + form_MM.GetPort() + ";" +
+                               "username=" + form_MM.GetUser() + ";" +
+                               "password=" + form_MM.GetPass() + ";"
+                            );
+            string insertQuery = "INSERT INTO " + form_MM.GetWorldDB() + ".npc_vendor " +
+                "(entry, slot, item, maxcount, incrtime, ExtendedCost, VerifiedBuild) \n" +
                 "VALUES (" +
                 textBox61.Text + ", " + // entry
                 textBox65.Text + ", " + // slot
@@ -67,21 +79,12 @@ namespace SpawnCreator
 
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
-            // Test
+            
             try
             {
                 if (command.ExecuteNonQuery() == 1)
                 {
                     label9.Visible = true;
-                }
-                else
-                {
-                    label9.Visible = true;
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
                 }
             }
             catch (Exception ex)
@@ -138,6 +141,40 @@ namespace SpawnCreator
         private void textBox65_TextChanged(object sender, EventArgs e)
         {
             label9.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText("INSERT INTO " + form_MM.GetWorldDB() + ".npc_vendor " +
+                "(entry, slot, item, maxcount, incrtime, ExtendedCost, VerifiedBuild) \n" +
+                "VALUES (" +
+                textBox61.Text + ", " + // entry
+                textBox65.Text + ", " + // slot
+                textBox1.Text + ", " + // item
+                textBox2.Text + ", " + // maxcount
+                textBox4.Text + ", " + // incrtime
+                textBox3.Text + ", " + // ExtendedCost
+                textBox5.Text + // VerifiedBuild
+                ");");
+            label9.Text = "Query has been copied to clipboard!";
+            label9.Visible = true;
+        }
+
+        private void AddVendorItems_Load(object sender, EventArgs e)
+        {
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                // If CheckBox is Checked (Start without MySQL)
+                button1.Enabled = false;
+                button1.Visible = false;
+                label11.Visible = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                label11.Visible = true;
+            }
         }
     }
 }

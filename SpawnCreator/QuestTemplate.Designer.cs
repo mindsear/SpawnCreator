@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestTemplate));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label119 = new System.Windows.Forms.Label();
+            this.button_SaveInTheSameFile = new System.Windows.Forms.Button();
             this.label89 = new System.Windows.Forms.Label();
             this.label_saved = new System.Windows.Forms.Label();
             this.label_copied_to_clipboard = new System.Windows.Forms.Label();
@@ -256,6 +258,8 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_DeleteQuery = new System.Windows.Forms.Button();
+            this.NUD_Entry = new System.Windows.Forms.NumericUpDown();
             this.textBox105 = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -279,14 +283,15 @@
             this.textBox67 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -301,11 +306,14 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Entry)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.panel3.Controls.Add(this.label119);
+            this.panel3.Controls.Add(this.button_SaveInTheSameFile);
             this.panel3.Controls.Add(this.label89);
             this.panel3.Controls.Add(this.label_saved);
             this.panel3.Controls.Add(this.label_copied_to_clipboard);
@@ -319,6 +327,40 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 502);
             this.panel3.TabIndex = 83;
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.BackColor = System.Drawing.Color.Transparent;
+            this.label119.Cursor = System.Windows.Forms.Cursors.Help;
+            this.label119.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label119.ForeColor = System.Drawing.Color.Transparent;
+            this.label119.Image = global::SpawnCreator.Properties.Resources.Help_Circle_Blue1;
+            this.label119.Location = new System.Drawing.Point(1, 173);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(16, 14);
+            this.label119.TabIndex = 218;
+            this.label119.Text = "   ";
+            this.label119.MouseEnter += new System.EventHandler(this.label119_MouseEnter);
+            // 
+            // button_SaveInTheSameFile
+            // 
+            this.button_SaveInTheSameFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.button_SaveInTheSameFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_SaveInTheSameFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_SaveInTheSameFile.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SaveInTheSameFile.ForeColor = System.Drawing.Color.White;
+            this.button_SaveInTheSameFile.Location = new System.Drawing.Point(0, 162);
+            this.button_SaveInTheSameFile.Name = "button_SaveInTheSameFile";
+            this.button_SaveInTheSameFile.Size = new System.Drawing.Size(167, 34);
+            this.button_SaveInTheSameFile.TabIndex = 217;
+            this.button_SaveInTheSameFile.Text = "Save in the same file";
+            this.button_SaveInTheSameFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.button_SaveInTheSameFile, "Or Press F2");
+            this.button_SaveInTheSameFile.UseVisualStyleBackColor = false;
+            this.button_SaveInTheSameFile.Click += new System.EventHandler(this.button_SaveInTheSameFile_Click);
+            this.button_SaveInTheSameFile.MouseEnter += new System.EventHandler(this.button_SaveInTheSameFile_MouseEnter);
+            this.button_SaveInTheSameFile.MouseLeave += new System.EventHandler(this.button_SaveInTheSameFile_MouseLeave);
             // 
             // label89
             // 
@@ -335,7 +377,7 @@
             // 
             this.label_saved.AutoSize = true;
             this.label_saved.ForeColor = System.Drawing.Color.Lime;
-            this.label_saved.Location = new System.Drawing.Point(20, 212);
+            this.label_saved.Location = new System.Drawing.Point(20, 253);
             this.label_saved.Name = "label_saved";
             this.label_saved.Size = new System.Drawing.Size(130, 26);
             this.label_saved.TabIndex = 100;
@@ -347,7 +389,7 @@
             // 
             this.label_copied_to_clipboard.AutoSize = true;
             this.label_copied_to_clipboard.ForeColor = System.Drawing.Color.Lime;
-            this.label_copied_to_clipboard.Location = new System.Drawing.Point(29, 213);
+            this.label_copied_to_clipboard.Location = new System.Drawing.Point(29, 254);
             this.label_copied_to_clipboard.Name = "label_copied_to_clipboard";
             this.label_copied_to_clipboard.Size = new System.Drawing.Size(120, 26);
             this.label_copied_to_clipboard.TabIndex = 99;
@@ -360,7 +402,7 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.panel7.Controls.Add(this.label86);
             this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel7.Location = new System.Drawing.Point(0, 161);
+            this.panel7.Location = new System.Drawing.Point(0, 202);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
@@ -491,7 +533,7 @@
             this.label78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.ForeColor = System.Drawing.Color.Black;
+            this.label78.ForeColor = System.Drawing.Color.White;
             this.label78.Location = new System.Drawing.Point(735, 0);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(26, 28);
@@ -507,7 +549,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(767, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 28);
@@ -523,7 +565,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(799, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 28);
@@ -591,6 +633,7 @@
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(167, 28);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(658, 506);
@@ -679,6 +722,7 @@
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox13.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox13.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox40
             // 
@@ -690,6 +734,7 @@
             this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox40.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox40.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox40.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox14
             // 
@@ -701,6 +746,7 @@
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox14.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox14.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label7
             // 
@@ -721,6 +767,7 @@
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox15.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox15.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox5
             // 
@@ -732,6 +779,7 @@
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox5.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox16
             // 
@@ -743,6 +791,7 @@
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox16.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox16.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox16.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label14
             // 
@@ -826,6 +875,7 @@
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox12.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox12.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox17
             // 
@@ -837,6 +887,7 @@
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox17.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox17.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox17.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox11
             // 
@@ -848,6 +899,7 @@
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox11.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox11.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox18
             // 
@@ -859,6 +911,7 @@
             this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox18.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox18.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox18.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox10
             // 
@@ -870,6 +923,7 @@
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox10.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox19
             // 
@@ -881,6 +935,7 @@
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox19.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox19.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox19.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox9
             // 
@@ -892,6 +947,7 @@
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox9.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox9.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox20
             // 
@@ -903,6 +959,7 @@
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox20.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox20.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox20.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label22
             // 
@@ -942,6 +999,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.groupBox7);
             this.groupBox4.Controls.Add(this.groupBox6);
             this.groupBox4.Controls.Add(this.comboBox2);
@@ -1069,6 +1127,7 @@
             this.textBox108.TabIndex = 110;
             this.textBox108.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox108.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox108.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label118
             // 
@@ -1087,6 +1146,7 @@
             this.textBox109.TabIndex = 109;
             this.textBox109.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox109.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox109.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // groupBox6
             // 
@@ -1118,6 +1178,7 @@
             this.textBox107.TabIndex = 108;
             this.textBox107.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox107.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox107.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label87
             // 
@@ -1136,6 +1197,7 @@
             this.textBox106.TabIndex = 107;
             this.textBox106.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox106.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox106.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // comboBox2
             // 
@@ -1160,6 +1222,7 @@
             this.comboBox2.Size = new System.Drawing.Size(134, 21);
             this.comboBox2.TabIndex = 82;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.MouseEnter += new System.EventHandler(this.All_ComboBoxes_MouseEnter);
             // 
             // label_query_executed_successfully
             // 
@@ -1186,6 +1249,7 @@
             this.button2.Size = new System.Drawing.Size(166, 36);
             this.button2.TabIndex = 111;
             this.button2.Text = "Execute Query";
+            this.toolTip1.SetToolTip(this.button2, "Or Press F5");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -1197,7 +1261,10 @@
             this.textBox104.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox104.Size = new System.Drawing.Size(464, 35);
             this.textBox104.TabIndex = 104;
+            this.toolTip1.SetToolTip(this.textBox104, "Used to define non-standard objective texts, that show up in the questlog. \r\nExam" +
+        "ple, \"Heal fallen warrior\" and the number gets added by Count values.");
             this.textBox104.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox104.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label116
             // 
@@ -1207,6 +1274,8 @@
             this.label116.Size = new System.Drawing.Size(79, 13);
             this.label116.TabIndex = 126;
             this.label116.Text = "ObjectiveText4";
+            this.toolTip1.SetToolTip(this.label116, "Used to define non-standard objective texts, that show up in the questlog. \r\nExam" +
+        "ple: \"Heal fallen warrior\" and the number gets added by Count values.");
             // 
             // textBox103
             // 
@@ -1218,6 +1287,7 @@
             this.textBox103.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox103.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox103.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox103.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label115
             // 
@@ -1238,6 +1308,7 @@
             this.textBox102.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox102.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox102.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox102.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label114
             // 
@@ -1258,6 +1329,7 @@
             this.textBox87.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox87.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox87.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox87.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox88
             // 
@@ -1269,6 +1341,7 @@
             this.textBox88.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox88.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox88.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox88.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox89
             // 
@@ -1280,6 +1353,7 @@
             this.textBox89.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox89.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox89.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox89.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox90
             // 
@@ -1291,6 +1365,7 @@
             this.textBox90.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox90.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox90.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox90.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label99
             // 
@@ -1336,6 +1411,8 @@
             this.label109.Size = new System.Drawing.Size(79, 13);
             this.label109.TabIndex = 100;
             this.label109.Text = "ObjectiveText1";
+            this.toolTip1.SetToolTip(this.label109, "Used to define non-standard objective texts, that show up in the questlog. \r\nExam" +
+        "ple: \"Heal fallen warrior\" and the number gets added by Count values.");
             // 
             // textBox97
             // 
@@ -1345,7 +1422,10 @@
             this.textBox97.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox97.Size = new System.Drawing.Size(464, 35);
             this.textBox97.TabIndex = 101;
+            this.toolTip1.SetToolTip(this.textBox97, "Used to define non-standard objective texts, that show up in the questlog. \r\nExam" +
+        "ple: \"Heal fallen warrior\" and the number gets added by Count values.");
             this.textBox97.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox97.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label103
             // 
@@ -1355,6 +1435,8 @@
             this.label103.Size = new System.Drawing.Size(79, 13);
             this.label103.TabIndex = 110;
             this.label103.Text = "ObjectiveText3";
+            this.toolTip1.SetToolTip(this.label103, "Used to define non-standard objective texts, that show up in the questlog. \r\nExam" +
+        "ple: \"Heal fallen warrior\" and the number gets added by Count values.");
             // 
             // textBox91
             // 
@@ -1364,7 +1446,10 @@
             this.textBox91.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox91.Size = new System.Drawing.Size(464, 35);
             this.textBox91.TabIndex = 103;
+            this.toolTip1.SetToolTip(this.textBox91, "Used to define non-standard objective texts, that show up in the questlog. \r\nExam" +
+        "ple, \"Heal fallen warrior\" and the number gets added by Count values.");
             this.textBox91.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox91.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox92
             // 
@@ -1376,6 +1461,7 @@
             this.textBox92.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox92.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox92.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox92.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox93
             // 
@@ -1387,6 +1473,7 @@
             this.textBox93.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox93.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox93.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox93.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label104
             // 
@@ -1416,6 +1503,7 @@
             this.textBox95.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox95.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox95.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox95.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox96
             // 
@@ -1427,6 +1515,7 @@
             this.textBox96.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox96.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox96.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox96.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label107
             // 
@@ -1465,6 +1554,7 @@
             this.textBox100.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox100.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox100.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox100.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox98
             // 
@@ -1476,6 +1566,7 @@
             this.textBox98.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox98.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox98.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox98.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox99
             // 
@@ -1487,6 +1578,7 @@
             this.textBox99.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox99.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox99.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox99.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox94
             // 
@@ -1496,7 +1588,10 @@
             this.textBox94.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox94.Size = new System.Drawing.Size(464, 35);
             this.textBox94.TabIndex = 102;
+            this.toolTip1.SetToolTip(this.textBox94, "Used to define non-standard objective texts, that show up in the questlog. \r\nExam" +
+        "ple, \"Heal fallen warrior\" and the number gets added by Count values.");
             this.textBox94.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox94.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox101
             // 
@@ -1508,6 +1603,7 @@
             this.textBox101.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox101.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox101.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox101.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label106
             // 
@@ -1517,6 +1613,8 @@
             this.label106.Size = new System.Drawing.Size(79, 13);
             this.label106.TabIndex = 103;
             this.label106.Text = "ObjectiveText2";
+            this.toolTip1.SetToolTip(this.label106, "Used to define non-standard objective texts, that show up in the questlog. \r\nExam" +
+        "ple: \"Heal fallen warrior\" and the number gets added by Count values.");
             // 
             // label110
             // 
@@ -1555,6 +1653,7 @@
             this.textBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox41.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox41.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox41.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox83
             // 
@@ -1564,8 +1663,10 @@
             this.textBox83.TabIndex = 90;
             this.textBox83.Text = "0";
             this.textBox83.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox83, "The number of times the creature or gameobject must be killed or casted upon");
             this.textBox83.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox83.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox83.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox84
             // 
@@ -1575,8 +1676,10 @@
             this.textBox84.TabIndex = 88;
             this.textBox84.Text = "0";
             this.textBox84.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox84, "The number of times the creature or gameobject must be killed or casted upon");
             this.textBox84.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox84.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox84.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox42
             // 
@@ -1588,6 +1691,7 @@
             this.textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox42.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox42.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox42.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label95
             // 
@@ -1597,6 +1701,7 @@
             this.label95.Size = new System.Drawing.Size(129, 13);
             this.label95.TabIndex = 89;
             this.label95.Text = "RequiredNpcOrGoCount4";
+            this.toolTip1.SetToolTip(this.label95, "The number of times the creature or gameobject must be killed or casted upon");
             // 
             // label96
             // 
@@ -1606,6 +1711,7 @@
             this.label96.Size = new System.Drawing.Size(129, 13);
             this.label96.TabIndex = 88;
             this.label96.Text = "RequiredNpcOrGoCount3";
+            this.toolTip1.SetToolTip(this.label96, "The number of times the creature or gameobject must be killed or casted upon");
             // 
             // textBox43
             // 
@@ -1617,6 +1723,7 @@
             this.textBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox43.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox43.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox43.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox85
             // 
@@ -1626,8 +1733,10 @@
             this.textBox85.TabIndex = 86;
             this.textBox85.Text = "0";
             this.textBox85.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox85, "The number of times the creature or gameobject must be killed or casted upon");
             this.textBox85.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox85.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox85.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox86
             // 
@@ -1637,8 +1746,10 @@
             this.textBox86.TabIndex = 84;
             this.textBox86.Text = "0";
             this.textBox86.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox86, "The number of times the creature or gameobject must be killed or casted upon");
             this.textBox86.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox86.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox86.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox44
             // 
@@ -1650,6 +1761,7 @@
             this.textBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox44.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox44.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox44.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label97
             // 
@@ -1659,6 +1771,7 @@
             this.label97.Size = new System.Drawing.Size(129, 13);
             this.label97.TabIndex = 85;
             this.label97.Text = "RequiredNpcOrGoCount2";
+            this.toolTip1.SetToolTip(this.label97, "The number of times the creature or gameobject must be killed or casted upon");
             // 
             // label43
             // 
@@ -1677,6 +1790,7 @@
             this.label98.Size = new System.Drawing.Size(129, 13);
             this.label98.TabIndex = 84;
             this.label98.Text = "RequiredNpcOrGoCount1";
+            this.toolTip1.SetToolTip(this.label98, "The number of times the creature or gameobject must be killed or casted upon");
             // 
             // textBox81
             // 
@@ -1688,6 +1802,7 @@
             this.textBox81.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox81.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox81.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox81.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label44
             // 
@@ -1708,6 +1823,7 @@
             this.textBox82.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox82.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox82.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox82.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label93
             // 
@@ -1746,6 +1862,7 @@
             this.textBox61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox61.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox61.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox61.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label46
             // 
@@ -1766,6 +1883,7 @@
             this.textBox62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox62.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox62.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox62.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label63
             // 
@@ -1815,6 +1933,7 @@
             this.textBox69.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox69.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox69.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox69.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox70
             // 
@@ -1826,6 +1945,7 @@
             this.textBox70.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox70.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox70.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox70.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox71
             // 
@@ -1837,6 +1957,7 @@
             this.textBox71.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox71.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox71.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox71.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox72
             // 
@@ -1848,6 +1969,7 @@
             this.textBox72.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox72.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox72.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox72.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label71
             // 
@@ -1895,6 +2017,7 @@
             this.textBox73.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox73.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox73.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox73.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox74
             // 
@@ -1906,6 +2029,7 @@
             this.textBox74.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox74.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox74.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox74.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox75
             // 
@@ -1917,6 +2041,7 @@
             this.textBox75.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox75.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox75.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox75.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox76
             // 
@@ -1928,6 +2053,7 @@
             this.textBox76.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox76.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox76.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox76.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label75
             // 
@@ -1975,6 +2101,7 @@
             this.textBox77.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox77.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox77.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox77.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox78
             // 
@@ -1986,6 +2113,7 @@
             this.textBox78.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox78.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox78.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox78.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox79
             // 
@@ -1997,6 +2125,7 @@
             this.textBox79.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox79.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox79.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox79.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox80
             // 
@@ -2008,6 +2137,7 @@
             this.textBox80.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox80.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox80.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox80.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label82
             // 
@@ -2101,6 +2231,7 @@
             this.textBox21.Text = "0";
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox21.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox22
             // 
@@ -2111,6 +2242,7 @@
             this.textBox22.Text = "0";
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox22.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox22.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox23
             // 
@@ -2121,6 +2253,7 @@
             this.textBox23.Text = "0";
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox23.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox23.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label23
             // 
@@ -2167,6 +2300,7 @@
             this.textBox52.Text = "0";
             this.textBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox52.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox52.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label58
             // 
@@ -2186,6 +2320,7 @@
             this.textBox56.Text = "0";
             this.textBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox56.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox56.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label62
             // 
@@ -2205,6 +2340,7 @@
             this.textBox60.Text = "0";
             this.textBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox60.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox60.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox48
             // 
@@ -2216,15 +2352,16 @@
             this.textBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox48.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox48.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox48.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label50
             // 
             this.label50.AutoSize = true;
             this.label50.Location = new System.Drawing.Point(428, 282);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(56, 13);
+            this.label50.Size = new System.Drawing.Size(59, 13);
             this.label50.TabIndex = 64;
-            this.label50.Text = "POIPriority";
+            this.label50.Text = "POI Priority";
             // 
             // textBox49
             // 
@@ -2234,8 +2371,10 @@
             this.textBox49.TabIndex = 64;
             this.textBox49.Text = "0";
             this.textBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox49, "Y coordinate of quest POI.");
             this.textBox49.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox49.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox49.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox50
             // 
@@ -2245,8 +2384,10 @@
             this.textBox50.TabIndex = 63;
             this.textBox50.Text = "0";
             this.textBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox50, "X coordinate of quest POI.");
             this.textBox50.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox50.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox50.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox51
             // 
@@ -2256,35 +2397,42 @@
             this.textBox51.TabIndex = 62;
             this.textBox51.Text = "0";
             this.textBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox51, "MapId of a quest point of interest (POI - Point Of Interest). \r\nPOI will be shown" +
+        " on the map when quest is active.");
             this.textBox51.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox51.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox51.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label51
             // 
             this.label51.AutoSize = true;
             this.label51.Location = new System.Drawing.Point(326, 282);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(30, 13);
+            this.label51.Size = new System.Drawing.Size(39, 13);
             this.label51.TabIndex = 59;
-            this.label51.Text = "POIy";
+            this.label51.Text = "  POI y";
+            this.toolTip1.SetToolTip(this.label51, "Y coordinate of quest POI.");
             // 
             // label52
             // 
             this.label52.AutoSize = true;
             this.label52.Location = new System.Drawing.Point(225, 282);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(30, 13);
+            this.label52.Size = new System.Drawing.Size(36, 13);
             this.label52.TabIndex = 58;
-            this.label52.Text = "POIx";
+            this.label52.Text = " POI x";
+            this.toolTip1.SetToolTip(this.label52, "X coordinate of quest POI.");
             // 
             // label53
             // 
             this.label53.AutoSize = true;
             this.label53.Location = new System.Drawing.Point(106, 282);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(70, 13);
+            this.label53.Size = new System.Drawing.Size(73, 13);
             this.label53.TabIndex = 57;
-            this.label53.Text = "POIContinent";
+            this.label53.Text = "POI Continent";
+            this.toolTip1.SetToolTip(this.label53, "MapId of a quest point of interest (POI - Point Of Interest). \r\nPOI will be shown" +
+        " on the map when quest is active.");
             // 
             // textBox53
             // 
@@ -2295,6 +2443,7 @@
             this.textBox53.Text = "0";
             this.textBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox53.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox53.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox54
             // 
@@ -2305,6 +2454,7 @@
             this.textBox54.Text = "0";
             this.textBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox54.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox54.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox55
             // 
@@ -2315,6 +2465,7 @@
             this.textBox55.Text = "0";
             this.textBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox55.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox55.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label55
             // 
@@ -2352,6 +2503,7 @@
             this.textBox57.Text = "0";
             this.textBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox57.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox57.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox58
             // 
@@ -2362,6 +2514,7 @@
             this.textBox58.Text = "0";
             this.textBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox58.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox58.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox45
             // 
@@ -2371,7 +2524,10 @@
             this.textBox45.TabIndex = 61;
             this.textBox45.Text = "0";
             this.textBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox45, "Will Give X Arena Points to the player that completes the quest. \r\nLeave \"0\" For " +
+        "no Arena Points Reward.");
             this.textBox45.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox45.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox59
             // 
@@ -2382,6 +2538,7 @@
             this.textBox59.Text = "0";
             this.textBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox59.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox59.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label59
             // 
@@ -2400,7 +2557,10 @@
             this.textBox46.TabIndex = 60;
             this.textBox46.Text = "0";
             this.textBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox46, "Will give X bonus talents to the player completed the quest. \r\nLeave \"0\" for No B" +
+        "onus Talent Points.");
             this.textBox46.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox46.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label60
             // 
@@ -2428,7 +2588,10 @@
             this.textBox47.TabIndex = 59;
             this.textBox47.Text = "0";
             this.textBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox47, "The title the character will receive upon completion of the quest. \r\nSee CharTitl" +
+        "es.dbc");
             this.textBox47.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox47.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label49
             // 
@@ -2438,6 +2601,8 @@
             this.label49.Size = new System.Drawing.Size(64, 13);
             this.label49.TabIndex = 65;
             this.label49.Text = "RewardTitle";
+            this.toolTip1.SetToolTip(this.label49, "The title the character will receive upon completion of the quest. \r\nSee CharTitl" +
+        "es.dbc");
             // 
             // label48
             // 
@@ -2507,6 +2672,7 @@
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox24.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox24.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox24.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label26
             // 
@@ -2527,6 +2693,7 @@
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox25.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox25.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox25.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox26
             // 
@@ -2538,6 +2705,7 @@
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox26.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox26.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox26.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox27
             // 
@@ -2549,6 +2717,7 @@
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox27.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox27.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox27.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox28
             // 
@@ -2560,6 +2729,7 @@
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox28.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox28.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox28.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label27
             // 
@@ -2607,6 +2777,7 @@
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox29.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox29.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox29.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox30
             // 
@@ -2618,6 +2789,7 @@
             this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox30.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox30.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox30.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox31
             // 
@@ -2629,6 +2801,7 @@
             this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox31.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox31.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox31.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox32
             // 
@@ -2640,6 +2813,7 @@
             this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox32.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox32.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox32.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label31
             // 
@@ -2687,6 +2861,7 @@
             this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox33.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox33.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox33.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox34
             // 
@@ -2698,6 +2873,7 @@
             this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox34.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox34.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox34.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox35
             // 
@@ -2709,6 +2885,7 @@
             this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox35.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox35.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox35.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox36
             // 
@@ -2720,6 +2897,7 @@
             this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox36.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox36.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox36.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label35
             // 
@@ -2767,6 +2945,7 @@
             this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox37.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox37.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox37.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox38
             // 
@@ -2778,6 +2957,7 @@
             this.textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox38.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox38.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox38.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox39
             // 
@@ -2789,6 +2969,7 @@
             this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox39.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox39.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox39.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label39
             // 
@@ -2819,6 +3000,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_DeleteQuery);
+            this.groupBox1.Controls.Add(this.NUD_Entry);
             this.groupBox1.Controls.Add(this.textBox105);
             this.groupBox1.Controls.Add(this.comboBox3);
             this.groupBox1.Controls.Add(this.button3);
@@ -2842,7 +3025,6 @@
             this.groupBox1.Controls.Add(this.textBox67);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -2854,13 +3036,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quest Details";
             // 
+            // btn_DeleteQuery
+            // 
+            this.btn_DeleteQuery.BackColor = System.Drawing.Color.DimGray;
+            this.btn_DeleteQuery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DeleteQuery.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DeleteQuery.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteQuery.ForeColor = System.Drawing.Color.White;
+            this.btn_DeleteQuery.Location = new System.Drawing.Point(399, 19);
+            this.btn_DeleteQuery.Name = "btn_DeleteQuery";
+            this.btn_DeleteQuery.Size = new System.Drawing.Size(62, 23);
+            this.btn_DeleteQuery.TabIndex = 85;
+            this.btn_DeleteQuery.Text = "Delete";
+            this.btn_DeleteQuery.UseVisualStyleBackColor = false;
+            this.btn_DeleteQuery.Visible = false;
+            this.btn_DeleteQuery.Click += new System.EventHandler(this.btn_DeleteItem_Click);
+            // 
+            // NUD_Entry
+            // 
+            this.NUD_Entry.Location = new System.Drawing.Point(14, 50);
+            this.NUD_Entry.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.NUD_Entry.Name = "NUD_Entry";
+            this.NUD_Entry.Size = new System.Drawing.Size(100, 20);
+            this.NUD_Entry.TabIndex = 84;
+            this.NUD_Entry.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NUD_Entry.Value = new decimal(new int[] {
+            300300,
+            0,
+            0,
+            0});
+            this.NUD_Entry.ValueChanged += new System.EventHandler(this.NUD_Entry_ValueChanged);
+            // 
             // textBox105
             // 
-            this.textBox105.Location = new System.Drawing.Point(399, 19);
+            this.textBox105.Location = new System.Drawing.Point(467, 19);
             this.textBox105.Name = "textBox105";
-            this.textBox105.Size = new System.Drawing.Size(100, 20);
+            this.textBox105.Size = new System.Drawing.Size(76, 20);
             this.textBox105.TabIndex = 83;
             this.textBox105.Visible = false;
+            this.textBox105.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // comboBox3
             // 
@@ -2869,23 +3087,25 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "Add New Quest",
-            "Replace Quest"});
+            "Replace Quest",
+            "Delete Quest"});
             this.comboBox3.Location = new System.Drawing.Point(233, 19);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(154, 23);
             this.comboBox3.TabIndex = 82;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.comboBox3.MouseEnter += new System.EventHandler(this.All_ComboBoxes_MouseEnter);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.DimGray;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(120, 45);
+            this.button3.Location = new System.Drawing.Point(120, 50);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(59, 25);
+            this.button3.Size = new System.Drawing.Size(53, 20);
             this.button3.TabIndex = 81;
             this.button3.Text = "Max+1";
             this.button3.UseVisualStyleBackColor = false;
@@ -2907,6 +3127,7 @@
             this.comboBox1.Size = new System.Drawing.Size(570, 22);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.MouseEnter += new System.EventHandler(this.All_ComboBoxes_MouseEnter);
             // 
             // textBox6
             // 
@@ -2919,6 +3140,7 @@
             this.toolTip1.SetToolTip(this.textBox6, "Recommended number of players to do the quest together");
             this.textBox6.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox6.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox7
             // 
@@ -2928,8 +3150,10 @@
             this.textBox7.TabIndex = 9;
             this.textBox7.Text = "0";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox7, "These values are ID taken from QuestInfo.dbc");
             this.textBox7.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox7.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox63
             // 
@@ -2941,6 +3165,7 @@
             this.textBox63.Size = new System.Drawing.Size(538, 88);
             this.textBox63.TabIndex = 15;
             this.textBox63.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox63.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox8
             // 
@@ -2950,8 +3175,10 @@
             this.textBox8.TabIndex = 8;
             this.textBox8.Text = "0";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox8, resources.GetString("textBox8.ToolTip"));
             this.textBox8.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox8.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label8
             // 
@@ -2973,15 +3200,16 @@
             this.textBox64.Size = new System.Drawing.Size(542, 58);
             this.textBox64.TabIndex = 14;
             this.textBox64.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox64.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label65
             // 
             this.label65.AutoSize = true;
             this.label65.Location = new System.Drawing.Point(246, 608);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(105, 13);
+            this.label65.Size = new System.Drawing.Size(111, 13);
             this.label65.TabIndex = 73;
-            this.label65.Text = "QuestCompletionLog";
+            this.label65.Text = "Quest Completion Log";
             // 
             // label9
             // 
@@ -2991,6 +3219,7 @@
             this.label9.Size = new System.Drawing.Size(64, 13);
             this.label9.TabIndex = 9;
             this.label9.Text = "QuestInfoID";
+            this.toolTip1.SetToolTip(this.label9, "These values are ID taken from QuestInfo.dbc");
             // 
             // label10
             // 
@@ -3000,6 +3229,7 @@
             this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 8;
             this.label10.Text = "QuestSortID";
+            this.toolTip1.SetToolTip(this.label10, resources.GetString("label10.ToolTip"));
             // 
             // textBox4
             // 
@@ -3007,29 +3237,30 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 7;
-            this.textBox4.Text = "0";
+            this.textBox4.Text = "1";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.textBox4, "Minimum level at which a player can get the quest");
             this.textBox4.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox4.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label66
             // 
             this.label66.AutoSize = true;
             this.label66.Location = new System.Drawing.Point(255, 521);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(82, 13);
+            this.label66.Size = new System.Drawing.Size(85, 13);
             this.label66.TabIndex = 72;
-            this.label66.Text = "AreaDescription";
+            this.label66.Text = "Area Description";
             // 
             // label68
             // 
             this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(255, 259);
+            this.label68.Location = new System.Drawing.Point(184, 259);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(78, 13);
+            this.label68.Size = new System.Drawing.Size(261, 13);
             this.label68.TabIndex = 66;
-            this.label68.Text = "LogDescription";
+            this.label68.Text = "Log Description (Quest Objectives - Short Description)";
             // 
             // textBox65
             // 
@@ -3041,24 +3272,25 @@
             this.textBox65.Size = new System.Drawing.Size(542, 124);
             this.textBox65.TabIndex = 13;
             this.textBox65.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox65.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // label69
             // 
             this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(269, 182);
+            this.label69.Location = new System.Drawing.Point(244, 182);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(45, 13);
+            this.label69.Size = new System.Drawing.Size(108, 13);
             this.label69.TabIndex = 65;
-            this.label69.Text = "LogTitle";
+            this.label69.Text = "Log Title (Quest Title)";
             // 
             // label67
             // 
             this.label67.AutoSize = true;
             this.label67.Location = new System.Drawing.Point(255, 365);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(88, 13);
+            this.label67.Size = new System.Drawing.Size(91, 13);
             this.label67.TabIndex = 67;
-            this.label67.Text = "QuestDescription";
+            this.label67.Text = "Quest Description";
             // 
             // textBox66
             // 
@@ -3069,7 +3301,12 @@
             this.textBox66.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox66.Size = new System.Drawing.Size(542, 75);
             this.textBox66.TabIndex = 12;
+            this.textBox66.Text = "Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire" +
+    ".";
             this.textBox66.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox66.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox66_KeyDown);
+            this.textBox66.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox66_KeyUp);
+            this.textBox66.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox67
             // 
@@ -3082,6 +3319,7 @@
             this.textBox67.TabIndex = 11;
             this.toolTip1.SetToolTip(this.textBox67, "Quest Title");
             this.textBox67.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox67.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox3
             // 
@@ -3089,11 +3327,12 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 6;
-            this.textBox3.Text = "0";
+            this.textBox3.Text = "1";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.textBox3, resources.GetString("textBox3.ToolTip"));
             this.textBox3.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox3.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox2
             // 
@@ -3105,19 +3344,6 @@
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.Visible = false;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(11, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.textBox1, "The quest ID. This column is the Primary Key for the Table. Each quest ID must be" +
-        " unique!");
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label6
             // 
@@ -3159,6 +3385,26 @@
             this.toolTip1.SetToolTip(this.label3, "The quest ID. This column is the Primary Key for the Table. Each quest ID must be" +
         " unique!");
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(26, 1);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox1, "The quest ID. This column is the Primary Key for the Table. Each quest ID must be" +
+        " unique!");
+            this.textBox1.Visible = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 10000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.ReshowDelay = 100;
+            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -3168,6 +3414,20 @@
             // 
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DimGray;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button4.Location = new System.Drawing.Point(1, 339);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(21, 24);
+            this.button4.TabIndex = 135;
+            this.button4.Text = "?";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // QuestTemplate
             // 
@@ -3212,6 +3472,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Entry)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3475,5 +3736,10 @@
         private System.Windows.Forms.TextBox textBox107;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.TextBox textBox106;
+        private System.Windows.Forms.NumericUpDown NUD_Entry;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.Button button_SaveInTheSameFile;
+        private System.Windows.Forms.Button btn_DeleteQuery;
+        private System.Windows.Forms.Button button4;
     }
 }

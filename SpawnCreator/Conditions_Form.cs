@@ -60,7 +60,7 @@ namespace SpawnCreator
             string BuildSQLFile;
             BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".conditions ";
             BuildSQLFile += "(SourceTypeOrReferenceId, SourceGroup, SourceEntry, SourceId, ElseGroup, ConditionTypeOrReference, "+
-                "ConditionTarget, ConditionValue1, ConditionValue2, ConditionValue3, NegativeCondition, ErrorType, ErrorTextId, ScriptName, Comment)";
+                "ConditionTarget, ConditionValue1, ConditionValue2, ConditionValue3, NegativeCondition, ErrorType, ErrorTextId, ScriptName, Comment) ";
 
             //Values
             BuildSQLFile += "VALUES \n";
@@ -80,15 +80,27 @@ namespace SpawnCreator
             BuildSQLFile += ErrorTypeNUD.Text + ", "; // ErrorType
             BuildSQLFile += ErrorTextIDNUD.Text + ", '"; // ErrorTextId
             BuildSQLFile += ScriptNameTXT.Text + "', '"; // ScriptName
-            BuildSQLFile += CommentTXT.Text + "');"; // Comment
+            BuildSQLFile += CommentTXT.Text + "'); \n"; // Comment
 
             stringSQLShare = BuildSQLFile;
         }
 
         private void Conditions_Form_Load(object sender, EventArgs e)
         {
-            timer1.Start(); //Check if MySql is still running
+            SourceTypeOrReferenceIDCMB.SelectedIndex = 0; //NONE
+            comboBox1.SelectedIndex = 0; //NONE
             timer2.Start(); //Stopwatch
+
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                label_mysql_status2.Visible = false;
+                label85.Visible = false;
+                timer1.Enabled = false;
+                GenerateConditionBTN.Visible = false;
+                timer1.Enabled = false;
+            }
+            else
+                timer1.Enabled = true; //Check mysql connection
         }
 
         private void SourceTypeOrReferenceIDCMB_SelectedIndexChanged(object sender, EventArgs e)
@@ -726,6 +738,9 @@ namespace SpawnCreator
             label_Executed_Successfully.Visible = false;
             label87.Visible = false;
             label88.Visible = false;
+
+            button_SaveInTheSameFile.Text = "Save in the same file";
+            button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleRight;
         }
 
         // Close Application
@@ -738,13 +753,11 @@ namespace SpawnCreator
         private void label2_MouseEnter(object sender, EventArgs e)
         {
             label2.BackColor = Color.Firebrick;
-            label2.ForeColor = Color.White;
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
         {
             label2.BackColor = Color.FromArgb(58, 89, 114);
-            label2.ForeColor = Color.Black;
         }
         //==========================================================
 
@@ -752,13 +765,11 @@ namespace SpawnCreator
         private void label1_MouseEnter(object sender, EventArgs e)
         {
             label1.BackColor = Color.Firebrick;
-            label1.ForeColor = Color.White;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             label1.BackColor = Color.FromArgb(58, 89, 114);
-            label1.ForeColor = Color.Black;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -771,13 +782,11 @@ namespace SpawnCreator
         private void label78_MouseEnter(object sender, EventArgs e)
         {
             label78.BackColor = Color.Firebrick;
-            label78.ForeColor = Color.White;
         }
 
         private void label78_MouseLeave(object sender, EventArgs e)
         {
             label78.BackColor = Color.FromArgb(58, 89, 114);
-            label78.ForeColor = Color.Black;
         }
 
         private void label78_Click(object sender, EventArgs e)
@@ -787,19 +796,28 @@ namespace SpawnCreator
             backtomainmenu.Show();
         }
 
+        public bool IsProcessOpen(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    label_mysql_status2.Text = "Connected!";
+                    label_mysql_status2.ForeColor = Color.LawnGreen;
+                    GenerateConditionBTN.Visible = true;
+                    return true;
+                }
+            }
+
+            label_mysql_status2.Text = "Connection Lost - MySQL is not running";
+            label_mysql_status2.ForeColor = Color.Red;
+            GenerateConditionBTN.Visible = false;
+            return false;
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Process[] mysql = Process.GetProcessesByName("mysqld");
-            if (mysql.Length == 0)
-            {
-                label_mysql_status2.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status2.ForeColor = Color.Red;
-            }
-            else
-            {
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;
-            }
+            IsProcessOpen();
         }
 
         int idx = 1;
@@ -890,6 +908,70 @@ namespace SpawnCreator
         private void panel5_MouseLeave(object sender, EventArgs e)
         {
             panel5.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void button_SaveInTheSameFile_MouseEnter(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.BackColor = Color.Firebrick;
+        }
+
+        private void button_SaveInTheSameFile_MouseLeave(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void label92_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(label92, "A file labeled Conditions.sql will be created in the same directory as the SpawnCreator vX.X executable. \nSo you can save multiple data rows in a single .sql file.");
+            toolTip1.AutoPopDelay = 10000; // 10 seconds
+        }
+
+        private void button_SaveInTheSameFile_Click(object sender, EventArgs e)
+        {
+            _GenerateSqlCode(sender, e);
+
+            using (var writer = File.AppendText("Conditions.sql"))
+            {
+                writer.Write(stringSQLShare);
+                button_SaveInTheSameFile.Text = "Saved!";
+                button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
+            }
+
+        }
+
+        private void SourceTypeOrReferenceIDCMB_MouseEnter(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.Text = "Save in the same file";
+            button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleRight;
+        }
+
+        private void ScriptNameTXT_MouseEnter(object sender, EventArgs e)
+        {
+            SourceTypeOrReferenceIDCMB_MouseEnter(sender, e);
+        }
+
+        private void label92_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            object sender = new object();
+            EventArgs e = new EventArgs();
+
+            if (keyData == Keys.F2)
+            {
+                button_SaveInTheSameFile_Click(sender, e); // Save in the same file if "F2" key is pressed
+                return true;
+            }
+
+            else if (keyData == Keys.F5)
+            {
+                GenerateConditionBTN_Click(sender, e); // Execute Query if "F5" key is pressed
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

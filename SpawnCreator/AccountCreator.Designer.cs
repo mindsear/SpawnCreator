@@ -139,7 +139,7 @@
             this.label78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.ForeColor = System.Drawing.Color.Black;
+            this.label78.ForeColor = System.Drawing.Color.White;
             this.label78.Location = new System.Drawing.Point(560, 0);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(26, 28);
@@ -155,7 +155,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(592, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 28);
@@ -171,7 +171,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(625, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 28);
@@ -220,7 +220,7 @@
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Location = new System.Drawing.Point(0, 28);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(167, 463);
+            this.panel3.Size = new System.Drawing.Size(167, 488);
             this.panel3.TabIndex = 79;
             // 
             // label89
@@ -238,7 +238,7 @@
             // 
             this.label88.AutoSize = true;
             this.label88.ForeColor = System.Drawing.Color.Lime;
-            this.label88.Location = new System.Drawing.Point(20, 212);
+            this.label88.Location = new System.Drawing.Point(20, 209);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(130, 26);
             this.label88.TabIndex = 100;
@@ -250,7 +250,7 @@
             // 
             this.label87.AutoSize = true;
             this.label87.ForeColor = System.Drawing.Color.Lime;
-            this.label87.Location = new System.Drawing.Point(29, 213);
+            this.label87.Location = new System.Drawing.Point(29, 210);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(120, 26);
             this.label87.TabIndex = 99;
@@ -263,7 +263,7 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.panel7.Controls.Add(this.label86);
             this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel7.Location = new System.Drawing.Point(0, 161);
+            this.panel7.Location = new System.Drawing.Point(0, 158);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
@@ -302,7 +302,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(10, 439);
+            this.linkLabel1.Location = new System.Drawing.Point(9, 472);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(151, 16);
             this.linkLabel1.TabIndex = 4;
@@ -313,7 +313,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::SpawnCreator.Properties.Resources.chibi_spawn_by_xxthornthevamphogxx_d9fzfhb;
-            this.pictureBox9.Location = new System.Drawing.Point(3, 252);
+            this.pictureBox9.Location = new System.Drawing.Point(3, 285);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(161, 184);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -348,7 +348,7 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.panel5.Controls.Add(this.label83);
             this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel5.Location = new System.Drawing.Point(0, 117);
+            this.panel5.Location = new System.Drawing.Point(0, 114);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
@@ -458,7 +458,7 @@
             this.label_Executed_Successfully.AutoSize = true;
             this.label_Executed_Successfully.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Executed_Successfully.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label_Executed_Successfully.Location = new System.Drawing.Point(146, 249);
+            this.label_Executed_Successfully.Location = new System.Drawing.Point(146, 251);
             this.label_Executed_Successfully.Name = "label_Executed_Successfully";
             this.label_Executed_Successfully.Size = new System.Drawing.Size(196, 15);
             this.label_Executed_Successfully.TabIndex = 101;
@@ -578,6 +578,7 @@
             this.textBox_realmID.TabIndex = 6;
             this.textBox_realmID.Text = "-1";
             this.textBox_realmID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox_realmID, "-1 means all realms");
             this.textBox_realmID.TextChanged += new System.EventHandler(this.textBox_realmID_TextChanged);
             this.textBox_realmID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_realmID_KeyPress);
             // 
@@ -646,7 +647,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 178);
+            this.label9.Location = new System.Drawing.Point(0, 182);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 13);
             this.label9.TabIndex = 115;
@@ -660,7 +661,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Blue",
             "Black"});
-            this.comboBox1.Location = new System.Drawing.Point(15, 194);
+            this.comboBox1.Location = new System.Drawing.Point(0, 198);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 114;
@@ -677,7 +678,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(651, 492);
+            this.ClientSize = new System.Drawing.Size(651, 516);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

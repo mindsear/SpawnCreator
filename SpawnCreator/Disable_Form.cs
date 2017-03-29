@@ -34,11 +34,149 @@ namespace SpawnCreator
         private bool _mouseDown;
         private Point lastLocation;
 
+        private void GenerateSql()
+        {
+            uint flags_dis_spell_st = 0;
+            uint flags_dis_map_st = 0;
+            uint flags_dis_vmap_st = 0;
+
+            string[] checkedIndicies1 = Properties.Settings.Default.FlagsDisableSpell.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i1 = 0; i1 < checkedIndicies1.Length; i1++)
+            {
+                int idx;
+                if ((int.TryParse(checkedIndicies1[i1], out idx)))
+                {
+                    switch (idx)
+                    {
+                        case 0: // Spell enabled
+                            flags_dis_spell_st += 0;
+                            break;
+                        case 1: // Spell disabled for players
+                            flags_dis_spell_st += 1;
+                            break;
+                        case 2: // Spell disabled for creatures
+                            flags_dis_spell_st += 2;
+                            break;
+                        case 3: // Spell disabled for pets
+                            flags_dis_spell_st += 4;
+                            break;
+                        case 4: // Spell completely disabled (used for no logner existing spells in DBCs)
+                            flags_dis_spell_st += 8;
+                            break;
+                        case 5: // Spell disabled for MapId
+                            flags_dis_spell_st += 16;
+                            break;
+                        case 6: // Spell disabled for AreaId
+                            flags_dis_spell_st += 32;
+                            break;
+                        case 7: // Line of Sight (LOS) is disabled for this spell (replaces "vmap.ignoreSpellIds" config option)
+                            flags_dis_spell_st += 64;
+                            break;
+                    }
+                }
+            }
+
+            string[] checkedIndicies2 = Properties.Settings.Default.FlagsDisableMap.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i1 = 0; i1 < checkedIndicies2.Length; i1++)
+            {
+                int idx;
+                if ((int.TryParse(checkedIndicies2[i1], out idx)))
+                {
+                    switch (idx)
+                    {
+                        case 0: // DUNGEON_STATUSFLAG_NORMAL OR RAID_STATUSFLAG_10MAN_NORMAL
+                            flags_dis_map_st += 1;
+                            break;
+                        case 1: // DUNGEON_STATUSFLAG_HEROIC OR RAID_STATUSFLAG_25MAN_NORMAL
+                            flags_dis_map_st += 2;
+                            break;
+                        case 2: // RAID_STATUSFLAG_10MAN_HEROIC
+                            flags_dis_map_st += 4;
+                            break;
+                        case 3: // RAID_STATUSFLAG_25MAN_HEROIC
+                            flags_dis_map_st += 8;
+                            break;
+                    }
+                }
+            }
+
+            string[] checkedIndicies3 = Properties.Settings.Default.FlagsDisableVmap.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i1 = 0; i1 < checkedIndicies3.Length; i1++)
+            {
+                int idx;
+                if ((int.TryParse(checkedIndicies3[i1], out idx)))
+                {
+                    switch (idx)
+                    {
+                        case 0: // VMAP_DISABLE_AREAFLAG
+                            flags_dis_vmap_st += 1;
+                            break;
+                        case 1: // VMAP_DISABLE_HEIGHT
+                            flags_dis_vmap_st += 2;
+                            break;
+                        case 2: // VMAP_DISABLE_LOS
+                            flags_dis_vmap_st += 4;
+                            break;
+                        case 3: // VMAP_LIQUIDSTATUS
+                            flags_dis_vmap_st += 8;
+                            break;
+                    }
+                }
+            }
+
+            Form_MainMenu mainmenu = new Form_MainMenu();
+            // Prepare SQL
+            // select insertion columns
+            string BuildSQLFile;
+            BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".disables ";
+            BuildSQLFile += "(sourceType, entry, flags, params_0, params_1, comment) ";
+
+            //Values
+            BuildSQLFile += "VALUES \n";
+            BuildSQLFile += "(";
+
+            if (textBox_SourceType.Text == "1"/*DISABLE_TYPE_QUEST*/) BuildSQLFile += "1, " + textBox_entry.Text + ", 0" + ", ";
+            else if (textBox_SourceType.Text == "3"/*DISABLE_TYPE_BATTLEGROUND*/) BuildSQLFile += "3, " + textBox_entry.Text + ", 0" + ", ";
+            else if (textBox_SourceType.Text == "4"/*DISABLE_TYPE_ACHIEVEMENT_CRITERIA*/) BuildSQLFile += "4, " + textBox_entry.Text + ", 0" + ", ";
+            else if (textBox_SourceType.Text == "5"/*DISABLE_TYPE_OUTDOORPVP*/) BuildSQLFile += "5, " + textBox_entry.Text + ", 0" + ", ";
+            else if (textBox_SourceType.Text == "7"/*DISABLE_TYPE_MMAP*/) BuildSQLFile += "7, " + textBox_entry.Text + ", 0" + ", ";
+            else if (textBox_SourceType.Text == "8"/*DISABLE_TYPE_LFG_MAP*/) BuildSQLFile += "8, " + textBox_entry.Text + ", 0" + ", ";
+
+            else
+            {
+                BuildSQLFile += textBox_SourceType.Text + ", " + textBox_entry.Text + ", "; // sourceType
+            }
+
+            //BuildSQLFile += textBox_entry.Text + ", "; // entry
+
+            if (button_flags_dis_spell.Visible == true) BuildSQLFile += flags_dis_spell_st + ", "; // flags_disable_spell
+            else if (button_flags_dis_map.Visible == true) BuildSQLFile += flags_dis_map_st + ", "; // flags_disable_map
+            else if (button_flags_dis_vmap.Visible == true) BuildSQLFile += flags_dis_vmap_st + ", "; // flags_disable_vmap
+
+            BuildSQLFile += "'" + textBox_params_0.Text + "', '"; // params_0
+            BuildSQLFile += textBox_params_1.Text + "', '"; // params_1
+            BuildSQLFile += textBox_comment.Text + "'); \n"; // comment
+
+            stringSQLShare = BuildSQLFile;
+            stringEntryShare = textBox_entry.Text;
+        }
+
         private void Disable_Form_Load(object sender, EventArgs e)
         {
-            comboBox_SourceType.SelectedIndex = 0; //Show default
-            timer1.Start(); //Check mysql connection
             timer2.Start(); //stopwatch
+            comboBox_SourceType.SelectedIndex = 0; //Show default
+
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                label_mysql_status2.Visible = false;
+                label85.Visible = false;
+                timer1.Enabled = false;
+                button_Execute_Query.Visible = false;
+                timer1.Enabled = false;
+            }
+            else
+                timer1.Enabled = true; //Check mysql connection
+            
         }
 
         //private void GenerateSqlCode(object sender, EventArgs e)
@@ -172,128 +310,7 @@ namespace SpawnCreator
 
         private void button_Execute_Query_Click(object sender, EventArgs e)
         {
-            uint flags_dis_spell_st = 0;
-            uint flags_dis_map_st = 0;
-            uint flags_dis_vmap_st = 0;
-
-            string[] checkedIndicies1 = Properties.Settings.Default.FlagsDisableSpell.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i1 = 0; i1 < checkedIndicies1.Length; i1++)
-            {
-                int idx;
-                if ((int.TryParse(checkedIndicies1[i1], out idx)))
-                {
-                    switch (idx)
-                    {
-                        case 0: // Spell enabled
-                            flags_dis_spell_st += 0;
-                            break;
-                        case 1: // Spell disabled for players
-                            flags_dis_spell_st += 1;
-                            break;
-                        case 2: // Spell disabled for creatures
-                            flags_dis_spell_st += 2;
-                            break;
-                        case 3: // Spell disabled for pets
-                            flags_dis_spell_st += 4;
-                            break;
-                        case 4: // Spell completely disabled (used for no logner existing spells in DBCs)
-                            flags_dis_spell_st += 8;
-                            break;
-                        case 5: // Spell disabled for MapId
-                            flags_dis_spell_st += 16;
-                            break;
-                        case 6: // Spell disabled for AreaId
-                            flags_dis_spell_st += 32;
-                            break;
-                        case 7: // Line of Sight (LOS) is disabled for this spell (replaces "vmap.ignoreSpellIds" config option)
-                            flags_dis_spell_st += 64;
-                            break;
-                    }
-                }
-            }
-
-            string[] checkedIndicies2 = Properties.Settings.Default.FlagsDisableMap.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i1 = 0; i1 < checkedIndicies2.Length; i1++)
-            {
-                int idx;
-                if ((int.TryParse(checkedIndicies2[i1], out idx)))
-                {
-                    switch (idx)
-                    {
-                        case 0: // DUNGEON_STATUSFLAG_NORMAL OR RAID_STATUSFLAG_10MAN_NORMAL
-                            flags_dis_map_st += 1;
-                            break;
-                        case 1: // DUNGEON_STATUSFLAG_HEROIC OR RAID_STATUSFLAG_25MAN_NORMAL
-                            flags_dis_map_st += 2;
-                            break;
-                        case 2: // RAID_STATUSFLAG_10MAN_HEROIC
-                            flags_dis_map_st += 4;
-                            break;
-                        case 3: // RAID_STATUSFLAG_25MAN_HEROIC
-                            flags_dis_map_st += 8;
-                            break;
-                    }
-                }
-            }
-
-            string[] checkedIndicies3 = Properties.Settings.Default.FlagsDisableVmap.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i1 = 0; i1 < checkedIndicies3.Length; i1++)
-            {
-                int idx;
-                if ((int.TryParse(checkedIndicies3[i1], out idx)))
-                {
-                    switch (idx)
-                    {
-                        case 0: // VMAP_DISABLE_AREAFLAG
-                            flags_dis_vmap_st += 1;
-                            break;
-                        case 1: // VMAP_DISABLE_HEIGHT
-                            flags_dis_vmap_st += 2;
-                            break;
-                        case 2: // VMAP_DISABLE_LOS
-                            flags_dis_vmap_st += 4;
-                            break;
-                        case 3: // VMAP_LIQUIDSTATUS
-                            flags_dis_vmap_st += 8;
-                            break;
-                    }
-                }
-            }
-
-            
-            // Prepare SQL
-            // select insertion columns
-            string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".disables ";
-            BuildSQLFile += "(sourceType, entry, flags, params_0, params_1, comment) ";
-
-            //Values
-            BuildSQLFile += "VALUES\n ";
-            BuildSQLFile += "(";
-
-            if (textBox_SourceType.Text == "1"/*DISABLE_TYPE_QUEST*/) BuildSQLFile += "1, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "3"/*DISABLE_TYPE_BATTLEGROUND*/) BuildSQLFile += "3, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "4"/*DISABLE_TYPE_ACHIEVEMENT_CRITERIA*/) BuildSQLFile += "4, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "5"/*DISABLE_TYPE_OUTDOORPVP*/) BuildSQLFile += "5, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "7"/*DISABLE_TYPE_MMAP*/) BuildSQLFile += "7, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "8"/*DISABLE_TYPE_LFG_MAP*/) BuildSQLFile += "8, " + textBox_entry.Text + ", 0" + ", ";
-
-            else
-            {
-                BuildSQLFile += textBox_SourceType.Text + ", " + textBox_entry.Text + ", "; // sourceType
-            }
-
-            //BuildSQLFile += textBox_entry.Text + ", "; // entry
-
-            if (button_flags_dis_spell.Visible == true) BuildSQLFile += flags_dis_spell_st + ", "; // flags_disable_spell
-            else if (button_flags_dis_map.Visible == true) BuildSQLFile += flags_dis_map_st + ", "; // flags_disable_map
-            else if (button_flags_dis_vmap.Visible == true) BuildSQLFile += flags_dis_vmap_st + ", "; // flags_disable_vmap
-
-            BuildSQLFile += "'" + textBox_params_0.Text + "', '"; // params_0
-            BuildSQLFile += textBox_params_1.Text + "', '"; // params_1
-            BuildSQLFile += textBox_comment.Text + "');"; // comment
-
-            stringSQLShare = BuildSQLFile;
+            GenerateSql();
 
             if (textBox_entry.Text == "0")
             {
@@ -333,130 +350,10 @@ namespace SpawnCreator
             connection.Close();
         }
 
+        // Copy to Clipboard label
         private void label86_Click(object sender, EventArgs e)
         {
-            uint flags_dis_spell_st = 0;
-            uint flags_dis_map_st = 0;
-            uint flags_dis_vmap_st = 0;
-
-            string[] checkedIndicies1 = Properties.Settings.Default.FlagsDisableSpell.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i1 = 0; i1 < checkedIndicies1.Length; i1++)
-            {
-                int idx;
-                if ((int.TryParse(checkedIndicies1[i1], out idx)))
-                {
-                    switch (idx)
-                    {
-                        case 0: // Spell enabled
-                            flags_dis_spell_st += 0;
-                            break;
-                        case 1: // Spell disabled for players
-                            flags_dis_spell_st += 1;
-                            break;
-                        case 2: // Spell disabled for creatures
-                            flags_dis_spell_st += 2;
-                            break;
-                        case 3: // Spell disabled for pets
-                            flags_dis_spell_st += 4;
-                            break;
-                        case 4: // Spell completely disabled (used for no logner existing spells in DBCs)
-                            flags_dis_spell_st += 8;
-                            break;
-                        case 5: // Spell disabled for MapId
-                            flags_dis_spell_st += 16;
-                            break;
-                        case 6: // Spell disabled for AreaId
-                            flags_dis_spell_st += 32;
-                            break;
-                        case 7: // Line of Sight (LOS) is disabled for this spell (replaces "vmap.ignoreSpellIds" config option)
-                            flags_dis_spell_st += 64;
-                            break;
-                    }
-                }
-            }
-
-            string[] checkedIndicies2 = Properties.Settings.Default.FlagsDisableMap.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i1 = 0; i1 < checkedIndicies2.Length; i1++)
-            {
-                int idx;
-                if ((int.TryParse(checkedIndicies2[i1], out idx)))
-                {
-                    switch (idx)
-                    {
-                        case 0: // DUNGEON_STATUSFLAG_NORMAL OR RAID_STATUSFLAG_10MAN_NORMAL
-                            flags_dis_map_st += 1;
-                            break;
-                        case 1: // DUNGEON_STATUSFLAG_HEROIC OR RAID_STATUSFLAG_25MAN_NORMAL
-                            flags_dis_map_st += 2;
-                            break;
-                        case 2: // RAID_STATUSFLAG_10MAN_HEROIC
-                            flags_dis_map_st += 4;
-                            break;
-                        case 3: // RAID_STATUSFLAG_25MAN_HEROIC
-                            flags_dis_map_st += 8;
-                            break;
-                    }
-                }
-            }
-
-            string[] checkedIndicies3 = Properties.Settings.Default.FlagsDisableVmap.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i1 = 0; i1 < checkedIndicies3.Length; i1++)
-            {
-                int idx;
-                if ((int.TryParse(checkedIndicies3[i1], out idx)))
-                {
-                    switch (idx)
-                    {
-                        case 0: // VMAP_DISABLE_AREAFLAG
-                            flags_dis_vmap_st += 1;
-                            break;
-                        case 1: // VMAP_DISABLE_HEIGHT
-                            flags_dis_vmap_st += 2;
-                            break;
-                        case 2: // VMAP_DISABLE_LOS
-                            flags_dis_vmap_st += 4;
-                            break;
-                        case 3: // VMAP_LIQUIDSTATUS
-                            flags_dis_vmap_st += 8;
-                            break;
-                    }
-                }
-            }
-
-            Form_MainMenu mainmenu = new Form_MainMenu();
-            // Prepare SQL
-            // select insertion columns
-            string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".disables ";
-            BuildSQLFile += "(sourceType, entry, flags, params_0, params_1, comment)";
-
-            //Values
-            BuildSQLFile += "VALUES\n ";
-            BuildSQLFile += "(";
-
-            if (textBox_SourceType.Text == "1"/*DISABLE_TYPE_QUEST*/) BuildSQLFile += "1, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "3"/*DISABLE_TYPE_BATTLEGROUND*/) BuildSQLFile += "3, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "4"/*DISABLE_TYPE_ACHIEVEMENT_CRITERIA*/) BuildSQLFile += "4, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "5"/*DISABLE_TYPE_OUTDOORPVP*/) BuildSQLFile += "5, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "7"/*DISABLE_TYPE_MMAP*/) BuildSQLFile += "7, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "8"/*DISABLE_TYPE_LFG_MAP*/) BuildSQLFile += "8, " + textBox_entry.Text + ", 0" + ", ";
-
-            else
-            {
-                BuildSQLFile += textBox_SourceType.Text + ", " + textBox_entry.Text + ", "; // sourceType
-            }
-            
-            //BuildSQLFile += textBox_entry.Text + ", "; // entry
-
-            if (button_flags_dis_spell.Visible == true) BuildSQLFile += flags_dis_spell_st + ", "; // flags_disable_spell
-            else if (button_flags_dis_map.Visible == true) BuildSQLFile += flags_dis_map_st + ", "; // flags_disable_map
-            else if (button_flags_dis_vmap.Visible == true) BuildSQLFile += flags_dis_vmap_st + ", "; // flags_disable_vmap
-
-            BuildSQLFile += "'" + textBox_params_0.Text + "', '"; // params_0
-            BuildSQLFile += textBox_params_1.Text + "', '"; // params_1
-            BuildSQLFile += textBox_comment.Text + "');"; // comment
-
-            stringSQLShare = BuildSQLFile;
+            GenerateSql();
 
             if (textBox_entry.Text == "0")
             {
@@ -477,37 +374,31 @@ namespace SpawnCreator
         private void label2_MouseEnter(object sender, EventArgs e)
         {
             label2.BackColor = Color.Firebrick;
-            label2.ForeColor = Color.White;
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
         {
             label2.BackColor = Color.FromArgb(58, 89, 114);
-            label2.ForeColor = Color.Black;
         }
 
         private void label1_MouseEnter(object sender, EventArgs e)
         {
             label1.BackColor = Color.Firebrick;
-            label1.ForeColor = Color.White;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             label1.BackColor = Color.FromArgb(58, 89, 114);
-            label1.ForeColor = Color.Black;
         }
 
         private void label78_MouseEnter(object sender, EventArgs e)
         {
             label78.BackColor = Color.Firebrick;
-            label78.ForeColor = Color.White;
         }
 
         private void label78_MouseLeave(object sender, EventArgs e)
         {
             label78.BackColor = Color.FromArgb(58, 89, 114);
-            label78.ForeColor = Color.Black;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -542,19 +433,28 @@ namespace SpawnCreator
             Process.Start("https://trinitycore.atlassian.net/wiki/display/tc/disables");
         }
 
+        public bool IsProcessOpen(string name = "mysqld")
+        {
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+                if (clsProcess.ProcessName.Contains(name))
+                {
+                    label_mysql_status2.Text = "Connected!";
+                    label_mysql_status2.ForeColor = Color.LawnGreen;
+                    button_Execute_Query.Visible = true;
+                    return true;
+                }
+            }
+
+            label_mysql_status2.Text = "Connection Lost - MySQL is not running";
+            label_mysql_status2.ForeColor = Color.Red;
+            button_Execute_Query.Visible = false;
+            return false;
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Process[] mysql = Process.GetProcessesByName("mysqld");
-            if (mysql.Length == 0)
-            {
-                label_mysql_status2.Text = "Connection Lost - MySQL is not running";
-                label_mysql_status2.ForeColor = Color.Red;
-            }
-            else
-            {
-                label_mysql_status2.Text = "Connected!";
-                label_mysql_status2.ForeColor = Color.LawnGreen;
-            }
+            IsProcessOpen();
         }
 
         int idx = 1;
@@ -568,129 +468,7 @@ namespace SpawnCreator
         private void label83_Click(object sender, EventArgs e)
         {
 
-            uint flags_dis_spell_st = 0;
-            uint flags_dis_map_st = 0;
-            uint flags_dis_vmap_st = 0;
-
-            string[] checkedIndicies1 = Properties.Settings.Default.FlagsDisableSpell.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i1 = 0; i1 < checkedIndicies1.Length; i1++)
-            {
-                int idx;
-                if ((int.TryParse(checkedIndicies1[i1], out idx)))
-                {
-                    switch (idx)
-                    {
-                        case 0: // Spell enabled
-                            flags_dis_spell_st += 0;
-                            break;
-                        case 1: // Spell disabled for players
-                            flags_dis_spell_st += 1;
-                            break;
-                        case 2: // Spell disabled for creatures
-                            flags_dis_spell_st += 2;
-                            break;
-                        case 3: // Spell disabled for pets
-                            flags_dis_spell_st += 4;
-                            break;
-                        case 4: // Spell completely disabled (used for no logner existing spells in DBCs)
-                            flags_dis_spell_st += 8;
-                            break;
-                        case 5: // Spell disabled for MapId
-                            flags_dis_spell_st += 16;
-                            break;
-                        case 6: // Spell disabled for AreaId
-                            flags_dis_spell_st += 32;
-                            break;
-                        case 7: // Line of Sight (LOS) is disabled for this spell (replaces "vmap.ignoreSpellIds" config option)
-                            flags_dis_spell_st += 64;
-                            break;
-                    }
-                }
-            }
-
-            string[] checkedIndicies2 = Properties.Settings.Default.FlagsDisableMap.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i1 = 0; i1 < checkedIndicies2.Length; i1++)
-            {
-                int idx;
-                if ((int.TryParse(checkedIndicies2[i1], out idx)))
-                {
-                    switch (idx)
-                    {
-                        case 0: // DUNGEON_STATUSFLAG_NORMAL OR RAID_STATUSFLAG_10MAN_NORMAL
-                            flags_dis_map_st += 1;
-                            break;
-                        case 1: // DUNGEON_STATUSFLAG_HEROIC OR RAID_STATUSFLAG_25MAN_NORMAL
-                            flags_dis_map_st += 2;
-                            break;
-                        case 2: // RAID_STATUSFLAG_10MAN_HEROIC
-                            flags_dis_map_st += 4;
-                            break;
-                        case 3: // RAID_STATUSFLAG_25MAN_HEROIC
-                            flags_dis_map_st += 8;
-                            break;
-                    }
-                }
-            }
-
-            string[] checkedIndicies3 = Properties.Settings.Default.FlagsDisableVmap.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i1 = 0; i1 < checkedIndicies3.Length; i1++)
-            {
-                int idx;
-                if ((int.TryParse(checkedIndicies3[i1], out idx)))
-                {
-                    switch (idx)
-                    {
-                        case 0: // VMAP_DISABLE_AREAFLAG
-                            flags_dis_vmap_st += 1;
-                            break;
-                        case 1: // VMAP_DISABLE_HEIGHT
-                            flags_dis_vmap_st += 2;
-                            break;
-                        case 2: // VMAP_DISABLE_LOS
-                            flags_dis_vmap_st += 4;
-                            break;
-                        case 3: // VMAP_LIQUIDSTATUS
-                            flags_dis_vmap_st += 8;
-                            break;
-                    }
-                }
-            }
-
-            Form_MainMenu mainmenu = new Form_MainMenu();
-            // Prepare SQL
-            // select insertion columns
-            string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".disables ";
-            BuildSQLFile += "(sourceType, entry, flags, params_0, params_1, comment)";
-
-            //Values
-            BuildSQLFile += "VALUES\n ";
-            BuildSQLFile += "(";
-
-            if (textBox_SourceType.Text == "1"/*DISABLE_TYPE_QUEST*/) BuildSQLFile += "1, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "3"/*DISABLE_TYPE_BATTLEGROUND*/) BuildSQLFile += "3, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "4"/*DISABLE_TYPE_ACHIEVEMENT_CRITERIA*/) BuildSQLFile += "4, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "5"/*DISABLE_TYPE_OUTDOORPVP*/) BuildSQLFile += "5, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "7"/*DISABLE_TYPE_MMAP*/) BuildSQLFile += "7, " + textBox_entry.Text + ", 0" + ", ";
-            else if (textBox_SourceType.Text == "8"/*DISABLE_TYPE_LFG_MAP*/) BuildSQLFile += "8, " + textBox_entry.Text + ", 0" + ", ";
-
-            else
-            {
-                BuildSQLFile += textBox_SourceType.Text + ", " + textBox_entry.Text + ", "; // sourceType
-            }
-
-            //BuildSQLFile += textBox_entry.Text + ", "; // entry
-
-            if (button_flags_dis_spell.Visible == true) BuildSQLFile += flags_dis_spell_st + ", "; // flags_disable_spell
-            else if (button_flags_dis_map.Visible == true) BuildSQLFile += flags_dis_map_st + ", "; // flags_disable_map
-            else if (button_flags_dis_vmap.Visible == true) BuildSQLFile += flags_dis_vmap_st + ", "; // flags_disable_vmap
-
-            BuildSQLFile += "'" + textBox_params_0.Text + "', '"; // params_0
-            BuildSQLFile += textBox_params_1.Text + "', '"; // params_1
-            BuildSQLFile += textBox_comment.Text + "');"; // comment
-
-            stringSQLShare = BuildSQLFile;
-            stringEntryShare = textBox_entry.Text;
+            GenerateSql();
 
             if (textBox_entry.Text == "0")
             {
@@ -806,6 +584,62 @@ namespace SpawnCreator
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://trinitycore.atlassian.net/wiki/display/tc/AreaTable");
+        }
+
+        private void label92_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(label92, "A file labeled Disables.sql will be created in the same directory as the SpawnCreator vX.X executable. \nSo you can save multiple data rows in a single .sql file.");
+            toolTip1.AutoPopDelay = 10000; // 10 seconds
+        }
+
+        private void button_SaveInTheSameFile_MouseEnter(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.BackColor = Color.Firebrick;
+        }
+
+        private void button_SaveInTheSameFile_MouseLeave(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.BackColor = Color.FromArgb(58, 89, 114);
+        }
+
+        private void button_SaveInTheSameFile_Click(object sender, EventArgs e)
+        {
+            GenerateSql();
+            
+            if (textBox_entry.Text == "0")
+            {
+                MessageBox.Show("Entry should not be 0", "Error");
+                return;
+            }
+            else if (textBox_entry.Text == "")
+            {
+                MessageBox.Show("Entry should not be empty", "Error");
+                return;
+            }
+
+            using (var writer = File.AppendText("Disables.sql"))
+            {
+                writer.Write(stringSQLShare);
+                button_SaveInTheSameFile.Text = "Saved!";
+                button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
+            }
+
+        }
+
+        private void All_textBoxes_MouseEnter(object sender, EventArgs e)
+        {
+            button_SaveInTheSameFile.Text = "Save in the same file";
+            button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleRight;
+        }
+
+        private void comboBox_SourceType_MouseEnter(object sender, EventArgs e)
+        {
+            All_textBoxes_MouseEnter(sender, e);
+        }
+
+        private void three_buttons_MouseEnter(object sender, EventArgs e)
+        {
+            All_textBoxes_MouseEnter(sender, e);
         }
     }
 }

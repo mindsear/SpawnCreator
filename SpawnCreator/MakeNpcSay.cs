@@ -76,16 +76,16 @@ namespace SpawnCreator
                 );
 
             string insertQuery = "INSERT INTO " + form_MM.GetWorldDB() + ".creature_text " +
-                "(entry, text, type, probability, language) " +
+                "(entry, text, type, probability, language) \n" +
                 "VALUES (" +
                 textBox61.Text + ", '" + // entry
                 textBox2.Text + "', " + // text
                 textBox4.Text + ", " + // type
                 textBox10.Text + ", " + // probability
-                textBox1.Text + ");" + // language
+                textBox1.Text + "); \n" + // language
 
                 "INSERT INTO " + form_MM.GetWorldDB() + ".smart_scripts " +
-                "(entryorguid, event_type, action_type, event_chance, event_param1, event_param2, event_param3, event_param4) " +
+                "(entryorguid, event_type, action_type, event_chance, event_param1, event_param2, event_param3, event_param4) \n" +
                 "VALUES (" +
                 textBox61.Text + ", " + // entryorguid
                 textBox20.Text + ", " + // event_type
@@ -94,25 +94,16 @@ namespace SpawnCreator
                 textBox11.Text + ", " + // event_param1
                 textBox5.Text + ", " + // event_param2
                 textBox18.Text + ", " + // event_param3
-                textBox17.Text + ");" // event_param4
+                textBox17.Text + "); \n" // event_param4
                 ;
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
 
-            // Test
             try
             {
                 if (command.ExecuteNonQuery() == 1)
                 {
                     label9.Visible = true;
-                }
-                else
-                {
-                    label9.Visible = true;
-                    //MessageBox.Show("Data Not Inserted");
-                    //label2.ForeColor = Color.Red;
-                    //label2.Text = "Eroare!";
-                    //MessageBox.Show("Unable to connect to any of the specified MySQL hosts.");
                 }
             }
             catch (Exception ex)
@@ -168,6 +159,48 @@ namespace SpawnCreator
         private void MakeNpcSay_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0; //default - Say
+
+            if (form_MM.CB_NoMySQL.Checked)
+            {
+                // If CheckBox is Checked (Start without MySQL)
+                button1.Enabled = false;
+                button1.Visible = false;
+                label11.Visible = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                label11.Visible = true;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(
+                "INSERT INTO " + form_MM.GetWorldDB() + ".creature_text " +
+                "(entry, text, type, probability, language) \n" +
+                "VALUES (" +
+                textBox61.Text + ", '" + // entry
+                textBox2.Text + "', " + // text
+                textBox4.Text + ", " + // type
+                textBox10.Text + ", " + // probability
+                textBox1.Text + "); \n" + // language
+
+                "INSERT INTO " + form_MM.GetWorldDB() + ".smart_scripts " +
+                "(entryorguid, event_type, action_type, event_chance, event_param1, event_param2, event_param3, event_param4) \n" +
+                "VALUES (" +
+                textBox61.Text + ", " + // entryorguid
+                textBox20.Text + ", " + // event_type
+                textBox16.Text + ", " + // action_type
+                textBox23.Text + ", " + // event_chance
+                textBox11.Text + ", " + // event_param1
+                textBox5.Text + ", " + // event_param2
+                textBox18.Text + ", " + // event_param3
+                textBox17.Text + "); \n" // event_param4)
+                );
+            label9.Text = "Query has been copied to clipboard!";
+            label9.Visible = true;
         }
     }
 }

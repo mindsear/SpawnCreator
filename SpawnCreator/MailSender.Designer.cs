@@ -77,8 +77,12 @@
             this.comboBox_receiver = new System.Windows.Forms.ComboBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.comboBox_sender = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox_item_guid = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpExp = new System.Windows.Forms.MonthCalendar();
             this.label10 = new System.Windows.Forms.Label();
@@ -92,11 +96,9 @@
             this.label23 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.comboBox_message_type = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -112,23 +114,19 @@
             this.numCount = new System.Windows.Forms.NumericUpDown();
             this.btnDel = new System.Windows.Forms.Button();
             this.lblCapacity = new System.Windows.Forms.Label();
-            this.textBox_item_guid = new System.Windows.Forms.TextBox();
-            this.comboBox_has_items = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label26 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button_search = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.gold = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
             this.silver = new System.Windows.Forms.NumericUpDown();
             this.copper = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
@@ -136,6 +134,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.rdbMoney = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox_has_items = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
@@ -146,6 +146,7 @@
             this.timer8 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer9 = new System.Windows.Forms.Timer(this.components);
+            this.timer10 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -357,7 +358,7 @@
             this.label78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.ForeColor = System.Drawing.Color.Black;
+            this.label78.ForeColor = System.Drawing.Color.White;
             this.label78.Location = new System.Drawing.Point(758, 0);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(26, 30);
@@ -373,7 +374,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(792, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 30);
@@ -389,7 +390,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(825, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 30);
@@ -556,13 +557,18 @@
             this.groupBox4.Controls.Add(this.comboBox_receiver);
             this.groupBox4.Controls.Add(this.btnSend);
             this.groupBox4.Controls.Add(this.comboBox_sender);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.textBox2);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.textBox_item_guid);
             this.groupBox4.Location = new System.Drawing.Point(6, 640);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(660, 422);
+            this.groupBox4.Size = new System.Drawing.Size(660, 356);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // textBox12
             // 
@@ -629,11 +635,11 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(137, 77);
+            this.label20.Location = new System.Drawing.Point(125, 74);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(70, 16);
+            this.label20.Size = new System.Drawing.Size(86, 16);
             this.label20.TabIndex = 113;
-            this.label20.Text = "NPC Entry";
+            this.label20.Text = "    NPC Entry";
             // 
             // label19
             // 
@@ -673,7 +679,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(55, 187);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(282, 176);
+            this.dataGridView1.Size = new System.Drawing.Size(282, 153);
             this.dataGridView1.TabIndex = 108;
             // 
             // comboBox_select_sender
@@ -702,10 +708,11 @@
             // 
             // textBox_receiver
             // 
-            this.textBox_receiver.Location = new System.Drawing.Point(557, 68);
+            this.textBox_receiver.Location = new System.Drawing.Point(568, 59);
             this.textBox_receiver.Name = "textBox_receiver";
-            this.textBox_receiver.Size = new System.Drawing.Size(54, 20);
+            this.textBox_receiver.Size = new System.Drawing.Size(43, 20);
             this.textBox_receiver.TabIndex = 103;
+            this.textBox_receiver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_receiver.Visible = false;
             // 
             // label_mail_sent
@@ -713,7 +720,7 @@
             this.label_mail_sent.AutoSize = true;
             this.label_mail_sent.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mail_sent.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label_mail_sent.Location = new System.Drawing.Point(413, 256);
+            this.label_mail_sent.Location = new System.Drawing.Point(413, 252);
             this.label_mail_sent.Name = "label_mail_sent";
             this.label_mail_sent.Size = new System.Drawing.Size(213, 15);
             this.label_mail_sent.TabIndex = 101;
@@ -742,7 +749,7 @@
             this.btnSend.ForeColor = System.Drawing.Color.White;
             this.btnSend.Image = global::SpawnCreator.Properties.Resources.mail_green;
             this.btnSend.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSend.Location = new System.Drawing.Point(460, 213);
+            this.btnSend.Location = new System.Drawing.Point(460, 205);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(106, 37);
             this.btnSend.TabIndex = 21;
@@ -764,15 +771,33 @@
             this.comboBox_sender.TabIndex = 15;
             this.comboBox_sender.SelectedIndexChanged += new System.EventHandler(this.txtSender_SelectedIndexChanged);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(586, 137);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 90;
+            this.label11.Text = "Mail ID";
+            this.label11.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(582, 153);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(65, 20);
+            this.textBox2.TabIndex = 4;
+            this.textBox2.Visible = false;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(75, 74);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 16);
+            this.label8.Size = new System.Drawing.Size(136, 16);
             this.label8.TabIndex = 17;
-            this.label8.Text = "Sender";
+            this.label8.Text = "Sender (Player Name)";
             // 
             // label9
             // 
@@ -780,9 +805,27 @@
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(413, 74);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 16);
+            this.label9.Size = new System.Drawing.Size(144, 16);
             this.label9.TabIndex = 18;
-            this.label9.Text = "Receiver";
+            this.label9.Text = "Receiver (Player Name)";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(577, 193);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 13);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Item Instance ID";
+            this.label12.Visible = false;
+            // 
+            // textBox_item_guid
+            // 
+            this.textBox_item_guid.Location = new System.Drawing.Point(582, 209);
+            this.textBox_item_guid.Name = "textBox_item_guid";
+            this.textBox_item_guid.Size = new System.Drawing.Size(66, 20);
+            this.textBox_item_guid.TabIndex = 4;
+            this.textBox_item_guid.Visible = false;
             // 
             // groupBox3
             // 
@@ -792,7 +835,7 @@
             this.groupBox3.Controls.Add(this.dtpDel);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Location = new System.Drawing.Point(12, 2172);
+            this.groupBox3.Location = new System.Drawing.Point(12, 1656);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(652, 231);
             this.groupBox3.TabIndex = 2;
@@ -863,11 +906,9 @@
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.textBox8);
             this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.textBox10);
             this.groupBox2.Controls.Add(this.textBox7);
             this.groupBox2.Controls.Add(this.comboBox_message_type);
             this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.textBox5);
@@ -880,13 +921,7 @@
             this.groupBox2.Controls.Add(this.numCount);
             this.groupBox2.Controls.Add(this.btnDel);
             this.groupBox2.Controls.Add(this.lblCapacity);
-            this.groupBox2.Controls.Add(this.textBox_item_guid);
-            this.groupBox2.Controls.Add(this.comboBox_has_items);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Location = new System.Drawing.Point(6, 1150);
+            this.groupBox2.Location = new System.Drawing.Point(12, 1068);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(654, 582);
             this.groupBox2.TabIndex = 1;
@@ -938,16 +973,6 @@
             this.label22.TabIndex = 5287;
             this.label22.Text = "Item Entry 5";
             // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(541, 290);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(66, 20);
-            this.textBox10.TabIndex = 5286;
-            this.textBox10.Text = "0";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox10.Visible = false;
-            // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(30, 205);
@@ -983,16 +1008,6 @@
             this.label21.Size = new System.Drawing.Size(63, 13);
             this.label21.TabIndex = 5285;
             this.label21.Text = "Item Entry 4";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(536, 276);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(70, 13);
-            this.label25.TabIndex = 5285;
-            this.label25.Text = "MaxDurability";
-            this.label25.Visible = false;
             // 
             // textBox6
             // 
@@ -1145,65 +1160,6 @@
             this.lblCapacity.TabIndex = 5252;
             this.lblCapacity.Text = "Attached items (0 of 12)";
             // 
-            // textBox_item_guid
-            // 
-            this.textBox_item_guid.Location = new System.Drawing.Point(540, 176);
-            this.textBox_item_guid.Name = "textBox_item_guid";
-            this.textBox_item_guid.Size = new System.Drawing.Size(66, 20);
-            this.textBox_item_guid.TabIndex = 4;
-            this.textBox_item_guid.Visible = false;
-            // 
-            // comboBox_has_items
-            // 
-            this.comboBox_has_items.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_has_items.FormattingEnabled = true;
-            this.comboBox_has_items.Items.AddRange(new object[] {
-            "0",
-            "1"});
-            this.comboBox_has_items.Location = new System.Drawing.Point(540, 232);
-            this.comboBox_has_items.Name = "comboBox_has_items";
-            this.comboBox_has_items.Size = new System.Drawing.Size(66, 21);
-            this.comboBox_has_items.TabIndex = 89;
-            this.comboBox_has_items.Visible = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(535, 160);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(85, 13);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Item Instance ID";
-            this.label12.Visible = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(540, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(65, 20);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(544, 104);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
-            this.label11.TabIndex = 90;
-            this.label11.Text = "Mail ID";
-            this.label11.Visible = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(517, 216);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 13);
-            this.label13.TabIndex = 90;
-            this.label13.Text = "Has Items (1 = true)";
-            this.label13.Visible = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.numericUpDown1);
@@ -1211,11 +1167,13 @@
             this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Controls.Add(this.button_search);
             this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.textBox10);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.gold);
+            this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.silver);
             this.groupBox1.Controls.Add(this.copper);
             this.groupBox1.Controls.Add(this.label14);
@@ -1226,6 +1184,8 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtSubject);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.comboBox_has_items);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtStyle);
             this.groupBox1.Controls.Add(this.txtBody);
@@ -1306,6 +1266,16 @@
             this.label6.TabIndex = 5281;
             this.label6.Text = "Search items";
             // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(101, 454);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(81, 20);
+            this.textBox10.TabIndex = 5286;
+            this.textBox10.Text = "0";
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox10.Visible = false;
+            // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -1367,6 +1337,16 @@
             this.gold.TabIndex = 90;
             this.toolTip1.SetToolTip(this.gold, "Gold");
             this.gold.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gold_KeyUp);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(105, 438);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(70, 13);
+            this.label25.TabIndex = 5285;
+            this.label25.Text = "MaxDurability";
+            this.label25.Visible = false;
             // 
             // silver
             // 
@@ -1461,6 +1441,29 @@
             this.textBox1.TabIndex = 88;
             this.textBox1.Visible = false;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(78, 287);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 13);
+            this.label13.TabIndex = 90;
+            this.label13.Text = "Send Item (1 = true)";
+            this.label13.Visible = false;
+            // 
+            // comboBox_has_items
+            // 
+            this.comboBox_has_items.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_has_items.FormattingEnabled = true;
+            this.comboBox_has_items.Items.AddRange(new object[] {
+            "0",
+            "1"});
+            this.comboBox_has_items.Location = new System.Drawing.Point(101, 303);
+            this.comboBox_has_items.Name = "comboBox_has_items";
+            this.comboBox_has_items.Size = new System.Drawing.Size(66, 21);
+            this.comboBox_has_items.TabIndex = 89;
+            this.comboBox_has_items.Visible = false;
+            // 
             // timer1
             // 
             this.timer1.Interval = 20;
@@ -1468,7 +1471,7 @@
             // 
             // timer2
             // 
-            this.timer2.Interval = 200;
+            this.timer2.Interval = 150;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // timer3
@@ -1505,6 +1508,10 @@
             // 
             this.timer9.Interval = 1000;
             this.timer9.Tick += new System.EventHandler(this.timer9_Tick);
+            // 
+            // timer10
+            // 
+            this.timer10.Tick += new System.EventHandler(this.timer10_Tick);
             // 
             // MailSender
             // 
@@ -1674,5 +1681,6 @@
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label_dot_receiver;
         private System.Windows.Forms.Timer timer9;
+        private System.Windows.Forms.Timer timer10;
     }
 }

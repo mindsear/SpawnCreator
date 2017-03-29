@@ -273,6 +273,26 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Help_Circle_Blue {
+            get {
+                object obj = ResourceManager.GetObject("Help_Circle_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Help_Circle_Blue1 {
+            get {
+                object obj = ResourceManager.GetObject("Help_Circle_Blue1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Interact {
             get {
                 object obj = ResourceManager.GetObject("Interact", resourceCulture);
@@ -396,6 +416,16 @@ namespace SpawnCreator.Properties {
         internal static System.Drawing.Bitmap Quest {
             get {
                 object obj = ResourceManager.GetObject("Quest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap questionmark {
+            get {
+                object obj = ResourceManager.GetObject("questionmark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
