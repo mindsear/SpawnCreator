@@ -121,7 +121,7 @@ namespace SpawnCreator
                             // Prepare SQL
                             // select insertion columns
                             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".smart_scripts";
+            BuildSQLFile = $"INSERT INTO { form_MM.GetWorldDB() }.smart_scripts";
             BuildSQLFile += "(entryorguid, source_type, id, link, event_type, event_phase_mask, event_chance, event_flags, event_param1, event_param2, event_param3, ";
             BuildSQLFile += "event_param4, action_type, action_param1, action_param2, action_param3, action_param4, action_param5, action_param6, target_type, target_param1, target_param2, target_param3, target_x, target_y, target_z, target_o, comment) ";
 
@@ -1620,6 +1620,7 @@ namespace SpawnCreator
             label87.Visible = false;
 
             label_query_executed_successfully2.Visible = false;
+            label_Success.Visible = false;
 
             //File has been successfully saved !
             label88.Visible = false;
@@ -1632,6 +1633,7 @@ namespace SpawnCreator
             label87.Visible = false;
 
             label_query_executed_successfully2.Visible = false;
+            label_Success.Visible = false;
 
             //File has been successfully saved !
             label88.Visible = false;
@@ -1737,6 +1739,7 @@ namespace SpawnCreator
                 {
                     //timer5.Start();
                     label_query_executed_successfully2.Visible = true;
+                    label_Success.Visible = true;
                 }
 
             }

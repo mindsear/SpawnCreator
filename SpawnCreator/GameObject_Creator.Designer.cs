@@ -33,6 +33,7 @@
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label_Success = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label_mysql_status2 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label83 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_DeleteQuery = new System.Windows.Forms.Button();
             this.textBox105 = new System.Windows.Forms.TextBox();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -84,7 +86,6 @@
             this.label37 = new System.Windows.Forms.Label();
             this.button_execute_query = new System.Windows.Forms.Button();
             this.RTB_Notes = new System.Windows.Forms.RichTextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -145,7 +146,6 @@
             this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.timer8 = new System.Windows.Forms.Timer(this.components);
-            this.btn_DeleteQuery = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -195,6 +195,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.panel2.Controls.Add(this.label_Success);
             this.panel2.Controls.Add(this.label78);
             this.panel2.Controls.Add(this.label_mysql_status2);
             this.panel2.Controls.Add(this.label85);
@@ -207,6 +208,18 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
+            // 
+            // label_Success
+            // 
+            this.label_Success.AutoSize = true;
+            this.label_Success.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Success.ForeColor = System.Drawing.Color.Lime;
+            this.label_Success.Location = new System.Drawing.Point(693, 6);
+            this.label_Success.Name = "label_Success";
+            this.label_Success.Size = new System.Drawing.Size(75, 17);
+            this.label_Success.TabIndex = 214;
+            this.label_Success.Text = "Success!";
+            this.label_Success.Visible = false;
             // 
             // label78
             // 
@@ -345,6 +358,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
+            this.panel7.Click += new System.EventHandler(this.label86_Click);
             this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
             this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             // 
@@ -430,6 +444,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
+            this.panel5.Click += new System.EventHandler(this.label83_Click);
             this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
             this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
@@ -464,6 +479,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(744, 506);
             this.panel1.TabIndex = 80;
+            // 
+            // btn_DeleteQuery
+            // 
+            this.btn_DeleteQuery.BackColor = System.Drawing.Color.DimGray;
+            this.btn_DeleteQuery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DeleteQuery.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DeleteQuery.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteQuery.ForeColor = System.Drawing.Color.White;
+            this.btn_DeleteQuery.Location = new System.Drawing.Point(449, 66);
+            this.btn_DeleteQuery.Name = "btn_DeleteQuery";
+            this.btn_DeleteQuery.Size = new System.Drawing.Size(62, 23);
+            this.btn_DeleteQuery.TabIndex = 213;
+            this.btn_DeleteQuery.Text = "Delete";
+            this.btn_DeleteQuery.UseVisualStyleBackColor = false;
+            this.btn_DeleteQuery.Visible = false;
+            this.btn_DeleteQuery.Click += new System.EventHandler(this.btn_DeleteQuery_Click);
             // 
             // textBox105
             // 
@@ -753,7 +784,6 @@
             this.groupBox1.Controls.Add(this.label37);
             this.groupBox1.Controls.Add(this.button_execute_query);
             this.groupBox1.Controls.Add(this.RTB_Notes);
-            this.groupBox1.Controls.Add(this.textBox33);
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.label22);
@@ -942,17 +972,7 @@
             this.RTB_Notes.Size = new System.Drawing.Size(329, 295);
             this.RTB_Notes.TabIndex = 82;
             this.RTB_Notes.Text = "";
-            // 
-            // textBox33
-            // 
-            this.textBox33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox33.Location = new System.Drawing.Point(432, 9);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(67, 20);
-            this.textBox33.TabIndex = 147;
-            this.textBox33.Text = "0";
-            this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox33.Visible = false;
+            this.RTB_Notes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RTB_Notes_MouseDown);
             // 
             // label23
             // 
@@ -1473,46 +1493,9 @@
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "GAMEOBJECT_TYPE_DOOR",
-            "GAMEOBJECT_TYPE_BUTTON",
-            "GAMEOBJECT_TYPE_QUESTGIVER",
-            "GAMEOBJECT_TYPE_CHEST",
-            "GAMEOBJECT_TYPE_BINDER",
-            "GAMEOBJECT_TYPE_GENERIC",
-            "GAMEOBJECT_TYPE_TRAP",
-            "GAMEOBJECT_TYPE_CHAIR",
-            "GAMEOBJECT_TYPE_SPELL_FOCUS",
-            "GAMEOBJECT_TYPE_TEXT",
-            "GAMEOBJECT_TYPE_GOOBER",
-            "GAMEOBJECT_TYPE_TRANSPORT",
-            "GAMEOBJECT_TYPE_AREADAMAGE",
-            "GAMEOBJECT_TYPE_CAMERA",
-            "GAMEOBJECT_TYPE_MAP_OBJECT",
-            "GAMEOBJECT_TYPE_MO_TRANSPORT",
-            "GAMEOBJECT_TYPE_DUEL_ARBITER",
-            "GAMEOBJECT_TYPE_FISHINGNODE",
-            "GAMEOBJECT_TYPE_RITUAL",
-            "GAMEOBJECT_TYPE_MAILBOX",
-            "GAMEOBJECT_TYPE_AUCTIONHOUSE",
-            "GAMEOBJECT_TYPE_GUARDPOST",
-            "GAMEOBJECT_TYPE_SPELLCASTER",
-            "GAMEOBJECT_TYPE_MEETINGSTONE",
-            "GAMEOBJECT_TYPE_FLAGSTAND",
-            "GAMEOBJECT_TYPE_FISHINGHOLE",
-            "GAMEOBJECT_TYPE_FLAGDROP",
-            "GAMEOBJECT_TYPE_MINI_GAME",
-            "GAMEOBJECT_TYPE_LOTTERY_KIOSK",
-            "GAMEOBJECT_TYPE_CAPTURE_POINT",
-            "GAMEOBJECT_TYPE_AURA_GENERATOR",
-            "GAMEOBJECT_TYPE_DUNGEON_DIFFICULTY",
-            "GAMEOBJECT_TYPE_BARBER_CHAIR",
-            "GAMEOBJECT_TYPE_DESTRUCTIBLE_BUILDING",
-            "GAMEOBJECT_TYPE_GUILD_BANK",
-            "GAMEOBJECT_TYPE_TRAPDOOR"});
-            this.comboBox2.Location = new System.Drawing.Point(210, 32);
+            this.comboBox2.Location = new System.Drawing.Point(171, 32);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(289, 21);
+            this.comboBox2.Size = new System.Drawing.Size(361, 21);
             this.comboBox2.TabIndex = 6;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             this.comboBox2.MouseEnter += new System.EventHandler(this.All_ComboBoxes_MouseEnter);
@@ -1668,22 +1651,6 @@
             this.timer8.Interval = 6000;
             this.timer8.Tick += new System.EventHandler(this.timer8_Tick);
             // 
-            // btn_DeleteQuery
-            // 
-            this.btn_DeleteQuery.BackColor = System.Drawing.Color.DimGray;
-            this.btn_DeleteQuery.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_DeleteQuery.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_DeleteQuery.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DeleteQuery.ForeColor = System.Drawing.Color.White;
-            this.btn_DeleteQuery.Location = new System.Drawing.Point(449, 66);
-            this.btn_DeleteQuery.Name = "btn_DeleteQuery";
-            this.btn_DeleteQuery.Size = new System.Drawing.Size(62, 23);
-            this.btn_DeleteQuery.TabIndex = 213;
-            this.btn_DeleteQuery.Text = "Delete";
-            this.btn_DeleteQuery.UseVisualStyleBackColor = false;
-            this.btn_DeleteQuery.Visible = false;
-            this.btn_DeleteQuery.Click += new System.EventHandler(this.btn_DeleteQuery_Click);
-            // 
             // GameObject_Creator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1758,7 +1725,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         public System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label34;
@@ -1818,7 +1784,6 @@
         internal System.Windows.Forms.Label label_query_executed_successfully2;
         private System.Windows.Forms.Button button_execute_query;
         internal System.Windows.Forms.Label label35;
-        public System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.Label label36;
         public System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.Timer timer2;
@@ -1833,7 +1798,6 @@
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.TextBox textBox105;
         private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.NumericUpDown NUD_Entry;
         public System.Windows.Forms.Label label85;
         public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label92;
@@ -1842,5 +1806,8 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button btn_DeleteQuery;
+        internal System.Windows.Forms.ComboBox comboBox2;
+        internal System.Windows.Forms.NumericUpDown NUD_Entry;
+        private System.Windows.Forms.Label label_Success;
     }
 }

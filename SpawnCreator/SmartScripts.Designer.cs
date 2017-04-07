@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SmartScripts));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label92 = new System.Windows.Forms.Label();
+            this.button_SaveInTheSameFile = new System.Windows.Forms.Button();
             this.label89 = new System.Windows.Forms.Label();
             this.label88 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
@@ -128,8 +130,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label92 = new System.Windows.Forms.Label();
-            this.button_SaveInTheSameFile = new System.Windows.Forms.Button();
+            this.label_Success = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -161,6 +162,40 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 483);
             this.panel3.TabIndex = 81;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.BackColor = System.Drawing.Color.Transparent;
+            this.label92.Cursor = System.Windows.Forms.Cursors.Help;
+            this.label92.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label92.ForeColor = System.Drawing.Color.Transparent;
+            this.label92.Image = global::SpawnCreator.Properties.Resources.Help_Circle_Blue1;
+            this.label92.Location = new System.Drawing.Point(2, 158);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(16, 14);
+            this.label92.TabIndex = 220;
+            this.label92.Text = "   ";
+            this.label92.MouseEnter += new System.EventHandler(this.label92_MouseEnter);
+            // 
+            // button_SaveInTheSameFile
+            // 
+            this.button_SaveInTheSameFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.button_SaveInTheSameFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_SaveInTheSameFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_SaveInTheSameFile.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SaveInTheSameFile.ForeColor = System.Drawing.Color.White;
+            this.button_SaveInTheSameFile.Location = new System.Drawing.Point(0, 149);
+            this.button_SaveInTheSameFile.Name = "button_SaveInTheSameFile";
+            this.button_SaveInTheSameFile.Size = new System.Drawing.Size(167, 34);
+            this.button_SaveInTheSameFile.TabIndex = 219;
+            this.button_SaveInTheSameFile.Text = "Save in the same file";
+            this.button_SaveInTheSameFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.button_SaveInTheSameFile, "Or Press F2");
+            this.button_SaveInTheSameFile.UseVisualStyleBackColor = false;
+            this.button_SaveInTheSameFile.Click += new System.EventHandler(this.button_SaveInTheSameFile_Click);
+            this.button_SaveInTheSameFile.MouseEnter += new System.EventHandler(this.button_SaveInTheSameFile_MouseEnter);
+            this.button_SaveInTheSameFile.MouseLeave += new System.EventHandler(this.button_SaveInTheSameFile_MouseLeave);
             // 
             // label89
             // 
@@ -206,6 +241,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
+            this.panel7.Click += new System.EventHandler(this.label86_Click);
             this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
             this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             // 
@@ -291,6 +327,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
+            this.panel5.Click += new System.EventHandler(this.label83_Click);
             this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
             this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
@@ -313,6 +350,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.panel2.Controls.Add(this.label_Success);
             this.panel2.Controls.Add(this.label78);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
@@ -1641,39 +1679,17 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // label92
+            // label_Success
             // 
-            this.label92.AutoSize = true;
-            this.label92.BackColor = System.Drawing.Color.Transparent;
-            this.label92.Cursor = System.Windows.Forms.Cursors.Help;
-            this.label92.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.ForeColor = System.Drawing.Color.Transparent;
-            this.label92.Image = global::SpawnCreator.Properties.Resources.Help_Circle_Blue1;
-            this.label92.Location = new System.Drawing.Point(2, 158);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(16, 14);
-            this.label92.TabIndex = 220;
-            this.label92.Text = "   ";
-            this.label92.MouseEnter += new System.EventHandler(this.label92_MouseEnter);
-            // 
-            // button_SaveInTheSameFile
-            // 
-            this.button_SaveInTheSameFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
-            this.button_SaveInTheSameFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_SaveInTheSameFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_SaveInTheSameFile.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SaveInTheSameFile.ForeColor = System.Drawing.Color.White;
-            this.button_SaveInTheSameFile.Location = new System.Drawing.Point(0, 149);
-            this.button_SaveInTheSameFile.Name = "button_SaveInTheSameFile";
-            this.button_SaveInTheSameFile.Size = new System.Drawing.Size(167, 34);
-            this.button_SaveInTheSameFile.TabIndex = 219;
-            this.button_SaveInTheSameFile.Text = "Save in the same file";
-            this.button_SaveInTheSameFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.button_SaveInTheSameFile, "Or Press F2");
-            this.button_SaveInTheSameFile.UseVisualStyleBackColor = false;
-            this.button_SaveInTheSameFile.Click += new System.EventHandler(this.button_SaveInTheSameFile_Click);
-            this.button_SaveInTheSameFile.MouseEnter += new System.EventHandler(this.button_SaveInTheSameFile_MouseEnter);
-            this.button_SaveInTheSameFile.MouseLeave += new System.EventHandler(this.button_SaveInTheSameFile_MouseLeave);
+            this.label_Success.AutoSize = true;
+            this.label_Success.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Success.ForeColor = System.Drawing.Color.Lime;
+            this.label_Success.Location = new System.Drawing.Point(614, 5);
+            this.label_Success.Name = "label_Success";
+            this.label_Success.Size = new System.Drawing.Size(75, 17);
+            this.label_Success.TabIndex = 352;
+            this.label_Success.Text = "Success!";
+            this.label_Success.Visible = false;
             // 
             // SmartScripts
             // 
@@ -1813,5 +1829,6 @@
         private System.Windows.Forms.LinkLabel linkLabel6;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.Button button_SaveInTheSameFile;
+        private System.Windows.Forms.Label label_Success;
     }
 }

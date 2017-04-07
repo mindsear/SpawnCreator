@@ -267,6 +267,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
+            this.panel7.Click += new System.EventHandler(this.label86_Click);
             this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
             this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             // 
@@ -352,6 +353,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
+            this.panel5.Click += new System.EventHandler(this.label83_Click);
             this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
             this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
@@ -753,12 +755,12 @@
         private System.Windows.Forms.TextBox textBox_realmID;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Timer timer7;
+        internal System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -17,10 +17,6 @@ namespace SpawnCreator
 {
     public partial class MailSender : Form
     {
-        //Settings frm = new Settings();
-        //Connection con = new Connection();
-        //Npcs npcsfrm = new Npcs();
-
         List<Classes.Item> items = new List<Classes.Item>();
         Form_MainMenu mainmenu = new Form_MainMenu();
 
@@ -53,53 +49,49 @@ namespace SpawnCreator
         }
         
         MySqlConnection connection = new MySqlConnection();
+        //MySql_Connect mysql_Connect = new MySql_Connect();
+
         public void GetMySqlConnection()
         {
-            MySqlConnection _connection = new MySqlConnection(
-                               "datasource = " + form_MM.GetHost() + "; " +
-                               "port=" + form_MM.GetPort() + ";" +
-                               "username=" + form_MM.GetUser() + ";" +
-                               "password=" + form_MM.GetPass() + ";"
-                            );
+            string connStr = string.Format("Server={0};Port={1};UID={2};Pwd={3};", 
+                form_MM.GetHost(), form_MM.GetPort(), form_MM.GetUser(), form_MM.GetPass());
+            MySqlConnection _connection = new MySqlConnection(connStr);
             connection = _connection;
         }
-        
 
-        private void SelectOnline_lblDots_Sender()
+        public void SelectGUID_sender()
         {
             GetMySqlConnection();
+            string query = $"SELECT guid FROM { form_MM.GetCharDB() }.characters WHERE name='{ comboBox_sender.Text }'";
 
-            string insertQuery_3 = "select guid from " + form_MM.GetCharDB() + ".characters where name='" +
-                                    comboBox_sender.Text + "'";
+            MySqlCommand _command = new MySqlCommand(query, connection);
 
-            connection.Open();
-
-
-            MySqlCommand command_3 = new MySqlCommand(insertQuery_3, connection);
             try
             {
-                textBox_sender.Text = command_3.ExecuteScalar().ToString();
+                connection.Open();
+                textBox_sender.Text = _command.ExecuteScalar().ToString();
+                _command.Connection.Close();
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            connection.Close();
+        }
 
-            //======================================
+        public void SelectOnline_sender()
+        {
+            GetMySqlConnection();
+            string query = $"SELECT online FROM { form_MM.GetCharDB() }.characters WHERE name='{ comboBox_sender.Text }'";
 
-            string insertQuery_78 = "select online from " + form_MM.GetCharDB() + ".characters where name='" +
-                                        comboBox_sender.Text + "';";
-            connection.Open();
+            MySqlCommand _command = new MySqlCommand(query, connection);
 
-            MySqlCommand command_78 = new MySqlCommand(insertQuery_78, connection);
             try
             {
-
+                connection.Open();
                 if (comboBox_sender.Text == "")
                     return;
 
-                textBox11.Text = command_78.ExecuteScalar().ToString();
+                textBox11.Text = _command.ExecuteScalar().ToString();
                 if (textBox11.Text == "1")
                 {
                     label_dot.Visible = true;
@@ -112,49 +104,71 @@ namespace SpawnCreator
                     label_dot.ForeColor = Color.Gray;
                     toolTip1.SetToolTip(label_dot, "Offline");
                 }
-
+                _command.Connection.Close();
             }
-            catch (Exception /*ex*/)
+            catch (MySqlException ex)
             {
-                //MessageBox.Show(ex.Message);
-
-                // If entry does not exist in the Database
-                //textBox10.Text = "0";
+                MessageBox.Show(ex.Message);
             }
-            connection.Close();
         }
 
+        public void SelectNames()
+        {
+            GetMySqlConnection();
+            string query = $"SELECT name FROM { form_MM.GetCharDB() }.characters;";
+
+            MySqlCommand _command = new MySqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+                using (var reader = _command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        //comboBox_sender.Items.Add(reader.GetString("name"));
+                        comboBox_receiver.Items.Add(reader.GetString("name"));
+                    }
+                }
+                _command.Connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
         private void SelectOnline_lblDots_Receiver()
         {
             GetMySqlConnection();
 
             string insertQuery_4 = "select guid from " + form_MM.GetCharDB() + ".characters where name='" +
                                     comboBox_receiver.Text + "';";
-
-            connection.Open();
-
-
+            
+            
             MySqlCommand command_4 = new MySqlCommand(insertQuery_4, connection);
             try
             {
+                connection.Open();
                 textBox_receiver.Text = command_4.ExecuteScalar().ToString();
+                connection.Close();
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            connection.Close();
+            
 
             //======================================
 
             string insertQuery_78 = "select online from " + form_MM.GetCharDB() + ".characters where name='" +
                                         comboBox_receiver.Text + "';";
-            connection.Open();
+            
 
             MySqlCommand command_78 = new MySqlCommand(insertQuery_78, connection);
             try
             {
-
+                connection.Open();
                 if (comboBox_receiver.Text == "")
                     return;
 
@@ -171,80 +185,13 @@ namespace SpawnCreator
                     label_dot_receiver.ForeColor = Color.Gray;
                     toolTip1.SetToolTip(label_dot_receiver, "Offline");
                 }
-
+                connection.Close();
             }
-            catch (Exception /*ex*/)
+            catch (MySqlException ex)
             {
-                //MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
-            connection.Close();
-        }
-
-        private void Query_FormLoad()
-        {
-            GetMySqlConnection();
-
-            string insertQuery = "SELECT name FROM " + form_MM.GetCharDB() + ".characters;";
-
-            connection.Open();
-            MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
-            using (var reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    //comboBox_sender.Items.Add(reader.GetString("name"));
-                    comboBox_receiver.Items.Add(reader.GetString("name"));
-                }
-            }
-
-            //==========================================================================================================
-
-            //string insertQuery_23 = "SELECT name FROM " + mainmenu.textbox_mysql_worldDB.Text + ".creature_template;";
-
-            ////string insertQuery = textBox_SelectMaxPlus1.Text;
-            //MySqlCommand command_23 = new MySqlCommand(insertQuery_23, connection);
-
-            //using (var reader = command_23.ExecuteReader())
-            //{
-            //    //Iterate through the rows and add it to the combobox's items
-            //    while (reader.Read())
-            //    {
-            //        comboBox_sender_creature.Items.Add(reader.GetString("name"));
-            //    }
-            //}
-
-            //==========================================================================================================
-
-            //string insertQuery_ = "select max(id)+1 from " + form_MM.GetCharDB() + ".mail;";
-            //MySqlCommand command_ = new MySqlCommand(insertQuery_, connection);
-            //try
-            //{
-            //    textBox2.Text = command_.ExecuteScalar().ToString();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            //connection.Close();
-
-            //==========================================================================================
-
-            //string insertQuery_2 = "select max(guid)+1 from " + form_MM.GetCharDB() + ".item_instance;";
-            ////string insertQuery = textBox_SelectMaxPlus1.Text;
-            //connection.Open();
-
-
-            //MySqlCommand command_2 = new MySqlCommand(insertQuery_2, connection);
-            //try
-            //{
-            //    textBox_item_guid.Text = command_2.ExecuteScalar().ToString();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            //connection.Close();
+            
         }
 
         private void GenerateSqlCode_MailSender(object sender, EventArgs e)
@@ -460,7 +407,7 @@ namespace SpawnCreator
                 btnSend.Visible = true; // Execute Query
                 comboBox_sender.DropDownStyle = ComboBoxStyle.DropDownList;
                 comboBox_receiver.DropDownStyle = ComboBoxStyle.DropDownList;
-                Query_FormLoad();
+                SelectNames();
             }
        
         }
@@ -512,12 +459,12 @@ namespace SpawnCreator
 
             string insertQuery_190 = "select online from " + form_MM.GetCharDB() + ".characters where name='" +
                                         comboBox_receiver.Text + "';";
-            connection.Open();
+            
 
             MySqlCommand command_190 = new MySqlCommand(insertQuery_190, connection);
             try
             {
-
+                connection.Open();
                 if (comboBox_receiver.Text == "")
                     return;
 
@@ -534,24 +481,24 @@ namespace SpawnCreator
                     label_dot_receiver.ForeColor = Color.Gray;
                     toolTip1.SetToolTip(label_dot_receiver, "Offline");
                 }
-
+                connection.Close();
             }
             catch (Exception /*ex*/)
             {
                 //MessageBox.Show(ex.Message);
             }
-            connection.Close();
+            
 
             ///====================================================================
 
             string insertQuery_78 = "select online from " + form_MM.GetCharDB() + ".characters where name='" +
                                         comboBox_sender.Text + "';";
-            connection.Open();
+            
 
             MySqlCommand command_78 = new MySqlCommand(insertQuery_78, connection);
             try
             {
-
+                connection.Open();
                 if (comboBox_sender.Text == "")
                     return;
 
@@ -568,7 +515,7 @@ namespace SpawnCreator
                     label_dot.ForeColor = Color.Gray;
                     toolTip1.SetToolTip(label_dot, "Offline");
                 }
-
+                connection.Close();
             }
             catch (Exception /*ex*/)
             {
@@ -577,7 +524,7 @@ namespace SpawnCreator
                 // If entry does not exist in the Database
                 //textBox10.Text = "0";
             }
-            connection.Close();
+            
 
 
             //MySqlConnection connection = new MySqlConnection("datasource=" + mainmenu.textbox_mysql_hostname.Text + ";port=" + mainmenu.textbox_mysql_port.Text + ";username=" + mainmenu.textbox_mysql_username.Text + ";password=" + mainmenu.textbox_mysql_pass.Text);
@@ -665,11 +612,11 @@ namespace SpawnCreator
             else if (txtStyle.SelectedIndex == 5) textBox1.Text = "1";  // Magic Scroll
         }
 
-        class Item
-        {
-            public int Quantity { get; set; }
-            public int Entry { get; set; }
-        }
+        //class Item
+        //{
+        //    public int Quantity { get; set; }
+        //    public int Entry { get; set; }
+        //}
 
         // Send Mail - Execute Query
         private void btnSend_Click(object sender, EventArgs e)
@@ -696,13 +643,14 @@ namespace SpawnCreator
             GetMySqlConnection();
 
             string insertQuery = stringSQLShare;
-            connection.Open();
+            
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
 
             //command.Parameters.AddWithValue("", )
 
             try
             {
+                connection.Open();
                 if (command.ExecuteNonQuery() >= 1)
                 {
                     timer3.Start();
@@ -717,13 +665,13 @@ namespace SpawnCreator
                 //{
                 //    label27.Visible = false;
                 //}
-
+                connection.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            connection.Close();
+            
         }
 
         private void button_search_Click(object sender, EventArgs e)
@@ -806,19 +754,21 @@ namespace SpawnCreator
             //Refresh max(guid)+1 from item_instance
             string insertQuery_2 = "select max(guid)+1 from " + form_MM.GetCharDB() + ".item_instance;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
-            connection.Open();
+            //
 
 
             MySqlCommand command_2 = new MySqlCommand(insertQuery_2, connection);
             try
             {
+                connection.Open();
                 textBox_item_guid.Text = command_2.ExecuteScalar().ToString();
+                connection.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            //connection.Close();
+            //
 
 
             ////===============================================================================================
@@ -826,20 +776,22 @@ namespace SpawnCreator
             //Refresh max (Mail ID) + 1 
             string _insertQuery = "select max(id)+1 from " + form_MM.GetCharDB() + ".mail;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
-            //connection.Open();
+            //
 
 
             MySqlCommand _command = new MySqlCommand(_insertQuery, connection);
             try
             {
+                connection.Open();
                 // Mail ID
                 textBox2.Text = _command.ExecuteScalar().ToString();
+                connection.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            //connection.Close();
+            //
 
             //========================================================================================================
 
@@ -879,7 +831,10 @@ namespace SpawnCreator
                 return;
 
             else
-                SelectOnline_lblDots_Sender();
+            {
+                SelectGUID_sender();
+                SelectOnline_sender();
+            }
         }
 
         private void comboBox_receiver_SelectedIndexChanged(object sender, EventArgs e)
@@ -927,9 +882,9 @@ namespace SpawnCreator
 
             string insertQuery = "SELECT name FROM " + form_MM.GetCharDB() + ".characters;";
 
-            connection.Open();
+            
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
+            connection.Open();
             using (var reader = command.ExecuteReader())
             {
                 while (reader.Read())
@@ -937,6 +892,7 @@ namespace SpawnCreator
                     comboBox_sender.Items.Add(reader.GetString("name"));
                 }
             }
+            connection.Close();
         }
 
         // comboBox Select Sender
@@ -983,18 +939,14 @@ namespace SpawnCreator
 
         private void SearchNPC()
         {
-            string constring = "datasource=" + form_MM.GetHost() + ";" +
-                               "port=" + form_MM.GetPort() + ";" +
-                               "username=" + form_MM.GetUser() + ";" +
-                               "password=" + form_MM.GetPass() + ";"
-                                ;
+            //MySqlConnection conDataBase = new MySqlConnection(connection);
+            GetMySqlConnection();
 
-            MySqlConnection conDataBase = new MySqlConnection(constring);
-
-            MySqlCommand com = new MySqlCommand("SELECT entry,name from " + form_MM.GetWorldDB() + ".creature_template WHERE name LIKE \"" + textBox_search_npc.Text + "\";", conDataBase);
+            MySqlCommand com = new MySqlCommand($"SELECT entry,name from { form_MM.GetWorldDB() }.creature_template WHERE name LIKE \"{ textBox_search_npc.Text }\";", connection);
 
             try
             {
+                connection.Open();
                 MySqlDataAdapter sda = new MySqlDataAdapter();
                 sda.SelectCommand = com;
                 DataTable dbdataset = new DataTable();
@@ -1004,6 +956,10 @@ namespace SpawnCreator
                 bsource.DataSource = dbdataset;
                 dataGridView1.DataSource = bsource;
                 sda.Update(dbdataset);
+
+                dataGridView1.Columns[0].Width = 45; // Entry
+                dataGridView1.Columns[1].Width = 180; // Name
+                connection.Close();
 
             }
             catch (Exception ex)
@@ -1187,12 +1143,14 @@ namespace SpawnCreator
         {
             GetMySqlConnection();
 
-            string insertQuery = "SELECT entry,name FROM " + form_MM.GetWorldDB() + ".item_template WHERE name LIKE \"%" + txtSearch.Text + "%\";";
-            connection.Open();
+            string insertQuery = $"SELECT entry,name FROM { form_MM.GetWorldDB() }.item_template WHERE name LIKE \"%{ txtSearch.Text }%\";";
+            
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
 
             try
             {
+                connection.Open();
+
                 MySqlDataAdapter sda = new MySqlDataAdapter();
                 sda.SelectCommand = command;
                 DataTable dbdataset = new DataTable();
@@ -1202,12 +1160,17 @@ namespace SpawnCreator
                 bsource.DataSource = dbdataset;
                 dataGridView2.DataSource = bsource;
                 sda.Update(dbdataset);
+
+                dataGridView2.Columns[0].Width = 45; // Entry
+                dataGridView2.Columns[1].Width = 180; // Name
+
+                connection.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            connection.Close();
+            
         }
 
         // Item Search BUTTON

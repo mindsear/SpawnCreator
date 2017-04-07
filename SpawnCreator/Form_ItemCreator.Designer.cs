@@ -64,6 +64,8 @@
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
+            this.button_execute_query = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -223,7 +225,6 @@
             this.label56 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label_query_executed_successfully2 = new System.Windows.Forms.Label();
-            this.button_execute_query = new System.Windows.Forms.Button();
             this.textBox92 = new System.Windows.Forms.TextBox();
             this.textBox86 = new System.Windows.Forms.TextBox();
             this.textBox87 = new System.Windows.Forms.TextBox();
@@ -267,6 +268,7 @@
             this.textBox68 = new System.Windows.Forms.TextBox();
             this.label73 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_DeleteQuery = new System.Windows.Forms.Button();
             this.textBox105 = new System.Windows.Forms.TextBox();
             this.comboBox29 = new System.Windows.Forms.ComboBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -276,7 +278,6 @@
             this.label85 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label92 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
             this.label89 = new System.Windows.Forms.Label();
             this.label88 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
@@ -298,7 +299,6 @@
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer6 = new System.Windows.Forms.Timer(this.components);
-            this.btn_DeleteQuery = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_item_Entry)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -861,6 +861,41 @@
             this.label90.Click += new System.EventHandler(this.label90_Click);
             this.label90.MouseEnter += new System.EventHandler(this.label90_MouseEnter);
             this.label90.MouseLeave += new System.EventHandler(this.label90_MouseLeave);
+            // 
+            // button_execute_query
+            // 
+            this.button_execute_query.BackColor = System.Drawing.Color.DimGray;
+            this.button_execute_query.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_execute_query.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_execute_query.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_execute_query.ForeColor = System.Drawing.Color.White;
+            this.button_execute_query.Location = new System.Drawing.Point(167, 189);
+            this.button_execute_query.Name = "button_execute_query";
+            this.button_execute_query.Size = new System.Drawing.Size(153, 27);
+            this.button_execute_query.TabIndex = 44;
+            this.button_execute_query.Text = "Execute Query";
+            this.toolTip1.SetToolTip(this.button_execute_query, "Or Press F5");
+            this.button_execute_query.UseVisualStyleBackColor = false;
+            this.button_execute_query.Click += new System.EventHandler(this.button_execute_query_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(0, 176);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(167, 34);
+            this.button8.TabIndex = 212;
+            this.button8.Text = "Save in the same file";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.button8, "Or Press F2");
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click_2);
+            this.button8.MouseEnter += new System.EventHandler(this.button8_MouseEnter);
+            this.button8.MouseLeave += new System.EventHandler(this.button8_MouseLeave);
             // 
             // groupBox2
             // 
@@ -3577,22 +3612,6 @@
             this.label_query_executed_successfully2.Text = "Query Executed Successfully!";
             this.label_query_executed_successfully2.Visible = false;
             // 
-            // button_execute_query
-            // 
-            this.button_execute_query.BackColor = System.Drawing.Color.DimGray;
-            this.button_execute_query.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_execute_query.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_execute_query.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_execute_query.ForeColor = System.Drawing.Color.White;
-            this.button_execute_query.Location = new System.Drawing.Point(167, 189);
-            this.button_execute_query.Name = "button_execute_query";
-            this.button_execute_query.Size = new System.Drawing.Size(153, 27);
-            this.button_execute_query.TabIndex = 44;
-            this.button_execute_query.Text = "Execute Query";
-            this.toolTip1.SetToolTip(this.button_execute_query, "Or Press F5");
-            this.button_execute_query.UseVisualStyleBackColor = false;
-            this.button_execute_query.Click += new System.EventHandler(this.button_execute_query_Click);
-            // 
             // textBox92
             // 
             this.textBox92.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4188,6 +4207,22 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btn_DeleteQuery
+            // 
+            this.btn_DeleteQuery.BackColor = System.Drawing.Color.DimGray;
+            this.btn_DeleteQuery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DeleteQuery.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DeleteQuery.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteQuery.ForeColor = System.Drawing.Color.White;
+            this.btn_DeleteQuery.Location = new System.Drawing.Point(553, 49);
+            this.btn_DeleteQuery.Name = "btn_DeleteQuery";
+            this.btn_DeleteQuery.Size = new System.Drawing.Size(62, 24);
+            this.btn_DeleteQuery.TabIndex = 212;
+            this.btn_DeleteQuery.Text = "Delete";
+            this.btn_DeleteQuery.UseVisualStyleBackColor = false;
+            this.btn_DeleteQuery.Visible = false;
+            this.btn_DeleteQuery.Click += new System.EventHandler(this.btn_DeleteQuery_Click);
+            // 
             // textBox105
             // 
             this.textBox105.Location = new System.Drawing.Point(525, 23);
@@ -4313,25 +4348,6 @@
             this.label92.MouseEnter += new System.EventHandler(this.label92_MouseEnter);
             this.label92.MouseLeave += new System.EventHandler(this.label92_MouseLeave);
             // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(0, 176);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(167, 34);
-            this.button8.TabIndex = 212;
-            this.button8.Text = "Save in the same file";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.button8, "Or Press F2");
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click_2);
-            this.button8.MouseEnter += new System.EventHandler(this.button8_MouseEnter);
-            this.button8.MouseLeave += new System.EventHandler(this.button8_MouseLeave);
-            // 
             // label89
             // 
             this.label89.AutoSize = true;
@@ -4376,6 +4392,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
+            this.panel7.Click += new System.EventHandler(this.label86_Click_1);
             this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
             this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             this.panel7.MouseHover += new System.EventHandler(this.panel7_MouseHover);
@@ -4479,9 +4496,11 @@
             this.label83.ForeColor = System.Drawing.Color.White;
             this.label83.Location = new System.Drawing.Point(34, 9);
             this.label83.Name = "label83";
+            this.label83.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label83.Size = new System.Drawing.Size(100, 20);
             this.label83.TabIndex = 1;
             this.label83.Text = "Save as *.sql";
+            this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label83.Click += new System.EventHandler(this.GenerateSQLCode);
             this.label83.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
             this.label83.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
@@ -4542,22 +4561,6 @@
             // 
             this.timer6.Interval = 3000;
             this.timer6.Tick += new System.EventHandler(this.timer6_Tick);
-            // 
-            // btn_DeleteQuery
-            // 
-            this.btn_DeleteQuery.BackColor = System.Drawing.Color.DimGray;
-            this.btn_DeleteQuery.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_DeleteQuery.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_DeleteQuery.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DeleteQuery.ForeColor = System.Drawing.Color.White;
-            this.btn_DeleteQuery.Location = new System.Drawing.Point(553, 49);
-            this.btn_DeleteQuery.Name = "btn_DeleteQuery";
-            this.btn_DeleteQuery.Size = new System.Drawing.Size(62, 24);
-            this.btn_DeleteQuery.TabIndex = 212;
-            this.btn_DeleteQuery.Text = "Delete";
-            this.btn_DeleteQuery.UseVisualStyleBackColor = false;
-            this.btn_DeleteQuery.Visible = false;
-            this.btn_DeleteQuery.Click += new System.EventHandler(this.btn_DeleteQuery_Click);
             // 
             // Form_ItemCreator
             // 

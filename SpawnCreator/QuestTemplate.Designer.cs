@@ -86,6 +86,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label117 = new System.Windows.Forms.Label();
             this.textBox108 = new System.Windows.Forms.TextBox();
@@ -291,7 +292,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.button4 = new System.Windows.Forms.Button();
+            this.label_Success = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -406,6 +407,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
+            this.panel7.Click += new System.EventHandler(this.label86_Click);
             this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
             this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             // 
@@ -491,6 +493,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
+            this.panel5.Click += new System.EventHandler(this.label83_Click);
             this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
             this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
@@ -513,6 +516,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
+            this.panel2.Controls.Add(this.label_Success);
             this.panel2.Controls.Add(this.label78);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
@@ -1096,6 +1100,20 @@
             this.groupBox4.Size = new System.Drawing.Size(596, 1173);
             this.groupBox4.TabIndex = 81;
             this.groupBox4.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DimGray;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button4.Location = new System.Drawing.Point(1, 339);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(21, 24);
+            this.button4.TabIndex = 135;
+            this.button4.Text = "?";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox7
             // 
@@ -3073,7 +3091,7 @@
             // 
             // textBox105
             // 
-            this.textBox105.Location = new System.Drawing.Point(467, 19);
+            this.textBox105.Location = new System.Drawing.Point(311, -1);
             this.textBox105.Name = "textBox105";
             this.textBox105.Size = new System.Drawing.Size(76, 20);
             this.textBox105.TabIndex = 83;
@@ -3415,19 +3433,17 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // button4
+            // label_Success
             // 
-            this.button4.BackColor = System.Drawing.Color.DimGray;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Location = new System.Drawing.Point(1, 339);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(21, 24);
-            this.button4.TabIndex = 135;
-            this.button4.Text = "?";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.label_Success.AutoSize = true;
+            this.label_Success.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Success.ForeColor = System.Drawing.Color.Lime;
+            this.label_Success.Location = new System.Drawing.Point(603, 6);
+            this.label_Success.Name = "label_Success";
+            this.label_Success.Size = new System.Drawing.Size(75, 17);
+            this.label_Success.TabIndex = 215;
+            this.label_Success.Text = "Success!";
+            this.label_Success.Visible = false;
             // 
             // QuestTemplate
             // 
@@ -3736,10 +3752,11 @@
         private System.Windows.Forms.TextBox textBox107;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.TextBox textBox106;
-        private System.Windows.Forms.NumericUpDown NUD_Entry;
         private System.Windows.Forms.Label label119;
         private System.Windows.Forms.Button button_SaveInTheSameFile;
         private System.Windows.Forms.Button btn_DeleteQuery;
         private System.Windows.Forms.Button button4;
+        internal System.Windows.Forms.NumericUpDown NUD_Entry;
+        private System.Windows.Forms.Label label_Success;
     }
 }

@@ -29,16 +29,59 @@ namespace SpawnCreator
         }
 
         MySqlConnection connection = new MySqlConnection();
+        //MySql_Connect mysql_Connect = new MySql_Connect();
+
         public void GetMySqlConnection()
         {
-            MySqlConnection _connection = new MySqlConnection(
-                               "datasource = " + form_MM.GetHost() + "; " +
-                               "port=" + form_MM.GetPort() + ";" +
-                               "username=" + form_MM.GetUser() + ";" +
-                               "password=" + form_MM.GetPass() + ";"
-                            );
+            string connStr = string.Format("Server={0};Port={1};UID={2};Pwd={3};", form_MM.GetHost(), form_MM.GetPort(), form_MM.GetUser(), form_MM.GetPass());
+            MySqlConnection _connection = new MySqlConnection(connStr);
             connection = _connection;
         }
+
+        private void SelectMaxPlus1_Item()
+        {
+            GetMySqlConnection();
+
+            string query = $"SELECT max(entry) + 1 FROM { form_MM.GetWorldDB() }.item_template;";
+            MySqlCommand _command = new MySqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+                NUD_item_Entry.Text = _command.ExecuteScalar().ToString();
+                _command.Connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DeleteItem()
+        {
+            GetMySqlConnection();
+
+            try
+            {
+                connection.Open();
+
+                MySqlCommand _command = new MySqlCommand();
+                _command.Connection = connection;
+
+                _command.CommandText = $"DELETE FROM { form_MM.GetWorldDB() }.item_template WHERE entry=@Entry;";
+                _command.Prepare();
+                _command.Parameters.AddWithValue("@Entry", NUD_item_Entry.Text);
+
+                _command.ExecuteNonQuery();
+                MessageBox.Show("Item successfully deleted! \t", "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _command.Connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
         Form_MainMenu mainmenu = new Form_MainMenu();
         // Fix flickering .. still showing a flicker at the top left corner, wtf? really?
@@ -1587,6 +1630,9 @@ namespace SpawnCreator
         // Save as .sql - Button
         private void GenerateSQLCode(object sender, EventArgs e)
         {
+            if (comboBox29.SelectedIndex == 2)
+                comboBox29.SelectedIndex = 0;
+
             _Generate(sender, e);
 
             //PopUPSaveOptionsDialog();
@@ -2086,22 +2132,8 @@ namespace SpawnCreator
 
         private void button_maxPlus1fromDB_Click(object sender, EventArgs e)
         {
-            
-            GetMySqlConnection();
-
-            string insertQuery = "SELECT max(entry)+1 FROM " + form_MM.GetWorldDB() + ".item_template;";
-            connection.Open();
-            MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
-            try
-            {
-                NUD_item_Entry.Text = command.ExecuteScalar().ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            connection.Close();
+            //mysql_Connect.SelectMaxPlus1_Item(this);
+            SelectMaxPlus1_Item();
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -2157,6 +2189,9 @@ namespace SpawnCreator
 
         private void button_execute_query_Click(object sender, EventArgs e)
         {
+            if (comboBox29.SelectedIndex == 2)
+                comboBox29.SelectedIndex = 0;
+
             _Generate(sender, e);
 
             if (NUD_item_Entry.Text == "")
@@ -2170,7 +2205,7 @@ namespace SpawnCreator
                 return;
             }
 
-            GetMySqlConnection();
+           GetMySqlConnection();
 
             string insertQuery = stringSQLShare;
             connection.Open();
@@ -2185,7 +2220,7 @@ namespace SpawnCreator
                 }
                 
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -2761,6 +2796,9 @@ namespace SpawnCreator
         //Copy to Clipboard - Button
         private void label86_Click_1(object sender, EventArgs e)
         {
+            if (comboBox29.SelectedIndex == 2)
+                comboBox29.SelectedIndex = 0;
+
             _Generate(sender, e);
 
             if (NUD_item_Entry.Text == "")
@@ -2947,6 +2985,7 @@ namespace SpawnCreator
         private void comboBox29_SelectedIndexChanged(object sender, EventArgs e)
         {
             btn_DeleteQuery.Visible = false;
+
             if (comboBox29.SelectedIndex == 0) textBox105.Text = "INSERT";
             else if (comboBox29.SelectedIndex == 1) textBox105.Text = "REPLACE";
             else if (comboBox29.SelectedIndex == 2)
@@ -2980,6 +3019,9 @@ namespace SpawnCreator
 
         private void button8_Click_2(object sender, EventArgs e)
         {
+            if (comboBox29.SelectedIndex == 2)
+                comboBox29.SelectedIndex = 0;
+
             _Generate(sender, e);
 
             //PopUPSaveOptionsDialog();
@@ -3048,25 +3090,9 @@ namespace SpawnCreator
                 return;
 
             else
-            {
-                GetMySqlConnection();
+                //mysql_Connect.DeleteItem(this);
+                DeleteItem();
 
-                string insertQuery = "DELETE FROM " + form_MM.GetWorldDB() + ".item_template WHERE entry=" + NUD_item_Entry.Text + ";";
-
-                connection.Open();
-                MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
-                try
-                {
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Item Deleted!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                connection.Close();
-            }
         }
         
     }

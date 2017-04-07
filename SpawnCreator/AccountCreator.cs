@@ -29,24 +29,54 @@ namespace SpawnCreator
         }
 
         MySqlConnection connection = new MySqlConnection();
+        //MySql_Connect mysql_Connect = new MySql_Connect();
+
         public void GetMySqlConnection()
         {
-            MySqlConnection _connection = new MySqlConnection(
-                               "datasource = " + form_MM.GetHost() + "; " +
-                               "port=" + form_MM.GetPort() + ";" +
-                               "username=" + form_MM.GetUser() + ";" +
-                               "password=" + form_MM.GetPass() + ";"
-                            );
+            string connStr = string.Format("Server={0};Port={1};UID={2};Pwd={3};",
+                form_MM.GetHost(), form_MM.GetPort(), form_MM.GetUser(), form_MM.GetPass());
+
+            MySqlConnection _connection = new MySqlConnection(connStr);
             connection = _connection;
+        }
+
+        public void ShowExistingAccounts()
+        {
+            GetMySqlConnection();
+
+            string query = $"SELECT id, username, email FROM { form_MM.GetAuthDB() }.account;";
+
+            MySqlCommand _command = new MySqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+
+                MySqlDataAdapter sda = new MySqlDataAdapter();
+                sda.SelectCommand = _command;
+                DataTable dbdataset = new DataTable();
+                sda.Fill(dbdataset);
+                BindingSource bsource = new BindingSource();
+
+                bsource.DataSource = dbdataset;
+                dataGridView1.DataSource = bsource;
+                sda.Update(dbdataset);
+
+                _command.Connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public static string stringSqlShare;
         private void GenerateSQL()
         {
-            string BuildSQL = "INSERT INTO " + form_MM.GetAuthDB() + ".account (username, sha_pass_hash, expansion, email) " + "\n" +
-                "VALUES (UPPER('" + textBox_username.Text + "'), (SHA1(CONCAT(UPPER('" + textBox_username.Text + "'), ':', UPPER('" + textBox_pass.Text + "')))), " + textBox_Expansion.Text + ", '" + textBox_email.Text + "'); " + "\n" +
-                "INSERT INTO " + form_MM.GetAuthDB() + ".account_access (id, gmlevel, RealmID) " + "\n" +
-                "VALUES ((SELECT id FROM " + form_MM.GetAuthDB() + ".account WHERE username = '" + textBox_username.Text + "'), " + textBox_Account_Access_Level.Text + ", " + textBox_realmID.Text + "); \n";
+            string BuildSQL = $"INSERT INTO { form_MM.GetAuthDB() }.account (username, sha_pass_hash, expansion, email) " + "\n" +
+                $"VALUES (UPPER('{ textBox_username.Text }'), (SHA1(CONCAT(UPPER('{ textBox_username.Text }'), ':', UPPER('{ textBox_pass.Text }')))), { textBox_Expansion.Text }, '{ textBox_email.Text }'); " + "\n" +
+                $"INSERT INTO { form_MM.GetAuthDB() }.account_access (id, gmlevel, RealmID) " + "\n" +
+                $"VALUES ((SELECT id FROM { form_MM.GetAuthDB() }.account WHERE username = '{ textBox_username.Text }'), { textBox_Account_Access_Level.Text }, { textBox_realmID.Text }); \n";
             stringSqlShare = BuildSQL;
         }
 
@@ -59,35 +89,6 @@ namespace SpawnCreator
         {
             _mouseDown = true;
             lastLocation = e.Location;
-        }
-
-        private void ShowExistingAccounts(object sender, EventArgs e)
-        {
-            string constring = "datasource=" + form_MM.GetHost() + ";" +
-                "port=" + form_MM.GetPort() + ";" +
-                "username=" + form_MM.GetUser() + ";" +
-                "password=" + form_MM.GetPass() + ";" ;
-
-            MySqlConnection conDataBase = new MySqlConnection(constring);
-            MySqlCommand com = new MySqlCommand("select id, username, email from " + form_MM.GetAuthDB() + ".account;", conDataBase);
-
-            try
-            {
-                MySqlDataAdapter sda = new MySqlDataAdapter();
-                sda.SelectCommand = com;
-                DataTable dbdataset = new DataTable();
-                sda.Fill(dbdataset);
-                BindingSource bsource = new BindingSource();
-
-                bsource.DataSource = dbdataset;
-                dataGridView1.DataSource = bsource;
-                sda.Update(dbdataset);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
@@ -162,7 +163,7 @@ namespace SpawnCreator
                 dataGridView1.Enabled = false;
             }
             else
-                ShowExistingAccounts(sender, e);
+                ShowExistingAccounts();
         }
 
         // Copy to Clipboard - Button
@@ -437,7 +438,7 @@ namespace SpawnCreator
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ShowExistingAccounts(sender, e); // Refresh dataGridView1
+            ShowExistingAccounts();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -469,7 +470,7 @@ namespace SpawnCreator
 
         private void timer7_Tick(object sender, EventArgs e)
         {
-            ShowExistingAccounts(sender, e); // Refresh dataGridView1
+            ShowExistingAccounts();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

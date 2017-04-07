@@ -231,6 +231,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 38);
             this.panel7.TabIndex = 22;
+            this.panel7.Click += new System.EventHandler(this.label86_Click);
             this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
             this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             // 
@@ -316,6 +317,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 38);
             this.panel5.TabIndex = 1;
+            this.panel5.Click += new System.EventHandler(this.label83_Click);
             this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
             this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
@@ -563,7 +565,7 @@
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.textBox_item_guid);
-            this.groupBox4.Location = new System.Drawing.Point(6, 640);
+            this.groupBox4.Location = new System.Drawing.Point(6, 626);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(660, 356);
             this.groupBox4.TabIndex = 3;
@@ -645,7 +647,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(57, 137);
+            this.label19.Location = new System.Drawing.Point(57, 145);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(134, 16);
             this.label19.TabIndex = 111;
@@ -657,9 +659,9 @@
             this.button_search_npc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_search_npc.Image = global::SpawnCreator.Properties.Resources.magnifier;
             this.button_search_npc.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_search_npc.Location = new System.Drawing.Point(263, 157);
+            this.button_search_npc.Location = new System.Drawing.Point(262, 162);
             this.button_search_npc.Name = "button_search_npc";
-            this.button_search_npc.Size = new System.Drawing.Size(74, 24);
+            this.button_search_npc.Size = new System.Drawing.Size(75, 24);
             this.button_search_npc.TabIndex = 110;
             this.button_search_npc.Text = "Search";
             this.button_search_npc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -669,7 +671,7 @@
             // textBox_search_npc
             // 
             this.textBox_search_npc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_search_npc.Location = new System.Drawing.Point(55, 158);
+            this.textBox_search_npc.Location = new System.Drawing.Point(55, 164);
             this.textBox_search_npc.Name = "textBox_search_npc";
             this.textBox_search_npc.Size = new System.Drawing.Size(202, 21);
             this.textBox_search_npc.TabIndex = 109;
@@ -1291,7 +1293,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox3.Image = global::SpawnCreator.Properties.Resources.UI_CopperIcon;
-            this.pictureBox3.Location = new System.Drawing.Point(373, 583);
+            this.pictureBox3.Location = new System.Drawing.Point(373, 566);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(16, 16);
             this.pictureBox3.TabIndex = 21;
@@ -1303,7 +1305,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = global::SpawnCreator.Properties.Resources.UI_GoldIcon;
-            this.pictureBox2.Location = new System.Drawing.Point(195, 583);
+            this.pictureBox2.Location = new System.Drawing.Point(195, 566);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 16);
             this.pictureBox2.TabIndex = 19;
@@ -1315,7 +1317,7 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox4.Image = global::SpawnCreator.Properties.Resources.UI_SilverIcon;
-            this.pictureBox4.Location = new System.Drawing.Point(294, 583);
+            this.pictureBox4.Location = new System.Drawing.Point(294, 566);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(16, 16);
             this.pictureBox4.TabIndex = 5235;
@@ -1326,7 +1328,7 @@
             // 
             this.gold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.gold.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gold.Location = new System.Drawing.Point(217, 578);
+            this.gold.Location = new System.Drawing.Point(217, 561);
             this.gold.Maximum = new decimal(new int[] {
             214747,
             0,
@@ -1352,7 +1354,7 @@
             // 
             this.silver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.silver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.silver.Location = new System.Drawing.Point(316, 578);
+            this.silver.Location = new System.Drawing.Point(316, 561);
             this.silver.Maximum = new decimal(new int[] {
             99,
             0,
@@ -1370,7 +1372,7 @@
             // copper
             // 
             this.copper.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copper.Location = new System.Drawing.Point(395, 578);
+            this.copper.Location = new System.Drawing.Point(395, 561);
             this.copper.Maximum = new decimal(new int[] {
             99,
             0,
@@ -1398,7 +1400,7 @@
             this.rdbCOD.AutoSize = true;
             this.rdbCOD.Enabled = false;
             this.rdbCOD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbCOD.Location = new System.Drawing.Point(341, 547);
+            this.rdbCOD.Location = new System.Drawing.Point(341, 530);
             this.rdbCOD.Name = "rdbCOD";
             this.rdbCOD.Size = new System.Drawing.Size(126, 20);
             this.rdbCOD.TabIndex = 5258;
@@ -1423,7 +1425,7 @@
             this.rdbMoney.AutoSize = true;
             this.rdbMoney.Checked = true;
             this.rdbMoney.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMoney.Location = new System.Drawing.Point(234, 547);
+            this.rdbMoney.Location = new System.Drawing.Point(234, 530);
             this.rdbMoney.Name = "rdbMoney";
             this.rdbMoney.Size = new System.Drawing.Size(65, 20);
             this.rdbMoney.TabIndex = 89;
@@ -1595,7 +1597,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.ComboBox comboBox_sender;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -1627,12 +1628,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label_mail_sent;
-        private System.Windows.Forms.ComboBox comboBox_receiver;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox_has_items;
         private System.Windows.Forms.TextBox textBox_item_guid;
         private System.Windows.Forms.TextBox textBox_receiver;
-        private System.Windows.Forms.TextBox textBox_sender;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -1641,7 +1640,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox_message_type;
         private System.Windows.Forms.ComboBox comboBox_message_type;
-        private System.Windows.Forms.ComboBox comboBox_select_sender;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button_search_npc;
@@ -1674,13 +1672,17 @@
         private System.Windows.Forms.Timer timer6;
         private System.Windows.Forms.Timer timer7;
         private System.Windows.Forms.Timer timer8;
-        private System.Windows.Forms.Label label_dot;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label_dot_receiver;
         private System.Windows.Forms.Timer timer9;
         private System.Windows.Forms.Timer timer10;
+        internal System.Windows.Forms.ComboBox comboBox_sender;
+        internal System.Windows.Forms.ComboBox comboBox_receiver;
+        internal System.Windows.Forms.ComboBox comboBox_select_sender;
+        internal System.Windows.Forms.TextBox textBox_sender;
+        internal System.Windows.Forms.Label label_dot;
+        internal System.Windows.Forms.TextBox textBox11;
+        internal System.Windows.Forms.TextBox textBox12;
+        internal System.Windows.Forms.Label label_dot_receiver;
+        internal System.Windows.Forms.ToolTip toolTip1;
     }
 }

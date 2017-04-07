@@ -31,35 +31,81 @@ namespace SpawnCreator
         }
 
         MySqlConnection connection = new MySqlConnection();
+        //MySql_Connect mysql_Connect = new MySql_Connect();
+
         public void GetMySqlConnection()
         {
-            MySqlConnection _connection = new MySqlConnection(
-                               "datasource = " + form_MM.GetHost() + "; " +
-                               "port=" + form_MM.GetPort() + ";" +
-                               "username=" + form_MM.GetUser() + ";" +
-                               "password=" + form_MM.GetPass() + ";"
-                            );
+            string connStr = string.Format("Server={0};Port={1};UID={2};Pwd={3};", 
+                form_MM.GetHost(), form_MM.GetPort(), form_MM.GetUser(), form_MM.GetPass());
+
+            MySqlConnection _connection = new MySqlConnection(connStr);
             connection = _connection;
         }
 
-        private void SelectMaxPlus1_FROM_creature_template()
+        public void SelectMaxPlus1_NPC()
         {
             GetMySqlConnection();
 
-            string insertQuery = "SELECT max(entry)+1 FROM " + form_MM.GetWorldDB() + ".creature_template;";
+            string query = $"SELECT max(entry) + 1 FROM { form_MM.GetWorldDB() }.creature_template;";
 
-            connection.Open();
-            MySqlCommand command = new MySqlCommand(insertQuery, connection);
+            MySqlCommand _command = new MySqlCommand(query, connection);
+
             try
             {
-                NUD_Entry.Text = command.ExecuteScalar().ToString();
+                connection.Open();
+                NUD_Entry.Text = _command.ExecuteScalar().ToString();
+                _command.Connection.Close();
+
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            connection.Close();
         }
+
+        public void DeleteNPC()
+        {
+            GetMySqlConnection();
+
+            try
+            {
+                connection.Open();
+
+                MySqlCommand _command = new MySqlCommand();
+                _command.Connection = connection;
+
+                _command.CommandText = $"DELETE FROM { form_MM.GetWorldDB() }.creature_template WHERE entry=@Entry;";
+                _command.Prepare();
+                _command.Parameters.AddWithValue("@Entry", NUD_Entry.Text);
+
+                _command.ExecuteNonQuery();
+                MessageBox.Show("Creature successfully deleted! \t", "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _command.Connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //private void SelectMaxPlus1_FROM_creature_template()
+        //{
+        //    //GetMySqlConnection();
+
+        //    string insertQuery = "SELECT max(entry)+1 FROM " + form_MM.GetWorldDB() + ".creature_template;";
+
+        //    connection.Open();
+        //    MySqlCommand command = new MySqlCommand(insertQuery, connection);
+        //    try
+        //    {
+        //        NUD_Entry.Text = command.ExecuteScalar().ToString();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    connection.Close();
+        //}
 
         void onlyNumbers(object sender, KeyPressEventArgs e)
         {
@@ -812,57 +858,57 @@ namespace SpawnCreator
 
             BuildSQLFile += "'" + textBox7.Text + "', "; // name
             BuildSQLFile += "'" + textBox12.Text + "', "; // subname
-            // BuildSQLFile += "'" + comboBox1.SelectedIndex + "', "; // IconName
+            BuildSQLFile += "'" + comboBox1.Text + "', "; // IconName
 
-            int IconName = comboBox1.SelectedIndex;
-            switch (IconName)
-            {
-                case 0:
-                    BuildSQLFile += "'" + "Directions" + "', ";
-                    break;
-                case 1:
-                    BuildSQLFile += "'" + "Gunner" + "', ";
-                    break;
-                case 2:
-                    BuildSQLFile += "'" + "vehichleCursor" + "', ";
-                    break;
-                case 3:
-                    BuildSQLFile += "'" + "Driver" + "', ";
-                    break;
-                case 4:
-                    BuildSQLFile += "'" + "Attack" + "', ";
-                    break;
-                case 5:
-                    BuildSQLFile += "'" + "Buy" + "', ";
-                    break;
-                case 6:
-                    BuildSQLFile += "'" + "Speak" + "', ";
-                    break;
-                case 7:
-                    BuildSQLFile += "'" + "Pickup" + "', ";
-                    break;
-                case 8:
-                    BuildSQLFile += "'" + "Interact" + "', ";
-                    break;
-                case 9:
-                    BuildSQLFile += "'" + "Trainer" + "', ";
-                    break;
-                case 10:
-                    BuildSQLFile += "'" + "Taxi" + "', ";
-                    break;
-                case 11:
-                    BuildSQLFile += "'" + "Repair" + "', ";
-                    break;
-                case 12:
-                    BuildSQLFile += "'" + "LootAll" + "', ";
-                    break;
-                case 13:
-                    BuildSQLFile += "'" + "Quest" + "', ";
-                    break;
-                case 14:
-                    BuildSQLFile += "'" + "PVP" + "', ";
-                    break;
-            }
+            //int IconName = comboBox1.SelectedIndex;
+            //switch (IconName)
+            //{
+            //    case 0:
+            //        BuildSQLFile += "'" + "Directions" + "', ";
+            //        break;
+            //    case 1:
+            //        BuildSQLFile += "'" + "Gunner" + "', ";
+            //        break;
+            //    case 2:
+            //        BuildSQLFile += "'" + "vehichleCursor" + "', ";
+            //        break;
+            //    case 3:
+            //        BuildSQLFile += "'" + "Driver" + "', ";
+            //        break;
+            //    case 4:
+            //        BuildSQLFile += "'" + "Attack" + "', ";
+            //        break;
+            //    case 5:
+            //        BuildSQLFile += "'" + "Buy" + "', ";
+            //        break;
+            //    case 6:
+            //        BuildSQLFile += "'" + "Speak" + "', ";
+            //        break;
+            //    case 7:
+            //        BuildSQLFile += "'" + "Pickup" + "', ";
+            //        break;
+            //    case 8:
+            //        BuildSQLFile += "'" + "Interact" + "', ";
+            //        break;
+            //    case 9:
+            //        BuildSQLFile += "'" + "Trainer" + "', ";
+            //        break;
+            //    case 10:
+            //        BuildSQLFile += "'" + "Taxi" + "', ";
+            //        break;
+            //    case 11:
+            //        BuildSQLFile += "'" + "Repair" + "', ";
+            //        break;
+            //    case 12:
+            //        BuildSQLFile += "'" + "LootAll" + "', ";
+            //        break;
+            //    case 13:
+            //        BuildSQLFile += "'" + "Quest" + "', ";
+            //        break;
+            //    case 14:
+            //        BuildSQLFile += "'" + "PVP" + "', ";
+            //        break;
+            //}
 
             if (textBox13.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox13.Text + ", "; // gossip_menu_id
@@ -1261,16 +1307,14 @@ namespace SpawnCreator
 
         private void GenerateSQLCode_NPC_Creator(object sender, EventArgs e)
         {
+            if (comboBox11.SelectedIndex == 2)
+                comboBox11.SelectedIndex = 0;
+
             _Generate_SQL_NPC(sender, e);
 
-            if (NUD_Entry.Text == "")
+            if (string.IsNullOrWhiteSpace(NUD_Entry.Text))
             {
-                MessageBox.Show("Entry should not be empty", "Error");
-                return;
-            }
-            if (textBox7.Text == "")
-            {
-                MessageBox.Show("Name should not be empty", "Error");
+                MessageBox.Show("Entry should not be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -1371,7 +1415,9 @@ namespace SpawnCreator
                 button12.Visible = false; // max+1 lootID
             }
             else
-                SelectMaxPlus1_FROM_creature_template();
+                //SelectMaxPlus1_FROM_creature_template();
+                //mysql_Connect.SelectMaxPlus1_NPC(this);
+                SelectMaxPlus1_NPC();
         }
 
         public bool IsProcessOpen(string name = "mysqld")
@@ -1531,20 +1577,18 @@ namespace SpawnCreator
         // Execute Query - Button
         private void button10_Click(object sender, EventArgs e)
         {
+            if (comboBox11.SelectedIndex == 2)
+                comboBox11.SelectedIndex = 0;
+
             _Generate_SQL_NPC(sender, e);
 
-            if (NUD_Entry.Text == "")
+            if (string.IsNullOrWhiteSpace(NUD_Entry.Text))
             {
                 MessageBox.Show("Entry should not be empty", "Error");
                 return;
             }
-            else if (textBox7.Text == "")
-            {
-                MessageBox.Show("Name should not be empty", "Error");
-                return;
-            }
 
-            GetMySqlConnection();
+            //GetMySqlConnection();
 
             string insertQuery = stringSQLShare;
             connection.Open();
@@ -1604,16 +1648,14 @@ namespace SpawnCreator
         //copy to clipboard button (label)
         private void label86_Click(object sender, EventArgs e)
         {
+            if (comboBox11.SelectedIndex == 2)
+                comboBox11.SelectedIndex = 0;
+
             _Generate_SQL_NPC(sender, e);
 
-            if (NUD_Entry.Text == "")
+            if (string.IsNullOrWhiteSpace(NUD_Entry.Text))
             {
-                MessageBox.Show("Entry should not be empty", "Error");
-                return;
-            }
-            if (textBox7.Text == "")
-            {
-                MessageBox.Show("Name should not be empty", "Error");
+                MessageBox.Show("Entry should not be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -1658,7 +1700,7 @@ namespace SpawnCreator
         //max + 1 button
         private void button2_Click(object sender, EventArgs e)
         {
-             SelectMaxPlus1_FROM_creature_template();
+            SelectMaxPlus1_NPC();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -1694,7 +1736,7 @@ namespace SpawnCreator
         // Max+1 LootID
         private void button12_Click(object sender, EventArgs e)
         {
-            GetMySqlConnection();
+            //GetMySqlConnection();
 
             string insertQuery = "SELECT max(entry)+1 FROM " + form_MM.GetWorldDB() + ".creature_loot_template;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
@@ -1930,7 +1972,7 @@ namespace SpawnCreator
         // Max+1 Gossip Menu ID
         private void button16_Click(object sender, EventArgs e)
         {
-            GetMySqlConnection();
+            //GetMySqlConnection();
 
             string insertQuery = "SELECT max(menu_id)+1 FROM " + form_MM.GetWorldDB() + ".gossip_menu_option;";
             //string insertQuery = textBox_SelectMaxPlus1.Text;
@@ -2013,6 +2055,7 @@ namespace SpawnCreator
 
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
         {
+            textBox105.ResetText();
             btn_DeleteQuery.Visible = false;
             if (comboBox11.SelectedIndex == 0) textBox105.Text = "INSERT";
             else if (comboBox11.SelectedIndex == 1) textBox105.Text = "REPLACE";
@@ -2073,20 +2116,20 @@ namespace SpawnCreator
         // button_SaveInTheSameFile
         private void button19_Click(object sender, EventArgs e)
         {
+            if (comboBox11.SelectedIndex == 2)
+                comboBox11.SelectedIndex = 0;
+
             _Generate_SQL_NPC(sender, e);
 
-            if (NUD_Entry.Text == "")
+            if (string.IsNullOrWhiteSpace(NUD_Entry.Text))
             {
-                MessageBox.Show("Entry should not be empty", "Error");
+                MessageBox.Show("Entry should not be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (textBox7.Text == "")
-            {
-                MessageBox.Show("Name should not be empty", "Error");
-                return;
-            }
-            
+
             //Save in the same file
+            //using (var writer = File.AppendText("Creatures.sql"))
+            //Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Screenshot.png"
             using (var writer = File.AppendText("Creatures.sql"))
             {
                 writer.Write(stringSQLShare);
@@ -2160,25 +2203,8 @@ namespace SpawnCreator
                 return;
 
             else
-            {
-                GetMySqlConnection();
-
-                string insertQuery = "DELETE FROM " + form_MM.GetWorldDB() + ".creature_template WHERE entry=" + NUD_Entry.Text + ";" ;
-
-                connection.Open();
-                MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
-                try
-                {
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Creature Deleted!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                connection.Close();
-            }
+                DeleteNPC();
+                
         }
 
         private void label92_Click(object sender, EventArgs e)
