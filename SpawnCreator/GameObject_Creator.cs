@@ -58,7 +58,7 @@ namespace SpawnCreator
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -83,7 +83,7 @@ namespace SpawnCreator
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -96,7 +96,7 @@ namespace SpawnCreator
             BuildSqlFile += "(entry, type, displayId, name, IconName, castBarCaption, unk1, ";
             BuildSqlFile += "size, Data0, Data1, Data2, Data3, Data4, Data5, Data6, Data7, Data8, Data9, Data10, Data11, Data12, Data13, Data14, Data15, ";
             BuildSqlFile += "Data16, Data17, Data18, Data19, Data20, Data21, Data22, Data23, AIName, ScriptName, VerifiedBuild) ";
-            BuildSqlFile += "VALUES \n";
+            BuildSqlFile += "VALUES " + Environment.NewLine;
             
             BuildSqlFile += $"({ NUD_Entry.Value }, "; // Entry
 
@@ -162,7 +162,7 @@ namespace SpawnCreator
             BuildSqlFile += $"'{ comboBox3.Text }', "; // AiName
             BuildSqlFile += $"'{ textBox30.Text }', "; // ScriptName
             if (textBox32.Text == "") BuildSqlFile += "0, "; else
-            BuildSqlFile += $"{ textBox32.Text }); \n";  // VerifiedBuild + \n (new line)
+            BuildSqlFile += $"{ textBox32.Text }); ";  // VerifiedBuild
 
             stringSqlShare = BuildSqlFile;
         }
@@ -723,15 +723,13 @@ namespace SpawnCreator
 
             try
             {
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    timer3.Start();
-                }
+                command.ExecuteNonQuery();
+                timer3.Start();
                 
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             connection.Close();
         }
@@ -1019,9 +1017,18 @@ namespace SpawnCreator
 
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button22.Visible = false;
             btn_DeleteQuery.Visible = false;
-            if (comboBox11.SelectedIndex == 0) textBox105.Text = "INSERT";
-            else if (comboBox11.SelectedIndex == 1) textBox105.Text = "REPLACE";
+            if (comboBox11.SelectedIndex == 0)
+            {
+                textBox105.Text = "INSERT";
+                button22.Visible = true;
+            }
+            else if (comboBox11.SelectedIndex == 1)
+            {
+                textBox105.Text = "REPLACE";
+                button22.Visible = true;
+            }
             else if (comboBox11.SelectedIndex == 2) // Delete Option
             {
                 if (form_MM.CB_NoMySQL.Checked || label_mysql_status2.Text == "Connection Lost - MySQL is not running")
@@ -1060,7 +1067,7 @@ namespace SpawnCreator
 
             using (var writer = File.AppendText("GameObjects.sql"))
             {
-                writer.Write(stringSqlShare);
+                writer.Write(stringSqlShare + Environment.NewLine);
                 button_SaveInTheSameFile.Text = "Saved!";
                 button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
             }
@@ -1160,6 +1167,15 @@ namespace SpawnCreator
 
                 RTB_Notes.ContextMenu = contextMenu;
             }
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            if (comboBox11.SelectedIndex == 0)
+                MessageBox.Show("MySQL - INSERT Syntax: \nInserts new rows into an existing table. ", "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            else
+                MessageBox.Show("MySQL - REPLACE Syntax: \nREPLACE works exactly like INSERT, except that if an old row in the table has the same value as a new row for a PRIMARY KEY or a UNIQUE index, the old row is deleted before the new row is inserted.", "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -223,7 +223,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(464, 216);
+            this.label10.Location = new System.Drawing.Point(464, 189);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 146;
@@ -306,6 +306,9 @@
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
             this.label_mysql_status2.Text = "Connected!";
+            this.label_mysql_status2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label_mysql_status2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label_mysql_status2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // label85
             // 
@@ -318,6 +321,9 @@
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
             this.label85.Text = "MySQL Status:";
+            this.label85.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label85.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label85.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // panel3
             // 
@@ -650,12 +656,12 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(427, 232);
+            this.textBox1.Location = new System.Drawing.Point(427, 205);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(223, 100);
+            this.textBox1.Size = new System.Drawing.Size(223, 127);
             this.textBox1.TabIndex = 145;
             // 
             // linkLabel2

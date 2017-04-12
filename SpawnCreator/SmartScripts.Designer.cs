@@ -425,6 +425,9 @@
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
             this.label_mysql_status2.Text = "Connected!";
+            this.label_mysql_status2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label_mysql_status2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label_mysql_status2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // label85
             // 
@@ -437,6 +440,9 @@
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
             this.label85.Text = "MySQL Status:";
+            this.label85.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label85.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label85.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // label80
             // 
@@ -1690,6 +1696,9 @@
             this.label_Success.TabIndex = 352;
             this.label_Success.Text = "Success!";
             this.label_Success.Visible = false;
+            this.label_Success.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label_Success.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label_Success.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // SmartScripts
             // 

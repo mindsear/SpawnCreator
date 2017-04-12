@@ -939,33 +939,53 @@ namespace SpawnCreator
 
         private void SearchNPC()
         {
-            //MySqlConnection conDataBase = new MySqlConnection(connection);
             GetMySqlConnection();
 
-            MySqlCommand com = new MySqlCommand($"SELECT entry,name from { form_MM.GetWorldDB() }.creature_template WHERE name LIKE \"{ textBox_search_npc.Text }\";", connection);
+            //MySqlCommand com = new MySqlCommand($"SELECT entry,name from { form_MM.GetWorldDB() }.creature_template WHERE name LIKE \"{ textBox_search_npc.Text }\";", connection);
 
+            //try
+            //{
+            //    connection.Open();
+            //    MySqlDataAdapter sda = new MySqlDataAdapter();
+            //    sda.SelectCommand = com;
+            //    DataTable dbdataset = new DataTable();
+            //    sda.Fill(dbdataset);
+            //    BindingSource bsource = new BindingSource();
+
+            //    bsource.DataSource = dbdataset;
+            //    dataGridView1.DataSource = bsource;
+            //    sda.Update(dbdataset);
+
+            //    dataGridView1.Columns[0].Width = 45; // Entry
+            //    dataGridView1.Columns[1].Width = 180; // Name
+            //    connection.Close();
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+            string query = $"SELECT entry,name from { form_MM.GetWorldDB() }.creature_template WHERE name LIKE @name";
             try
             {
-                connection.Open();
-                MySqlDataAdapter sda = new MySqlDataAdapter();
-                sda.SelectCommand = com;
-                DataTable dbdataset = new DataTable();
-                sda.Fill(dbdataset);
-                BindingSource bsource = new BindingSource();
-
-                bsource.DataSource = dbdataset;
-                dataGridView1.DataSource = bsource;
-                sda.Update(dbdataset);
-
-                dataGridView1.Columns[0].Width = 45; // Entry
-                dataGridView1.Columns[1].Width = 180; // Name
-                connection.Close();
-
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = textBox_search_npc.Text + "%";
+                    MySqlDataAdapter sda = new MySqlDataAdapter();
+                    sda.SelectCommand = cmd;
+                    DataTable dbdataset = new DataTable();
+                    sda.Fill(dbdataset);
+                    dataGridView1.DataSource = dbdataset;
+                    dataGridView1.Columns[0].Width = 50; // Entry
+                    dataGridView1.Columns[1].Width = 160; // Name
+                }
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(this, "ERROR " + ex.Number + ": " + ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         // Search NPC
@@ -1143,34 +1163,53 @@ namespace SpawnCreator
         {
             GetMySqlConnection();
 
-            string insertQuery = $"SELECT entry,name FROM { form_MM.GetWorldDB() }.item_template WHERE name LIKE \"%{ txtSearch.Text }%\";";
-            
-            MySqlCommand command = new MySqlCommand(insertQuery, connection);
+            //string insertQuery = $"SELECT entry,name FROM { form_MM.GetWorldDB() }.item_template WHERE name LIKE \"%{ txtSearch.Text }%\";";
+
+            //MySqlCommand command = new MySqlCommand(insertQuery, connection);
+
+            //try
+            //{
+            //    connection.Open();
+
+            //    MySqlDataAdapter sda = new MySqlDataAdapter();
+            //    sda.SelectCommand = command;
+            //    DataTable dbdataset = new DataTable();
+            //    sda.Fill(dbdataset);
+            //    BindingSource bsource = new BindingSource();
+
+            //    bsource.DataSource = dbdataset;
+            //    dataGridView2.DataSource = bsource;
+            //    sda.Update(dbdataset);
+
+            //    dataGridView2.Columns[0].Width = 45; // Entry
+            //    dataGridView2.Columns[1].Width = 180; // Name
+
+            //    connection.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            string query = $"SELECT entry,name FROM { form_MM.GetWorldDB() }.item_template WHERE name LIKE @item";
 
             try
             {
-                connection.Open();
-
-                MySqlDataAdapter sda = new MySqlDataAdapter();
-                sda.SelectCommand = command;
-                DataTable dbdataset = new DataTable();
-                sda.Fill(dbdataset);
-                BindingSource bsource = new BindingSource();
-
-                bsource.DataSource = dbdataset;
-                dataGridView2.DataSource = bsource;
-                sda.Update(dbdataset);
-
-                dataGridView2.Columns[0].Width = 45; // Entry
-                dataGridView2.Columns[1].Width = 180; // Name
-
-                connection.Close();
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.Add("@item", MySqlDbType.VarChar).Value = txtSearch.Text + "%";
+                    MySqlDataAdapter sda = new MySqlDataAdapter();
+                    sda.SelectCommand = cmd;
+                    DataTable dbdataset = new DataTable();
+                    sda.Fill(dbdataset);
+                    dataGridView2.DataSource = dbdataset;
+                    dataGridView2.Columns[0].Width = 50; // Entry
+                    dataGridView2.Columns[1].Width = 160; // Name
+                }
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(this, "ERROR " + ex.Number + ": " + ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         // Item Search BUTTON

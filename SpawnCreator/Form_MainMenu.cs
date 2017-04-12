@@ -276,6 +276,46 @@ namespace SpawnCreator
                 myConn.Open();
                 DataSet ds = new DataSet();
 
+
+                try
+                {
+                    string query = $"SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{ textbox_mysql_worldDB.Text }';";
+                    MySqlCommand _command = new MySqlCommand(query, myConn);
+                    textbox_mysql_worldDB.Text = _command.ExecuteScalar().ToString();
+                }
+                catch
+                {
+                    MessageBox.Show($"ERROR: Database '{ textbox_mysql_worldDB.Text }' doesn't exist. \nMake sure you typed database name correctly.",
+                        "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    string query = $"SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{ textBox_mysql_authDB.Text }';";
+                    MySqlCommand _command = new MySqlCommand(query, myConn);
+                    textBox_mysql_authDB.Text = _command.ExecuteScalar().ToString();
+                }
+                catch
+                {
+                    MessageBox.Show($"ERROR: Database '{ textBox_mysql_authDB.Text }' doesn't exist.  \nMake sure you typed database name correctly.",
+                        "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    string query = $"SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{ textBox_mysql_charactersDB.Text }';";
+                    MySqlCommand _command = new MySqlCommand(query, myConn);
+                    textBox_mysql_charactersDB.Text = _command.ExecuteScalar().ToString();
+                }
+                catch
+                {
+                    MessageBox.Show($"ERROR: Database '{ textBox_mysql_charactersDB.Text }' doesn't exist.  \nMake sure you typed database name correctly.",
+                        "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 tabControl1.Visible = false;
                 label1.Visible = true;
                 label2.Visible = true;
@@ -316,9 +356,13 @@ namespace SpawnCreator
                 timer1.Enabled = true;
                 myConn.Close();
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                if (ex.Number == 0)
+                    MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                else
+                    MessageBox.Show("ERROR "+ ex.Number + ": " + ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -775,6 +819,21 @@ namespace SpawnCreator
         private void CB_NoMySQL_MouseLeave(object sender, EventArgs e)
         {
             CB_NoMySQL.BackColor = Color.DimGray;
+        }
+
+        private void label_mysql_status_MouseDown(object sender, MouseEventArgs e)
+        {
+            panel1_MouseDown(sender, e);
+        }
+
+        private void label_mysql_status_MouseMove(object sender, MouseEventArgs e)
+        {
+            panel1_MouseMove(sender, e);
+        }
+
+        private void label_mysql_status_MouseUp(object sender, MouseEventArgs e)
+        {
+            panel1_MouseUp(sender, e);
         }
     }
 }

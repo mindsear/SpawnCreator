@@ -126,7 +126,7 @@ namespace SpawnCreator
             BuildSQLFile += "event_param4, action_type, action_param1, action_param2, action_param3, action_param4, action_param5, action_param6, target_type, target_param1, target_param2, target_param3, target_x, target_y, target_z, target_o, comment) ";
 
             // values now
-            BuildSQLFile += "VALUES \n";
+            BuildSQLFile += "VALUES " + Environment.NewLine;
             BuildSQLFile += "(";
             BuildSQLFile += textBox1.Text + ", "; // entryorguid
             BuildSQLFile += textBox2.Text + ", "; // source_type
@@ -204,7 +204,7 @@ namespace SpawnCreator
             if (textBox28.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox28.Text + ", '"; // target_o
 
-            BuildSQLFile += textBox27.Text + "'); \n"; // comment
+            BuildSQLFile += textBox27.Text + "'); "; // comment
 
             stringSQLShare = BuildSQLFile;
             stringEntryShare = textBox1.Text;
@@ -1917,7 +1917,7 @@ namespace SpawnCreator
 
             using (var writer = File.AppendText("SmartScripts.sql"))
             {
-                writer.Write(stringSQLShare);
+                writer.Write(stringSQLShare + Environment.NewLine); 
                 button_SaveInTheSameFile.Text = "Saved!";
                 button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
             }

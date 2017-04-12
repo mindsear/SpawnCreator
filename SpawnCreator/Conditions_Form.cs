@@ -58,12 +58,31 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = "INSERT INTO " + form_MM.GetWorldDB() + ".conditions ";
-            BuildSQLFile += "(SourceTypeOrReferenceId, SourceGroup, SourceEntry, SourceId, ElseGroup, ConditionTypeOrReference, "+
-                "ConditionTarget, ConditionValue1, ConditionValue2, ConditionValue3, NegativeCondition, ErrorType, ErrorTextId, ScriptName, Comment) ";
+            //BuildSQLFile = $"INSERT INTO { form_MM.GetWorldDB() }.conditions ";
+            //BuildSQLFile += "(SourceTypeOrReferenceId, SourceGroup, SourceEntry, SourceId, ElseGroup, ConditionTypeOrReference, "+
+            //    "ConditionTarget, ConditionValue1, ConditionValue2, ConditionValue3, NegativeCondition, ErrorType, ErrorTextId, ScriptName, Comment) ";
+
+            BuildSQLFile = $"INSERT INTO { form_MM.GetWorldDB() }.conditions ";
+            BuildSQLFile += "(" +
+                "SourceTypeOrReferenceId, " +
+                "SourceGroup, " +
+                "SourceEntry, " +
+                "SourceId, " +
+                "ElseGroup, " +
+                "ConditionTypeOrReference, " +
+                "ConditionTarget, " +
+                "ConditionValue1, " +
+                "ConditionValue2, " +
+                "ConditionValue3, " +
+                "NegativeCondition, " +
+                "ErrorType, " +
+                "ErrorTextId, " +
+                "ScriptName, " +
+                "Comment" +
+                ") ";
 
             //Values
-            BuildSQLFile += "VALUES \n";
+            BuildSQLFile += "VALUES " + Environment.NewLine;
             BuildSQLFile += "(";
 
             BuildSQLFile += textBox_sourceType.Text + ", "; // SourceTypeOrReferenceId
@@ -80,7 +99,7 @@ namespace SpawnCreator
             BuildSQLFile += ErrorTypeNUD.Text + ", "; // ErrorType
             BuildSQLFile += ErrorTextIDNUD.Text + ", '"; // ErrorTextId
             BuildSQLFile += ScriptNameTXT.Text + "', '"; // ScriptName
-            BuildSQLFile += CommentTXT.Text + "'); \n"; // Comment
+            BuildSQLFile += CommentTXT.Text + "'); "; // Comment
 
             stringSQLShare = BuildSQLFile;
         }
@@ -717,9 +736,9 @@ namespace SpawnCreator
                 }
 
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             connection.Close();
         }
@@ -932,7 +951,7 @@ namespace SpawnCreator
 
             using (var writer = File.AppendText("Conditions.sql"))
             {
-                writer.Write(stringSQLShare);
+                writer.Write(stringSQLShare + Environment.NewLine);
                 button_SaveInTheSameFile.Text = "Saved!";
                 button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
             }

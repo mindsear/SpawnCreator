@@ -59,7 +59,7 @@ namespace SpawnCreator
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -84,7 +84,7 @@ namespace SpawnCreator
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -824,7 +824,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = textBox105.Text + " INTO " + form_MM.GetWorldDB() + ".creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3, KillCredit1, ";
+            BuildSQLFile = textBox105.Text + $" INTO { form_MM.GetWorldDB() }.creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3, KillCredit1, ";
             BuildSQLFile += "KillCredit2, modelid1, modelid2, modelid3, modelid4, name, subname, IconName, gossip_menu_id, minlevel, ";
             BuildSQLFile += "maxlevel, exp, faction, npcflag, speed_walk, speed_run, scale, rank, dmgschool, BaseAttackTime, ";
             BuildSQLFile += "RangeAttackTime, BaseVariance, RangeVariance, unit_class, unit_flags, unit_flags2, dynamicflags, family, ";
@@ -835,7 +835,7 @@ namespace SpawnCreator
             BuildSQLFile += "RacialLeader, movementId, RegenHealth, mechanic_immune_mask, flags_extra, ScriptName, VerifiedBuild) ";
 
             // values now
-            BuildSQLFile += "VALUES \n";
+            BuildSQLFile += $"VALUES { Environment.NewLine }";
             BuildSQLFile += "(";
             BuildSQLFile += NUD_Entry.Value + ", "; // entry
             BuildSQLFile += textBox3.Text + ", "; // difficulty_entry_1
@@ -1297,7 +1297,7 @@ namespace SpawnCreator
 
             if (textBox59.Text == "") BuildSQLFile += "0, "; else
             BuildSQLFile += textBox59.Text; // VerifiedBuild
-            BuildSQLFile += "); \n";
+            BuildSQLFile += ");";
 
             stringSQLShare = BuildSQLFile;
             stringEntryShare = NUD_Entry.Text;
@@ -1371,9 +1371,171 @@ namespace SpawnCreator
 
         }
 
+        void SetLightBlueColor_TextBoxActive(object sender, EventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            NumericUpDown nud = sender as NumericUpDown;
+            
+            if (sender == txt)
+                txt.BackColor = Color.FromArgb(179, 228, 255);
+
+            else
+                nud.BackColor = Color.FromArgb(179, 228, 255);
+        }
+
+        void SetWhiteColor_TextBoxLeave(object sender, EventArgs e)
+        {
+            //TextBox txt = (TextBox)sender;
+            TextBox txt = sender as TextBox;
+            NumericUpDown nud = sender as NumericUpDown;
+            
+            if (sender == txt)
+                txt.BackColor = Color.White;
+
+            else
+                nud.BackColor = Color.White;
+        }
+
+        void _textboxes()
+        {
+            NUD_Entry.Enter += SetLightBlueColor_TextBoxActive;
+            NUD_Entry.Leave += SetWhiteColor_TextBoxLeave;
+            textBox2.Enter += SetLightBlueColor_TextBoxActive;
+            textBox2.Leave += SetWhiteColor_TextBoxLeave;
+            textBox3.Enter += SetLightBlueColor_TextBoxActive;
+            textBox3.Leave += SetWhiteColor_TextBoxLeave;
+            textBox4.Enter += SetLightBlueColor_TextBoxActive;
+            textBox4.Leave += SetWhiteColor_TextBoxLeave;
+            textBox5.Enter += SetLightBlueColor_TextBoxActive;
+            textBox5.Leave += SetWhiteColor_TextBoxLeave;
+            textBox6.Enter += SetLightBlueColor_TextBoxActive;
+            textBox6.Leave += SetWhiteColor_TextBoxLeave;
+            textBox7.Enter += SetLightBlueColor_TextBoxActive;
+            textBox7.Leave += SetWhiteColor_TextBoxLeave;
+            textBox8.Enter += SetLightBlueColor_TextBoxActive;
+            textBox8.Leave += SetWhiteColor_TextBoxLeave;
+            textBox9.Enter += SetLightBlueColor_TextBoxActive;
+            textBox9.Leave += SetWhiteColor_TextBoxLeave;
+            textBox10.Enter += SetLightBlueColor_TextBoxActive;
+            textBox10.Leave += SetWhiteColor_TextBoxLeave;
+            textBox11.Enter += SetLightBlueColor_TextBoxActive;
+            textBox11.Leave += SetWhiteColor_TextBoxLeave;
+            textBox12.Enter += SetLightBlueColor_TextBoxActive;
+            textBox12.Leave += SetWhiteColor_TextBoxLeave;
+            textBox13.Enter += SetLightBlueColor_TextBoxActive;
+            textBox13.Leave += SetWhiteColor_TextBoxLeave;
+            textBox14.Enter += SetLightBlueColor_TextBoxActive;
+            textBox14.Leave += SetWhiteColor_TextBoxLeave;
+            textBox15.Enter += SetLightBlueColor_TextBoxActive;
+            textBox15.Leave += SetWhiteColor_TextBoxLeave;
+            textBox16.Enter += SetLightBlueColor_TextBoxActive;
+            textBox16.Leave += SetWhiteColor_TextBoxLeave;
+            textBox17.Enter += SetLightBlueColor_TextBoxActive;
+            textBox17.Leave += SetWhiteColor_TextBoxLeave;
+            textBox18.Enter += SetLightBlueColor_TextBoxActive;
+            textBox18.Leave += SetWhiteColor_TextBoxLeave;
+            textBox19.Enter += SetLightBlueColor_TextBoxActive;
+            textBox19.Leave += SetWhiteColor_TextBoxLeave;
+            textBox20.Enter += SetLightBlueColor_TextBoxActive;
+            textBox20.Leave += SetWhiteColor_TextBoxLeave;
+            textBox21.Enter += SetLightBlueColor_TextBoxActive;
+            textBox21.Leave += SetWhiteColor_TextBoxLeave;
+            textBox22.Enter += SetLightBlueColor_TextBoxActive;
+            textBox22.Leave += SetWhiteColor_TextBoxLeave;
+            textBox23.Enter += SetLightBlueColor_TextBoxActive;
+            textBox23.Leave += SetWhiteColor_TextBoxLeave;
+            textBox24.Enter += SetLightBlueColor_TextBoxActive;
+            textBox24.Leave += SetWhiteColor_TextBoxLeave;
+            textBox25.Enter += SetLightBlueColor_TextBoxActive;
+            textBox25.Leave += SetWhiteColor_TextBoxLeave;
+            textBox26.Enter += SetLightBlueColor_TextBoxActive;
+            textBox26.Leave += SetWhiteColor_TextBoxLeave;
+            textBox27.Enter += SetLightBlueColor_TextBoxActive;
+            textBox27.Leave += SetWhiteColor_TextBoxLeave;
+            textBox28.Enter += SetLightBlueColor_TextBoxActive;
+            textBox28.Leave += SetWhiteColor_TextBoxLeave;
+            textBox29.Enter += SetLightBlueColor_TextBoxActive;
+            textBox29.Leave += SetWhiteColor_TextBoxLeave;
+            textBox30.Enter += SetLightBlueColor_TextBoxActive;
+            textBox30.Leave += SetWhiteColor_TextBoxLeave;
+            textBox31.Enter += SetLightBlueColor_TextBoxActive;
+            textBox31.Leave += SetWhiteColor_TextBoxLeave;
+            textBox32.Enter += SetLightBlueColor_TextBoxActive;
+            textBox32.Leave += SetWhiteColor_TextBoxLeave;
+            textBox33.Enter += SetLightBlueColor_TextBoxActive;
+            textBox33.Leave += SetWhiteColor_TextBoxLeave;
+            textBox35.Enter += SetLightBlueColor_TextBoxActive;
+            textBox35.Leave += SetWhiteColor_TextBoxLeave;
+            textBox36.Enter += SetLightBlueColor_TextBoxActive;
+            textBox36.Leave += SetWhiteColor_TextBoxLeave;
+            textBox37.Enter += SetLightBlueColor_TextBoxActive;
+            textBox37.Leave += SetWhiteColor_TextBoxLeave;
+            textBox38.Enter += SetLightBlueColor_TextBoxActive;
+            textBox38.Leave += SetWhiteColor_TextBoxLeave;
+            textBox39.Enter += SetLightBlueColor_TextBoxActive;
+            textBox39.Leave += SetWhiteColor_TextBoxLeave;
+            textBox40.Enter += SetLightBlueColor_TextBoxActive;
+            textBox40.Leave += SetWhiteColor_TextBoxLeave;
+            textBox41.Enter += SetLightBlueColor_TextBoxActive;
+            textBox41.Leave += SetWhiteColor_TextBoxLeave;
+            textBox42.Enter += SetLightBlueColor_TextBoxActive;
+            textBox42.Leave += SetWhiteColor_TextBoxLeave;
+            textBox43.Enter += SetLightBlueColor_TextBoxActive;
+            textBox43.Leave += SetWhiteColor_TextBoxLeave;
+            textBox44.Enter += SetLightBlueColor_TextBoxActive;
+            textBox44.Leave += SetWhiteColor_TextBoxLeave;
+            textBox45.Enter += SetLightBlueColor_TextBoxActive;
+            textBox45.Leave += SetWhiteColor_TextBoxLeave;
+            textBox46.Enter += SetLightBlueColor_TextBoxActive;
+            textBox46.Leave += SetWhiteColor_TextBoxLeave;
+            textBox47.Enter += SetLightBlueColor_TextBoxActive;
+            textBox47.Leave += SetWhiteColor_TextBoxLeave;
+            textBox48.Enter += SetLightBlueColor_TextBoxActive;
+            textBox48.Leave += SetWhiteColor_TextBoxLeave;
+            textBox49.Enter += SetLightBlueColor_TextBoxActive;
+            textBox49.Leave += SetWhiteColor_TextBoxLeave;
+            textBox50.Enter += SetLightBlueColor_TextBoxActive;
+            textBox50.Leave += SetWhiteColor_TextBoxLeave;
+            textBox51.Enter += SetLightBlueColor_TextBoxActive;
+            textBox51.Leave += SetWhiteColor_TextBoxLeave;
+            textBox52.Enter += SetLightBlueColor_TextBoxActive;
+            textBox52.Leave += SetWhiteColor_TextBoxLeave;
+            textBox53.Enter += SetLightBlueColor_TextBoxActive;
+            textBox53.Leave += SetWhiteColor_TextBoxLeave;
+            textBox54.Enter += SetLightBlueColor_TextBoxActive;
+            textBox54.Leave += SetWhiteColor_TextBoxLeave;
+            textBox55.Enter += SetLightBlueColor_TextBoxActive;
+            textBox55.Leave += SetWhiteColor_TextBoxLeave;
+            textBox56.Enter += SetLightBlueColor_TextBoxActive;
+            textBox56.Leave += SetWhiteColor_TextBoxLeave;
+            textBox57.Enter += SetLightBlueColor_TextBoxActive;
+            textBox57.Leave += SetWhiteColor_TextBoxLeave;
+            textBox58.Enter += SetLightBlueColor_TextBoxActive;
+            textBox58.Leave += SetWhiteColor_TextBoxLeave;
+            textBox59.Enter += SetLightBlueColor_TextBoxActive;
+            textBox59.Leave += SetWhiteColor_TextBoxLeave;
+            textBox60.Enter += SetLightBlueColor_TextBoxActive;
+            textBox60.Leave += SetWhiteColor_TextBoxLeave;
+            textBox61.Enter += SetLightBlueColor_TextBoxActive;
+            textBox61.Leave += SetWhiteColor_TextBoxLeave;
+            textBox62.Enter += SetLightBlueColor_TextBoxActive;
+            textBox62.Leave += SetWhiteColor_TextBoxLeave;
+            textBox63.Enter += SetLightBlueColor_TextBoxActive;
+            textBox63.Leave += SetWhiteColor_TextBoxLeave;
+            textBox64.Enter += SetLightBlueColor_TextBoxActive;
+            textBox64.Leave += SetWhiteColor_TextBoxLeave;
+            textBox65.Enter += SetLightBlueColor_TextBoxActive;
+            textBox65.Leave += SetWhiteColor_TextBoxLeave;
+            textBox66.Enter += SetLightBlueColor_TextBoxActive;
+            textBox66.Leave += SetWhiteColor_TextBoxLeave;
+        }
+
         private void NPC_Creator_Load(object sender, EventArgs e)
         {
             //size = 914, 533
+
+
+            //_textboxes();
 
             timer9.Start();
             
@@ -1385,6 +1547,7 @@ namespace SpawnCreator
             textBox50.KeyPress += onlyNumbers; // spell6
             textBox49.KeyPress += onlyNumbers; // spell7
             textBox48.KeyPress += onlyNumbers; // spell8
+
 
             comboBox1.SelectedIndex = 6; // show Speak Icon
             comboBox3.SelectedIndex = 0; // show default item
@@ -1596,15 +1759,13 @@ namespace SpawnCreator
 
             try
             {
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    timer5.Start();
-                }
+                command.ExecuteNonQuery();
+                timer5.Start();
                
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             connection.Close();
         }
@@ -1701,6 +1862,12 @@ namespace SpawnCreator
         private void button2_Click(object sender, EventArgs e)
         {
             SelectMaxPlus1_NPC();
+            
+        }
+
+        private void NUD_Entry_LostFocus(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -1748,9 +1915,9 @@ namespace SpawnCreator
                 textBox42.Text = command.ExecuteScalar().ToString();
                
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             connection.Close();
         }
@@ -1983,9 +2150,9 @@ namespace SpawnCreator
             {
                 textBox13.Text = command.ExecuteScalar().ToString();
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             connection.Close();
         }
@@ -2055,10 +2222,19 @@ namespace SpawnCreator
 
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button22.Visible = false;
             textBox105.ResetText();
             btn_DeleteQuery.Visible = false;
-            if (comboBox11.SelectedIndex == 0) textBox105.Text = "INSERT";
-            else if (comboBox11.SelectedIndex == 1) textBox105.Text = "REPLACE";
+            if (comboBox11.SelectedIndex == 0)
+            {
+                textBox105.Text = "INSERT";
+                button22.Visible = true;
+            }
+            else if (comboBox11.SelectedIndex == 1)
+            {
+                textBox105.Text = "REPLACE";
+                button22.Visible = true;
+            }
             else if (comboBox11.SelectedIndex == 2)
             {
                 if (form_MM.CB_NoMySQL.Checked || label_mysql_status2.Text == "Connection Lost - MySQL is not running")
@@ -2132,7 +2308,7 @@ namespace SpawnCreator
             //Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Screenshot.png"
             using (var writer = File.AppendText("Creatures.sql"))
             {
-                writer.Write(stringSQLShare);
+                writer.Write(stringSQLShare + Environment.NewLine);
                 button_SaveInTheSameFile.Text = "Saved!";
                 button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
             }
@@ -2199,6 +2375,7 @@ namespace SpawnCreator
         private void btn_DeleteQuery_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Are you sure you want to delete Creature " + NUD_Entry.Text + " ?", "SpawnCreator " + form_MM.version, MessageBoxButtons.YesNo);
+           // NUD_Entry.ForeColor = Color.Red;
             if (dr == DialogResult.No)
                 return;
 
@@ -2210,6 +2387,144 @@ namespace SpawnCreator
         private void label92_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox7_Click_DeletedEvent()
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox7.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void button19_Click_1(object sender, EventArgs e)
+        {
+            //Label lbl = new Label();
+            //ClearLabel(lbl);
+
+            TextBox tbx = Controls.Find(textBox1.Text, true).FirstOrDefault() as TextBox;
+
+            try
+            {
+                if (textBox1.Text == "Spell3" ||
+                    textBox1.Text == "spell3" ||
+                    textBox1.Text == "Spell 3" ||
+                    textBox1.Text == "spell 3")
+                    textBox43.Focus();
+                if (textBox1.Text == "health modifier" ||
+                    textBox1.Text == "Health Modifier" ||
+                    textBox1.Text == "HealthModifier" ||
+                    textBox1.Text == "health")
+                    textBox54.Focus();
+
+                //tbx.Focus();
+                //tbx.ForeColor = Color.Red;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error: Label Name is Invalid");
+                //throw;
+            }
+            //if (string.IsNullOrEmpty(tbx.Text))
+            //    return;
+            //else
+            //tbx.Focus();
+            //tbx.ForeColor = Color.Red;
+
+            
+
+            //// looping through all labels and change color to all of them
+            //foreach (Control labelcontrol1 in this.Controls)
+            //{
+            //        labelcontrol1.Focus();
+            //        labelcontrol1.ForeColor = Color.Red;
+            //}
+
+            
+        }
+
+        private void comboBox12_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label9.ForeColor = Color.Black;
+            switch (comboBox12.Text)
+            {
+                case "entry":
+                    NUD_Entry.Focus();
+                    break;
+                case "difficulty_entry_1":
+                    textBox3.Focus();
+                    break;
+                case "difficulty_entry_2":
+                    textBox2.Focus();
+                    break;
+                case "difficulty_entry_3":
+                    textBox4.Focus();
+                    break;
+                case "KillCredit1":
+                    textBox5.Focus();
+                    break;
+                case "KillCredit2":
+                    textBox6.Focus();
+                    break;
+                case "modelid1":
+                    textBox10.Focus();
+                    break;
+                case "modelid2":
+                    textBox11.Focus();
+                    break;
+                case "modelid3":
+                    textBox9.Focus();
+                    break;
+                case "modelid4":
+                    textBox8.Focus();
+                    break;
+                case "name":
+                    textBox7.Focus();
+                    textBox7.SelectAll();
+                    break;
+                case "subname":
+                    textBox12.Focus();
+                    textBox12.SelectAll();
+                    break;
+                case "IconName":
+                    comboBox1.Focus();
+                    label9.ForeColor = Color.Red;
+                    break;
+                case "gossip_menu_id":
+                    textBox13.Focus();
+                    break;
+
+                default:
+                    label9.ForeColor = Color.Black;
+                    break;
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            timer2.Stop();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            timer2.Start();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            if (comboBox11.SelectedIndex == 0)
+                MessageBox.Show("MySQL - INSERT Syntax: \nInserts new rows into an existing table. ", "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            else 
+                MessageBox.Show("MySQL - REPLACE Syntax: \nREPLACE works exactly like INSERT, except that if an old row in the table has the same value as a new row for a PRIMARY KEY or a UNIQUE index, the old row is deleted before the new row is inserted.", "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox4.BackColor = colorDialog1.Color;
+            }
         }
     }
 }

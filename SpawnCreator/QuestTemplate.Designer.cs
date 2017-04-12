@@ -46,6 +46,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label83 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label_Success = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -292,7 +293,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label_Success = new System.Windows.Forms.Label();
+            this.button22 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -532,6 +533,21 @@
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
+            // label_Success
+            // 
+            this.label_Success.AutoSize = true;
+            this.label_Success.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Success.ForeColor = System.Drawing.Color.Lime;
+            this.label_Success.Location = new System.Drawing.Point(603, 6);
+            this.label_Success.Name = "label_Success";
+            this.label_Success.Size = new System.Drawing.Size(75, 17);
+            this.label_Success.TabIndex = 215;
+            this.label_Success.Text = "Success!";
+            this.label_Success.Visible = false;
+            this.label_Success.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label_Success.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label_Success.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
+            // 
             // label78
             // 
             this.label78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(114)))));
@@ -591,6 +607,9 @@
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
             this.label_mysql_status2.Text = "Connected!";
+            this.label_mysql_status2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label_mysql_status2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label_mysql_status2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // label85
             // 
@@ -603,6 +622,9 @@
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
             this.label85.Text = "MySQL Status:";
+            this.label85.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label85.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label85.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // label80
             // 
@@ -1925,7 +1947,7 @@
             // 
             this.textBox68.Location = new System.Drawing.Point(427, 243);
             this.textBox68.Name = "textBox68";
-            this.textBox68.Size = new System.Drawing.Size(42, 20);
+            this.textBox68.Size = new System.Drawing.Size(29, 20);
             this.textBox68.TabIndex = 68;
             this.textBox68.Text = "0";
             this.textBox68.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3018,6 +3040,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button22);
             this.groupBox1.Controls.Add(this.btn_DeleteQuery);
             this.groupBox1.Controls.Add(this.NUD_Entry);
             this.groupBox1.Controls.Add(this.textBox105);
@@ -3074,8 +3097,8 @@
             // 
             this.NUD_Entry.Location = new System.Drawing.Point(14, 50);
             this.NUD_Entry.Maximum = new decimal(new int[] {
-            999999999,
-            0,
+            -727379969,
+            232,
             0,
             0});
             this.NUD_Entry.Name = "NUD_Entry";
@@ -3295,11 +3318,11 @@
             // label69
             // 
             this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(244, 182);
+            this.label69.Location = new System.Drawing.Point(265, 182);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(108, 13);
+            this.label69.Size = new System.Drawing.Size(48, 13);
             this.label69.TabIndex = 65;
-            this.label69.Text = "Log Title (Quest Title)";
+            this.label69.Text = "Log Title";
             // 
             // label67
             // 
@@ -3321,9 +3344,10 @@
             this.textBox66.TabIndex = 12;
             this.textBox66.Text = "Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire" +
     ".";
+            this.textBox66.Click += new System.EventHandler(this.textBox66_Click);
             this.textBox66.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox66.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox66_KeyDown);
-            this.textBox66.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox66_KeyUp);
+            this.textBox66.Enter += new System.EventHandler(this.textBox66_Enter);
+            this.textBox66.Leave += new System.EventHandler(this.textBox66_Leave);
             this.textBox66.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox67
@@ -3335,8 +3359,11 @@
             this.textBox67.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox67.Size = new System.Drawing.Size(542, 45);
             this.textBox67.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.textBox67, "Quest Title");
+            this.textBox67.Text = "Quest Title";
+            this.textBox67.Click += new System.EventHandler(this.textBox67_Click);
             this.textBox67.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox67.Enter += new System.EventHandler(this.textBox67_Enter);
+            this.textBox67.Leave += new System.EventHandler(this.textBox67_Leave);
             this.textBox67.MouseEnter += new System.EventHandler(this.All_textBoxes_MouseEnter);
             // 
             // textBox3
@@ -3433,17 +3460,17 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // label_Success
+            // button22
             // 
-            this.label_Success.AutoSize = true;
-            this.label_Success.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Success.ForeColor = System.Drawing.Color.Lime;
-            this.label_Success.Location = new System.Drawing.Point(603, 6);
-            this.label_Success.Name = "label_Success";
-            this.label_Success.Size = new System.Drawing.Size(75, 17);
-            this.label_Success.TabIndex = 215;
-            this.label_Success.Text = "Success!";
-            this.label_Success.Visible = false;
+            this.button22.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.Location = new System.Drawing.Point(397, 19);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(21, 24);
+            this.button22.TabIndex = 216;
+            this.button22.Text = "?";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Visible = false;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // QuestTemplate
             // 
@@ -3758,5 +3785,6 @@
         private System.Windows.Forms.Button button4;
         internal System.Windows.Forms.NumericUpDown NUD_Entry;
         private System.Windows.Forms.Label label_Success;
+        private System.Windows.Forms.Button button22;
     }
 }

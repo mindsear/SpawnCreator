@@ -126,6 +126,9 @@
             this.label_mysql_status.Size = new System.Drawing.Size(116, 15);
             this.label_mysql_status.TabIndex = 22;
             this.label_mysql_status.Text = "Not Connected...";
+            this.label_mysql_status.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label_mysql_status_MouseDown);
+            this.label_mysql_status.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label_mysql_status_MouseMove);
+            this.label_mysql_status.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label_mysql_status_MouseUp);
             // 
             // label8
             // 
@@ -153,6 +156,9 @@
             this.lbl_MySQL_Status.Size = new System.Drawing.Size(101, 15);
             this.lbl_MySQL_Status.TabIndex = 21;
             this.lbl_MySQL_Status.Text = "MySQL Status:";
+            this.lbl_MySQL_Status.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label_mysql_status_MouseDown);
+            this.lbl_MySQL_Status.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label_mysql_status_MouseMove);
+            this.lbl_MySQL_Status.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label_mysql_status_MouseUp);
             // 
             // label7
             // 
@@ -718,9 +724,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 321);
+            this.button1.Location = new System.Drawing.Point(11, 323);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 43);
+            this.button1.Size = new System.Drawing.Size(136, 43);
             this.button1.TabIndex = 123;
             this.button1.Text = "Start without MySQL Connection";
             this.button1.UseVisualStyleBackColor = false;

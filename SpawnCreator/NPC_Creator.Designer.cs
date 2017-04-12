@@ -38,6 +38,8 @@
             this.label_mysql_status2 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.label92 = new System.Windows.Forms.Label();
             this.button_SaveInTheSameFile = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
@@ -54,6 +56,10 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label83 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button22 = new System.Windows.Forms.Button();
+            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.button19 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_DeleteQuery = new System.Windows.Forms.Button();
             this.textBox105 = new System.Windows.Forms.TextBox();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
@@ -213,7 +219,7 @@
             this.textBox51 = new System.Windows.Forms.TextBox();
             this.label62 = new System.Windows.Forms.Label();
             this.textBox52 = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
+            this.Spell3 = new System.Windows.Forms.Label();
             this.textBox43 = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
             this.textBox44 = new System.Windows.Forms.TextBox();
@@ -251,6 +257,8 @@
             this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.timer8 = new System.Windows.Forms.Timer(this.components);
             this.timer9 = new System.Windows.Forms.Timer(this.components);
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.button23 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -331,6 +339,9 @@
             this.label_Success.TabIndex = 23;
             this.label_Success.Text = "Success!";
             this.label_Success.Visible = false;
+            this.label_Success.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label_Success.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label_Success.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // label78
             // 
@@ -359,6 +370,9 @@
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
             this.label_mysql_status2.Text = "Connected!";
+            this.label_mysql_status2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label_mysql_status2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label_mysql_status2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // label85
             // 
@@ -371,10 +385,15 @@
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
             this.label85.Text = "MySQL Status:";
+            this.label85.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label85.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label85.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.panel3.Controls.Add(this.button21);
+            this.panel3.Controls.Add(this.button20);
             this.panel3.Controls.Add(this.label92);
             this.panel3.Controls.Add(this.button_SaveInTheSameFile);
             this.panel3.Controls.Add(this.button18);
@@ -391,6 +410,28 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 504);
             this.panel3.TabIndex = 79;
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(117, 3);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(44, 23);
+            this.button21.TabIndex = 213;
+            this.button21.Text = "stop";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Visible = false;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(4, 3);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(41, 23);
+            this.button20.TabIndex = 121;
+            this.button20.Text = "start";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Visible = false;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // label92
             // 
@@ -598,6 +639,11 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.button23);
+            this.panel1.Controls.Add(this.button22);
+            this.panel1.Controls.Add(this.comboBox12);
+            this.panel1.Controls.Add(this.button19);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btn_DeleteQuery);
             this.panel1.Controls.Add(this.textBox105);
             this.panel1.Controls.Add(this.comboBox11);
@@ -609,11 +655,132 @@
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.groupBox5);
-            this.panel1.Location = new System.Drawing.Point(167, 29);
+            this.panel1.Location = new System.Drawing.Point(167, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 502);
+            this.panel1.Size = new System.Drawing.Size(747, 497);
             this.panel1.TabIndex = 80;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button22
+            // 
+            this.button22.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.Location = new System.Drawing.Point(549, 71);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(21, 24);
+            this.button22.TabIndex = 213;
+            this.button22.Text = "?";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Visible = false;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // comboBox12
+            // 
+            this.comboBox12.FormattingEnabled = true;
+            this.comboBox12.Items.AddRange(new object[] {
+            "entry",
+            "difficulty_entry_1",
+            "difficulty_entry_2",
+            "difficulty_entry_3",
+            "KillCredit1",
+            "KillCredit2",
+            "modelid1",
+            "modelid2",
+            "modelid3",
+            "modelid4",
+            "name",
+            "subname",
+            "IconName",
+            "gossip_menu_id",
+            "minlevel",
+            "maxlevel",
+            "exp",
+            "faction",
+            "npcflag",
+            "speed_walk",
+            "speed_run",
+            "scale",
+            "rank",
+            "dmgschool",
+            "BaseAttackTime",
+            "RangeAttackTime",
+            "BaseVariance",
+            "RangeVariance",
+            "unit_class",
+            "unit_flags",
+            "unit_flags2",
+            "dynamicflags",
+            "family",
+            "trainer_type",
+            "trainer_spell",
+            "trainer_class",
+            "trainer_race",
+            "type",
+            "type_flags",
+            "lootid",
+            "pickpocketloot",
+            "skinloot",
+            "resistance1",
+            "resistance2",
+            "resistance3",
+            "resistance4",
+            "resistance5",
+            "resistance6",
+            "spell1",
+            "spell2",
+            "spell3",
+            "spell4",
+            "spell5",
+            "spell6",
+            "spell7",
+            "spell8",
+            "PetSpellDataId",
+            "VehicleId",
+            "mingold",
+            "maxgold",
+            "AIName",
+            "MovementType",
+            "InhabitType",
+            "HoverHeight",
+            "HealthModifier",
+            "ManaModifier",
+            "ArmorModifier",
+            "DamageModifier",
+            "ExperienceModifier",
+            "RacialLeader",
+            "movementId",
+            "RegenHealth",
+            "mechanic_immune_mask",
+            "flags_extra",
+            "ScriptName",
+            "VerifiedBuild"});
+            this.comboBox12.Location = new System.Drawing.Point(6, 8);
+            this.comboBox12.Name = "comboBox12";
+            this.comboBox12.Size = new System.Drawing.Size(153, 21);
+            this.comboBox12.TabIndex = 121;
+            this.comboBox12.Visible = false;
+            this.comboBox12.SelectedIndexChanged += new System.EventHandler(this.comboBox12_SelectedIndexChanged);
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(210, 40);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(47, 21);
+            this.button19.TabIndex = 212;
+            this.button19.Text = "search";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Visible = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click_1);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(108, 41);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(93, 20);
+            this.textBox1.TabIndex = 211;
+            this.textBox1.Text = "spell3";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Visible = false;
             // 
             // btn_DeleteQuery
             // 
@@ -777,8 +944,8 @@
             this.NUD_Entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.NUD_Entry.Location = new System.Drawing.Point(9, 41);
             this.NUD_Entry.Maximum = new decimal(new int[] {
-            -727379969,
-            232,
+            276447231,
+            23283,
             0,
             0});
             this.NUD_Entry.Minimum = new decimal(new int[] {
@@ -984,6 +1151,7 @@
             // 
             // textBox7
             // 
+            this.textBox7.BackColor = System.Drawing.SystemColors.Window;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.Location = new System.Drawing.Point(111, 42);
             this.textBox7.Name = "textBox7";
@@ -1492,7 +1660,7 @@
             // textBox27
             // 
             this.textBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox27.Location = new System.Drawing.Point(124, 257);
+            this.textBox27.Location = new System.Drawing.Point(117, 257);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(93, 20);
             this.textBox27.TabIndex = 32;
@@ -1516,7 +1684,7 @@
             // textBox28
             // 
             this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(16, 257);
+            this.textBox28.Location = new System.Drawing.Point(9, 257);
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(93, 20);
             this.textBox28.TabIndex = 31;
@@ -1531,13 +1699,13 @@
             this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
-            "CLASS_WARRIOR",
-            "CLASS_PALADIN",
-            "CLASS_ROGUE",
-            "CLASS_MAGE"});
-            this.comboBox4.Location = new System.Drawing.Point(26, 213);
+            "CLASS_WARRIOR (Health only)",
+            "CLASS_PALADIN (Health & Mana)",
+            "CLASS_ROGUE (Health only)",
+            "CLASS_MAGE (Health & Mana)"});
+            this.comboBox4.Location = new System.Drawing.Point(9, 213);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(171, 21);
+            this.comboBox4.Size = new System.Drawing.Size(201, 21);
             this.comboBox4.TabIndex = 30;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             this.comboBox4.MouseEnter += new System.EventHandler(this.All_comboBoxes_MouseEnter);
@@ -2090,7 +2258,7 @@
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.Color.Transparent;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(180, 231);
+            this.label34.Location = new System.Drawing.Point(186, 231);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(67, 13);
             this.label34.TabIndex = 153;
@@ -2228,7 +2396,7 @@
             this.groupBox5.Controls.Add(this.textBox51);
             this.groupBox5.Controls.Add(this.label62);
             this.groupBox5.Controls.Add(this.textBox52);
-            this.groupBox5.Controls.Add(this.label53);
+            this.groupBox5.Controls.Add(this.Spell3);
             this.groupBox5.Controls.Add(this.textBox43);
             this.groupBox5.Controls.Add(this.label54);
             this.groupBox5.Controls.Add(this.textBox44);
@@ -2871,17 +3039,17 @@
             this.textBox52.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
             this.textBox52.MouseEnter += new System.EventHandler(this.ALL_textBoxes_MouseEnter);
             // 
-            // label53
+            // Spell3
             // 
-            this.label53.AutoSize = true;
-            this.label53.BackColor = System.Drawing.Color.Transparent;
-            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(259, 22);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(36, 13);
-            this.label53.TabIndex = 158;
-            this.label53.Text = "Spell3";
-            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Spell3.AutoSize = true;
+            this.Spell3.BackColor = System.Drawing.Color.Transparent;
+            this.Spell3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Spell3.Location = new System.Drawing.Point(259, 22);
+            this.Spell3.Name = "Spell3";
+            this.Spell3.Size = new System.Drawing.Size(36, 13);
+            this.Spell3.TabIndex = 158;
+            this.Spell3.Text = "Spell3";
+            this.Spell3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox43
             // 
@@ -3269,6 +3437,17 @@
             this.timer9.Interval = 10;
             this.timer9.Tick += new System.EventHandler(this.timer9_Tick);
             // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(680, 82);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(47, 21);
+            this.button23.TabIndex = 214;
+            this.button23.Text = "test";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Visible = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
             // NPC_Creator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3456,7 +3635,7 @@
         public System.Windows.Forms.TextBox textBox51;
         private System.Windows.Forms.Label label62;
         public System.Windows.Forms.TextBox textBox52;
-        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label Spell3;
         public System.Windows.Forms.TextBox textBox43;
         private System.Windows.Forms.Label label54;
         public System.Windows.Forms.TextBox textBox44;
@@ -3541,5 +3720,13 @@
         private System.Windows.Forms.Button button_SaveInTheSameFile;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.Button btn_DeleteQuery;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button button19;
+        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button23;
     }
 }

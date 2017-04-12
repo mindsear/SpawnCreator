@@ -44,29 +44,48 @@ namespace SpawnCreator
         {
             GetMySqlConnection();
 
+            //string query = $"SELECT id, username, email FROM { form_MM.GetAuthDB() }.account;";
+
+            //MySqlCommand _command = new MySqlCommand(query, connection);
+
+            //try
+            //{
+            //    connection.Open();
+
+            //    MySqlDataAdapter sda = new MySqlDataAdapter();
+            //    sda.SelectCommand = _command;
+            //    DataTable dbdataset = new DataTable();
+            //    sda.Fill(dbdataset);
+            //    BindingSource bsource = new BindingSource();
+
+            //    bsource.DataSource = dbdataset;
+            //    dataGridView1.DataSource = bsource;
+            //    sda.Update(dbdataset);
+
+            //    _command.Connection.Close();
+            //}
+            //catch (MySqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
             string query = $"SELECT id, username, email FROM { form_MM.GetAuthDB() }.account;";
-
-            MySqlCommand _command = new MySqlCommand(query, connection);
-
             try
             {
-                connection.Open();
-
-                MySqlDataAdapter sda = new MySqlDataAdapter();
-                sda.SelectCommand = _command;
-                DataTable dbdataset = new DataTable();
-                sda.Fill(dbdataset);
-                BindingSource bsource = new BindingSource();
-
-                bsource.DataSource = dbdataset;
-                dataGridView1.DataSource = bsource;
-                sda.Update(dbdataset);
-
-                _command.Connection.Close();
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    MySqlDataAdapter sda = new MySqlDataAdapter();
+                    sda.SelectCommand = cmd;
+                    DataTable dbdataset = new DataTable();
+                    sda.Fill(dbdataset);
+                    dataGridView1.DataSource = dbdataset;
+                    dataGridView1.Columns[0].Width = 50; // Entry
+                    dataGridView1.Columns[1].Width = 160; // Name
+                }
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(this, "ERROR " + ex.Number + ": " + ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -79,6 +98,15 @@ namespace SpawnCreator
                 $"VALUES ((SELECT id FROM { form_MM.GetAuthDB() }.account WHERE username = '{ textBox_username.Text }'), { textBox_Account_Access_Level.Text }, { textBox_realmID.Text }); \n";
             stringSqlShare = BuildSQL;
         }
+
+        //private void GenerateSQL()
+        //{
+        //    string BuildSQL = $"INSERT INTO { form_MM.GetAuthDB() }.account (username, sha_pass_hash, expansion, email) " + "\n" +
+        //        $"VALUES (UPPER(@username), (SHA1(CONCAT(UPPER(@username), ':', UPPER(@password)))), @expansion, @email); " + "\n" +
+        //        $"INSERT INTO { form_MM.GetAuthDB() }.account_access (id, gmlevel, RealmID) " + "\n" +
+        //        $"VALUES ((SELECT id FROM { form_MM.GetAuthDB() }.account WHERE username = @username), @accesslvl, @realmID); \n";
+        //    stringSqlShare = BuildSQL;
+        //}
 
         private bool _mouseDown;
         private Point lastLocation;
@@ -239,16 +267,37 @@ namespace SpawnCreator
 
             try
             {
+                //string connStr = string.Format("Server={0};Port={1};UID={2};Pwd={3};",
+                //form_MM.GetHost(), form_MM.GetPort(), form_MM.GetUser(), form_MM.GetPass());
+
+                //using (var con = new MySqlConnection(connStr))
+                //{
+                //    connection.Open();
+                //    using (MySqlCommand cmd = new MySqlCommand(stringSqlShare, connection))
+                //    {
+                //        cmd.Parameters.AddWithValue("@username", textBox_username.Text);
+                //        cmd.Parameters.AddWithValue("@password", textBox_pass.Text);
+                //        cmd.Parameters.AddWithValue("@expansion", textBox_Expansion.Text);
+                //        cmd.Parameters.AddWithValue("@email", textBox_email.Text);
+                //        cmd.Parameters.AddWithValue("@accesslvl", textBox_Account_Access_Level.Text);
+                //        cmd.Parameters.AddWithValue("@realmID", textBox_realmID.Text);
+                //        cmd.ExecuteNonQuery();
+                //        label_Executed_Successfully.Visible = true;
+                //        button1_Click_1(sender, e);
+                //    }
+                //}
+
+
                 if (command.ExecuteNonQuery() >= 1)
-                {   
+                {
                     //this is correct !
                     label_Executed_Successfully.Visible = true;
                     button1_Click_1(sender, e);
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             connection.Close();
         }

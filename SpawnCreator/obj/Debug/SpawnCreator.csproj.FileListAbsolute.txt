@@ -48,3 +48,4 @@ E:\SpawnCreator\SpawnCreator\obj\Debug\SpawnCreator.unit_flags2.resources
 E:\SpawnCreator\SpawnCreator\obj\Debug\SpawnCreator.csproj.GenerateResource.Cache
 E:\SpawnCreator\SpawnCreator\obj\Debug\SpawnCreator.exe
 E:\SpawnCreator\SpawnCreator\obj\Debug\SpawnCreator.pdb
+E:\SpawnCreator\SpawnCreator\obj\Debug\SpawnCreator.csprojResolveAssemblyReference.cache

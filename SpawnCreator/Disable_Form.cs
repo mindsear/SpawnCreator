@@ -132,7 +132,7 @@ namespace SpawnCreator
             BuildSQLFile += "(sourceType, entry, flags, params_0, params_1, comment) ";
 
             //Values
-            BuildSQLFile += "VALUES \n";
+            BuildSQLFile += "VALUES " + Environment.NewLine;
             BuildSQLFile += "(";
 
             if (textBox_SourceType.Text == "1"/*DISABLE_TYPE_QUEST*/) BuildSQLFile += "1, " + textBox_entry.Text + ", 0" + ", ";
@@ -155,7 +155,7 @@ namespace SpawnCreator
 
             BuildSQLFile += "'" + textBox_params_0.Text + "', '"; // params_0
             BuildSQLFile += textBox_params_1.Text + "', '"; // params_1
-            BuildSQLFile += textBox_comment.Text + "'); \n"; // comment
+            BuildSQLFile += textBox_comment.Text + "'); "; // comment
 
             stringSQLShare = BuildSQLFile;
             stringEntryShare = textBox_entry.Text;
@@ -343,9 +343,9 @@ namespace SpawnCreator
                 }
                 
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             connection.Close();
         }
@@ -619,7 +619,7 @@ namespace SpawnCreator
 
             using (var writer = File.AppendText("Disables.sql"))
             {
-                writer.Write(stringSQLShare);
+                writer.Write(stringSQLShare + Environment.NewLine);
                 button_SaveInTheSameFile.Text = "Saved!";
                 button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
             }

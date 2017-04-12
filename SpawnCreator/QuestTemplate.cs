@@ -30,7 +30,6 @@ namespace SpawnCreator
         }
 
         MySqlConnection connection = new MySqlConnection();
-        //MySql_Connect mysql_Connect = new MySql_Connect();
 
         public void GetMySqlConnection()
         {
@@ -56,7 +55,7 @@ namespace SpawnCreator
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -83,7 +82,7 @@ namespace SpawnCreator
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -100,6 +99,7 @@ namespace SpawnCreator
             textBox66.SelectionStart = 0;  //This keeps the text
             textBox66.SelectionLength = 0; //from being highlighted
             textBox66.ForeColor = Color.Gray;
+            textBox67.ForeColor = Color.Gray;
 
             if (form_MM.CB_NoMySQL.Checked)
             {
@@ -172,7 +172,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = textBox105.Text + " INTO " + form_MM.GetWorldDB() + ".quest_template ";
+            BuildSQLFile = textBox105.Text + $" INTO { form_MM.GetWorldDB() }.quest_template ";
             BuildSQLFile += "(ID, QuestType, QuestLevel, MinLevel, QuestSortID, QuestInfoID, SuggestedGroupNum, RequiredFactionId1, RequiredFactionId2, RequiredFactionValue1, ";
             BuildSQLFile += "RequiredFactionValue2, RewardNextQuest, RewardXPDifficulty, RewardMoney, RewardBonusMoney, RewardDisplaySpell, RewardSpell, RewardHonor, ";
             BuildSQLFile += "RewardKillHonor, StartItem, Flags, RequiredPlayerKills, RewardItem1, RewardAmount1, RewardItem2, RewardAmount2, RewardItem3, RewardAmount3, RewardItem4, ";
@@ -188,7 +188,7 @@ namespace SpawnCreator
             BuildSQLFile += "RequiredItemCount6, Unknown0, ObjectiveText1, ObjectiveText2, ObjectiveText3, ObjectiveText4, VerifiedBuild) ";
 
             // values now
-            BuildSQLFile += "VALUES \n";
+            BuildSQLFile += $"VALUES { Environment.NewLine }";
             BuildSQLFile += "(";
             BuildSQLFile += NUD_Entry.Value + ", "; // ID
             BuildSQLFile += textBox2.Text + ", "; // QuestType
@@ -295,25 +295,25 @@ namespace SpawnCreator
             BuildSQLFile += "'" + textBox91.Text + "', "; // ObjectiveText3
             BuildSQLFile += "'" + textBox104.Text + "', "; // ObjectiveText4
             BuildSQLFile += textBox100.Text; // VerifiedBuild
-            BuildSQLFile += "); \n";
+            BuildSQLFile += "); " + Environment.NewLine;
 
             //Creature Quest Starter
             BuildSQLFile += textBox105.Text + " INTO " + form_MM.GetWorldDB() + ".creature_queststarter ";
             BuildSQLFile += "(id, quest) ";
-            BuildSQLFile += "VALUES \n";
+            BuildSQLFile += "VALUES " + Environment.NewLine;
             BuildSQLFile += "(";
             BuildSQLFile += textBox106.Text + ", "; // Creature Entry
             BuildSQLFile += textBox107.Text; // Quest ID
-            BuildSQLFile += "); \n";
+            BuildSQLFile += "); " + Environment.NewLine;
 
             //Creature Quest Ender
             BuildSQLFile += textBox105.Text + " INTO " + form_MM.GetWorldDB() + ".creature_questender ";
             BuildSQLFile += "(id, quest) ";
-            BuildSQLFile += "VALUES \n";
+            BuildSQLFile += "VALUES " + Environment.NewLine;
             BuildSQLFile += "(";
             BuildSQLFile += textBox109.Text + ", "; // Creature Entry
             BuildSQLFile += textBox108.Text; // Quest ID
-            BuildSQLFile += "); \n";
+            BuildSQLFile += "); ";
 
             stringSQLShare = BuildSQLFile;
             stringEntryShare = NUD_Entry.Text;
@@ -636,9 +636,9 @@ namespace SpawnCreator
                 }
 
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             connection.Close();
         }
@@ -673,16 +673,17 @@ namespace SpawnCreator
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button22.Visible = false;
             btn_DeleteQuery.Visible = false;
             if (comboBox3.SelectedIndex == 0)
             {
                 textBox105.Text = "INSERT";
-
+                button22.Visible = true;
             }
             else if (comboBox3.SelectedIndex == 1)
             {
                 textBox105.Text = "REPLACE";
-
+                button22.Visible = true;
             }
             else if (comboBox3.SelectedIndex == 2)
             {
@@ -753,7 +754,7 @@ namespace SpawnCreator
 
             using (var writer = File.AppendText("Quests.sql"))
             {
-                writer.Write(stringSQLShare);
+                writer.Write(stringSQLShare + Environment.NewLine);
                 button_SaveInTheSameFile.Text = "Saved!";
                 button_SaveInTheSameFile.TextAlign = ContentAlignment.MiddleCenter;
             }
@@ -818,24 +819,6 @@ namespace SpawnCreator
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private void textBox66_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (textBox66.Text.Equals("Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire.") == true)
-            {
-                textBox66.Text = "";
-                textBox66.ForeColor = Color.Black;
-            }
-        }
-
-        private void textBox66_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (textBox66.Text.Equals(null) == true || textBox66.Text.Equals("") == true)
-            {
-                textBox66.Text = "Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire.";
-                textBox66.ForeColor = Color.Gray;
-            }
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Value > 0: required creature_template ID the player needs to kill/cast on in order to complete the quest. \n" +
@@ -844,6 +827,63 @@ namespace SpawnCreator
                 "NOTE: If RequiredSpellCast is != 0 and the spell has effects Send Event or Quest Complete, this field may be left empty." 
                  , "RequiredNpcOrGo", MessageBoxButtons.OK
                 );
+        }
+
+        private void textBox66_Click(object sender, EventArgs e)
+        {
+            if (textBox66.Text.Equals("Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire.") == true)
+            {
+                textBox66.Text = "";
+                textBox66.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox66_Leave(object sender, EventArgs e)
+        {
+            if (textBox66.Text.Equals(null) == true || textBox66.Text.Equals("") == true)
+            {
+                textBox66.Text = "Example: Slay 10 Stonetusk Boars and then report back to Smith Argus in Goldshire.";
+                textBox66.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textBox66_Enter(object sender, EventArgs e)
+        {
+            textBox66_Click(sender, e);
+        }
+
+        private void textBox67_Enter(object sender, EventArgs e)
+        {
+            textBox67_Click(sender, e);
+        }
+
+        private void textBox67_Leave(object sender, EventArgs e)
+        {
+            // Quest Title
+            if (textBox67.Text.Equals(null) == true || textBox67.Text.Equals("") == true)
+            {
+                textBox67.Text = "Quest Title";
+                textBox67.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textBox67_Click(object sender, EventArgs e)
+        {
+            if (textBox67.Text.Equals("Quest Title") == true)
+            {
+                textBox67.Text = "";
+                textBox67.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            if (comboBox3.SelectedIndex == 0)
+                MessageBox.Show("MySQL - INSERT Syntax: \nInserts new rows into an existing table. ", "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            else
+                MessageBox.Show("MySQL - REPLACE Syntax: \nREPLACE works exactly like INSERT, except that if an old row in the table has the same value as a new row for a PRIMARY KEY or a UNIQUE index, the old row is deleted before the new row is inserted.", "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

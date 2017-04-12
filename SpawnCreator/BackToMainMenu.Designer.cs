@@ -227,6 +227,9 @@
             this.label_mysql_status.Size = new System.Drawing.Size(116, 15);
             this.label_mysql_status.TabIndex = 22;
             this.label_mysql_status.Text = "Not Connected...";
+            this.label_mysql_status.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.label_mysql_status.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.label_mysql_status.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // label85
             // 
@@ -239,6 +242,9 @@
             this.label85.Size = new System.Drawing.Size(101, 15);
             this.label85.TabIndex = 21;
             this.label85.Text = "MySQL Status:";
+            this.label85.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.label85.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.label85.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // label1
             // 

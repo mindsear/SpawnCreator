@@ -71,7 +71,7 @@ namespace SpawnCreator
                 ";password=" + form_MM.GetPass() 
                 );
 
-            string insertQuery = "INSERT INTO " + form_MM.GetWorldDB() + ".creature_loot_template " +
+            string insertQuery = $"INSERT INTO { form_MM.GetWorldDB() }.creature_loot_template " +
                 "(Entry, Item, Reference, Chance, QuestRequired, LootMode, GroupId, MinCount, MaxCount, Comment) \n" +
                 "VALUES (" +
                 textBox61.Text + ", " + // Entry
@@ -280,7 +280,7 @@ namespace SpawnCreator
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText("INSERT INTO " + form_MM.GetWorldDB() + ".creature_loot_template " +
+            Clipboard.SetText($"INSERT INTO { form_MM.GetWorldDB() }.creature_loot_template " +
                 "(Entry, Item, Reference, Chance, QuestRequired, LootMode, GroupId, MinCount, MaxCount, Comment) \n" +
                 "VALUES (" +
                 textBox61.Text + ", " + // Entry

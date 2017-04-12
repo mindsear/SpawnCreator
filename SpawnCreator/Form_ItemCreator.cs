@@ -33,7 +33,9 @@ namespace SpawnCreator
 
         public void GetMySqlConnection()
         {
-            string connStr = string.Format("Server={0};Port={1};UID={2};Pwd={3};", form_MM.GetHost(), form_MM.GetPort(), form_MM.GetUser(), form_MM.GetPass());
+            string connStr = string.Format("Server={0};Port={1};UID={2};Pwd={3};", 
+                form_MM.GetHost(), form_MM.GetPort(), form_MM.GetUser(), form_MM.GetPass());
+
             MySqlConnection _connection = new MySqlConnection(connStr);
             connection = _connection;
         }
@@ -53,7 +55,7 @@ namespace SpawnCreator
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -78,7 +80,7 @@ namespace SpawnCreator
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -664,7 +666,7 @@ namespace SpawnCreator
             // Prepare SQL
             // select insertion columns
             string BuildSQLFile;
-            BuildSQLFile = textBox105.Text + " INTO " + form_MM.GetWorldDB() + ".item_template (entry, quality, class, subclass, name, description, ";
+            BuildSQLFile = textBox105.Text + $" INTO { form_MM.GetWorldDB() }.item_template (entry, quality, class, subclass, name, description, ";
             BuildSQLFile += "displayid, inventorytype, bonding, buycount, buyprice, sellprice, stackable, maxcount, ";
             BuildSQLFile += "sheath, material, itemlevel, itemset, randomproperty, randomsuffix, gemproperties, ";
             BuildSQLFile += "socketColor_1, socketContent_1, socketColor_2, socketContent_2, socketColor_3, socketContent_3, ";
@@ -684,7 +686,7 @@ namespace SpawnCreator
             BuildSQLFile += "spellID_3, spellTrigger_3, spellCharges_3, spellppmRate_3, spellCooldown_3, spellcategory_3, spellcategorycooldown_3, ";
             BuildSQLFile += "spellID_4, spellTrigger_4, spellCharges_4, spellppmRate_4, spellCooldown_4, spellcategory_4, spellcategorycooldown_4, ";
             BuildSQLFile += "spellID_5, spellTrigger_5, spellCharges_5, spellppmRate_5, spellCooldown_5, spellcategory_5, spellcategorycooldown_5) ";
-            BuildSQLFile += "VALUES \n";
+            BuildSQLFile += "VALUES " + Environment.NewLine;
             BuildSQLFile += "(";
 
             // values now
@@ -1303,7 +1305,7 @@ namespace SpawnCreator
             BuildSQLFile += textBox93.Text + ", "; // spellCategory_5
 
             if (textBox92.Text == "") BuildSQLFile += "0, "; else
-            BuildSQLFile += textBox92.Text + "); \n"; // spellCategoryCooldown_5
+            BuildSQLFile += textBox92.Text + "); "; // spellCategoryCooldown_5
 
             stringSQLShare = BuildSQLFile;
             stringEntryShare = NUD_item_Entry.Text;
@@ -2222,7 +2224,7 @@ namespace SpawnCreator
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             connection.Close();
         }
@@ -2984,10 +2986,19 @@ namespace SpawnCreator
 
         private void comboBox29_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button22.Visible = false;
             btn_DeleteQuery.Visible = false;
 
-            if (comboBox29.SelectedIndex == 0) textBox105.Text = "INSERT";
-            else if (comboBox29.SelectedIndex == 1) textBox105.Text = "REPLACE";
+            if (comboBox29.SelectedIndex == 0)
+            {
+                textBox105.Text = "INSERT";
+                button22.Visible = true;
+            }
+            else if (comboBox29.SelectedIndex == 1)
+            {
+                textBox105.Text = "REPLACE";
+                button22.Visible = true;
+            }
             else if (comboBox29.SelectedIndex == 2)
             {
                 if (form_MM.CB_NoMySQL.Checked || label_mysql_status2.Text == "Connection Lost - MySQL is not running")
@@ -3040,7 +3051,7 @@ namespace SpawnCreator
             
             using (var writer = File.AppendText("items.sql"))
             {
-                writer.Write(stringSQLShare);
+                writer.Write(stringSQLShare + Environment.NewLine);
                 button8.Text = "Saved!";
                 button8.TextAlign = ContentAlignment.MiddleCenter;
             }
@@ -3085,15 +3096,36 @@ namespace SpawnCreator
 
         private void btn_DeleteQuery_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are you sure you want to delete Item " + NUD_item_Entry.Text + " ?", "SpawnCreator " + form_MM.version, MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show($"Are you sure you want to delete Item { NUD_item_Entry.Text } ?", $"SpawnCreator { form_MM.version }", MessageBoxButtons.YesNo);
             if (dr == DialogResult.No)
                 return;
 
             else
-                //mysql_Connect.DeleteItem(this);
                 DeleteItem();
-
         }
-        
+
+        private void label_mysql_status2_MouseDown(object sender, MouseEventArgs e)
+        {
+            panel2_MouseDown(sender, e);
+        }
+
+        private void label_mysql_status2_MouseMove(object sender, MouseEventArgs e)
+        {
+            panel2_MouseMove(sender, e);
+        }
+
+        private void label_mysql_status2_MouseUp(object sender, MouseEventArgs e)
+        {
+            panel2_MouseUp(sender, e);
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            if (comboBox29.SelectedIndex == 0)
+                MessageBox.Show("MySQL - INSERT Syntax: \nInserts new rows into an existing table. ", "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            else
+                MessageBox.Show("MySQL - REPLACE Syntax: \nREPLACE works exactly like INSERT, except that if an old row in the table has the same value as a new row for a PRIMARY KEY or a UNIQUE index, the old row is deleted before the new row is inserted.", "SpawnCreator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

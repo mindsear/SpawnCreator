@@ -146,6 +146,7 @@
             this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.timer8 = new System.Windows.Forms.Timer(this.components);
+            this.button22 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -220,6 +221,9 @@
             this.label_Success.TabIndex = 214;
             this.label_Success.Text = "Success!";
             this.label_Success.Visible = false;
+            this.label_Success.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label_Success.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label_Success.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // label78
             // 
@@ -248,6 +252,9 @@
             this.label_mysql_status2.Size = new System.Drawing.Size(101, 18);
             this.label_mysql_status2.TabIndex = 20;
             this.label_mysql_status2.Text = "Connected!";
+            this.label_mysql_status2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label_mysql_status2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label_mysql_status2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // label85
             // 
@@ -260,6 +267,9 @@
             this.label85.Size = new System.Drawing.Size(125, 18);
             this.label85.TabIndex = 18;
             this.label85.Text = "MySQL Status:";
+            this.label85.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.label85.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.label85.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // panel3
             // 
@@ -468,6 +478,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.button22);
             this.panel1.Controls.Add(this.btn_DeleteQuery);
             this.panel1.Controls.Add(this.textBox105);
             this.panel1.Controls.Add(this.comboBox11);
@@ -1651,6 +1662,18 @@
             this.timer8.Interval = 6000;
             this.timer8.Tick += new System.EventHandler(this.timer8_Tick);
             // 
+            // button22
+            // 
+            this.button22.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.Location = new System.Drawing.Point(447, 65);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(21, 24);
+            this.button22.TabIndex = 214;
+            this.button22.Text = "?";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Visible = false;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
             // GameObject_Creator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1809,5 +1832,6 @@
         internal System.Windows.Forms.ComboBox comboBox2;
         internal System.Windows.Forms.NumericUpDown NUD_Entry;
         private System.Windows.Forms.Label label_Success;
+        private System.Windows.Forms.Button button22;
     }
 }
