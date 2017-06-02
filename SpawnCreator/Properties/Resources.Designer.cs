@@ -63,6 +63,46 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0UI_TargetingFrame_NoMana {
+            get {
+                object obj = ResourceManager.GetObject("_0UI_TargetingFrame_NoMana", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _133_UI_TargetingFrame_Elite {
+            get {
+                object obj = ResourceManager.GetObject("_133_UI_TargetingFrame_Elite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _22_UI_TargetingFrame_Rare_Elite {
+            get {
+                object obj = ResourceManager.GetObject("22-UI-TargetingFrame-Rare-Elite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _222_UI_TargetingFrame_Rare_Elite {
+            get {
+                object obj = ResourceManager.GetObject("_222_UI_TargetingFrame_Rare_Elite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _250px_Mage_Crest {
             get {
                 object obj = ResourceManager.GetObject("250px-Mage_Crest", resourceCulture);
@@ -73,9 +113,19 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3D_Orc {
+        internal static System.Drawing.Bitmap _3_UI_TargetingFrame_Skull {
             get {
-                object obj = ResourceManager.GetObject("3D-Orc", resourceCulture);
+                object obj = ResourceManager.GetObject("3-UI-TargetingFrame-Skull", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _44_UI_TargetingFrame_Rare {
+            get {
+                object obj = ResourceManager.GetObject("_44_UI_TargetingFrame_Rare", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,16 +216,6 @@ namespace SpawnCreator.Properties {
         internal static System.Drawing.Bitmap BattleMasterGossipIcon {
             get {
                 object obj = ResourceManager.GetObject("BattleMasterGossipIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap beta_axe {
-            get {
-                object obj = ResourceManager.GetObject("beta_axe", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,16 +316,6 @@ namespace SpawnCreator.Properties {
         internal static System.Drawing.Bitmap Help_Circle_Blue {
             get {
                 object obj = ResourceManager.GetObject("Help_Circle_Blue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Help_Circle_Blue1 {
-            get {
-                object obj = ResourceManager.GetObject("Help_Circle_Blue1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +453,9 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap questionmark {
+        internal static System.Drawing.Bitmap rankInfo {
             get {
-                object obj = ResourceManager.GetObject("questionmark", resourceCulture);
+                object obj = ResourceManager.GetObject("rankInfo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -583,9 +613,9 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap UI_SilverIcon {
+        internal static System.Drawing.Bitmap UI_Quest_BulletPoint {
             get {
-                object obj = ResourceManager.GetObject("UI-SilverIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("UI_Quest_BulletPoint", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -593,9 +623,9 @@ namespace SpawnCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap UnlearnGossipIcon {
+        internal static System.Drawing.Bitmap UI_SilverIcon {
             get {
-                object obj = ResourceManager.GetObject("UnlearnGossipIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("UI-SilverIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -21,25 +21,25 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="mysql_pass" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">ascent</Value>
     </Setting>
     <Setting Name="mysql_username" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">root</Value>
     </Setting>
     <Setting Name="mysql_hostname" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">127.0.0.1</Value>
     </Setting>
     <Setting Name="mysql_port" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">3306</Value>
     </Setting>
     <Setting Name="mysql_worldDB" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">world</Value>
     </Setting>
     <Setting Name="mysql_authDB" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">auth</Value>
     </Setting>
     <Setting Name="mysql_charactersDB" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">characters</Value>
     </Setting>
     <Setting Name="NpcFlag" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -84,6 +84,9 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="MySQL_Path" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="InhabitType" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

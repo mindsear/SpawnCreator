@@ -97,7 +97,7 @@ namespace SpawnCreator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ascent")]
         public string mysql_pass {
             get {
                 return ((string)(this["mysql_pass"]));
@@ -109,7 +109,7 @@ namespace SpawnCreator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("root")]
         public string mysql_username {
             get {
                 return ((string)(this["mysql_username"]));
@@ -121,7 +121,7 @@ namespace SpawnCreator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
         public string mysql_hostname {
             get {
                 return ((string)(this["mysql_hostname"]));
@@ -133,7 +133,7 @@ namespace SpawnCreator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
         public string mysql_port {
             get {
                 return ((string)(this["mysql_port"]));
@@ -145,7 +145,7 @@ namespace SpawnCreator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("world")]
         public string mysql_worldDB {
             get {
                 return ((string)(this["mysql_worldDB"]));
@@ -157,7 +157,7 @@ namespace SpawnCreator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("auth")]
         public string mysql_authDB {
             get {
                 return ((string)(this["mysql_authDB"]));
@@ -169,7 +169,7 @@ namespace SpawnCreator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("characters")]
         public string mysql_charactersDB {
             get {
                 return ((string)(this["mysql_charactersDB"]));
@@ -356,6 +356,18 @@ namespace SpawnCreator.Properties {
             }
             set {
                 this["MySQL_Path"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string InhabitType {
+            get {
+                return ((string)(this["InhabitType"]));
+            }
+            set {
+                this["InhabitType"] = value;
             }
         }
     }

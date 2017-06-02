@@ -53,235 +53,247 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountCreator.cs">
+    <Compile Include="Forms\AccountCreator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountCreator.Designer.cs">
+    <Compile Include="Forms\AccountCreator.Designer.cs">
       <DependentUpon>AccountCreator.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddGossipMenus.cs">
+    <Compile Include="Forms\Form_ItemCreator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddGossipMenus.Designer.cs">
+    <Compile Include="Forms\Form_ItemCreator.Designer.cs">
+      <DependentUpon>Form_ItemCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NPC_Creator_SubForms\AddGossipMenus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NPC_Creator_SubForms\AddGossipMenus.Designer.cs">
       <DependentUpon>AddGossipMenus.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddVendorItems.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\AddVendorItems.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddVendorItems.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\AddVendorItems.Designer.cs">
       <DependentUpon>AddVendorItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="BackToMainMenu.cs">
+    <Compile Include="Forms\BackToMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BackToMainMenu.Designer.cs">
+    <Compile Include="Forms\BackToMainMenu.Designer.cs">
       <DependentUpon>BackToMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Item.cs" />
-    <Compile Include="Conditions_Form.cs">
+    <Compile Include="Forms\Conditions_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Conditions_Form.Designer.cs">
+    <Compile Include="Forms\Conditions_Form.Designer.cs">
       <DependentUpon>Conditions_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlPanel.cs">
+    <Compile Include="Forms\ControlPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControlPanel.Designer.cs">
+    <Compile Include="Forms\ControlPanel.Designer.cs">
       <DependentUpon>ControlPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Definers.cs" />
+    <Compile Include="Classes\Definers.cs" />
     <Compile Include="Definitions\ConditionSourceTypes.cs" />
     <Compile Include="Definitions\ConditionTypes.cs" />
     <Compile Include="Definitions\InstanceInfo.cs" />
     <Compile Include="Definitions\RelationTypes.cs" />
-    <Compile Include="Disable_Form.cs">
+    <Compile Include="Forms\Disable_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Disable_Form.Designer.cs">
+    <Compile Include="Forms\Disable_Form.Designer.cs">
       <DependentUpon>Disable_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="dynamicflags.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\dynamicflags.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dynamicflags.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\dynamicflags.Designer.cs">
       <DependentUpon>dynamicflags.cs</DependentUpon>
     </Compile>
-    <Compile Include="event_flags.cs">
+    <Compile Include="Forms\SmartScripts_SubForms\event_flags.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="event_flags.Designer.cs">
+    <Compile Include="Forms\SmartScripts_SubForms\event_flags.Designer.cs">
       <DependentUpon>event_flags.cs</DependentUpon>
     </Compile>
-    <Compile Include="event_phase_mask.cs">
+    <Compile Include="Forms\SmartScripts_SubForms\event_phase_mask.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="event_phase_mask.Designer.cs">
+    <Compile Include="Forms\SmartScripts_SubForms\event_phase_mask.Designer.cs">
       <DependentUpon>event_phase_mask.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flags_Disable_Map.cs">
+    <Compile Include="Forms\Disable_SubForms\Flags_Disable_Map.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Flags_Disable_Map.Designer.cs">
+    <Compile Include="Forms\Disable_SubForms\Flags_Disable_Map.Designer.cs">
       <DependentUpon>Flags_Disable_Map.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flags_Disable_Spell.cs">
+    <Compile Include="Forms\Disable_SubForms\Flags_Disable_Spell.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Flags_Disable_Spell.Designer.cs">
+    <Compile Include="Forms\Disable_SubForms\Flags_Disable_Spell.Designer.cs">
       <DependentUpon>Flags_Disable_Spell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flags_Disable_Vmap.cs">
+    <Compile Include="Forms\Disable_SubForms\Flags_Disable_Vmap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Flags_Disable_Vmap.Designer.cs">
+    <Compile Include="Forms\Disable_SubForms\Flags_Disable_Vmap.Designer.cs">
       <DependentUpon>Flags_Disable_Vmap.cs</DependentUpon>
     </Compile>
-    <Compile Include="flags_extra.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\flags_extra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="flags_extra.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\flags_extra.Designer.cs">
       <DependentUpon>flags_extra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_BagFamilyMasksDialog.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_BagFamilyMasksDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_BagFamilyMasksDialog.Designer.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_BagFamilyMasksDialog.Designer.cs">
       <DependentUpon>Form_BagFamilyMasksDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ClassMasksDialog.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_ClassMasksDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_ClassMasksDialog.Designer.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_ClassMasksDialog.Designer.cs">
       <DependentUpon>Form_ClassMasksDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_FlagMasksDialog.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_FlagMasksDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_FlagMasksDialog.Designer.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_FlagMasksDialog.Designer.cs">
       <DependentUpon>Form_FlagMasksDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_FlagExtraMasksDialog.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_FlagExtraMasksDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_FlagExtraMasksDialog.Designer.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_FlagExtraMasksDialog.Designer.cs">
       <DependentUpon>Form_FlagExtraMasksDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_FlagCustomDialog.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_FlagCustomDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_FlagCustomDialog.Designer.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_FlagCustomDialog.Designer.cs">
       <DependentUpon>Form_FlagCustomDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ItemPreview.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_ItemPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_ItemPreview.Designer.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_ItemPreview.Designer.cs">
       <DependentUpon>Form_ItemPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_MainMenu.cs">
+    <Compile Include="Forms\Form_MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_MainMenu.Designer.cs">
+    <Compile Include="Forms\Form_MainMenu.Designer.cs">
       <DependentUpon>Form_MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ItemCreator.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_RaceMasksDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_ItemCreator.Designer.cs">
-      <DependentUpon>Form_ItemCreator.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_RaceMasksDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_RaceMasksDialog.Designer.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_RaceMasksDialog.Designer.cs">
       <DependentUpon>Form_RaceMasksDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_SocketOptions.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_SocketOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_SocketOptions.Designer.cs">
+    <Compile Include="Forms\Item_Creator_SubForms\Form_SocketOptions.Designer.cs">
       <DependentUpon>Form_SocketOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameObject_Creator.cs">
+    <Compile Include="Forms\GameObject_Creator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameObject_Creator.Designer.cs">
+    <Compile Include="Forms\GameObject_Creator.Designer.cs">
       <DependentUpon>GameObject_Creator.cs</DependentUpon>
     </Compile>
-    <Compile Include="GenerateLoot.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\GenerateLoot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GenerateLoot.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\GenerateLoot.Designer.cs">
       <DependentUpon>GenerateLoot.cs</DependentUpon>
     </Compile>
-    <Compile Include="HowToAddWaypoints.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\HowToAddWaypoints.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HowToAddWaypoints.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\HowToAddWaypoints.Designer.cs">
       <DependentUpon>HowToAddWaypoints.cs</DependentUpon>
     </Compile>
-    <Compile Include="MailSender.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\InhabitType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MailSender.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\InhabitType.Designer.cs">
+      <DependentUpon>InhabitType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MailSender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MailSender.Designer.cs">
       <DependentUpon>MailSender.cs</DependentUpon>
     </Compile>
-    <Compile Include="MakeNpcSay.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\MakeNpcSay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MakeNpcSay.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\MakeNpcSay.Designer.cs">
       <DependentUpon>MakeNpcSay.cs</DependentUpon>
     </Compile>
-    <Compile Include="mechanic_immune_mask.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\mechanic_immune_mask.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mechanic_immune_mask.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\mechanic_immune_mask.Designer.cs">
       <DependentUpon>mechanic_immune_mask.cs</DependentUpon>
     </Compile>
-    <Compile Include="MountNPC.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\MountNPC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MountNPC.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\MountNPC.Designer.cs">
       <DependentUpon>MountNPC.cs</DependentUpon>
     </Compile>
-    <Compile Include="MySql_Connect.cs" />
-    <Compile Include="NpcFlag.cs">
+    <Compile Include="Classes\MySql_Connect.cs" />
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\NpcFlag.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NpcFlag.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\NpcFlag.Designer.cs">
       <DependentUpon>NpcFlag.cs</DependentUpon>
     </Compile>
-    <Compile Include="NPC_Creator.cs">
+    <Compile Include="Forms\NPC_Creator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NPC_Creator.Designer.cs">
+    <Compile Include="Forms\NPC_Creator.Designer.cs">
       <DependentUpon>NPC_Creator.cs</DependentUpon>
     </Compile>
-    <Compile Include="Predefined_SAI_Templates.cs">
+    <Compile Include="Forms\SmartScripts_SubForms\Predefined_SAI_Templates.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Predefined_SAI_Templates.Designer.cs">
+    <Compile Include="Forms\SmartScripts_SubForms\Predefined_SAI_Templates.Designer.cs">
       <DependentUpon>Predefined_SAI_Templates.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\Quest_Creator_SubForms\QuestFlags_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Quest_Creator_SubForms\QuestFlags_Form.Designer.cs">
+      <DependentUpon>QuestFlags_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuestTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuestTemplate.Designer.cs">
+      <DependentUpon>QuestTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NPC_Creator_SubForms\RankInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NPC_Creator_SubForms\RankInfo.Designer.cs">
+      <DependentUpon>RankInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="QuestFlags_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuestFlags_Form.Designer.cs">
-      <DependentUpon>QuestFlags_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuestTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuestTemplate.Designer.cs">
-      <DependentUpon>QuestTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="SaveOptionsDialog.cs">
       <SubType>Form</SubType>
@@ -289,137 +301,140 @@
     <Compile Include="SaveOptionsDialog.Designer.cs">
       <DependentUpon>SaveOptionsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="SmartScripts.cs">
+    <Compile Include="Forms\SmartScripts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SmartScripts.Designer.cs">
+    <Compile Include="Forms\SmartScripts.Designer.cs">
       <DependentUpon>SmartScripts.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpawnFunctions.cs" />
-    <Compile Include="Spawn_NPC.cs">
+    <Compile Include="Classes\SpawnFunctions.cs" />
+    <Compile Include="Forms\NPC_Creator_SubForms\Spawn_NPC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Spawn_NPC.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\Spawn_NPC.Designer.cs">
       <DependentUpon>Spawn_NPC.cs</DependentUpon>
     </Compile>
-    <Compile Include="type_flags.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\type_flags.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="type_flags.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\type_flags.Designer.cs">
       <DependentUpon>type_flags.cs</DependentUpon>
     </Compile>
-    <Compile Include="unit_flags.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\unit_flags.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="unit_flags.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\unit_flags.Designer.cs">
       <DependentUpon>unit_flags.cs</DependentUpon>
     </Compile>
-    <Compile Include="unit_flags2.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\unit_flags2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="unit_flags2.Designer.cs">
+    <Compile Include="Forms\NPC_Creator_SubForms\flags_forms\unit_flags2.Designer.cs">
       <DependentUpon>unit_flags2.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AccountCreator.resx">
+    <EmbeddedResource Include="Forms\AccountCreator.resx">
       <DependentUpon>AccountCreator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddGossipMenus.resx">
-      <DependentUpon>AddGossipMenus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddVendorItems.resx">
-      <DependentUpon>AddVendorItems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BackToMainMenu.resx">
-      <DependentUpon>BackToMainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Conditions_Form.resx">
-      <DependentUpon>Conditions_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlPanel.resx">
-      <DependentUpon>ControlPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Disable_Form.resx">
-      <DependentUpon>Disable_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="dynamicflags.resx">
-      <DependentUpon>dynamicflags.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="event_flags.resx">
-      <DependentUpon>event_flags.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="event_phase_mask.resx">
-      <DependentUpon>event_phase_mask.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Flags_Disable_Map.resx">
-      <DependentUpon>Flags_Disable_Map.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Flags_Disable_Spell.resx">
-      <DependentUpon>Flags_Disable_Spell.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Flags_Disable_Vmap.resx">
-      <DependentUpon>Flags_Disable_Vmap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="flags_extra.resx">
-      <DependentUpon>flags_extra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_BagFamilyMasksDialog.resx">
-      <DependentUpon>Form_BagFamilyMasksDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_ClassMasksDialog.resx">
-      <DependentUpon>Form_ClassMasksDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_FlagMasksDialog.resx">
-      <DependentUpon>Form_FlagMasksDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_FlagExtraMasksDialog.resx">
-      <DependentUpon>Form_FlagExtraMasksDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_FlagCustomDialog.resx">
-      <DependentUpon>Form_FlagCustomDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_ItemPreview.resx">
-      <DependentUpon>Form_ItemPreview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_MainMenu.resx">
-      <DependentUpon>Form_MainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_ItemCreator.resx">
+    <EmbeddedResource Include="Forms\Form_ItemCreator.resx">
       <DependentUpon>Form_ItemCreator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_RaceMasksDialog.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\AddGossipMenus.resx">
+      <DependentUpon>AddGossipMenus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\AddVendorItems.resx">
+      <DependentUpon>AddVendorItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BackToMainMenu.resx">
+      <DependentUpon>BackToMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conditions_Form.resx">
+      <DependentUpon>Conditions_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ControlPanel.resx">
+      <DependentUpon>ControlPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Disable_Form.resx">
+      <DependentUpon>Disable_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\flags_forms\dynamicflags.resx">
+      <DependentUpon>dynamicflags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SmartScripts_SubForms\event_flags.resx">
+      <DependentUpon>event_flags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SmartScripts_SubForms\event_phase_mask.resx">
+      <DependentUpon>event_phase_mask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Disable_SubForms\Flags_Disable_Map.resx">
+      <DependentUpon>Flags_Disable_Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Disable_SubForms\Flags_Disable_Spell.resx">
+      <DependentUpon>Flags_Disable_Spell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Disable_SubForms\Flags_Disable_Vmap.resx">
+      <DependentUpon>Flags_Disable_Vmap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\flags_forms\flags_extra.resx">
+      <DependentUpon>flags_extra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item_Creator_SubForms\Form_BagFamilyMasksDialog.resx">
+      <DependentUpon>Form_BagFamilyMasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item_Creator_SubForms\Form_ClassMasksDialog.resx">
+      <DependentUpon>Form_ClassMasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item_Creator_SubForms\Form_FlagMasksDialog.resx">
+      <DependentUpon>Form_FlagMasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item_Creator_SubForms\Form_FlagExtraMasksDialog.resx">
+      <DependentUpon>Form_FlagExtraMasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item_Creator_SubForms\Form_FlagCustomDialog.resx">
+      <DependentUpon>Form_FlagCustomDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item_Creator_SubForms\Form_ItemPreview.resx">
+      <DependentUpon>Form_ItemPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_MainMenu.resx">
+      <DependentUpon>Form_MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item_Creator_SubForms\Form_RaceMasksDialog.resx">
       <DependentUpon>Form_RaceMasksDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_SocketOptions.resx">
+    <EmbeddedResource Include="Forms\Item_Creator_SubForms\Form_SocketOptions.resx">
       <DependentUpon>Form_SocketOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameObject_Creator.resx">
+    <EmbeddedResource Include="Forms\GameObject_Creator.resx">
       <DependentUpon>GameObject_Creator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenerateLoot.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\GenerateLoot.resx">
       <DependentUpon>GenerateLoot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HowToAddWaypoints.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\HowToAddWaypoints.resx">
       <DependentUpon>HowToAddWaypoints.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MailSender.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\InhabitType.resx">
+      <DependentUpon>InhabitType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MailSender.resx">
       <DependentUpon>MailSender.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MakeNpcSay.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\MakeNpcSay.resx">
       <DependentUpon>MakeNpcSay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mechanic_immune_mask.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\flags_forms\mechanic_immune_mask.resx">
       <DependentUpon>mechanic_immune_mask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MountNPC.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\MountNPC.resx">
       <DependentUpon>MountNPC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NpcFlag.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\flags_forms\NpcFlag.resx">
       <DependentUpon>NpcFlag.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NPC_Creator.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator.resx">
       <DependentUpon>NPC_Creator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Predefined_SAI_Templates.resx">
+    <EmbeddedResource Include="Forms\SmartScripts_SubForms\Predefined_SAI_Templates.resx">
       <DependentUpon>Predefined_SAI_Templates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -427,28 +442,31 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuestFlags_Form.resx">
+    <EmbeddedResource Include="Forms\Quest_Creator_SubForms\QuestFlags_Form.resx">
       <DependentUpon>QuestFlags_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuestTemplate.resx">
+    <EmbeddedResource Include="Forms\QuestTemplate.resx">
       <DependentUpon>QuestTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\RankInfo.resx">
+      <DependentUpon>RankInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SaveOptionsDialog.resx">
       <DependentUpon>SaveOptionsDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SmartScripts.resx">
+    <EmbeddedResource Include="Forms\SmartScripts.resx">
       <DependentUpon>SmartScripts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Spawn_NPC.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\Spawn_NPC.resx">
       <DependentUpon>Spawn_NPC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="type_flags.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\flags_forms\type_flags.resx">
       <DependentUpon>type_flags.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="unit_flags.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\flags_forms\unit_flags.resx">
       <DependentUpon>unit_flags.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="unit_flags2.resx">
+    <EmbeddedResource Include="Forms\NPC_Creator_SubForms\flags_forms\unit_flags2.resx">
       <DependentUpon>unit_flags2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
@@ -510,7 +528,6 @@
     <None Include="Resources\TabardGossipIcon.png" />
     <None Include="Resources\TaxiGossipIcon.png" />
     <None Include="Resources\TrainerGossipIcon.png" />
-    <None Include="Resources\UnlearnGossipIcon.png" />
     <None Include="Resources\yellow-dot.png" />
     <None Include="Resources\arrow_right.png" />
     <None Include="Resources\arrow_left.png" />
@@ -520,9 +537,20 @@
     <None Include="Resources\UI-CopperIcon.png" />
     <None Include="Resources\mail_body_frame.png" />
     <None Include="Resources\magnifier.png" />
-    <None Include="Resources\questionmark.png" />
     <None Include="Resources\Help_Circle_Blue.png" />
-    <None Include="Resources\Help_Circle_Blue1.png" />
+    <None Include="Resources\22-UI-TargetingFrame-Rare-Elite.png" />
+    <None Include="Resources\200-UI-TargetingFrame-Rare-Elite.png" />
+    <None Include="Resources\00-UI-TargetingFrame.png" />
+    <None Include="Resources\3-UI-TargetingFrame-Skull.png" />
+    <None Include="Resources\13-UI-TargetingFrame-Elite.png" />
+    <None Include="Resources\133-UI-TargetingFrame-Elite.png" />
+    <None Include="Resources\44-UI-TargetingFrame-Rare.png" />
+    <None Include="Resources\000-UI-TargetingFrame.png" />
+    <None Include="Resources\0UI-TargetingFrame-NoMana.png" />
+    <None Include="Resources\Point.png" />
+    <None Include="Resources\rankInfo.png" />
+    <None Include="Resources\UI-Quest-BulletPoint.png" />
+    <None Include="Resources\222-UI-TargetingFrame-Rare-Elite.png" />
     <Content Include="spawncreator_icon.ico" />
   </ItemGroup>
   <ItemGroup />

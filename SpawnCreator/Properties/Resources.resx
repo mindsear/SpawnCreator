@@ -127,11 +127,14 @@
   <data name="ActiveQuestIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ActiveQuestIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="UI-GoldIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UI-GoldIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pickup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pickup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TrainerGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TrainerGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="22-UI-TargetingFrame-Rare-Elite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\22-UI-TargetingFrame-Rare-Elite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Help_Circle_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Help_Circle_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,14 +142,23 @@
   <data name="Inv_enchant_disenchant" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inv_enchant_disenchant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="56176" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\56176.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="socket-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socket-blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="yellow_dot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellow-dot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_0UI_TargetingFrame_NoMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\0UI-TargetingFrame-NoMana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="mail_body_frame" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mail_body_frame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3-UI-TargetingFrame-Skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3-UI-TargetingFrame-Skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="line_divider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\line_divider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,12 +175,6 @@
   <data name="PVP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PVP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3D-Orc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3D-Orc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Inv_misc_coin_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inv_misc_coin_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,6 +187,12 @@
   <data name="socket-yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socket-yellow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_133_UI_TargetingFrame_Elite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\133-UI-TargetingFrame-Elite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="skull_f18221f5f36c13224" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\skull_f18221f5f36c13224.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Buy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Buy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,11 +202,8 @@
   <data name="BattleMasterGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BattleMasterGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Quest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Quest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="56176" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\56176.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Gunner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gunner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,23 +211,17 @@
   <data name="TaxiGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TaxiGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Directions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Directions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Repair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Repair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Interact" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Interact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TrainerGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrainerGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BankerGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BankerGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="questionmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\questionmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="beta_axe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\beta_axe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vehichleCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vehichleCursor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,20 +232,17 @@
   <data name="mail_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mail_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UnlearnGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UnlearnGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Taxi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Taxi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="skull_f18221f5f36c13224" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skull_f18221f5f36c13224.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Quest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HealerGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HealerGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inv_misc_questionmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inv_misc_questionmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Directions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Directions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Taxi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Taxi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BinderGossipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BinderGossipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -277,8 +277,11 @@
   <data name="Driver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Driver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UI-GoldIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UI-GoldIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Inv_misc_questionmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inv_misc_questionmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_44_UI_TargetingFrame_Rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\44-UI-TargetingFrame-Rare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,7 +289,13 @@
   <data name="UI-SilverIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UI-SilverIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Help_Circle_Blue1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help_Circle_Blue1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rankInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rankInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UI_Quest_BulletPoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UI-Quest-BulletPoint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_222_UI_TargetingFrame_Rare_Elite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\222-UI-TargetingFrame-Rare-Elite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
